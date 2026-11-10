@@ -1,0 +1,38 @@
+# hakelim.com = עותק אוטומטי של gilad-rachamim/gilad-rachamim.github.io (שם עורכים; כאן לא נוגעים).
+# כל 5 דקות: אם main שם התקדם, מעתיקים את האתר לענף site (קומיט יחיד, נדרס בכל פעם) ומוסיפים CNAME.
+# GitHub Pages של המאגר הזה מגיש את הענף site בכתובת hakelim.com.
+name: mirror
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: mirror
+  cancel-in-progress: false
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: sync site branch
+        run: |
+          set -e
+          SRC_URL=https://github.com/gilad-rachamim/gilad-rachamim.github.io.git
+          DST_URL=https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          SRC=$(git ls-remote "$SRC_URL" refs/heads/main | cut -f1)
+          HAVE=$(curl -fsSL "https://raw.githubusercontent.com/${{ github.repository }}/site/.mirror-of" 2>/dev/null || true)
+          echo "source main: $SRC / mirrored: $HAVE"
+          if [ "$SRC" = "$HAVE" ]; then echo "up to date"; exit 0; fi
+          git clone --depth 1 "$SRC_URL" src
+          cd src
+          test "$(git rev-parse HEAD)" = "$SRC" || SRC=$(git rev-parse HEAD)
+          rm -rf .git .github .claude
+          echo "hakelim.com" > CNAME
+          echo "$SRC" > .mirror-of
+          git init -q -b site
+          git config user.name "hakelim-mirror"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "mirror of gilad-rachamim.github.io@$SRC"
+          git push -f "$DST_URL" site
