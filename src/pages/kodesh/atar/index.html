@@ -1,0 +1,94 @@
+<!--meta {
+  "site": "kodesh",
+  "nav": "rabanim",
+  "tool": "rav_atar",
+  "title": "אתר אישי לרב, לרבנית ולבית הכנסת, בחינם | כלי קודש",
+  "description": "ממלאים טופס אחד ומקבלים דף מכובד עם קישור משלכם: השיעורים מיוטיוב נכנסים לבד, מערכת שבועית עם ספירה לאחור, הוספה ליומן, ניווט, שאלות בווטסאפ, פרשת השבוע וזמני שבת. בחינם, בלי הרשמה.",
+  "og_title": "האתר של הרב: דף אישי עם השיעורים, המערכת ושאלות בווטסאפ",
+  "priority": "0.7",
+  "crumbs": [["האתר של הרב", null]],
+  "head": "<link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><link rel=\"stylesheet\" href=\"/assets/rav.css\"><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"איך פותחים אתר לרב בחינם?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"ממלאים את הטופס בדף ולוחצים \\\"ליצור את הקישור לדף\\\". הדף מוכן מיד.\"}}, {\"@type\": \"Question\", \"name\": \"השיעורים מיוטיוב מתעדכנים לבד?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. מדביקים את הקישור לערוץ, והשיעורים האחרונים נכנסים לדף לבד.\"}}, {\"@type\": \"Question\", \"name\": \"איך משנים פרטים אחר כך?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"שומרים את קישור העריכה. הוא פותח את הטופס עם כל הפרטים, ושינוי יוצר קישור חדש.\"}}, {\"@type\": \"Question\", \"name\": \"צריך הרשמה או סיסמה?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לא. אין הרשמה ואין סיסמה. כדי לעדכן שומרים את קישור העריכה.\"}}, {\"@type\": \"Question\", \"name\": \"צריך לדעת לבנות אתרים?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לא. ממלאים טופס אחד ומקבלים קישור לאתר. השיעורים מיוטיוב נכנסים לבד.\"}}]}</script>",
+  "foot": "<script src=\"/assets/vendor/hebcal-bundle/hebcal-core-6.14.7.min.js\" data-hebcal defer></script><script src=\"/assets/vendor/qrcodejs/qrcode-1.0.0.min.js\" integrity=\"sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" defer></script><script src=\"/assets/rav.js\" defer></script>"
+} -->
+<header class="k-hero">
+  <h1>אתר אישי לרב ולבית הכנסת, בחינם</h1>
+  <p class="sub">דף אישי ומכובד עם קישור משלכם. השיעורים מיוטיוב נכנסים לבד, המערכת השבועית עם "השיעור הבא", ושאלות ישירות בווטסאפ. לרב, לרבנית, לבית כנסת, לישיבה או לארגון.</p>
+  <div class="actions"><a class="btn btn-line btn-sm" href="/kodesh/r/#k=voM7HG" target="_blank" rel="noopener">לראות דף לדוגמה ←</a></div>
+</header>
+<div class="tool">
+  <form class="k-form" id="ra-form" novalidate>
+    <div class="field"><span class="label">הדף הוא של</span>
+      <div class="ra-kinds" role="radiogroup" aria-label="הדף הוא של">
+        <label><input type="radio" name="k" value="rav" checked><span>רב</span></label>
+        <label><input type="radio" name="k" value="rabanit"><span>רבנית</span></label>
+        <label><input type="radio" name="k" value="bk"><span>בית כנסת</span></label>
+        <label><input type="radio" name="k" value="yeshiva"><span>ישיבה</span></label>
+        <label><input type="radio" name="k" value="org"><span>ארגון</span></label>
+      </div>
+    </div>
+    <div class="field"><label for="ra-name">שם</label><input id="ra-name" name="name" type="text" required maxlength="60" placeholder="הרב משה כהן · בית הכנסת אהל יצחק"></div>
+    <div class="field"><label for="ra-sub">שורה מתחת לשם <span class="opt">(לא חובה)</span></label><input id="ra-sub" name="sub" type="text" maxlength="80" placeholder="רב הקהילה, רמות · ראש הישיבה"></div>
+    <div class="field"><label for="ra-intro">משפט פתיחה <span class="opt">(לא חובה)</span></label><textarea id="ra-intro" name="intro" maxlength="300" placeholder="ברוכים הבאים. כאן תמצאו את השיעורים, ודרך פשוטה לשאול כל שאלה."></textarea></div>
+    <div class="field"><span class="label">תמונה <span class="opt">(לא חובה)</span></span>
+      <div class="ra-pic"><img id="ra-picprev" alt="" hidden><label class="btn btn-line btn-sm" for="ra-pic" style="cursor:pointer">📷 תמונה מהטלפון</label><input id="ra-pic" type="file" accept="image/*" hidden><button class="btn btn-line btn-sm" type="button" id="ra-picdel" hidden>להסיר</button></div>
+      <input name="imgurl" type="url" maxlength="300" dir="ltr" style="text-align:right" placeholder="או קישור לתמונה: https://" aria-label="קישור לתמונה">
+      <label style="font-weight:400;color:var(--body)"><input type="checkbox" id="ra-yi" checked> בלי תמונה? להשתמש בתמונה של ערוץ היוטיוב</label>
+    </div>
+    <div class="field"><span class="label">צבעים</span><div class="ra-ths" id="ra-ths" role="radiogroup" aria-label="צבעים"></div></div>
+
+    <div class="field"><label for="ra-yt">ערוץ היוטיוב <span class="opt">(לא חובה)</span></label><input id="ra-yt" name="yt" type="text" maxlength="200" dir="ltr" style="text-align:right" placeholder="https://www.youtube.com/@..."><span class="opt" style="font-size:.9rem">מדביקים את הקישור לערוץ. השיעורים האחרונים נכנסים לדף לבד, וכשיש שידור חי, הוא מופיע למעלה.</span>
+      <label style="font-weight:400;color:var(--body)"><input type="checkbox" id="ra-shorts" checked> להראות גם סרטונים קצרים (שורטס)</label></div>
+
+    <div class="field"><span class="label">המערכת השבועית <span class="opt">(שיעורים קבועים, לא חובה)</span></span>
+      <div class="ra-rows" id="ra-rows"></div>
+      <button class="btn btn-line btn-sm" type="button" id="ra-add" style="justify-self:start">+ עוד שיעור</button>
+    </div>
+
+    <div class="field"><label for="ra-ph">ווטסאפ לשאלות <span class="opt">(לא חובה)</span></label><input id="ra-ph" name="ph" type="tel" inputmode="tel" maxlength="20" dir="ltr" style="text-align:right" placeholder="050-0000000">
+      <label style="font-weight:400;color:var(--body)"><input type="checkbox" id="ra-call"> להראות גם כפתור "להתקשר"</label></div>
+    <div class="field"><label for="ra-city">פרשת השבוע וזמני שבת לפי</label><select id="ra-city" name="city"></select></div>
+    <div class="field"><label for="ra-addr">כתובת לניווט <span class="opt">(לא חובה)</span></label><input id="ra-addr" name="addr" type="text" maxlength="90" placeholder="רחוב הרב קוק 5, ירושלים"></div>
+    <div class="field"><label for="ra-site">אתר נוסף <span class="opt">(לא חובה)</span></label><input id="ra-site" name="site" type="url" maxlength="150" dir="ltr" style="text-align:right" placeholder="https://"></div>
+    <div class="field"><label for="ra-mail">מייל <span class="opt">(לא חובה)</span></label><input id="ra-mail" name="mail" type="email" maxlength="80" dir="ltr" style="text-align:right"></div>
+    <button class="btn btn-gold btn-block" type="submit">ליצור את הקישור לדף</button>
+    <p class="privacy">אין הרשמה ואין סיסמה. כל הפרטים יושבים בתוך הקישור עצמו (בקישור הקצר הם נשמרים אצלנו רק כדי שהקישור יפתח את הדף). מה שמקלידים נשמר גם בטלפון הזה, כדי שיהיה קל לעדכן. <button type="button" id="ra-demo" style="background:none;border:0;color:var(--gold);text-decoration:underline;cursor:pointer;font:inherit">למלא דוגמה</button></p>
+  </form>
+
+  <div class="res" id="ra-ready" hidden>
+    <h3>הדף מוכן!</h3>
+    <div class="field"><input id="ra-link" type="text" readonly aria-label="הקישור לדף"></div>
+    <p class="ra-ok" id="ra-ok"></p>
+    <div class="share-row"><button class="btn btn-gold btn-sm" type="button" id="ra-copy">להעתיק את הקישור</button><a class="btn btn-line btn-sm" id="ra-wa" href="#" target="_blank" rel="noopener"><svg class="ic"><use href="#wa"/></svg> לשלוח בווטסאפ</a><a class="btn btn-line btn-sm" id="ra-open" href="#" target="_blank" rel="noopener">לפתוח את הדף</a></div>
+    <div class="ra-qrbox" id="ra-qrwrap" hidden><div class="rv-qr" id="ra-qr"></div><div class="share-row"><button class="btn btn-line btn-sm" type="button" id="ra-qrdl">להוריד את ה-QR כתמונה</button><a class="btn btn-line btn-sm" href="/kodesh/qr/">שלט QR להדפסה</a></div></div>
+    <p class="note">כדי לעדכן בעתיד: שומרים את קישור העריכה. הוא פותח את הטופס עם כל הפרטים. שינוי = קישור חדש, והישן ממשיך לעבוד עם הפרטים הקודמים. השיעורים מיוטיוב, השיעור הבא וזמני השבת מתעדכנים לבד, גם בקישור הישן.</p>
+    <div class="field"><label for="ra-edit">קישור העריכה (רק לכם)</label><input id="ra-edit" type="text" readonly dir="ltr" style="font-size:.8rem"></div>
+  </div>
+
+  <section class="ra-prev" aria-label="תצוגה מקדימה"><h2>כך זה ייראה</h2><div id="ra-prev"></div></section>
+  <p class="disclaimer">חלק מ<a class="gold" href="/kodesh/">כלי קודש</a>. רוצים רק כרטיס ביקור קטן? <a class="gold" href="/kodesh/kartis/">כרטיס ביקור לרב</a> · דף לבית כנסת עם שלט: <a class="gold" href="/kodesh/beit-knesset/">דף לבית הכנסת</a>.</p>
+</div>
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">אתר לרב או לבית הכנסת, בלי לבנות אתר</h2>
+  <p>ממלאים טופס אחד ומקבלים דף אישי ומכובד עם קישור משלכם. לרב, לרבנית, לבית כנסת, לישיבה או לארגון. מוסיפים שם, תמונה, משפט פתיחה וצבעים.</p>
+  <h3>השיעורים נכנסים לבד</h3>
+  <p>מדביקים קישור לערוץ היוטיוב, והשיעורים האחרונים מופיעים בדף לבד. כשיש שידור חי, הוא מופיע למעלה. מוסיפים מערכת שבועית עם "השיעור הבא", כפתור לשאלות בווטסאפ, פרשת השבוע וזמני שבת, ניווט ומייל.</p>
+  <p>אין הרשמה ואין סיסמה. מקבלים גם QR להורדה ושלט להדפסה, וקישור עריכה לשינויים בעתיד. רוצים משהו קטן יותר? <a class="gold" href="/kodesh/kartis/">כרטיס ביקור לרב</a>, או <a class="gold" href="/kodesh/beit-knesset/">דף לבית הכנסת</a> עם שלט.</p>
+  <h3>מה יש באתר</h3>
+  <p>שם, תמונה ומשפט פתיחה; השיעורים האחרונים מערוץ היוטיוב, וגם שורטס אם רוצים; כפתור לשאלות בווטסאפ וכפתור להתקשר; פרשת השבוע וזמני שבת לפי העיר; ניווט לכתובת, אתר נוסף ומייל. כל שדה שלא ממלאים פשוט לא מופיע.</p>
+  <h3>לראות לפני</h3>
+  <p>"לראות דף לדוגמה" מראה איך האתר נראה, עוד לפני שממלאים. אפשר לבחור רב, רבנית, בית כנסת, ישיבה או ארגון, והטקסטים בדף מתאימים את עצמם.</p>
+  <h3>בחינם ובקישור משלכם</h3>
+  <p>האתר מקבל קישור קבוע שאפשר לשים בסטטוס, בחתימה ובעלון. השיעורים החדשים מיוטיוב נכנסים לבד, כך שאין צורך לעדכן את האתר בכל שבוע. מתאים גם לבית כנסת שרוצה דף עם זמני תפילות ושיעורים, ולארגון שרוצה כתובת אחת לכל הפרטים.</p>
+  <h3>כמה זה עולה?</h3>
+  <p>כלום. הכלי בנוי כחסד, בלי פרסומות ובלי איסוף פרטים. אפשר להשתמש בו כמה שרוצים, ולשלוח אותו לגבאי, לרב או לחברים.</p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>איך פותחים אתר לרב בחינם?</summary><p>ממלאים את הטופס בדף ולוחצים "ליצור את הקישור לדף". הדף מוכן מיד.</p></details>
+  <details><summary>השיעורים מיוטיוב מתעדכנים לבד?</summary><p>כן. מדביקים את הקישור לערוץ, והשיעורים האחרונים נכנסים לדף לבד.</p></details>
+  <details><summary>איך משנים פרטים אחר כך?</summary><p>שומרים את קישור העריכה. הוא פותח את הטופס עם כל הפרטים, ושינוי יוצר קישור חדש.</p></details>
+  <details><summary>צריך הרשמה או סיסמה?</summary><p>לא. אין הרשמה ואין סיסמה. כדי לעדכן שומרים את קישור העריכה.</p></details>
+  <details><summary>צריך לדעת לבנות אתרים?</summary><p>לא. ממלאים טופס אחד ומקבלים קישור לאתר. השיעורים מיוטיוב נכנסים לבד.</p></details>
+</section>
+<!--/seo-txt-->

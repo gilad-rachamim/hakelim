@@ -1,0 +1,106 @@
+<!--meta {
+  "site": "limudim",
+  "nav": "kvutza",
+  "tool": "kvutza",
+  "title": "לימוד משותף בקבוצה: מחלקים את המשניות או התנ״ך בין המשפחה ובית הכנסת, ומסיימים יחד | כלים ללימודים",
+  "description": "בוחרים מה לומדים, ש״ס משניות, סדר, מסכת או ספר בתנ״ך, כותבים את שמות הלומדים, ומקבלים חלוקה שווה, קישור אחד לקבוצה בווטסאפ, הטקסט מספריא, ודף סיום להדפסה. בלי הרשמה ובלי שרת. חינם.",
+  "head": "<link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"איך מחלקים משניות לעילוי נשמה בין המשפחה?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"בוחרים ש\\\"ס משניות או חלק, כותבים את השמות, ומקבלים חלוקה וקישור לקבוצה.\"}}, {\"@type\": \"Question\", \"name\": \"החלוקה שווה?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. אם מבקשים לא לחתוך מסכת באמצע, החלקים פחות שווים.\"}}, {\"@type\": \"Question\", \"name\": \"למה אין סימון משותף לכולם?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כדי לא לשמור שמות בשרת. הרשימה נמצאת רק בקישור.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר להדפיס דף סיום?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן.\"}}, {\"@type\": \"Question\", \"name\": \"כמה מסכתות יש בש\\\"ס משניות?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"63 מסכתות, ב-523 פרקים, בשישה סדרים.\"}}, {\"@type\": \"Question\", \"name\": \"תוך כמה זמן מספיקים לסיים משניות בקבוצה?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"תלוי בכמה אנשים. בשלושים איש לכל אחד יוצאים בערך שני פרקים ביום במשך שבוע, ולכן אפשר לסיים לשלושים בנוחות.\"}}]}</script>",
+  "og_title": "לימוד משותף בקבוצה – מחלקים ומסיימים יחד",
+  "priority": "0.7",
+  "crumbs": [
+    [
+      "לימוד משותף בקבוצה",
+      null
+    ]
+  ],
+  "foot": "<script src=\"/assets/limudim-data.js\"></script><script src=\"/assets/limudim-ilui.js\"></script>"
+} -->
+<header class="k-hero no-print">
+  <h1>לימוד משותף בקבוצה</h1>
+  <p class="sub">משפחה, חברים או בית כנסת מחלקים ביניהם את המשניות או את התנ״ך, וכל אחד לומד את החלק שלו. מסיימים יחד.</p>
+</header>
+
+<div class="tool">
+  <div id="kv-out" hidden>
+    <div id="kv-view"></div>
+    <div class="panel no-print">
+      <div class="btns">
+        <a class="btn btn-gold" id="kv-wa" href="#" target="_blank" rel="noopener"><svg class="ic"><use href="#wa"/></svg> לשלוח לקבוצה</a>
+        <button class="btn btn-line" type="button" id="kv-print">להדפיס דף סיום</button>
+      </div>
+      <div class="btns"><button class="linkish" type="button" id="kv-copy">להעתיק את הקישור</button><button class="linkish" type="button" id="kv-again">חלוקה חדשה</button></div>
+      <p class="status" id="kv-copy-st" aria-live="polite"></p>
+      <p class="note" id="kv-admin-tip" hidden>כל פעם שמשנים שם, שולחים לקבוצה שוב. ההודעה האחרונה בקבוצה היא הרשימה המעודכנת.</p>
+    </div>
+    <details class="panel no-print">
+      <summary><b>למה אין סימון משותף לכולם?</b></summary>
+      <p class="note">סימון שכולם רואים מחייב שרת שישמור את המצב, ואז גם שמות ונתונים של אנשים יושבים אצלנו. כאן בחרנו בדרך הפשוטה והפרטית: כל החלוקה יושבת בתוך הקישור, ומי שסיים מבשר בווטסאפ בלחיצה. המארגן מסמן ✓ אצלו, ושולח לקבוצה עדכון כשרוצה. לסיום תהילים יש כלי עם סימון משותף: <a class="gold" href="/kodesh/tehillim/">סיום תהילים בקישור</a>.</p>
+    </details>
+  </div>
+
+  <form class="panel no-print" id="kv-new" novalidate>
+    <div id="kv-form" style="display:grid;gap:.9rem">
+      <h2>חלוקה חדשה</h2>
+      <div class="row2">
+        <div class="field"><label for="kv-what">מה לומדים</label><select id="kv-what"><option value="mishnah">משנה</option><option value="tanakh">תנ״ך</option><option value="other">ספר אחר</option></select></div>
+        <div class="field" id="kv-part-w"><label for="kv-part">איזה חלק</label><select id="kv-part"></select></div>
+      </div>
+      <div id="kv-other" hidden style="display:grid;gap:.9rem">
+        <div class="field"><label for="kv-oname">שם הספר</label><input id="kv-oname" type="text" maxlength="50" placeholder="למשל: זוהר, פרשת בראשית"></div>
+        <div class="row2">
+          <div class="field"><label for="kv-ocount">כמה יש בו</label><input id="kv-ocount" type="number" min="1" max="5000" inputmode="numeric" placeholder="למשל 40"></div>
+          <div class="field"><label for="kv-ounit">של מה</label><select id="kv-ounit"><option>פרקים</option><option>דפים</option><option>סימנים</option><option>עמודים</option></select></div>
+        </div>
+      </div>
+      <label class="check"><input type="checkbox" id="kv-whole" checked> <span>לא לחתוך מסכת או ספר באמצע <span class="opt">(החלקים פחות שווים)</span></span></label>
+      <div class="field"><label for="kv-how">איך מחלקים</label><select id="kv-how"><option value="names">לפי שמות הלומדים</option><option value="count">למספר חלקים, ושמות אחר כך</option></select></div>
+      <div class="field" id="kv-names-w"><label for="kv-names">השמות, אחד בכל שורה</label><textarea id="kv-names" rows="5" placeholder="אבא&#10;דוד&#10;מיכל&#10;משפחת לוי"></textarea></div>
+      <div class="field" id="kv-count-w" hidden><label for="kv-count">כמה חלקים</label><input id="kv-count" type="number" min="1" max="300" value="30" inputmode="numeric"></div>
+      <div class="field"><label for="kv-title">שם ללימוד <span class="opt">(לא חובה)</span></label><input id="kv-title" type="text" maxlength="60" placeholder="ש״ס משניות של בית הכנסת"></div>
+      <details><summary class="gold">להקדיש את הלימוד <span class="opt">(לא חובה)</span></summary>
+        <div style="display:grid;gap:.9rem;margin-top:.7rem">
+          <div class="field"><label for="kv-k">בשביל מה</label><select id="kv-k"><option value="niftar">לעילוי נשמת</option><option value="refua">לרפואת</option><option value="hatzlacha">להצלחת</option><option value="zchut">לזכות</option></select></div>
+          <div class="field"><label for="kv-n">השם</label><input id="kv-n" type="text" maxlength="50" autocomplete="off"></div>
+          <div class="row2">
+            <div class="field"><label for="kv-bb">בן / בת</label><select id="kv-bb"><option>בן</option><option>בת</option></select></div>
+            <div class="field"><label for="kv-par">שם ההורה</label><input id="kv-par" type="text" maxlength="40" autocomplete="off"></div>
+          </div>
+        </div>
+      </details>
+      <div class="row2">
+        <div class="field"><label for="kv-goal">מסיימים עד <span class="opt">(לא חובה)</span></label><input id="kv-goal" type="date"></div>
+        <div class="field"><label for="kv-by">מי מארגן <span class="opt">(לא חובה)</span></label><input id="kv-by" type="text" maxlength="40" placeholder="משפחת כהן"></div>
+      </div>
+      <p class="status" id="kv-st" aria-live="polite"></p>
+      <button class="btn btn-gold btn-block" type="submit">לחלק ולקבל קישור</button>
+    </div>
+  </form>
+
+  <div class="no-print">
+    <p class="local-note">🔒 בלי הרשמה ובלי שרת. השמות נמצאים רק בקישור שאתם שולחים.</p>
+    <div class="share-row"><a class="btn btn-gold btn-sm" href="#" data-share-tool="wa" data-text="לימוד משותף בקבוצה: מחלקים משניות או תנ״ך בין כולם, ומסיימים יחד" target="_blank" rel="noopener"><svg class="ic"><use href="#wa"/></svg> לשלוח לחבר בווטסאפ</a></div>
+    <p class="disclaimer"><a class="gold" href="/limudim/">כל הכלים ללימודים</a> · חינם · בלי הרשמה</p>
+  </div>
+</div>
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">מחלקים משניות או תנ"ך בין כולם, ומסיימים יחד</h2>
+  <p>בוחרים מה לומדים: ש"ס משניות, סדר, מסכת או ספר בתנ"ך, או ספר אחר. כותבים את שמות הלומדים, או מספר חלקים ושמות אחר כך, ומקבלים חלוקה שווה. אפשר לבקש לא לחתוך מסכת או ספר באמצע.</p>
+  <h3>למשפחה ולבית הכנסת</h3>
+  <p>מוסיפים שם ללימוד, הקדשה לעילוי נשמת או לרפואה, תאריך סיום ומי מארגן. שולחים קישור לקבוצה, ומדפיסים דף סיום. כל פעם שמשנים שם, שולחים שוב, וההודעה האחרונה בקבוצה היא הרשימה המעודכנת.</p>
+  <p>בלי הרשמה ובלי שרת: השמות נמצאים רק בקישור שאתם שולחים. ללימוד של אדם אחד: <a class="gold" href="/limudim/ilui/">משניות לפי אותיות השם</a>.</p>
+  <h3>מתי מחלקים לימוד בקבוצה</h3>
+  <p>הכי נפוץ: סיום משניות לשלושים או לאזכרה, כשהמשפחה והחברים מחלקים ביניהם את ש"ס המשניות כדי לסיים עד היום שנקבע. וגם: סיום תהילים או תנ"ך לרפואה, לימוד לזכות חייל, סיום מסכת בבית הכנסת לקראת חג, או לימוד משותף של כיתה בישיבה. בש"ס המשניות יש 63 מסכתות ו-523 פרקים, ולכן כשמתחלקים בין עשרים או שלושים איש, לכל אחד יוצא חלק שאפשר לסיים בכמה ימים.</p>
+  <h3>מה שולחים לקבוצה</h3>
+  <p>הודעה אחת עם שם הלימוד, ההקדשה, תאריך הסיום והחלוקה: ליד כל שם, מה הוא לומד. מי שרוצה להחליף חלק, מבקש מהמארגן, והמארגן שולח את הרשימה המעודכנת. ביום הסיום מדפיסים את דף הסיום עם כל השמות. ללימוד של אדם אחד יש <a class="gold" href="/limudim/ilui/">לימוד לעילוי נשמה ולזכות</a>.</p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>איך מחלקים משניות לעילוי נשמה בין המשפחה?</summary><p>בוחרים ש"ס משניות או חלק, כותבים את השמות, ומקבלים חלוקה וקישור לקבוצה.</p></details>
+  <details><summary>החלוקה שווה?</summary><p>כן. אם מבקשים לא לחתוך מסכת באמצע, החלקים פחות שווים.</p></details>
+  <details><summary>למה אין סימון משותף לכולם?</summary><p>כדי לא לשמור שמות בשרת. הרשימה נמצאת רק בקישור.</p></details>
+  <details><summary>אפשר להדפיס דף סיום?</summary><p>כן.</p></details>
+  <details><summary>כמה מסכתות יש בש"ס משניות?</summary><p>63 מסכתות, ב-523 פרקים, בשישה סדרים.</p></details>
+  <details><summary>תוך כמה זמן מספיקים לסיים משניות בקבוצה?</summary><p>תלוי בכמה אנשים. בשלושים איש לכל אחד יוצאים בערך שני פרקים ביום במשך שבוע, ולכן אפשר לסיים לשלושים בנוחות.</p></details>
+</section>
+<!--/seo-txt-->

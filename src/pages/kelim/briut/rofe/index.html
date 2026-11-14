@@ -1,0 +1,68 @@
+<!--meta {
+  "site": "kelim",
+  "nav": "tchumim",
+  "tool": "rofe",
+  "title": "הכנה לביקור אצל רופא – מה לספר ומה לשאול | הכלים של גילעד רחמים",
+  "description": "דף הכנה לביקור אצל רופא: מה מרגישים, ממתי, מה עוזר ומה מחמיר, שאלות שרוצים לשאול, תרופות ואלרגיות. ממלאים בבית, ובחדר מראים את הדף. בחינם, נשמר רק בטלפון.",
+  "og_title": "הכנה לביקור אצל רופא – לא לשכוח כלום",
+  "priority": "0.7",
+  "crumbs": [["בריאות", "/kelim/briut/"], ["הכנה לביקור רופא", null]],
+  "head": "<link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><link rel=\"stylesheet\" href=\"/assets/mishpacha.css\"><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"איך מתכוננים לביקור אצל רופא?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כותבים מראש מה מרגישים וממתי, מה עוזר ומה מחמיר, ואת השאלות. מביאים רשימת תרופות. בדף הכול מסודר בשדות.\"}}, {\"@type\": \"Question\", \"name\": \"מה לשאול את הרופא?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"למשל: מה הסיבה, אילו בדיקות צריך, מה הטיפול ומה תופעות הלוואי, ומתי לחזור. כותבים את השאלות שלכם, שאלה בכל שורה.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר להכין בשביל ההורים?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. בוחרים למי הביקור וממלאים בשבילם.\"}}, {\"@type\": \"Question\", \"name\": \"הפרטים נשמרים אצלכם?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לא. הם נשמרים רק בטלפון שלכם.\"}}, {\"@type\": \"Question\", \"name\": \"אילו שאלות כדאי לשאול בביקור אצל רופא?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"מה האבחנה, אילו בדיקות צריך, מה האפשרויות לטיפול ותופעות הלוואי, ומתי לחזור. כותבים את השאלות מראש, החשובה ראשונה.\"}}]}</script>",
+  "foot": "<script src=\"/assets/rofe.js\" defer></script>"
+} -->
+<header class="k-hero no-print">
+  <h1>הכנה לביקור אצל רופא: מה לספר ומה לשאול</h1>
+  <p class="sub">בחדר של הרופא הכול נשכח. ממלאים כאן בבית, ובביקור פשוט מראים את הדף, או שולחים אותו לפני.</p>
+</header>
+<div class="tool no-print">
+  <form class="k-form" id="rf-form" novalidate>
+    <div class="field"><label for="rf-who">למי הביקור?</label><input id="rf-who" name="who" type="text" maxlength="40" placeholder="אני / אמא / יוסי בן 6"></div>
+    <div class="field"><label for="rf-doc">אצל מי ומתי? <span class="opt">(לא חובה)</span></label><input id="rf-doc" name="doc" type="text" maxlength="60" placeholder="ד״ר לוי, רופאת משפחה, יום שלישי 10:30"></div>
+    <div class="field"><label for="rf-what">מה מרגישים?</label><textarea id="rf-what" name="what" maxlength="600" placeholder="כאב ראש בצד ימין, בעיקר בבוקר"></textarea></div>
+    <div class="field"><label for="rf-since">ממתי, וכמה פעמים?</label><input id="rf-since" name="since" type="text" maxlength="80" placeholder="שבועיים, כמעט כל יום"></div>
+    <div class="field"><label for="rf-better">מה עוזר ומה מחמיר? <span class="opt">(לא חובה)</span></label><input id="rf-better" name="better" type="text" maxlength="120" placeholder="אקמול עוזר קצת, מסך מחמיר"></div>
+    <div class="field"><label for="rf-q">שאלות לרופא <span class="opt">(שאלה בכל שורה)</span></label><textarea id="rf-q" name="q" maxlength="600" placeholder="צריך בדיקת דם?&#10;זה יכול להיות מהתרופה החדשה?&#10;מתי לחזור אם זה לא עובר?"></textarea></div>
+    <div class="field"><label for="rf-meds">תרופות קבועות</label><textarea id="rf-meds" name="meds" maxlength="400" placeholder="אלטרוקסין 50 בבוקר"></textarea></div>
+    <div class="field"><label for="rf-allerg">אלרגיות</label><input id="rf-allerg" name="allerg" type="text" maxlength="100" placeholder="פניצילין / אין"></div>
+    <div class="field"><label for="rf-docs">מה להביא <span class="opt">(לא חובה)</span></label><input id="rf-docs" name="docs" type="text" maxlength="120" placeholder="תוצאות בדיקת דם, מכתב שחרור, הפניה"></div>
+  </form>
+  <div class="share-row">
+    <button class="btn btn-gold btn-sm" type="button" id="rf-print">להדפיס / לשמור PDF</button>
+    <a class="btn btn-line btn-sm" href="#" id="rf-wa" target="_blank" rel="noopener"><svg class="ic"><use href="#wa"/></svg> לשלוח בווטסאפ</a>
+    <button class="btn btn-line btn-sm" type="button" id="rf-new">ביקור חדש (לנקות)</button>
+  </div>
+  <h2 class="lv-h" style="text-align:center;font-family:var(--serif);color:var(--cream);margin-top:1rem">כך ייראה הדף</h2>
+</div>
+<div id="rf-card" class="mp-card"></div>
+<div class="tool no-print">
+  <p class="disclaimer">הכלי עוזר לארגן מה לספר ומה לשאול. הוא לא נותן ייעוץ רפואי. במצב חירום: מד״א <span dir="ltr">101</span>. מה שכתבתם נשמר רק בטלפון הזה.</p>
+  <p class="k-next no-print">💊 לרופא כדאי להביא גם את <a class="gold" href="/kelim/briut/trufot/">רשימת התרופות</a> ואת <a class="gold" href="/kelim/briut/madadim/">יומן המדדים</a> (לחץ דם, סוכר, משקל). שניהם בחינם, ונשמרים רק אצלכם.</p>
+  <div class="share-row"><a class="btn btn-line btn-sm" href="#" data-share-tool="wa" data-text="דף הכנה לביקור אצל רופא, כדי לא לשכוח כלום בחדר. בחינם:" target="_blank" rel="noopener"><svg class="ic"><use href="#wa"/></svg> לשלוח את הכלי לחבר</a></div>
+</div>
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">מה לשאול את הרופא, ואיך לא לשכוח</h2>
+  <p>מחכים שבועות לתור, ובתוך החדר הכול נשכח. דף ההכנה מסדר מראש את מה שחשוב לספר ואת מה שרוצים לשאול, כדי שתצאו מהביקור עם תשובות.</p>
+  <h3>מה ממלאים</h3>
+  <p>מה מרגישים, ממתי וכמה פעמים, מה עוזר ומה מחמיר, שאלות לרופא (שאלה בכל שורה), תרופות קבועות, אלרגיות ומה להביא. אפשר למלא גם בשביל הורה או ילד.</p>
+  <h3>בחדר מראים את הדף</h3>
+  <p>מדפיסים, שומרים כ-PDF או שולחים בווטסאפ לפני הביקור. הכלי עוזר לארגן מה לספר ומה לשאול, ולא נותן ייעוץ רפואי. במצב חירום מתקשרים למד"א 101.</p>
+  <p>כדאי להביא גם את <a class="gold" href="/kelim/briut/trufot/">רשימת התרופות</a> ואת <a class="gold" href="/kelim/briut/madadim/">יומן המדדים</a>. מה שכתבתם נשמר רק בטלפון.</p>
+  <h3>איך ממלאים</h3>
+  <p>כותבים למי הביקור ואצל מי. אחר כך מה מרגישים, ממתי וכמה פעמים, ומה עוזר או מחמיר. בשאלות לרופא כותבים שאלה בכל שורה, החשובה ראשונה. מוסיפים תרופות קבועות, אלרגיות, ומה להביא, כמו בדיקות קודמות או מכתב שחרור.</p>
+  <h3>שאלות שכדאי לשאול</h3>
+  <p>מה האבחנה, ובמילים פשוטות? אילו בדיקות צריך, ולמה? מה האפשרויות לטיפול, ומה תופעות הלוואי? מתי לחזור, ומתי לפנות מיד? כדאי לכתוב את התשובות על הדף בזמן הביקור, או לבקש ממי שמלווה לכתוב.</p>
+  <h3>כשמלווים הורה מבוגר</h3>
+  <p>אפשר למלא את הדף בשביל אבא, אמא או ילד, ולהדפיס לפני התור. מי שמלווה הורה מבוגר מגיע עם רשימה מסודרת, ולא שוכח את מה שההורה סיפר בבית.</p>
+  <h3>בחינם, ובלי הרשמה</h3>
+  <p>אין כאן מנוי, אין גרסת פרימיום ואין פרסומות. הכלי בנוי כחסד, לכל מי שצריך אותו, ורץ בדפדפן שלכם. הדרך הכי טובה לעזור היא לשלוח את הקישור למי שזה יכול לחסוך לו זמן, או <a class="gold" href="/kelim/bakasha/">לספר לנו מה עוד חסר</a>.</p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>איך מתכוננים לביקור אצל רופא?</summary><p>כותבים מראש מה מרגישים וממתי, מה עוזר ומה מחמיר, ואת השאלות. מביאים רשימת תרופות. בדף הכול מסודר בשדות.</p></details>
+  <details><summary>מה לשאול את הרופא?</summary><p>למשל: מה הסיבה, אילו בדיקות צריך, מה הטיפול ומה תופעות הלוואי, ומתי לחזור. כותבים את השאלות שלכם, שאלה בכל שורה.</p></details>
+  <details><summary>אפשר להכין בשביל ההורים?</summary><p>כן. בוחרים למי הביקור וממלאים בשבילם.</p></details>
+  <details><summary>הפרטים נשמרים אצלכם?</summary><p>לא. הם נשמרים רק בטלפון שלכם.</p></details>
+  <details><summary>אילו שאלות כדאי לשאול בביקור אצל רופא?</summary><p>מה האבחנה, אילו בדיקות צריך, מה האפשרויות לטיפול ותופעות הלוואי, ומתי לחזור. כותבים את השאלות מראש, החשובה ראשונה.</p></details>
+</section>
+<!--/seo-txt-->

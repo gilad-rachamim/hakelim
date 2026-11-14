@@ -1,0 +1,104 @@
+<!--meta {
+  "site": "kesef",
+  "nav": "ashrai",
+  "tool": "ashrai",
+  "title": "סריקת דף פירוט אשראי – לאן הולך הכסף, מנויים וחיובים חוזרים | כלים לכסף",
+  "description": "מעלים את קובץ האקסל של פירוט כרטיס האשראי (מקס, ישראכרט, כאל), ורואים: לפי קטגוריה, לפי עסק, חיובים חוזרים ומנויים, והשוואה לחודש הקודם. הקובץ נקרא בטלפון ולא נשלח לשום מקום.",
+  "head": "<link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"איך מורידים פירוט אשראי לאקסל?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"נכנסים לאתר או לאפליקציה של חברת האשראי, ובפירוט החיובים לוחצים \\\"ייצוא לאקסל\\\" או \\\"הורדה\\\".\"}}, {\"@type\": \"Question\", \"name\": \"איך מוצאים מנויים ששכחתי?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"מעלים את הפירוט, והכלי מראה את כל החיובים החוזרים והמנויים ברשימה נפרדת.\"}}, {\"@type\": \"Question\", \"name\": \"הקובץ נשלח לשרת?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לא. הוא נקרא בתוך הטלפון, ומספר הכרטיס לא נשמר.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר להעלות PDF?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן, אם יש בו טקסט שאפשר לסמן. צילום או PDF סרוק עוד לא נתמכים.\"}}, {\"@type\": \"Question\", \"name\": \"איך מורידים קובץ פירוט מהאתר של חברת האשראי?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"באזור האישי באתר או באפליקציה של מקס, ישראכרט או כאל יש אפשרות לייצא את פירוט החיובים לאקסל. את הקובץ הזה מעלים לכלי.\"}}]}</script>",
+  "og_title": "סריקת דף פירוט אשראי",
+  "crumbs": [
+    [
+      "סריקת דף פירוט אשראי",
+      null
+    ]
+  ]
+} -->
+<header class="k-hero">
+  <h1>סריקת דף פירוט אשראי</h1>
+  <p class="sub">מעלים את קובץ הפירוט של כרטיס האשראי, ורואים לאן הלך הכסף: לפי קטגוריה, לפי עסק, ואילו חיובים חוזרים כל חודש.</p>
+</header>
+
+<div class="tool" id="ashrai">
+  <section class="box">
+    <h2>מעלים את הקובץ</h2>
+    <ol class="steps">
+      <li>נכנסים לאתר או לאפליקציה של חברת האשראי (מקס, ישראכרט, כאל, אמריקן אקספרס).</li>
+      <li>בפירוט החיובים לוחצים על "ייצוא לאקסל" או "הורדה".</li>
+      <li>בוחרים כאן את הקובץ. אפשר כמה חודשים ביחד (גם כמה PDF), ואז רואים גם השוואה.</li>
+    </ol>
+    <label class="big-btn" for="a-file" style="margin-top:1rem">📄 לבחור קובץ (אקסל, CSV או PDF)</label>
+    <input type="file" id="a-file" accept=".xlsx,.xls,.csv,.pdf,application/pdf" multiple hidden>
+    <button class="add" type="button" id="a-demo">לראות קודם דוגמה</button>
+    <p class="saved" id="a-msg" role="status"></p>
+    <div class="cancel-box" id="a-pdf-out" hidden role="status"></div>
+  </section>
+
+  <div id="a-out" hidden>
+    <section class="sum" aria-live="polite">
+      <div class="lbl" id="a-lbl">סך הכל</div>
+      <div class="big" id="a-total">₪0</div>
+      <div class="sub2" id="a-sub"></div>
+      <div class="stats">
+        <div><b id="a-n">0</b><span>חיובים</span></div>
+        <div><b id="a-rec">₪0</b><span>חוזרים בחודש</span></div>
+        <div><b id="a-pay">0</b><span>בתשלומים</span></div>
+      </div>
+    </section>
+
+    <section class="cancel-box" id="a-sum5"></section>
+
+    <section class="box">
+      <h2>לפי קטגוריה</h2>
+      <div class="ykids" id="a-cats"></div>
+    </section>
+
+    <section class="box">
+      <h2>חיובים חוזרים ומנויים</h2>
+      <p class="note">הוראות קבע, מנויים מוכרים, ועסק שחייב באותו סכום ביותר מחודש אחד. שווה לעבור ולשאול: אני עוד משתמש בזה?</p>
+      <div class="log" id="a-recs"></div>
+      <button class="add" type="button" id="a-send" hidden>להעביר את החיובים החוזרים לכלי המנויים ולהוצאות לאורך השנה</button>
+      <p class="saved" id="a-msg2" role="status"></p>
+    </section>
+
+    <section class="box">
+      <h2>העסקים שהכי הרבה כסף הלך אליהם</h2>
+      <div class="log" id="a-top"></div>
+    </section>
+
+    <section class="box" id="a-months-box" hidden>
+      <h2>חודש מול חודש</h2>
+      <div class="log" id="a-months"></div>
+    </section>
+
+    <button class="big-btn" type="button" id="a-csv">לשמור את הסיכום לקובץ שנפתח באקסל</button>
+  </div>
+
+  <div class="local-note"><span class="ic2">🔒</span><span>הקובץ נקרא בתוך הטלפון ולא נשלח לשום מקום. נשמרים בטלפון רק השם, הסכום והחודש של כל חיוב, כדי להשוות לחודש הבא. מספר הכרטיס לא נשמר.</span></div>
+  <div class="local-note"><span class="ic2">💡</span><span>PDF של דף הפירוט עובד כשיש בו טקסט (כזה שאפשר לסמן ולהעתיק). צילום או PDF סרוק עוד לא נתמכים. הכי מדויק: קובץ אקסל מהאתר של חברת האשראי.</span></div>
+  <div class="data-acts"><button class="linkish" type="button" data-wipe="ashrai">למחוק מהטלפון</button></div>
+</div>
+
+<p class="not-advice"><b>זה מחשבון, לא ייעוץ.</b> החלוקה לקטגוריות אוטומטית לפי שם העסק, ויכולה לטעות.</p>
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">לאן הולך הכסף: ניתוח פירוט כרטיס אשראי</h2>
+  <p>בסוף החודש החיוב גבוה, ולא ברור על מה. מורידים את קובץ הפירוט מהאתר של חברת האשראי (מקס, ישראכרט, כאל או אמריקן אקספרס), מעלים אותו כאן, ורואים לאן הלך הכסף: לפי קטגוריה ולפי עסק.</p>
+  <h3>חיובים חוזרים ומנויים</h3>
+  <p>הכלי מוצא הוראות קבע, מנויים מוכרים ועסקים שחייבו את אותו סכום ביותר מחודש אחד. שווה לעבור ולשאול: אני עוד משתמש בזה? את החיובים החוזרים אפשר להעביר ל<a class="gold" href="/kesef/minuyim/">כלי המנויים</a>.</p>
+  <h3>חודש מול חודש</h3>
+  <p>מעלים כמה חודשים יחד, ורואים השוואה. אקסל, CSV או PDF שיש בו טקסט. הכי מדויק: קובץ אקסל מהאתר של חברת האשראי.</p>
+  <h3>הקובץ לא יוצא מהטלפון</h3>
+  <p>הקובץ נקרא בתוך הטלפון ולא נשלח לשום מקום. מספר הכרטיס לא נשמר. זה מחשבון, לא ייעוץ, והחלוקה לקטגוריות אוטומטית ויכולה לטעות.</p>
+  <h3>מה מגלים בדף הפירוט</h3>
+  <p>בדרך כלל שלושה דברים: מנויים ששכחתם (אפליקציות, סטרימינג, חדר כושר), חיובים חוזרים שעלו בשקט במחיר, וקטגוריה אחת שלוקחת הרבה יותר ממה שחשבתם, כמו משלוחי אוכל או קניות קטנות. הכלי מקבץ לפי קטגוריה ולפי עסק ומשווה לחודש הקודם. את המנויים שמצאתם אפשר להעביר ל<a class="gold" href="/kesef/minuyim/">כמה זה עולה לי באמת</a>, ואת ההוצאות הקבועות ל<a class="gold" href="/kesef/taktziv/">תקציב המשפחתי</a>.</p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>איך מורידים פירוט אשראי לאקסל?</summary><p>נכנסים לאתר או לאפליקציה של חברת האשראי, ובפירוט החיובים לוחצים "ייצוא לאקסל" או "הורדה".</p></details>
+  <details><summary>איך מוצאים מנויים ששכחתי?</summary><p>מעלים את הפירוט, והכלי מראה את כל החיובים החוזרים והמנויים ברשימה נפרדת.</p></details>
+  <details><summary>הקובץ נשלח לשרת?</summary><p>לא. הוא נקרא בתוך הטלפון, ומספר הכרטיס לא נשמר.</p></details>
+  <details><summary>אפשר להעלות PDF?</summary><p>כן, אם יש בו טקסט שאפשר לסמן. צילום או PDF סרוק עוד לא נתמכים.</p></details>
+  <details><summary>איך מורידים קובץ פירוט מהאתר של חברת האשראי?</summary><p>באזור האישי באתר או באפליקציה של מקס, ישראכרט או כאל יש אפשרות לייצא את פירוט החיובים לאקסל. את הקובץ הזה מעלים לכלי.</p></details>
+</section>
+<!--/seo-txt-->
+{{K:foot:סריקת דף פירוט אשראי: לאן הלך הכסף, ומה יורד כל חודש. הקובץ נשאר בטלפון. כלי חינמי}}

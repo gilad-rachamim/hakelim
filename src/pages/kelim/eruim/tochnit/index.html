@@ -1,0 +1,77 @@
+<!--meta {
+  "site": "kelim",
+  "nav": "tchumim",
+  "tool": "eruim_tochnit",
+  "title": "תוכנית האירוע – מה קורה בכל שעה ומי אחראי, לחתונה, בר מצווה וברית | הכלים של גילעד רחמים",
+  "description": "כלי חינם לסדר היום של השמחה: קבלת פנים, חופה, ריקודים, נאומים וקינוח, כל שלב עם שעה ומי אחראי, והטלפונים של הצוות במקום אחד. מתחילים מתבנית לחתונה, בר מצווה או ברית, מדפיסים דף אחד בשלושה סגנונות ושולחים בווטסאפ לצלם, לדי-ג'יי ולמשפחה. נשמר רק בטלפון.",
+  "og_title": "תוכנית האירוע – מה קורה בכל שעה",
+  "priority": "0.7",
+  "crumbs": [["כלים לאירועים ולשמחות", "/kelim/eruim/"], ["תוכנית האירוע", null]],
+  "head": "<link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><link rel=\"stylesheet\" href=\"/assets/eruim.css\"><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"מה סדר האירוע בחתונה?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"בדרך כלל קבלת פנים, חופה, כניסה לאולם, ריקודים, ארוחה, נאומים וקינוח. התבנית בדף מתחילה מזה, ומשנים לפי השמחה שלכם.\"}}, {\"@type\": \"Question\", \"name\": \"איך משתפים את התוכנית עם הצלם והדי-ג'יי?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לוחצים \\\"לשלוח לצוות\\\" ושולחים בווטסאפ, או מדפיסים.\"}}, {\"@type\": \"Question\", \"name\": \"יש תבנית לבר מצווה ולברית?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן, וגם לאירוסין ולערב משפחתי.\"}}, {\"@type\": \"Question\", \"name\": \"התוכנית נשמרת אצלכם?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לא. היא נשמרת רק בטלפון שלכם.\"}}, {\"@type\": \"Question\", \"name\": \"מה כותבים בסדר היום של חתונה?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"קבלת פנים, חופה, ארוחה, ריקודים, נאומים וסיום, עם שעה ומי אחראי לכל שלב. התבנית בדף נותנת נקודת התחלה.\"}}]}</script>",
+  "foot": "<script src=\"/assets/eruim-tochnit.js\" defer></script>"
+} -->
+<header class="k-hero no-print">
+  <h1>תוכנית האירוע: סדר היום לחתונה ולשמחה</h1>
+  <p class="sub">מה קורה בכל שעה, ומי אחראי על מה. כשלכולם יש את אותו דף – הצלם יודע מתי החופה, הדי-ג'יי יודע מתי הנאום, וההורים יכולים פשוט לשמוח.</p>
+</header>
+<div class="tool no-print">
+  <div class="er-note" id="tc-demo" hidden><span>זו דוגמה עם שמות בדויים, כדי שיהיה ברור איך זה נראה. משנים לשמחה שלכם, או מנקים ומתחילים.</span><button class="btn btn-line btn-sm" type="button" id="tc-demo-x">לנקות ולהתחיל</button></div>
+  <form class="k-form" id="tc-form" novalidate>
+    <div class="field"><label for="tc-title">איזו שמחה?</label><input id="tc-title" type="text" maxlength="70" placeholder="החתונה של נועה ואביתר"></div>
+    <div class="er-two">
+      <div class="field"><label for="tc-date">תאריך</label><input id="tc-date" type="date"></div>
+      <div class="field"><label for="tc-place">איפה</label><input id="tc-place" type="text" maxlength="60" placeholder="אולמי הגן, נתיבות"></div>
+    </div>
+    <div class="field"><label>להתחיל מתבנית <span class="opt">(מחליף את השלבים שברשימה)</span></label>
+      <div class="er-chips" id="tc-tpl"><button type="button" data-k="chatuna">חתונה</button><button type="button" data-k="bar">בר מצווה</button><button type="button" data-k="brit">ברית</button><button type="button" data-k="erusin">אירוסין</button><button type="button" data-k="erev">ערב משפחתי</button></div></div>
+    <p class="res" id="tc-msg" aria-live="polite"></p>
+  </form>
+  <section class="er-sec"><h2>השלבים</h2>
+    <p class="er-hint">כל שלב: שעה, מה קורה, ומי אחראי. הרשימה מסתדרת לבד לפי השעה.</p>
+    <div id="tc-list"></div>
+    <div class="er-tools" style="margin-top:.5rem"><button class="btn btn-line btn-sm" type="button" id="tc-add">+ להוסיף שלב</button></div></section>
+  <section class="er-sec"><h2>אנשי הצוות</h2>
+    <p class="er-hint">את מי מתקשרים ביום עצמו. תפקיד, שם וטלפון.</p>
+    <div id="tc-team"></div>
+    <div class="er-tools" style="margin-top:.5rem"><button class="btn btn-line btn-sm" type="button" id="tc-tadd">+ להוסיף איש צוות</button></div></section>
+  <div class="field" style="margin-top:1rem"><label>סגנון הדף להדפסה</label>
+    <div class="er-chips" id="tc-theme"><button type="button" data-t="lavan">לבן (חוסך דיו)</button><button type="button" data-t="zayit">ירוק זית</button><button type="button" data-t="klaf">קלף</button></div></div>
+  <div class="er-tools">
+    <button class="btn btn-gold btn-sm" type="button" id="tc-print">להדפיס</button>
+    <a class="btn btn-line btn-sm" href="#" id="tc-wa" target="_blank" rel="noopener"><svg class="ic"><use href="#wa"/></svg> לשלוח לצוות</a>
+    <button class="btn btn-line btn-sm" type="button" id="tc-copy">להעתיק</button>
+  </div>
+</div>
+<div id="tc-card" class="er-card t-lavan"></div>
+<div class="tool no-print">
+  <p class="disclaimer">הדף עוזר שכולם יידעו מה קורה ומתי. הכול נשמר רק בטלפון הזה, ולא נשלח לשום מקום עד שלוחצים על ווטסאפ.</p>
+  <div class="share-row"><a class="btn btn-line btn-sm" href="#" data-share-tool="wa" data-text="תוכנית האירוע: מה קורה בכל שעה ומי אחראי, דף אחד לצוות ולמשפחה. בחינם:" target="_blank" rel="noopener"><svg class="ic"><use href="#wa"/></svg> לשלוח את הכלי לחבר</a></div>
+</div>
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">סדר היום של החתונה, על דף אחד</h2>
+  <p>כשלכולם יש את אותו דף, הצלם יודע מתי החופה, הדי-ג'יי יודע מתי הנאום, וההורים יכולים פשוט לשמוח. כאן בונים את תוכנית האירוע: מה קורה בכל שעה ומי אחראי.</p>
+  <h3>מתחילים מתבנית</h3>
+  <p>חתונה, בר מצווה, ברית, אירוסין או ערב משפחתי. כל שלב מקבל שעה, מה קורה ומי אחראי, והרשימה מסתדרת לבד לפי השעה: קבלת פנים, חופה, ריקודים, נאומים וקינוח.</p>
+  <h3>אנשי הצוות במקום אחד</h3>
+  <p>תפקיד, שם וטלפון של כל מי שמתקשרים אליו ביום עצמו: אולם, צלם, תקליטן, קייטרינג.</p>
+  <h3>מדפיסים ושולחים</h3>
+  <p>דף אחד להדפסה בשלושה סגנונות: לבן שחוסך דיו, ירוק זית או קלף. או שולחים לצוות בווטסאפ. עוד לאירוע: <a class="gold" href="/kelim/eruim/hachana/">תקציב ומשימות</a> ו<a class="gold" href="/kelim/eruim/hoshava/">סידור הושבה</a>.</p>
+  <h3>חמש תבניות מוכנות</h3>
+  <p>בוחרים תבנית: חתונה, בר מצווה, ברית, אירוסין או ערב משפחתי, ומקבלים רשימת שלבים לדוגמה. משנים שעות, מוחקים מה שלא צריך, ומוסיפים שלבים. השלבים מסתדרים לבד לפי השעה.</p>
+  <h3>צוות האירוע</h3>
+  <p>מוסיפים אנשי צוות: צלם, די-ג'יי, אולם, קייטרינג, רב, ובני משפחה. ליד כל שלב כותבים מי אחראי. ביום עצמו כל אחד יודע מה התפקיד שלו, ואף אחד לא צריך לשאול את החתן והכלה.</p>
+  <h3>להדפיס ולשלוח</h3>
+  <p>מדפיסים בשלושה סגנונות, לבן שחוסך דיו, ירוק זית או קלף, ומחלקים לצוות. "להעתיק" נותן את התוכנית כטקסט לשליחה בווטסאפ לכל אנשי הצוות.</p>
+  <h3>למה זה בחינם</h3>
+  <p>הכלים של גילעד רחמים נבנים כחסד: בלי תשלום, בלי פרסומות ובלי הרשמה, כדי שכל אחד יוכל להשתמש בהם. מי שרוצה לעזור, שולח את הדף לחבר שזה יכול לעזור לו. חסר לכם כלי? אפשר <a class="gold" href="/kelim/bakasha/">לבקש כלי חדש</a>.</p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>מה סדר האירוע בחתונה?</summary><p>בדרך כלל קבלת פנים, חופה, כניסה לאולם, ריקודים, ארוחה, נאומים וקינוח. התבנית בדף מתחילה מזה, ומשנים לפי השמחה שלכם.</p></details>
+  <details><summary>איך משתפים את התוכנית עם הצלם והדי-ג'יי?</summary><p>לוחצים "לשלוח לצוות" ושולחים בווטסאפ, או מדפיסים.</p></details>
+  <details><summary>יש תבנית לבר מצווה ולברית?</summary><p>כן, וגם לאירוסין ולערב משפחתי.</p></details>
+  <details><summary>התוכנית נשמרת אצלכם?</summary><p>לא. היא נשמרת רק בטלפון שלכם.</p></details>
+  <details><summary>מה כותבים בסדר היום של חתונה?</summary><p>קבלת פנים, חופה, ארוחה, ריקודים, נאומים וסיום, עם שעה ומי אחראי לכל שלב. התבנית בדף נותנת נקודת התחלה.</p></details>
+</section>
+<!--/seo-txt-->

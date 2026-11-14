@@ -1,0 +1,116 @@
+<!--meta {
+  "site": "bait",
+  "tool": "bait_shigra",
+  "title": "שגרת בוקר וערב לילדים – לוח עם ציורים, מסמנים וזוכים בכוכב | כלים למשפחה ולבית",
+  "description": "לוח שגרה לילדים עם ציורים: הילד מסמן מה עשה וצובר כוכבים. מגיעים למספר כוכבים ומקבלים מתנה, או הופכים כוכבים לכסף בשלוש צנצנות: להוציא, לחסוך (אבא ואמא מכפילים) וצדקה. דף להדפסה למקרר. בחינם.",
+  "head": "<link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"איך גורמים לילדים לעשות את השגרה בבוקר?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"רשימה בציורים, סימון של כל משימה וכוכב בסוף עובדים טוב יותר מתזכורות. הילד רואה את ההתקדמות שלו ומרגיש גאווה.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר להדפיס לוח למקרר?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. כפתור \\\"דף למקרר\\\" מכין לוח להדפסה.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר כמה ילדים?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. מוסיפים ילדים, ולכל ילד יש כוכבים, מתנה וצנצנות משלו.\"}}, {\"@type\": \"Question\", \"name\": \"הנתונים נשמרים אצלכם?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לא. הכול נשמר רק בטלפון, ועובר לטלפון אחר רק בקישור שאתם שולחים.\"}}, {\"@type\": \"Question\", \"name\": \"מאיזה גיל מתאים לוח שגרה עם ציורים?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"בערך מגיל שלוש. הציורים מאפשרים לילד שלא קורא עדיין להבין לבד מה המשימה.\"}}, {\"@type\": \"Question\", \"name\": \"מה זה שלוש הצנצנות?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"חלוקה של הכסף שהילד צובר: צנצנת להוציא, צנצנת לחסוך (שההורים מכפילים) וצנצנת לצדקה.\"}}]}</script>",
+  "og_title": "שגרת בוקר וערב לילדים – עם כוכבים",
+  "priority": "0.8",
+  "crumbs": [
+    [
+      "שגרה לילדים",
+      null
+    ]
+  ]
+} -->
+<header class="k-hero no-print">
+  <h1>שגרת בוקר וערב</h1>
+  <p class="sub">הילד לוחץ על כל ציור כשהוא מסיים, ובסוף מקבל כוכב. פחות "כמה פעמים אמרתי לך", יותר "תראו מה עשיתי".</p>
+</header>
+<div class="tool bt">
+  <div class="no-print">
+    <div class="chips" id="sg-kids" style="justify-content:center"></div>
+    <div class="seg" role="group" aria-label="בוקר או ערב">
+      <button type="button" data-sg-mode="boker" aria-pressed="true">☀️ בוקר</button>
+      <button type="button" data-sg-mode="erev" aria-pressed="false">🌙 ערב</button>
+    </div>
+    <div class="kn-meter" style="position:static"><div class="track"><div class="fill" id="sg-bar"></div></div><p id="sg-txt" aria-live="polite"></p></div>
+    <div class="sg-win" id="sg-win" hidden>⭐</div>
+    <div class="sg-grid" id="sg-grid"></div>
+    <div class="tools">
+      <button class="btn btn-gold btn-sm" type="button" id="sg-print">🖨️ דף למקרר</button>
+      <button class="btn btn-line btn-sm" type="button" id="sg-again">להתחיל שוב</button>
+    </div>
+    <section class="pz box" id="pz-root" aria-labelledby="pz-h">
+      <div class="pz-top"><h2 id="pz-h">🏆 המבצע של <span id="pz-name"></span></h2><span class="pz-stars" id="pz-stars"></span></div>
+      <div class="kn-meter" style="position:static;background:none;border:0;padding:.3rem 0 0;margin:0"><div class="track"><div class="fill" id="pz-goal-bar"></div></div><p id="pz-goal-txt" style="font-size:1rem"></p></div>
+      <div class="tools" style="margin-top:.5rem">
+        <button class="btn btn-gold btn-sm" type="button" id="pz-got" hidden>🎁 קיבל/ה את המתנה</button>
+        <button class="btn btn-line btn-sm" type="button" id="pz-plus">+⭐ כוכב על מעשה טוב</button>
+        <button class="btn btn-line btn-sm" type="button" id="pz-minus" aria-label="להוריד כוכב">−⭐</button>
+      </div>
+
+      <h3 class="pz-h3">שלוש הצנצנות</h3>
+      <div class="pz-jars">
+        <div class="pz-jar"><span class="e">🛍️</span><b>להוציא</b><span class="v" id="pz-j-sp"></span><button type="button" class="btn btn-line btn-sm" data-jar="spend">קניתי משהו</button></div>
+        <div class="pz-jar sv"><span class="e">🐷</span><b>חיסכון</b><span class="v" id="pz-j-sv"></span><button type="button" class="btn btn-line btn-sm" data-jar="save">פתחנו</button></div>
+        <div class="pz-jar tz"><span class="e">💝</span><b>צדקה</b><span class="v" id="pz-j-tz"></span><button type="button" class="btn btn-line btn-sm" data-jar="tz">נתתי ✓</button></div>
+      </div>
+      <p class="pz-given" id="pz-given"></p>
+      <p class="pz-quote">צדקה היא חלק מהכסף שלנו. וכשהכסף יוצא מאיתנו בשפע, הקב״ה דואג להזרים אלינו בשפע.</p>
+
+      <h3 class="pz-h3">להפוך כוכבים לכסף</h3>
+      <div class="pz-form">
+        <label>כמה כוכבים? <input id="pz-n" type="number" inputmode="numeric" min="0" placeholder="0"></label>
+        <label>💝 לצדקה <b id="pz-tz-v"></b><input id="pz-tz" type="range" min="10" max="50" step="5" value="10"></label>
+        <label>🐷 לחיסכון <b id="pz-sv-v"></b><input id="pz-sv" type="range" min="0" max="90" step="10" value="50"></label>
+        <p class="muted" id="pz-mult-t"></p>
+        <p class="pz-prev" id="pz-prev"></p>
+        <button class="btn btn-gold btn-sm" type="button" id="pz-go">להעביר לצנצנות</button>
+      </div>
+
+      <details style="margin-top:1rem">
+        <summary style="cursor:pointer;color:var(--cream);font-weight:600">⚙️ להגדיר את המבצע</summary>
+        <div class="ms-form" style="margin-top:.6rem">
+          <label>כמה כוכבים עד המתנה? <input id="pz-g-n" type="number" inputmode="numeric" min="1"></label>
+          <label>מה המתנה? <input id="pz-g-p" type="text" maxlength="40" placeholder="🍦 יציאה לגלידה, 🚲 אופניים, ספר חדש"></label>
+          <label>כמה שווה כוכב אחד? <span>(₪)</span> <input id="pz-val" type="number" inputmode="decimal" min="0" step="0.5"></label>
+          <label>אבא ואמא מוסיפים על החיסכון <select id="pz-mult"><option value="1">בלי תוספת</option><option value="1.5">חצי שקל על כל שקל</option><option value="2">שקל על כל שקל (פי 2)</option><option value="3">פי 3</option></select></label>
+          <label>צדקה, לפחות <span>(%)</span> <input id="pz-mintz" type="number" inputmode="numeric" min="0" max="100"></label>
+        </div>
+        <p class="muted" style="margin-top:.4rem">המתנה והצנצנות נפרדות לכל ילד. רוצים לחסוך יחד למטרה משפחתית? <a class="gold" href="/kesef/mivtza/">המבצע המשפחתי</a>.</p>
+      </details>
+    </section>
+    <details class="box" id="sg-edit">
+      <summary style="cursor:pointer;color:var(--cream);font-weight:600">✏️ לשנות את הרשימה ואת השמות</summary>
+      <h2>מה עושים <small>הרשימה שמוצגת עכשיו</small></h2>
+      <div id="sg-items"></div>
+      <div class="tools" style="justify-content:flex-start;margin-top:.5rem"><button class="btn btn-line btn-sm" type="button" id="sg-iadd">+ עוד משימה</button><button class="btn btn-line btn-sm" type="button" id="sg-reset">לחזור לרשימה המקורית</button></div>
+      <h2>הילדים</h2>
+      <div id="sg-kidlist"></div>
+      <div class="tools" style="justify-content:flex-start;margin-top:.5rem"><button class="btn btn-line btn-sm" type="button" id="sg-kadd">+ עוד ילד/ה</button></div>
+    </details>
+    <section class="box bt-sync" aria-labelledby="sg-sync-h">
+      <h2 id="sg-sync-h">אותה שגרה גם אצל בן או בת הזוג</h2>
+      <p class="muted">שולחים קישור שבתוכו הרשימות, הכוכבים, המבצע והצנצנות. השני פותח, לוחץ "לייבא", ושניכם רואים אותו מצב. ילד קיבל כוכב אצל אחד מכם? שולחים שוב מהטלפון שבו זה עודכן.</p>
+      <div class="tools"><a class="btn btn-gold btn-sm" href="#" id="sg-sync-wa" target="_blank" rel="noopener"><svg class="ic"><use href="#wa"/></svg> לשלוח לבן/בת הזוג</a><button class="btn btn-line btn-sm" type="button" id="sg-sync-copy">להעתיק את הקישור</button></div>
+    </section>
+    <p class="disclaimer">הסימונים מתאפסים לבד כל יום. הכוכבים נשמרים ומצטברים בטלפון הזה, ועוברים לטלפון אחר רק בקישור שאתם שולחים.</p>
+  </div>
+  <div class="paper print-me print-only" id="sg-paper"></div>
+  <p class="k-next no-print">💾 הכול נשמר רק בטלפון הזה. מחליפים טלפון, או רוצים את זה גם במחשב? <a class="gold" href="/bait/#gibui">גיבוי של כל כלי הבית בלחיצה אחת ←</a></p>
+  <div class="share-row no-print"><a class="btn btn-line btn-sm" href="#" data-share-tool="wa" data-text="לוח שגרת בוקר וערב לילדים, עם ציורים וכוכבים. בחינם:" target="_blank" rel="noopener"><svg class="ic"><use href="#wa"/></svg> לשלוח את הכלי לחבר</a></div>
+</div>
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">לוח משימות לילדים שבאמת עובד</h2>
+  <p>צחצוח שיניים, להתלבש, לסדר את התיק. במקום להזכיר עשר פעמים, הילד רואה את הרשימה בציורים ולוחץ על כל משימה שסיים. בסוף השגרה הוא מקבל כוכב. פחות "כמה פעמים אמרתי לך", יותר "תראו מה עשיתי".</p>
+  <h3>שגרת בוקר ושגרת ערב</h3>
+  <p>אפשר לשנות את המשימות ואת השמות, ולהוסיף עוד ילדים. הסימונים מתאפסים לבד כל יום, והכוכבים נשמרים ומצטברים. יש גם דף להדפסה למקרר.</p>
+  <h3>כוכבים, מתנה ושלוש צנצנות</h3>
+  <p>קובעים כמה כוכבים עד המתנה, או הופכים כוכבים לכסף בשלוש צנצנות: להוציא, לחסוך וצדקה. ההורים יכולים להוסיף על החיסכון, ומלמדים בדרך ערך של כסף ונתינה. לחיסכון משפחתי משותף: <a class="gold" href="/kesef/mivtza/">המבצע המשפחתי</a>.</p>
+  <h3>גם אצל בן או בת הזוג</h3>
+  <p>שולחים קישור, והשני רואה את אותו מצב בטלפון שלו. הכול נשמר רק בטלפון שלכם.</p>
+  <h3>למה לוח שגרה עובד לילדים</h3>
+  <p>ילדים מרגישים בטוחים כשהם יודעים מה מגיע עכשיו. לוח עם ציורים פשוטים (לצחצח שיניים, להתלבש, לסדר תיק) הופך את הבוקר ואת הערב מוויכוחים לרשימה שהילד מסמן בעצמו. כל סימון נותן כוכב, ומספר כוכבים מוסכם מראש מביא מתנה קטנה או כסף לצנצנות. לילדים גדולים יותר שרוצים ללמוד לחסוך יש <a class="gold" href="/kesef/yeladim/">חיסכון לילדים</a> ו<a class="gold" href="/kesef/mivtza/">המבצע המשפחתי</a>.</p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>איך גורמים לילדים לעשות את השגרה בבוקר?</summary><p>רשימה בציורים, סימון של כל משימה וכוכב בסוף עובדים טוב יותר מתזכורות. הילד רואה את ההתקדמות שלו ומרגיש גאווה.</p></details>
+  <details><summary>אפשר להדפיס לוח למקרר?</summary><p>כן. כפתור "דף למקרר" מכין לוח להדפסה.</p></details>
+  <details><summary>אפשר כמה ילדים?</summary><p>כן. מוסיפים ילדים, ולכל ילד יש כוכבים, מתנה וצנצנות משלו.</p></details>
+  <details><summary>הנתונים נשמרים אצלכם?</summary><p>לא. הכול נשמר רק בטלפון, ועובר לטלפון אחר רק בקישור שאתם שולחים.</p></details>
+  <details><summary>מאיזה גיל מתאים לוח שגרה עם ציורים?</summary><p>בערך מגיל שלוש. הציורים מאפשרים לילד שלא קורא עדיין להבין לבד מה המשימה.</p></details>
+  <details><summary>מה זה שלוש הצנצנות?</summary><p>חלוקה של הכסף שהילד צובר: צנצנת להוציא, צנצנת לחסוך (שההורים מכפילים) וצנצנת לצדקה.</p></details>
+</section>
+<!--/seo-txt-->

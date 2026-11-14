@@ -1,0 +1,78 @@
+<!--meta {
+  "site": "esek",
+  "nav": "tafrit",
+  "tool": "esek_tafrit",
+  "title": "תפריט דיגיטלי בחינם: תפריט QR למסעדה, לבית קפה ולדוכן, בלי הרשמה | כלים לעסק קטן",
+  "description": "בונים תפריט דיגיטלי בחינם: מקלידים מנות ומחירים ומקבלים תפריט בקישור, ו-QR להדפסה לשולחן. למסעדה, לפיצרייה, לבית קפה, לדוכן או למספרה. בלי הרשמה, בלי שרת ובלי תשלום.",
+  "og_title": "תפריט דיגיטלי בקישור ו-QR לשולחן, בחינם",
+  "priority": "0.8",
+  "crumbs": [
+    [
+      "תפריט דיגיטלי ו-QR",
+      null
+    ]
+  ],
+  "head": "<style>.k-form textarea#tf-items{min-height:14rem;font-size:1.02rem;line-height:1.6}</style><script src=\"/assets/vendor/qrcodejs/qrcode-1.0.0.min.js\" integrity=\"sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" defer></script><link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"התפריט הדיגיטלי בחינם?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. בלי הרשמה, בלי תשלום חודשי ובלי שרת.\"}}, {\"@type\": \"Question\", \"name\": \"מה עושים כשמשנים מחיר?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"מעדכנים את התפריט בכלי ומקבלים קישור חדש וקוד QR חדש. התפריט נשמר לכם בטלפון, כך שלא מתחילים מהתחלה.\"}}, {\"@type\": \"Question\", \"name\": \"לאילו עסקים זה מתאים?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"למסעדה, לפיצרייה, לבית קפה, לדוכן, וגם למספרה או לכל עסק שרוצה מחירון מסודר בקישור.\"}}, {\"@type\": \"Question\", \"name\": \"איפה התפריט נשמר?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"בתוך הקישור עצמו ובטלפון שלכם. הוא לא נשמר באתר.\"}}, {\"@type\": \"Question\", \"name\": \"איך יוצרים QR לתפריט מסעדה בחינם?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"בונים את התפריט בכלי, ומקבלים קוד QR שמוביל אליו. מדפיסים ומניחים על השולחן.\"}}, {\"@type\": \"Question\", \"name\": \"צריך לשלם על אחסון התפריט?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לא. התפריט נשמר בתוך הקישור עצמו, בלי שרת ובלי תשלום חודשי.\"}}]}</script>",
+  "foot": "<script src=\"/assets/esek-tafrit.js\" defer></script>"
+} -->
+<div id="tf-build">
+<header class="k-hero">
+  <h1>תפריט דיגיטלי ו-QR</h1>
+  <p class="sub">מקלידים את המנות והמחירים, ומקבלים תפריט בקישור. שולחים בווטסאפ, ומדפיסים QR לשולחן. כל מי שסורק רואה את התפריט בטלפון.</p>
+</header>
+<div class="tool">
+  <form class="k-form lead-form" id="tf-form" novalidate>
+    <div class="field"><label for="tf-name">שם העסק</label><input id="tf-name" name="name" type="text" required maxlength="60" placeholder="למשל: פיצה של משה"></div>
+    <div class="field"><label for="tf-sub">שורה מתחת לשם <span class="opt">(לא חובה)</span></label><input id="tf-sub" name="sub" type="text" maxlength="80" placeholder="פיצה בעבודת יד · כשר למהדרין"></div>
+    <div class="field"><label for="tf-items">המנות והמחירים</label>
+      <textarea id="tf-items" name="items" required maxlength="4000" placeholder="פיצות:&#10;פיצה משפחתית - 55 | רוטב עגבניות ומוצרלה&#10;פיצה אישית - 32&#10;תוספות:&#10;זיתים - 6&#10;פטריות - 6&#10;שתייה:&#10;פחית - 8"></textarea>
+      <p class="es-hint">שורה שנגמרת בנקודתיים <code>פיצות:</code> היא כותרת. מנה: <code>שם - מחיר</code>. הסבר קטן אחרי קו: <code>| עם רוטב הבית</code>.</p>
+      <button class="btn btn-line btn-sm" type="button" id="tf-sample" style="margin-top:.5rem">למלא דוגמה של פיצריה</button>
+    </div>
+    <div class="field"><label for="tf-phone">טלפון או ווטסאפ להזמנות <span class="opt">(לא חובה)</span></label><input id="tf-phone" name="phone" type="tel" inputmode="tel" maxlength="20" placeholder="050-0000000" dir="ltr" style="text-align:right"></div>
+    <div class="field"><label for="tf-addr">כתובת לניווט <span class="opt">(לא חובה)</span></label><input id="tf-addr" name="addr" type="text" maxlength="90" placeholder="הרצל 12, באר שבע"></div>
+    <div class="field"><label for="tf-hours">שעות פתיחה <span class="opt">(לא חובה)</span></label><input id="tf-hours" name="hours" type="text" maxlength="90" placeholder="א-ה 11:00-23:00 · ו' עד שעתיים לפני שבת"></div>
+    <div class="field"><label for="tf-note">הערה בסוף התפריט <span class="opt">(לא חובה)</span></label><input id="tf-note" name="note" type="text" maxlength="160" placeholder="משלוחים בעיר עד 22:00 · כשרות: רבנות באר שבע"></div>
+    <button class="btn btn-gold btn-block" type="submit">ליצור קישור ו-QR</button>
+    <p class="privacy">התפריט לא נשמר אצלנו בשום מקום: הוא יושב בתוך הקישור עצמו, ובטלפון שלכם.</p>
+  </form>
+  <div class="res" id="tf-ready" hidden>
+    <h3>התפריט מוכן!</h3>
+    <div class="field"><input id="tf-link" type="text" readonly aria-label="הקישור לתפריט"></div>
+    <div class="share-row"><button class="btn btn-gold btn-sm" type="button" id="tf-copy">להעתיק את הקישור</button><a class="btn btn-line btn-sm" id="tf-wa" href="#" target="_blank" rel="noopener"><svg class="ic"><use href="#wa"/></svg> לשלוח בווטסאפ</a><a class="btn btn-line btn-sm" id="tf-open" href="#">לפתוח את התפריט</a><button class="btn btn-line btn-sm" type="button" data-tf="print">🖨️ QR לשולחן</button><a class="btn btn-line btn-sm" id="tf-qrimg" href="/esek/qr/">QR מעוצב כתמונה</a></div>
+    <div style="text-align:center"><div class="tf-qr" id="tf-qr-small"></div></div>
+    <p class="tf-len" id="tf-len"></p>
+    <p class="note">שינוי במחיר או מנה חדשה = מעדכנים כאן ומקבלים קישור חדש (התפריט נשמר לכם בטלפון). את דף ה-QR מדפיסים, חותכים לשניים ומניחים על השולחנות.</p>
+  </div>
+  <h2 style="font-family:var(--serif);color:var(--cream);font-size:1.3rem;margin-top:1.6rem">כך זה ייראה</h2>
+</div>
+</div>
+<div class="tool"><div id="tf-view" hidden></div>
+  <p id="tf-mine" class="disclaimer" hidden><a class="gold" href="/esek/tafrit/">רוצים תפריט כזה לעסק שלכם? בונים בחינם תוך שתי דקות ←</a></p>
+  <p class="disclaimer">חלק מ<a class="gold" href="/esek/">כלים לעסק קטן</a>. חסר משהו בתפריט? <a class="gold" href="/kelim/bakasha/">ספרו לי</a>.</p>
+</div>
+<div id="tf-sign" aria-hidden="true"></div>
+
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">תפריט דיגיטלי לעסק קטן, בשתי דקות</h2>
+  <p>לקוחות רגילים היום לסרוק קוד על השולחן ולראות את התפריט בטלפון. הכלי מתאים למסעדה קטנה, לפיצרייה, לבית קפה, לדוכן בשוק, וגם למספרה או לקוסמטיקאית שרוצות מחירון מסודר. אין צורך באתר, במתכנת או במנוי.</p>
+  <h3>איך בונים תפריט</h3>
+  <p>כותבים את שם העסק, ואחר כך את המנות והמחירים כטקסט פשוט. שורה שנגמרת בנקודתיים היא כותרת, למשל "פיצות:". מנה כותבים כך: שם, מקף ומחיר. אפשר להוסיף הסבר קטן למנה. לא בטוחים איך? יש כפתור שממלא דוגמה של פיצרייה. אפשר להוסיף טלפון או ווטסאפ להזמנות, כתובת לניווט, שעות פתיחה והערה בסוף. לוחצים "ליצור קישור ו-QR", והתפריט מוכן.</p>
+  <h3>מה עושים עם התפריט</h3>
+  <p>את הקישור שולחים בווטסאפ או מפרסמים בפייסבוק. את דף ה-QR מדפיסים, חותכים לשניים ומניחים על השולחנות. כל מי שסורק רואה את התפריט בטלפון שלו. אפשר גם להכין QR מעוצב כתמונה.</p>
+  <h3>טוב לדעת</h3>
+  <p>התפריט לא נשמר באתר בשום מקום. הוא יושב בתוך הקישור עצמו, ובטלפון שלכם. לכן כשמשנים מחיר או מוסיפים מנה, מעדכנים כאן ומקבלים קישור חדש וקוד חדש, ומדפיסים שוב. הכלי בחינם, בלי הרשמה ובלי תשלום חודשי, כחלק מכלים לעסק קטן.</p>
+  <h3>למה תפריט דיגיטלי</h3>
+  <p>תפריט בקישור מתעדכן בשנייה: משנים מחיר או מוסיפים מנה, וכל מי שסורק את ה-QR רואה מיד את הגרסה החדשה, בלי להדפיס שוב. הלקוח רואה את התפריט בטלפון שלו, בגודל שנוח לו. אפשר גם לשלוח את הקישור בווטסאפ להזמנות ולשים אותו בגוגל ובאינסטגרם. ל-QR לאתר, לוויפי או לביט יש <a class="gold" href="/esek/qr/">QR מעוצב</a>, ולמבצע של השבוע <a class="gold" href="/esek/mivtza/">מודעת מבצע</a>.</p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>התפריט הדיגיטלי בחינם?</summary><p>כן. בלי הרשמה, בלי תשלום חודשי ובלי שרת.</p></details>
+  <details><summary>מה עושים כשמשנים מחיר?</summary><p>מעדכנים את התפריט בכלי ומקבלים קישור חדש וקוד QR חדש. התפריט נשמר לכם בטלפון, כך שלא מתחילים מהתחלה.</p></details>
+  <details><summary>לאילו עסקים זה מתאים?</summary><p>למסעדה, לפיצרייה, לבית קפה, לדוכן, וגם למספרה או לכל עסק שרוצה מחירון מסודר בקישור.</p></details>
+  <details><summary>איפה התפריט נשמר?</summary><p>בתוך הקישור עצמו ובטלפון שלכם. הוא לא נשמר באתר.</p></details>
+  <details><summary>איך יוצרים QR לתפריט מסעדה בחינם?</summary><p>בונים את התפריט בכלי, ומקבלים קוד QR שמוביל אליו. מדפיסים ומניחים על השולחן.</p></details>
+  <details><summary>צריך לשלם על אחסון התפריט?</summary><p>לא. התפריט נשמר בתוך הקישור עצמו, בלי שרת ובלי תשלום חודשי.</p></details>
+</section>
+<!--/seo-txt-->

@@ -1,0 +1,84 @@
+<!--meta {
+  "site": "kodesh",
+  "nav": "rabanim",
+  "tool": "luach",
+  "title": "הלוח השבועי לבית הכנסת ביחידה – זמני היום, פרשה, דבר תורה וחיזוק | כלי קודש",
+  "description": "כלי חינם לרב היחידה ולכל בית כנסת: לוח שבועי מעוצב לתלייה, עם זמני היום לפי המיקום, פרשה, הדלקת נרות וצאת השבת, וטורים לבחירה: דבר תורה, חיזוק, מוסר, משנה שבועית, הלכה יומית ועוד. מדפיסים או שולחים כתמונה.",
+  "og_title": "הלוח השבועי לבית הכנסת ביחידה",
+  "priority": "0.8",
+  "crumbs": [["הלוח השבועי", null]],
+  "head": "<link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><link rel=\"stylesheet\" href=\"/assets/luach.css\"><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"איך עושים לוח שבועי לבית כנסת?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"ממלאים מקום ופרטים, בוחרים טורים, ומדפיסים או שולחים כתמונה.\"}}, {\"@type\": \"Question\", \"name\": \"הזמנים מתעדכנים לבד?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן, לפי המיקום והשבוע שבוחרים.\"}}, {\"@type\": \"Question\", \"name\": \"איך נקבעת הדלקת הנרות?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לפי המקום (ירושלים 40, חיפה 30, אחרים 20) או לפי מספר דקות שבוחרים.\"}}, {\"@type\": \"Question\", \"name\": \"הלוח נשמר?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן, בטלפון, ובשבוע הבא הוא מחכה.\"}}, {\"@type\": \"Question\", \"name\": \"איך מעבירים את הלוח לשבוע הבא?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"בוחרים \\\"לשבוע הבא\\\". הזמנים והפרשה מתעדכנים, ואפשר לנקות את התוכן השבועי ולהשאיר את זמני התפילות.\"}}]}</script>",
+  "foot": "<script src=\"/assets/vendor/hebcal-bundle/hebcal-core-6.14.7.min.js\" data-hebcal defer></script><script src=\"/assets/vendor/html-to-image/html-to-image-1.11.11.js\" defer></script><script src=\"/assets/luach.js\" defer></script>"
+} -->
+<header class="k-hero no-print">
+  <h1>הלוח השבועי</h1>
+  <p class="sub">לוח מעוצב לתלייה בבית הכנסת של היחידה, שמתחדש כל שבוע: זמני היום, פרשה, שבת, ומה שתבחרו לכתוב לחיילים. ממלאים פעם אחת, ובשבוע הבא רק מעדכנים.</p>
+</header>
+<div class="tool lv-tool no-print">
+  <form class="k-form lead-form" id="lv-form" novalidate>
+    <details open><summary>פרטים ושבוע</summary>
+      <div class="field"><label for="lv-title">כותרת</label><input id="lv-title" name="title" type="text" maxlength="40"></div>
+      <div class="field"><label for="lv-unit">היחידה או בית הכנסת</label><input id="lv-unit" name="unit" type="text" maxlength="60" placeholder="בית הכנסת של גדוד 51"></div>
+      <div class="field"><label for="lv-week">איזה שבוע?</label><input id="lv-week" name="week" type="date">
+        <div class="lv-row"><button class="btn btn-line btn-sm" type="button" id="lv-this">השבוע</button><button class="btn btn-gold btn-sm" type="button" id="lv-next">לשבוע הבא ←</button></div>
+        <label class="check"><input type="checkbox" id="lv-clear" checked> <span>במעבר לשבוע הבא: לנקות את דבר התורה, החיזוק, המוסר, המשנה וההלכה (זמני התפילות וההודעות נשארים)</span></label></div>
+      <div class="field"><label for="lv-sig">חתימה</label><input id="lv-sig" name="sig" type="text" maxlength="60" placeholder="רב היחידה"></div>
+    </details>
+    <details open><summary>מקום וזמנים</summary>
+      <div class="field"><label for="lv-place">איפה היחידה?</label><select id="lv-place"></select></div>
+      <div class="field" id="lv-coords-row" hidden><label for="lv-coords">קואורדינטות (רוחב,אורך)</label><input id="lv-coords" type="text" dir="ltr" placeholder="31.5,34.6"></div>
+      <div class="field"><span class="label">אילו זמנים בטבלה?</span><div class="lv-checks" id="lv-zm"></div></div>
+      <div class="field"><label for="lv-candle">הדלקת נרות</label><select id="lv-candle" name="candle"><option value="auto">לפי המקום (ירושלים 40, חיפה 30, אחרים 20)</option><option value="20">20 דקות לפני השקיעה</option><option value="30">30 דקות</option><option value="40">40 דקות</option></select></div>
+    </details>
+    <details open><summary>הטורים בלוח</summary>
+      <p class="note">מסמנים מה יופיע, וכותבים. אפשר לשנות לכל טור את הכותרת.</p>
+      <div id="lv-cols"></div>
+      <div class="field"><label for="lv-pasuk">פסוק לחיזוק בתחתית <span class="opt">(ריק = פסוק אחר בכל שבוע, מתוך 12)</span></label><input id="lv-pasuk" name="pasuk" type="text" maxlength="140"></div>
+    </details>
+    <details open><summary>עיצוב</summary>
+      <div class="field"><div class="radios lv-themes">
+        <label><input type="radio" name="theme" value="zayit"> ירוק זית</label>
+        <label><input type="radio" name="theme" value="kachol"> כחול וזהב</label>
+        <label><input type="radio" name="theme" value="klaf"> קלף</label>
+        <label><input type="radio" name="theme" value="lavan"> לבן (חוסך דיו)</label>
+        <label><input type="radio" name="theme" value="layla"> לילה (לתמונה)</label>
+      </div></div>
+    </details>
+  </form>
+  <div class="share-row">
+    <button class="btn btn-gold btn-sm" type="button" id="lv-print">להדפיס / לשמור PDF</button>
+    <button class="btn btn-line btn-sm" type="button" id="lv-img"><svg class="ic"><use href="#wa"/></svg> לשלוח כתמונה</button>
+  </div>
+  <h2 class="lv-h">כך ייראה הלוח</h2>
+</div>
+<div id="lv-wrap"><div id="lv-board" class="lv-board"></div></div>
+<div class="tool no-print">
+  <p class="disclaimer">הזמנים מחושבים לפי המיקום (שקיעה מישורית, צאת הכוכבים 8.5°). לזמנים מדויקים להלכה במקום מסוים – לוח מקומי. התוכן ההלכתי בלוח הוא של הרב שחותם עליו.</p>
+  <p class="disclaimer">הכול נשמר אצלכם בטלפון, ובשבוע הבא הלוח מחכה. רוצים טור או סגנון נוסף? <a class="gold" href="/kelim/bakasha/">ספרו לי</a>.</p>
+</div>
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">לוח שבועי לבית הכנסת של היחידה</h2>
+  <p>לוח מעוצב לתלייה, שמתחדש כל שבוע: זמני היום לפי המיקום, הפרשה, הדלקת נרות וצאת השבת. מוסיפים טורים לבחירה: דבר תורה, חיזוק, מוסר, משנה, הלכה, זמני תפילות והודעות.</p>
+  <h3>פעם אחת, ואז כל שבוע</h3>
+  <p>ממלאים פעם אחת. במעבר לשבוע הבא אפשר לנקות את התוכן השבועי ולהשאיר את זמני התפילות וההודעות. חמישה עיצובים, להדפסה או כתמונה.</p>
+  <p>הזמנים מחושבים לפי המיקום. לזמנים מדויקים להלכה במקום מסוים בודקים בלוח מקומי, ובכל שאלה שואלים את הרב. עוד: <a class="gold" href="/kodesh/zmanim/">זמני היום לפי עיר או לפי המיקום</a>.</p>
+  <p><p>ללוח של שנה שלמה, עם פרשות, חגים וזמני שבת לפי עיר: <a class="gold" href="/kodesh/luach-shana/">לוח שנה עברי להדפסה</a>.</p></p>
+  <h3>בכל שבוע מחדש</h3>
+  <p>בפעם הראשונה ממלאים כותרת, שם היחידה או בית הכנסת, מיקום וחתימה. בכל שבוע אחר כך בוחרים "לשבוע הבא", והזמנים והפרשה מתעדכנים לבד. אפשר לנקות את דבר התורה, החיזוק, המוסר, המשנה וההלכה, ולהשאיר את זמני התפילות וההודעות.</p>
+  <h3>הזמנים לפי המיקום</h3>
+  <p>זמני היום, הדלקת הנרות וצאת השבת מחושבים לפי המקום של היחידה. בבסיס בלי שם יישוב מקלידים קואורדינטות. ההדלקה לפי המנהג במקום, או לפי מה שבוחרים: 20, 30 או 40 דקות.</p>
+  <h3>עיצוב והדפסה</h3>
+  <p>בוחרים אילו טורים יופיעו, ועיצוב מתוך חמישה. מדפיסים לתלייה בבית הכנסת או בחדר האוכל, או שומרים כתמונה לקבוצה.</p>
+  <h3>כמה זה עולה?</h3>
+  <p>כלום. הכלי בנוי כחסד, בלי פרסומות ובלי איסוף פרטים. אפשר להשתמש בו כמה שרוצים, ולשלוח אותו לגבאי, לרב או לחברים.</p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>איך עושים לוח שבועי לבית כנסת?</summary><p>ממלאים מקום ופרטים, בוחרים טורים, ומדפיסים או שולחים כתמונה.</p></details>
+  <details><summary>הזמנים מתעדכנים לבד?</summary><p>כן, לפי המיקום והשבוע שבוחרים.</p></details>
+  <details><summary>איך נקבעת הדלקת הנרות?</summary><p>לפי המקום (ירושלים 40, חיפה 30, אחרים 20) או לפי מספר דקות שבוחרים.</p></details>
+  <details><summary>הלוח נשמר?</summary><p>כן, בטלפון, ובשבוע הבא הוא מחכה.</p></details>
+  <details><summary>איך מעבירים את הלוח לשבוע הבא?</summary><p>בוחרים "לשבוע הבא". הזמנים והפרשה מתעדכנים, ואפשר לנקות את התוכן השבועי ולהשאיר את זמני התפילות.</p></details>
+</section>
+<!--/seo-txt-->

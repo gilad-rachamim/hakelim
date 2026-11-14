@@ -1,0 +1,69 @@
+<!--meta {
+  "site": "kodesh",
+  "nav": "rabanim",
+  "tool": "teuda",
+  "title": "תעודת הוקרה ותעודת הערכה להדפסה: חתן תורה, סיום מסכת, גבאי ותורם | כלי קודש",
+  "description": "תעודת הוקרה או תעודת הערכה מעוצבת להדפסה ב-A4: חתן תורה, חתן בראשית, סיום מסכת, הוקרה לגבאי, לתורם או לתלמיד מצטיין. ממלאים שם וחתימות, ומדפיסים או שולחים כתמונה. בחינם, בלי הרשמה.",
+  "og_title": "תעודת הוקרה מעוצבת – להדפסה ב-A4",
+  "priority": "0.7",
+  "crumbs": [["תעודת הוקרה", null]],
+  "head": "<link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><style>#te-canvas{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);margin-top:1rem;background:#000}.te-row{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}#kc-print{display:none}@media print{@page{size:A4 landscape;margin:0}body>*:not(#kc-print){display:none!important}#kc-print{display:block}#kc-print img{width:100%;height:auto;display:block}}</style><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"מה כותבים בתעודת הוקרה?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"את שם המקבל, על מה ההוקרה (למשל \\\"על מסירותו לבית הכנסת\\\"), שם המוסד, תאריך וחתימה. הדף מסדר את הכול בעיצוב מכובד.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר להדפיס בבית דפוס?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. בחלון ההדפסה בוחרים \\\"שמירה כ-PDF\\\" ושולחים את הקובץ לבית הדפוס.\"}}, {\"@type\": \"Question\", \"name\": \"יש תעודה לחתן תורה ולחתן בראשית?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן, וגם לסיום מסכת, לגבאי, לתורם ולתלמיד מצטיין.\"}}, {\"@type\": \"Question\", \"name\": \"זה בחינם?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. בלי הרשמה, והתעודה לא נשמרת אצלנו.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר להכין תעודת הערכה?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. בוחרים \\\"אחר\\\" וכותבים כותרת משלכם, למשל \\\"תעודת הערכה\\\": לתלמיד, למתנדב, למורה או לעובד.\"}}]}</script>",
+  "foot": "<script src=\"/assets/kcard.js\" defer></script><script src=\"/assets/teuda.js\" defer></script>"
+} -->
+<header class="k-hero">
+  <h1>תעודת הוקרה ותעודת הערכה</h1>
+  <p class="sub">לחתן תורה ולחתן בראשית, לסיום מסכת, לגבאי, לתורם או לתלמיד מצטיין. ממלאים שם וחתימות, ומקבלים תעודה מעוצבת להדפסה ב-A4.</p>
+</header>
+<div class="tool">
+  <form class="k-form lead-form" id="te-form" novalidate>
+    <div class="field"><label for="te-k">לאיזו תעודה?</label><select id="te-k" name="k"><option value="torah">חתן תורה</option><option value="bereshit">חתן בראשית</option><option value="siyum">סיום מסכת</option><option value="gabai">הוקרה לגבאי</option><option value="torem">הוקרה לתורם</option><option value="metzayen">תלמיד מצטיין</option><option value="other">אחר</option></select></div>
+    <div class="field"><label for="te-name">שם המקבל</label><input id="te-name" name="name" type="text" maxlength="40" placeholder="ר' אברהם לוי הי&quot;ו"></div>
+    <div class="field"><label for="te-title">כותרת משנה</label><input id="te-title" name="title" type="text" maxlength="40" placeholder="חתן תורה"></div>
+    <div class="field"><label for="te-why">על מה</label><input id="te-why" name="why" type="text" maxlength="90" placeholder="לכבוד היותו חתן תורה בשמחת תורה"></div>
+    <div class="te-row">
+      <div class="field"><label for="te-date">תאריך <span class="opt">(לא חובה)</span></label><input id="te-date" name="date" type="text" maxlength="40" placeholder="שמחת תורה תשפ&quot;ז"></div>
+      <div class="field"><label for="te-org">בית הכנסת או המוסד</label><input id="te-org" name="org" type="text" maxlength="40" placeholder="בית הכנסת אהל יצחק"></div>
+    </div>
+    <div class="te-row">
+      <div class="field"><label for="te-sig1">חתימה 1</label><input id="te-sig1" name="sig1" type="text" maxlength="30" placeholder="הרב משה כהן, רב הקהילה"></div>
+      <div class="field"><label for="te-sig2">חתימה 2 <span class="opt">(לא חובה)</span></label><input id="te-sig2" name="sig2" type="text" maxlength="30" placeholder="יעקב לוי, הגבאי"></div>
+    </div>
+    <div class="te-row">
+      <div class="field"><label for="te-theme">עיצוב</label><select id="te-theme" name="theme"><option value="parch">קלף</option><option value="paper">לבן נקי (חוסך דיו)</option><option value="night">כחול וזהב</option><option value="black">שחור וזהב</option></select></div>
+      <div class="field"><label for="te-size">גודל</label><select id="te-size" name="size"><option value="a4l">דף A4 לרוחב</option><option value="square">ריבוע (לווטסאפ)</option></select></div>
+    </div>
+  </form>
+  <canvas id="te-canvas" width="1754" height="1240" role="img" aria-label="תצוגה מקדימה של התעודה"></canvas>
+  <div class="share-row">
+    <button class="btn btn-gold btn-sm" type="button" id="te-print">להדפיס תעודה A4</button>
+    <button class="btn btn-line btn-sm" type="button" id="te-share"><svg class="ic"><use href="#wa"/></svg> לשתף כתמונה</button>
+    <button class="btn btn-line btn-sm" type="button" id="te-dl">לשמור את התמונה</button>
+  </div>
+  <p class="ios-tip" id="te-tip" hidden>התמונה נשמרה בטלפון. עכשיו פותחים את הווטסאפ, ומצרפים אותה מהגלריה.</p>
+  <p class="disclaimer">בהדפסה בוחרים "לרוחב", ואפשר גם "שמירה כ-PDF" ולשלוח לבית דפוס. מומלץ להדפיס על נייר עבה. התעודה נוצרת בטלפון שלכם ולא נשמרת אצלנו.</p>
+  <p class="disclaimer">חלק מ<a class="gold" href="/kodesh/">כלי קודש</a>. רוצים עיצוב נוסף? <a class="gold" href="/kelim/bakasha/">ספרו לי</a>.</p>
+</div>
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">תעודת הוקרה מעוצבת, בלי מעצב</h2>
+  <p>שמחת תורה מתקרבת, יש סיום מסכת בשבת, או שרוצים להגיד תודה לגבאי שעובד כל השנה בשקט. כאן ממלאים שם, על מה ומי חותם, ומקבלים תעודת הוקרה מכובדת להדפסה, בלי תוכנה ובלי מעצב.</p>
+  <h3>לכל כבוד</h3>
+  <p>חתן תורה, חתן בראשית, סיום מסכת, הוקרה לגבאי, הוקרה לתורם, תלמיד מצטיין, או כל כותרת אחרת שכותבים. אפשר להוסיף את שם בית הכנסת או המוסד, תאריך ועד שתי חתימות.</p>
+  <h3>ארבעה עיצובים</h3>
+  <p>קלף, לבן נקי שחוסך דיו, כחול וזהב, ושחור וזהב. מדפיסים A4 לרוחב על נייר עבה, שומרים כ-PDF לבית דפוס, או שולחים כתמונה מרובעת בווטסאפ. עוד לבית הכנסת: <a class="gold" href="/kodesh/misheberach/">מי שברך לגבאי</a> ו<a class="gold" href="/kodesh/simcha/">הזמנות לכל שמחה</a>.</p>
+  <h2>תעודת הוקרה: מה כותבים בה</h2>
+  <p>תעודה טובה היא אישית. כותבים את שם המקבל, כותרת משנה, ומשפט אחד על מה ההוקרה: לא "על תרומתו" באופן כללי, אלא מה הוא עשה בפועל, למשל "על שנים של פתיחת בית הכנסת בכל בוקר". מוסיפים את שם בית הכנסת או המוסד, תאריך, וחתימה אחת או שתיים, למשל של הרב ושל הגבאי. המשפט האישי הוא מה שזוכרים. יש ארבעה עיצובים לבחירה.</p>
+  <h2>תעודת הערכה לתלמיד, למתנדב ולעובד</h2>
+  <p>אותו דף מתאים גם לתעודת הערכה: בוחרים "אחר", וכותבים את הכותרת שרוצים. מורים מכינים תעודה לתלמיד מצטיין או לסיום שנה, עמותות מודות למתנדבים, ומנהלים נפרדים מעובד שיוצא לפנסיה. מדפיסים על נייר עבה, ואפשר למסגר. אפשר גם לשלוח אותה כתמונה מרובעת בווטסאפ, למי שלא נמצא בטקס.</p>
+  <h3>למה זה בחינם</h3>
+  <p>תעודה היא דרך פשוטה להגיד תודה, ולא צריך בשבילה מעצב או תוכנה. גם מי שלא רגיל למחשב מכין תעודה בכמה דקות, מהטלפון. הכלי חלק מכלי קודש: בלי הרשמה, בלי פרסומות, והתעודה לא נשמרת אצלנו.</p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>מה כותבים בתעודת הוקרה?</summary><p>את שם המקבל, על מה ההוקרה (למשל "על מסירותו לבית הכנסת"), שם המוסד, תאריך וחתימה. הדף מסדר את הכול בעיצוב מכובד.</p></details>
+  <details><summary>אפשר להדפיס בבית דפוס?</summary><p>כן. בחלון ההדפסה בוחרים "שמירה כ-PDF" ושולחים את הקובץ לבית הדפוס.</p></details>
+  <details><summary>יש תעודה לחתן תורה ולחתן בראשית?</summary><p>כן, וגם לסיום מסכת, לגבאי, לתורם ולתלמיד מצטיין.</p></details>
+  <details><summary>זה בחינם?</summary><p>כן. בלי הרשמה, והתעודה לא נשמרת אצלנו.</p></details>
+  <details><summary>אפשר להכין תעודת הערכה?</summary><p>כן. בוחרים "אחר" וכותבים כותרת משלכם, למשל "תעודת הערכה": לתלמיד, למתנדב, למורה או לעובד.</p></details>
+</section>
+<!--/seo-txt-->

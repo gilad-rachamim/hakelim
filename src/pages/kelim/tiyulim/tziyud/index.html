@@ -1,0 +1,61 @@
+<!--meta {
+  "site": "kelim",
+  "nav": "tchumim",
+  "tool": "tiyulim_tziyud",
+  "title": "רשימת ציוד לטיול בחינם: צ'ק-ליסט לקמפינג, לצימר, לטיסה לחו\"ל ולטיול עם ילדים | הכלים של גילעד רחמים",
+  "description": "רשימת ציוד לטיול בחינם: בוחרים טיול יום, לילה בשטח, צימר או מלון, טיסה לחו\"ל או טיול עם ילדים, והרשימה מתאימה את עצמה. מסמנים מה כבר ארוז, מוסיפים פריטים משלכם, ושולחים בווטסאפ מה עוד חסר. נשמר בטלפון.",
+  "og_title": "רשימת ציוד לטיול – מה כבר בתיק?",
+  "priority": "0.7",
+  "crumbs": [["כלים לטיולים ולנסיעות", "/kelim/tiyulim/"], ["רשימת ציוד", null]],
+  "head": "<link rel=\"stylesheet\" href=\"/assets/tiyulim.css\"><link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"לאילו טיולים הרשימה מתאימה?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"טיול יום, לילה בשטח, צימר או מלון, חו\\\"ל וטיול עם ילדים. אפשר לבחור כמה סוגים ביחד.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר להוסיף פריטים משלי?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. מוסיפים כל פריט שחסר, והוא נשמר ברשימה.\"}}, {\"@type\": \"Question\", \"name\": \"איך משתפים את הרשימה?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"שולחים בווטסאפ את כל הרשימה, או רק את מה שעוד לא ארוז.\"}}, {\"@type\": \"Question\", \"name\": \"הרשימה נשמרת לטיול הבא?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. היא נשמרת בטלפון, ואחרי הטיול מנקים את הסימונים ומשתמשים בה שוב.\"}}, {\"@type\": \"Question\", \"name\": \"יש רשימת ציוד לטיסה?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. בוחרים \\\"חו\\\"ל\\\", והרשימה מוסיפה את מה שצריך לטיסה: דרכון בתוקף, כרטיסי טיסה ואישורי מלון, ביטוח נסיעות, מתאם לשקע ועוד. אפשר לשלב עם \\\"עם ילדים\\\".\"}}]}</script>",
+  "foot": "<script src=\"/assets/tiyulim-tziyud.js\" defer></script>"
+} -->
+<header class="k-hero">
+  <h1>רשימת ציוד לטיול</h1>
+  <p class="sub">בוחרים איזה טיול זה, והרשימה מתאימה את עצמה. מסמנים מה כבר בתיק, ושולחים לבן הזוג או לחבר'ה מה עוד חסר. בפעם הבאה הרשימה מחכה בטלפון.</p>
+</header>
+<div class="tool">
+  <div class="ty-note" id="ty-demo" hidden><span>זו דוגמה עם שמות בדויים: קמפינג עם ילדים. משנים לטיול שלכם, או מנקים ומתחילים.</span><button class="btn btn-line btn-sm" type="button" id="ty-demo-x">לנקות ולהתחיל</button></div>
+  <div class="k-form">
+    <div class="field"><label for="ty-title">איזה טיול? <span class="opt">(לא חובה)</span></label><input id="ty-title" type="text" maxlength="60" placeholder="סוף שבוע בצפון"></div>
+    <div class="field"><label>סוג הטיול <span class="opt">(אפשר לבחור כמה)</span></label>
+      <div class="ty-chips" id="ty-types"><button type="button" data-k="yom">טיול יום</button><button type="button" data-k="laila">לילה בשטח</button><button type="button" data-k="tzimer">צימר או מלון</button><button type="button" data-k="chul">חו"ל</button><button type="button" data-k="yeladim">עם ילדים</button></div></div>
+  </div>
+  <div class="ty-meter"><div class="track"><div class="fill" id="ty-bar"></div></div><p id="ty-txt">0 מתוך 0</p></div>
+  <div id="ty-list"></div>
+  <form class="ty-add field" id="ty-add"><input id="ty-new" type="text" maxlength="60" placeholder="להוסיף פריט משלי…" aria-label="פריט חדש"><button class="btn btn-gold btn-sm" type="submit">להוסיף</button></form>
+  <div class="ty-tools">
+    <a class="btn btn-gold btn-sm" href="#" id="ty-wa-miss" target="_blank" rel="noopener"><svg class="ic"><use href="#wa"/></svg> לשלוח מה עוד חסר</a>
+    <a class="btn btn-line btn-sm" href="#" id="ty-wa-all" target="_blank" rel="noopener">לשלוח את כל הרשימה</a>
+    <button class="btn btn-line btn-sm" type="button" id="ty-reset">לנקות סימונים (לטיול הבא)</button>
+  </div>
+  <p class="disclaimer">הרשימה היא תזכורת, לא הוראות בטיחות. לפני מסלול בשטח בודקים מזג אוויר והנחיות. הסימונים נשמרים רק בטלפון הזה.</p>
+  <p class="k-next no-print">עוד לטיול: 🗺️ <a class="gold" href="/kelim/tiyulim/maslul/">מסלול יומי</a> · 💸 <a class="gold" href="/kelim/tiyulim/hotzaot/">חלוקת הוצאות</a> · 🎉 <a class="gold" href="/bait/mevi/">מי מביא מה</a></p>
+  <div class="share-row"><a class="btn btn-line btn-sm" href="#" data-share-tool="wa" data-text="רשימת ציוד לטיול לפי סוג הטיול, מסמנים מה ארוז ונשמר בטלפון. בחינם:" target="_blank" rel="noopener"><svg class="ic"><use href="#wa"/></svg> לשלוח את הכלי לחבר</a></div>
+</div>
+
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">מה לקחת לטיול: רשימה שמתאימה את עצמה</h2>
+  <p>תמיד שוכחים משהו: מטען, כובע, תעודות. הרשימה מתאימה למשפחות שיוצאות לחופשה, לחברים שיוצאים לקמפינג, למי שטס לחו"ל, ולהורים שאורזים לכמה ילדים בבת אחת. בפעם הבאה הרשימה כבר מחכה בטלפון.</p>
+  <h3>איך משתמשים</h3>
+  <p>בוחרים את סוג הטיול, ואפשר לבחור כמה ביחד: טיול יום, לילה בשטח, צימר או מלון, חו"ל, ועם ילדים. הרשימה מתאימה את עצמה למה שבחרתם. בכניסה מופיעה דוגמה, קמפינג עם ילדים, ואפשר לשנות אותה או לנקות ולהתחיל. מסמנים כל פריט שכבר בתיק, ורואים כמה נשאר. חסר פריט שחשוב לכם? מוסיפים אותו לרשימה.</p>
+  <h3>אורזים ביחד</h3>
+  <p>כפתור אחד שולח בווטסאפ רק את מה שעוד חסר, לבן או לבת הזוג או לחבר'ה, וכפתור אחר שולח את כל הרשימה. כך כל אחד יודע מה נשאר לארוז, ולא קונים פעמיים. אחרי הטיול מנקים את הסימונים, והרשימה מוכנה לטיול הבא.</p>
+  <h3>חשוב לדעת</h3>
+  <p>הרשימה היא תזכורת, ולא הוראות בטיחות. לפני מסלול בשטח בודקים מזג אוויר והנחיות. הסימונים נשמרים רק בטלפון הזה, בלי הרשמה. לאותו טיול יש גם מסלול יומי, חלוקת הוצאות בין חברים ותכנון אוכל ונשנושים. הכול בחינם ובלי פרסומות.</p>
+  <h2>רשימת ציוד לטיסה לחו"ל</h2>
+  <p>כשבוחרים "חו"ל" הרשימה מוסיפה את מה שקל לשכוח לפני טיסה: דרכון בתוקף, כרטיסי טיסה ואישורי מלון בטלפון ובהדפסה, ביטוח נסיעות, מטבע מקומי וכרטיס אשראי, מתאם לשקע, חבילת גלישה, ותרופות לכל הימים. כדאי לבדוק את תוקף הדרכון חודשים לפני, ולשמור צילום שלו בטלפון ובמייל.</p>
+  <h2>רשימת ציוד לקמפינג וללילה בשטח</h2>
+  <p>בוחרים "לילה בשטח", והרשימה מוסיפה את מה שצריך ללינה בחוץ. יוצאים עם ילדים? מסמנים גם "עם ילדים", ומתווספים בגדים להחלפה, חטיפים ושתייה, כובע לכל ילד, ופתק עם הטלפון של ההורים בכיס של הילד.</p>
+  <p><p>ואחרי הציוד: <a class="gold" href="/kelim/tiyulim/ochel/">אוכל לטיול: תפריט ורשימת קניות</a>.</p></p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>לאילו טיולים הרשימה מתאימה?</summary><p>טיול יום, לילה בשטח, צימר או מלון, חו"ל וטיול עם ילדים. אפשר לבחור כמה סוגים ביחד.</p></details>
+  <details><summary>אפשר להוסיף פריטים משלי?</summary><p>כן. מוסיפים כל פריט שחסר, והוא נשמר ברשימה.</p></details>
+  <details><summary>איך משתפים את הרשימה?</summary><p>שולחים בווטסאפ את כל הרשימה, או רק את מה שעוד לא ארוז.</p></details>
+  <details><summary>הרשימה נשמרת לטיול הבא?</summary><p>כן. היא נשמרת בטלפון, ואחרי הטיול מנקים את הסימונים ומשתמשים בה שוב.</p></details>
+  <details><summary>יש רשימת ציוד לטיסה?</summary><p>כן. בוחרים "חו"ל", והרשימה מוסיפה את מה שצריך לטיסה: דרכון בתוקף, כרטיסי טיסה ואישורי מלון, ביטוח נסיעות, מתאם לשקע ועוד. אפשר לשלב עם "עם ילדים".</p></details>
+</section>
+<!--/seo-txt-->

@@ -1,0 +1,76 @@
+<!--meta {
+  "site": "esek",
+  "nav": "mivtza",
+  "tool": "esek_mivtza",
+  "title": "מודעת מבצע לסטטוס ולפייסבוק: מחיר, תוקף ותמונה מוכנה | כלים לעסק קטן",
+  "description": "כותבים מה המבצע, המחיר והתוקף, ומקבלים תמונה מעוצבת לסטטוס בווטסאפ, לפייסבוק ולאינסטגרם, ודף להדפסה לחלון. לפיצריה, למסעדה, לחנות ולכל עסק קטן. בחינם.",
+  "head": "<link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"איך עושים מודעת מבצע לסטטוס?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"ממלאים מה במבצע, מחיר ותוקף, בוחרים \\\"לגובה\\\", ומשתפים.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר להראות מחיר לפני ואחרי?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. ממלאים גם מחיר רגיל (לא חובה), והמודעה מראה אותו ליד מחיר המבצע.\"}}, {\"@type\": \"Question\", \"name\": \"יש גרסה להדפסה?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן, \\\"להדפיס לחלון\\\".\"}}, {\"@type\": \"Question\", \"name\": \"זה בחינם?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן, בלי הרשמה.\"}}, {\"@type\": \"Question\", \"name\": \"מה חייב להופיע במודעת מבצע?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"מה כלול, המחיר, ועד מתי המבצע בתוקף. כדאי לכתוב גם תנאים, כמו \\\"עד גמר המלאי\\\", כדי שלא יהיו אי הבנות.\"}}, {\"@type\": \"Question\", \"name\": \"איזה גודל מתאים לסטטוס בווטסאפ?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"בוחרים \\\"לגובה\\\". זה הגודל שממלא את כל המסך בסטטוס ובסטורי.\"}}]}</script>",
+  "og_title": "מודעת מבצע לסטטוס ולפייסבוק – בחינם, תוך דקה",
+  "priority": "0.8",
+  "crumbs": [
+    [
+      "מודעת מבצע",
+      null
+    ]
+  ],
+  "foot": "<script src=\"/assets/kcard.js\" defer></script><script src=\"/assets/esek-mivtza.js\" defer></script>"
+} -->
+<header class="k-hero">
+  <h1>מודעת מבצע</h1>
+  <p class="sub">מה המבצע, כמה זה עולה, ועד מתי. מקבלים תמונה לסטטוס, לפייסבוק ולאינסטגרם, ודף להדפסה לחלון הראווה.</p>
+</header>
+<div class="tool">
+  <form class="k-form lead-form" id="mv-form" novalidate>
+    <div class="field"><label for="mv-biz">שם העסק</label><input id="mv-biz" name="biz" type="text" maxlength="50" placeholder="פיצה של משה"></div>
+    <div class="es-row">
+      <div class="field"><label for="mv-head">כותרת</label><input id="mv-head" name="head" type="text" maxlength="30" value="מבצע!" placeholder="מבצע!"></div>
+      <div class="field"><label for="mv-tag">תגית <span class="opt">(לא חובה)</span></label><input id="mv-tag" name="tag" type="text" maxlength="24" placeholder="רק השבוע"></div>
+    </div>
+    <div class="field"><label for="mv-what">מה במבצע</label><textarea id="mv-what" name="what" required maxlength="200" placeholder="פיצה משפחתית + 2 תוספות + בקבוק שתייה"></textarea></div>
+    <div class="es-row">
+      <div class="field"><label for="mv-price">מחיר במבצע (₪)</label><input id="mv-price" name="price" type="text" inputmode="decimal" maxlength="12" placeholder="59"></div>
+      <div class="field"><label for="mv-old">מחיר רגיל <span class="opt">(לא חובה)</span></label><input id="mv-old" name="old" type="text" inputmode="decimal" maxlength="12" placeholder="78"></div>
+    </div>
+    <div class="field"><label for="mv-until">תוקף</label><input id="mv-until" name="until" type="text" maxlength="50" placeholder="עד יום חמישי 12.11 או עד גמר המלאי"></div>
+    <div class="field"><label for="mv-terms">תנאים בקטן <span class="opt">(לא חובה)</span></label><input id="mv-terms" name="terms" type="text" maxlength="90" placeholder="באיסוף עצמי בלבד · לא כולל משלוח"></div>
+    <div class="field"><label for="mv-contact">טלפון, כתובת או אתר <span class="opt">(שורה למטה)</span></label><input id="mv-contact" name="contact" type="text" maxlength="70" placeholder="להזמנות: 050-0000000 · הרצל 12"></div>
+    <div class="es-row">
+      <div class="field"><label for="mv-theme">עיצוב</label><select id="mv-theme" name="theme"><option value="tomato">אדום פיצה</option><option value="sunny">צהוב שמש</option><option value="fresh">ירוק טרי</option><option value="coffee">בית קפה</option><option value="sweet">ורוד מאפייה</option><option value="black">שחור וזהב</option><option value="white">לבן נקי</option></select></div>
+      <div class="field"><label for="mv-size">גודל</label><select id="mv-size" name="size"><option value="story">לגובה (סטטוס, סטורי)</option><option value="square">ריבוע (אינסטגרם, קבוצה)</option><option value="wide">לרוחב (פייסבוק)</option></select></div>
+    </div>
+    <label class="check"><input type="checkbox" name="bsd" id="mv-bsd" value="1"> <span>להוסיף בס"ד בפינה</span></label>
+    <input type="hidden" name="foot" value="">
+  </form>
+  <canvas id="mv-canvas" class="es-canvas" width="1080" height="1920" role="img" aria-label="תצוגה מקדימה של מודעת המבצע"></canvas>
+  <div class="share-row">
+    <button class="btn btn-gold btn-sm" type="button" id="mv-share"><svg class="ic"><use href="#wa"/></svg> לשתף את התמונה</button>
+    <button class="btn btn-line btn-sm" type="button" id="mv-dl">לשמור את התמונה</button>
+    <button class="btn btn-line btn-sm" type="button" id="mv-text">להעתיק כטקסט</button>
+    <button class="btn btn-line btn-sm" type="button" id="mv-print">🖨️ להדפיס לחלון</button>
+  </div>
+  <p class="ios-tip" id="mv-tip" hidden>התמונה נשמרה בטלפון. עכשיו פותחים את הסטטוס או את פייסבוק, ומצרפים אותה מהגלריה.</p>
+  <p class="disclaimer">התמונה נוצרת בטלפון שלכם ולא נשמרת אצלנו. מבצע הוא התחייבות: כדאי לכתוב בדיוק מה כלול ועד מתי.</p>
+  <p class="disclaimer">חלק מ<a class="gold" href="/esek/">כלים לעסק קטן</a>. רוצים עיצוב נוסף? <a class="gold" href="/kelim/bakasha/">ספרו לי</a>.</p>
+</div>
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">מודעת מבצע לעסק קטן, בדקה</h2>
+  <p>כותבים שם העסק, מה במבצע, מחיר במבצע ומחיר רגיל, תנאים בקטן ופרטי קשר. בוחרים אחד משבעה עיצובים, כמו אדום פיצה, ירוק טרי, בית קפה או שחור וזהב, ומקבלים תמונה מוכנה.</p>
+  <h3>לכל מקום</h3>
+  <p>לגובה לסטטוס ולסטורי, ריבוע לאינסטגרם ולקבוצה, או לרוחב לפייסבוק. יש גם דף להדפסה לחלון הראווה, ואפשר להוסיף בס"ד בפינה.</p>
+  <p>התמונה נוצרת בטלפון ולא נשמרת אצלנו. מבצע הוא התחייבות, לכן כותבים בדיוק מה כלול ועד מתי. עוד לעסק: <a class="gold" href="/esek/ptiha/">צ'ק-ליסט לפתיחת עסק</a>, <a class="gold" href="/esek/tafrit/">תפריט דיגיטלי</a> ו<a class="gold" href="/esek/qr/">QR מעוצב</a>.</p>
+  <h3>מה כותבים במודעת מבצע</h3>
+  <p>מודעה טובה עונה על ארבע שאלות בשנייה אחת: מה מקבלים, כמה זה עולה, עד מתי, ואיך מגיעים. לכן הכותרת קצרה ("2 פיצות משפחתיות ב-79 ₪"), המחיר גדול, והתוקף ברור ("עד יום חמישי, 20.11"). כשמראים גם את המחיר הרגיל ליד מחיר המבצע, הלקוח רואה מיד כמה הוא חוסך. התנאים ("באיסוף עצמי בלבד", "עד גמר המלאי") נכתבים בקטן, אבל כן כותבים אותם.</p>
+  <h3>איפה לפרסם</h3>
+  <p>סטטוס בווטסאפ מגיע לכל אנשי הקשר של העסק, ולכן הוא המקום הראשון לעסק קטן. אחריו קבוצות השכונה, סטורי באינסטגרם ופוסט בפייסבוק. את הדף המודפס תולים בחלון הראווה ועל הקופה. רוצים שיגיעו גם לתפריט או לאתר? מוסיפים <a class="gold" href="/esek/qr/">קוד QR מעוצב</a> שמוביל אליו, ולעיצוב חופשי יותר יש את <a class="gold" href="/kelim/tochen/studio/">סטודיו העיצוב</a>.</p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>איך עושים מודעת מבצע לסטטוס?</summary><p>ממלאים מה במבצע, מחיר ותוקף, בוחרים "לגובה", ומשתפים.</p></details>
+  <details><summary>אפשר להראות מחיר לפני ואחרי?</summary><p>כן. ממלאים גם מחיר רגיל (לא חובה), והמודעה מראה אותו ליד מחיר המבצע.</p></details>
+  <details><summary>יש גרסה להדפסה?</summary><p>כן, "להדפיס לחלון".</p></details>
+  <details><summary>זה בחינם?</summary><p>כן, בלי הרשמה.</p></details>
+  <details><summary>מה חייב להופיע במודעת מבצע?</summary><p>מה כלול, המחיר, ועד מתי המבצע בתוקף. כדאי לכתוב גם תנאים, כמו "עד גמר המלאי", כדי שלא יהיו אי הבנות.</p></details>
+  <details><summary>איזה גודל מתאים לסטטוס בווטסאפ?</summary><p>בוחרים "לגובה". זה הגודל שממלא את כל המסך בסטטוס ובסטורי.</p></details>
+</section>
+<!--/seo-txt-->

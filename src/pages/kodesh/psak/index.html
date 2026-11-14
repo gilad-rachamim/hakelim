@@ -1,0 +1,74 @@
+<!--meta {
+  "site": "kodesh",
+  "nav": "rabanim",
+  "tool": "psak",
+  "title": "ממקור לפסק: תבנית לסיכום הלכה – שאלה, מקורות, שיטות ומסקנה | כלי קודש",
+  "description": "תבנית מסודרת לסיכום סוגיה הלכתית: השאלה, המקורות, השיטות, המסקנה למעשה וההערות. ממלאים בטלפון ומקבלים דף מעוצב להדפסה, לשיעור או לווטסאפ. לרבנים, לאברכים וללומדים לרבנות. בחינם.",
+  "og_title": "ממקור לפסק – תבנית לסיכום הלכה",
+  "priority": "0.7",
+  "crumbs": [["ממקור לפסק", null]],
+  "head": "<link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><link rel=\"stylesheet\" href=\"/assets/daf-print.css\"><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"איך מסכמים סוגיה בהלכה?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"שאלה, מקורות, שיטות ולמעשה. התבנית מסדרת את זה לדף אחד.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר להדפיס?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן, להדפיס או לשמור PDF.\"}}, {\"@type\": \"Question\", \"name\": \"הכלי פוסק הלכה?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לא. זו תבנית לסידור הלימוד. למעשה שואלים את הרב.\"}}, {\"@type\": \"Question\", \"name\": \"הסיכום נשמר?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן, בטלפון שלכם.\"}}, {\"@type\": \"Question\", \"name\": \"איך מסכמים סוגיה הלכתית?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כותבים את השאלה, מסדרים את המקורות לפי הסדר, מפרטים את השיטות, ובסוף כותבים מה למעשה ומה נשאר פתוח. התבנית בדף מסדרת את זה לדף מעוצב.\"}}]}</script>",
+  "foot": "<script src=\"/assets/daf-print.js\" defer></script>"
+} -->
+<header class="k-hero no-print">
+  <h1>ממקור לפסק: תבנית לסיכום סוגיה הלכתית</h1>
+  <p class="sub">תבנית מסודרת לסיכום סוגיה: השאלה, המקורות, השיטות והמסקנה למעשה. ממלאים, ומקבלים דף מעוצב לשיעור, לחזרה למבחן או לשליחה.</p>
+</header>
+<div class="tool no-print">
+  <form class="k-form" data-key="kodesh-psak" novalidate>
+    <div class="field"><label for="ps-title">הנושא</label><input id="ps-title" name="title" data-out="title" type="text" maxlength="80" placeholder="ברכה על נרות שבת: לפני ההדלקה או אחריה?"></div>
+    <div class="field"><label for="ps-q">השאלה</label><textarea id="ps-q" name="q" data-out="q" rows="2" placeholder="כל המצוות מברכים עליהן עובר לעשייתן. אבל בנרות שבת, אם מברכים לפני ההדלקה – הרי כבר קיבלה שבת?"></textarea></div>
+    <div class="field"><label for="ps-src">המקורות, שורה לכל מקור</label><textarea id="ps-src" name="src" data-out="src" data-lines="list" rows="4" placeholder="פסחים ז: – כל המצוות מברך עליהן עובר לעשייתן&#10;רמ&quot;א או&quot;ח רסג, ה – מדליקה, מכסה עיניה, ומברכת"></textarea>
+      <p class="mk-ex">רוצים את הטקסט המלא של המקורות? <a class="gold" href="/kodesh/mekorot/">דף מקורות לשיעור</a> מביא אותו מספריא.</p></div>
+    <div class="field"><label for="ps-shitot">השיטות, שורה לכל שיטה</label><textarea id="ps-shitot" name="shitot" data-out="shitot" data-lines="list" rows="4" placeholder="שיטה א: מברכת ואחר כך מדליקה, כי ההדלקה לא נחשבת קבלת שבת&#10;שיטה ב (הרמ&quot;א): מדליקה, מכסה את עיניה, ומברכת"></textarea></div>
+    <div class="field"><label for="ps-psak">למעשה</label><textarea id="ps-psak" name="psak" data-out="psak" rows="3" placeholder="המנהג הנפוץ באשכנז כרמ&quot;א. בספרד רבים נוהגים לברך לפני ההדלקה. כל אחד כמנהג אבותיו."></textarea></div>
+    <div class="field"><label for="ps-notes">הערות ושאלות פתוחות <span class="opt">(לא חובה)</span></label><textarea id="ps-notes" name="notes" data-out="notes" rows="2"></textarea></div>
+    <div class="dp-row">
+      <div class="field"><label for="ps-sig">חתימה <span class="opt">(לא חובה)</span></label><input id="ps-sig" name="sig" data-out="sig" type="text" maxlength="60" placeholder="סיכום: משה כהן · כולל ערב"></div>
+      <div class="field"><label for="ps-theme">עיצוב</label><select id="ps-theme" name="theme"><option value="klaf">קלף וזהב</option><option value="kachol">כחול</option><option value="zayit">ירוק זית</option><option value="lavan">לבן (חוסך דיו)</option></select></div>
+    </div>
+  </form>
+  <div class="share-row">
+    <button class="btn btn-gold btn-sm" type="button" id="dp-print">להדפיס / לשמור PDF</button>
+    <button class="btn btn-line btn-sm" type="button" id="dp-wa"><svg class="ic"><use href="#wa"/></svg> לשלוח בווטסאפ</button>
+    <button class="btn btn-line btn-sm" type="button" id="dp-copy">להעתיק כטקסט</button>
+  </div>
+</div>
+<div id="dp-sheet" class="dp-sheet" dir="rtl">
+  <div class="dp-head"><span class="bsd">בס"ד</span><p class="dp-kicker">ממקור לפסק</p><h2 data-in="title"></h2></div>
+  <div class="dp-sec"><h3>השאלה</h3><p data-in="q"></p></div>
+  <div class="dp-sec"><h3>המקורות</h3><div data-in="src"></div></div>
+  <div class="dp-sec"><h3>השיטות</h3><div data-in="shitot"></div></div>
+  <div class="dp-sec dp-box"><h3>למעשה</h3><p data-in="psak"></p></div>
+  <div class="dp-sec" data-opt><h3>הערות</h3><p data-in="notes"></p></div>
+  <p class="dp-sig" data-in="sig"></p>
+</div>
+<div class="tool no-print">
+  <p class="disclaimer">זו תבנית לסידור הלימוד. ההכרעה ההלכתית היא של מי שחותם עליה, ולמעשה – שואלים את הרב.</p>
+  <p class="disclaimer">הסיכום נשמר אצלכם בטלפון. חלק מ<a class="gold" href="/kodesh/">כלי קודש</a>. רוצים תבנית נוספת? <a class="gold" href="/kelim/bakasha/">ספרו לי</a>.</p>
+</div>
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">תבנית לסיכום סוגיה הלכתית</h2>
+  <p>ממלאים את הנושא, השאלה, המקורות, השיטות, המסקנה למעשה והערות, ומקבלים דף מסודר ומעוצב: לשיעור, לחזרה למבחן או לשליחה לחברותא.</p>
+  <h3>להדפסה ולווטסאפ</h3>
+  <p>ארבעה עיצובים, כולל לבן שחוסך דיו. מדפיסים או שומרים PDF, שולחים בווטסאפ או מעתיקים כטקסט. רוצים את הטקסט המלא של המקורות? <a class="gold" href="/kodesh/mekorot/">דף מקורות לשיעור</a> מביא אותו.</p>
+  <p>זו תבנית לסידור הלימוד. ההכרעה היא של מי שחותם עליה, ובכל שאלה למעשה שואלים את הרב. הסיכום נשמר אצלכם בטלפון.</p>
+  <h3>סדר הסיכום</h3>
+  <p>שאלה אחת ברורה בראש הדף. אחריה המקורות לפי הסדר, מהגמרא דרך הראשונים ועד השולחן ערוך. אחר כך השיטות, כל שיטה בשורה, ובסוף "למעשה". מה שעוד לא ברור נכנס ל"הערות ושאלות פתוחות", כדי לחזור אליו.</p>
+  <h3>למי זה מתאים</h3>
+  <p>לאברכים ולתלמידי ישיבה שמסכמים סוגיה לפני מבחן רבנות, לרב שמכין שיעור הלכה, ולחברותא שרוצה דף משותף. כשהסיכום כתוב בתבנית קבועה, קל להשוות בין סוגיות ולחזור עליהן.</p>
+  <h3>חשוב לדעת</h3>
+  <p>זו תבנית לסידור החשיבה, לא פסק הלכה. את ההכרעה למעשה שואלים את הרב. כדי להביא את הטקסט המלא של המקורות, משתמשים בדף מקורות לשיעור.</p>
+  <h3>בחינם, לזיכוי הרבים</h3>
+  <p>אין כאן תשלום, מנוי או פרסומות, ואין צורך להירשם. הדף נבנה כדי שכל אחד יוכל להשתמש בו בקלות, מהטלפון או מהמחשב. אם הוא עזר לכם, שתפו אותו עם הקהילה או עם המשפחה.</p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>איך מסכמים סוגיה בהלכה?</summary><p>שאלה, מקורות, שיטות ולמעשה. התבנית מסדרת את זה לדף אחד.</p></details>
+  <details><summary>אפשר להדפיס?</summary><p>כן, להדפיס או לשמור PDF.</p></details>
+  <details><summary>הכלי פוסק הלכה?</summary><p>לא. זו תבנית לסידור הלימוד. למעשה שואלים את הרב.</p></details>
+  <details><summary>הסיכום נשמר?</summary><p>כן, בטלפון שלכם.</p></details>
+  <details><summary>איך מסכמים סוגיה הלכתית?</summary><p>כותבים את השאלה, מסדרים את המקורות לפי הסדר, מפרטים את השיטות, ובסוף כותבים מה למעשה ומה נשאר פתוח. התבנית בדף מסדרת את זה לדף מעוצב.</p></details>
+</section>
+<!--/seo-txt-->

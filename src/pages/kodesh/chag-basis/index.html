@@ -1,0 +1,79 @@
+<!--meta {
+  "site": "kodesh",
+  "nav": "rabanim",
+  "tool": "chag_basis",
+  "title": "דף מידע לחג בבסיס: תפילות, סעודות ופעילויות, להדפסה ולווטסאפ | כלי קודש",
+  "description": "רב היחידה ממלא את זמני התפילות, הסעודות והפעילויות בחג, ומקבל דף מעוצב לתלייה בבסיס, וטקסט מוכן לקבוצת הווטסאפ. לכל חג: ראש השנה, יום כיפור, סוכות, חנוכה, פורים, פסח, שבועות. בחינם.",
+  "og_title": "דף מידע לחג בבסיס – להדפסה ולווטסאפ",
+  "priority": "0.7",
+  "crumbs": [["דף מידע לחג בבסיס", null]],
+  "head": "<link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><link rel=\"stylesheet\" href=\"/assets/daf-print.css\"><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"איך מכינים דף חג לחיילים?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"ממלאים את לוח הזמנים ומה מחכה להם, ומדפיסים או שולחים לקבוצה.\"}}, {\"@type\": \"Question\", \"name\": \"זה מתאים לכל חג?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. בוחרים את החג מהרשימה.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר לשלוח בווטסאפ?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן, יש כפתור לשליחה ולהעתקה כטקסט.\"}}, {\"@type\": \"Question\", \"name\": \"צריך להירשם?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לא. בחינם.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר לשלוח את הדף בווטסאפ?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. \\\"להעתיק כטקסט\\\" מעתיק את כל המידע כטקסט מסודר, ואפשר גם לשמור PDF ולשלוח.\"}}]}</script>",
+  "foot": "<script src=\"/assets/daf-print.js\" defer></script>"
+} -->
+<header class="k-hero no-print">
+  <h1>דף מידע לחג בבסיס, לרב היחידה</h1>
+  <p class="sub">ממלאים את זמני התפילות, הסעודות והפעילויות, ומקבלים דף מעוצב לתלייה בבסיס, וגם טקסט מוכן לקבוצה.</p>
+</header>
+<div class="tool no-print">
+  <form class="k-form" data-key="kodesh-chag-basis" novalidate>
+    <div class="dp-row">
+      <div class="field"><label for="cb-chag">החג</label><input id="cb-chag" name="chag" data-out="chag" type="text" maxlength="30" list="cb-chagim" placeholder="סוכות"></div>
+      <div class="field"><label for="cb-unit">היחידה או הבסיס</label><input id="cb-unit" name="unit" data-out="unit" type="text" maxlength="50" placeholder="בסיס נחשונים"></div>
+    </div>
+    <datalist id="cb-chagim"><option value="ראש השנה"><option value="יום כיפור"><option value="סוכות"><option value="שמחת תורה"><option value="חנוכה"><option value="פורים"><option value="פסח"><option value="שבועות"><option value="ט׳ באב"><option value="יום העצמאות"></datalist>
+    <div class="field"><label for="cb-place">איפה? <span class="opt">(בית כנסת, סוכה, חדר אוכל)</span></label><input id="cb-place" name="place" data-out="place" type="text" maxlength="80" placeholder="בית הכנסת של הבסיס, והסוכה ליד חדר האוכל"></div>
+    <div class="field"><label for="cb-times">לוח הזמנים, שורה לכל דבר <span class="opt">(שעה – מה)</span></label><textarea id="cb-times" name="times" data-out="times" data-lines="times" rows="6" placeholder="17:15 – הדלקת נרות&#10;17:30 – מנחה וערבית בבית הכנסת&#10;18:30 – סעודת החג בסוכה&#10;08:30 – שחרית&#10;12:00 – סעודה שנייה&#10;18:20 – ערבית והבדלה"></textarea></div>
+    <div class="field"><label for="cb-what">מה מחכה לכם <span class="opt">(לא חובה, שורה לכל דבר)</span></label><textarea id="cb-what" name="what" data-out="what" data-lines="list" rows="3" placeholder="ארבעת המינים – אפשר לברך אצל הרב כל הבוקר&#10;שיעור קצר ושירה אחרי הסעודה"></textarea></div>
+    <div class="field"><label for="cb-msg">מילה מהרב <span class="opt">(לא חובה)</span></label><textarea id="cb-msg" name="msg" data-out="msg" rows="2" placeholder="גם רחוק מהבית, נעשה כאן חג אמיתי. ושמחת בחגך – כולם מוזמנים."></textarea></div>
+    <div class="dp-row">
+      <div class="field"><label for="cb-sig">חתימה</label><input id="cb-sig" name="sig" data-out="sig" type="text" maxlength="50" placeholder="רב הבסיס · טלפון 050-0000000"></div>
+      <div class="field"><label for="cb-theme">עיצוב</label><select id="cb-theme" name="theme"><option value="klaf">קלף וזהב</option><option value="kachol">כחול</option><option value="zayit">ירוק זית</option><option value="lavan">לבן (חוסך דיו)</option></select></div>
+    </div>
+  </form>
+  <div class="share-row">
+    <button class="btn btn-gold btn-sm" type="button" id="dp-print">להדפיס / לשמור PDF</button>
+    <button class="btn btn-line btn-sm" type="button" id="dp-wa"><svg class="ic"><use href="#wa"/></svg> לשלוח בווטסאפ</button>
+    <button class="btn btn-line btn-sm" type="button" id="dp-copy">להעתיק כטקסט</button>
+  </div>
+</div>
+<div id="dp-sheet" class="dp-sheet" dir="rtl">
+  <div class="dp-head"><span class="bsd">בס"ד</span><p class="dp-kicker">חג שמח!</p><h2 data-in="chag"></h2><p class="dp-sub" data-in="unit"></p></div>
+  <div class="dp-sec" data-opt><h3>איפה</h3><p data-in="place"></p></div>
+  <div class="dp-sec"><h3>לוח הזמנים</h3><div data-in="times"></div></div>
+  <div class="dp-sec" data-opt><h3>מה מחכה לכם</h3><div data-in="what"></div></div>
+  <div class="dp-sec dp-box" data-opt><p data-in="msg"></p></div>
+  <p class="dp-sig" data-in="sig"></p>
+</div>
+<div class="tool no-print">
+  <p class="disclaimer">מה שאתם כותבים נשמר אצלכם בטלפון, ובחג הבא רק מעדכנים שעות. זמני הדלקת נרות לפי המיקום – ב<a class="gold" href="/kodesh/zmanim/">זמנים לבסיס</a>.</p>
+  <p class="disclaimer">חלק מ<a class="gold" href="/kodesh/">כלי קודש</a>. רוצים עוד משהו בדף? <a class="gold" href="/kelim/bakasha/">ספרו לי</a>.</p>
+</div>
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">דף מידע לחג ביחידה, לתלייה ולקבוצה</h2>
+  <p>רב היחידה ממלא את החג, את המקום, ולוח זמנים של תפילות, סעודות ופעילויות, ומוסיף מילה מהרב. מקבלים דף מעוצב לתלייה בבסיס, וטקסט מוכן לקבוצת הווטסאפ.</p>
+  <h3>בחג הבא רק מעדכנים</h3>
+  <p>מה שכותבים נשמר בטלפון, ובחג הבא רק מעדכנים שעות. ארבעה עיצובים, להדפסה או PDF.</p>
+  <p>זמני הדלקת נרות לפי המיקום: <a class="gold" href="/kodesh/zmanim/">זמנים לבסיס</a>. ללוח שבועי: <a class="gold" href="/kodesh/luach/">הלוח השבועי</a>.</p>
+  <h3>מה כותבים</h3>
+  <p>בוחרים את החג וכותבים את שם היחידה, איפה מתפללים או אוכלים, ולוח זמנים בשורות של "שעה – מה": תפילות, סעודה, הדלקת נרות, פעילות. אפשר להוסיף מה מחכה לחיילים, ומילה קצרה מהרב.</p>
+  <h3>דף לחדר האוכל וטקסט לקבוצה</h3>
+  <p>הדף יוצא מעוצב להדפסה, לתלייה בחדר האוכל או בבית הכנסת, או לשמירה כ-PDF. "להעתיק כטקסט" נותן גרסה לקבוצת הווטסאפ של היחידה. ארבעה עיצובים: קלף וזהב, כחול, ירוק זית ולבן שחוסך דיו.</p>
+  <h3>לחג הבא</h3>
+  <p>כל מה שכתבתם נשמר בטלפון. בחג הבא בוחרים את החג החדש ומעדכנים רק את השעות, בלי לכתוב הכול מחדש.</p>
+  <h3>למי זה מתאים</h3>
+  <p>לרבנים צבאיים, לנגדי דת ולמפקדים, וגם לרכזים במכינות ובישיבות שמארגנים חג לקבוצה מחוץ לבית.</p>
+  <h3>דוגמה ללוח זמנים</h3>
+  <p>בערב חג: 16:00 – הדלקת נרות, 16:15 – תפילת ערבית בבית הכנסת, 17:00 – סעודת חג בחדר האוכל, 19:00 – שיחה עם הרב. כל שורה כוללת שעה ומה קורה, והדף מסדר אותן בטבלה ברורה.</p>
+  <h3>למה זה בחינם</h3>
+  <p>כלי קודש נבנים כחסד, לרבנים, לגבאים, לבתי כנסת ולכל המשפחה: בלי תשלום, בלי פרסומות ובלי הרשמה. מי שרוצה לעזור, שולח את הדף למי שזה יכול לעזור לו.</p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>איך מכינים דף חג לחיילים?</summary><p>ממלאים את לוח הזמנים ומה מחכה להם, ומדפיסים או שולחים לקבוצה.</p></details>
+  <details><summary>זה מתאים לכל חג?</summary><p>כן. בוחרים את החג מהרשימה.</p></details>
+  <details><summary>אפשר לשלוח בווטסאפ?</summary><p>כן, יש כפתור לשליחה ולהעתקה כטקסט.</p></details>
+  <details><summary>צריך להירשם?</summary><p>לא. בחינם.</p></details>
+  <details><summary>אפשר לשלוח את הדף בווטסאפ?</summary><p>כן. "להעתיק כטקסט" מעתיק את כל המידע כטקסט מסודר, ואפשר גם לשמור PDF ולשלוח.</p></details>
+</section>
+<!--/seo-txt-->

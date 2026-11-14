@@ -1,0 +1,131 @@
+<!--meta {
+  "site": "kesef",
+  "nav": "kranot",
+  "tool": "kranot",
+  "title": "השוואת קרנות השתלמות, גמל ופנסיה: תשואה ודמי ניהול | כלים לכסף",
+  "description": "השוואת קרנות השתלמות, קופות גמל וקרנות פנסיה: בוחרים את הקרן והמסלול שלכם, ורואים תשואה ודמי ניהול מול כל המסלולים הדומים בשוק, לפי נתוני גמל נט ופנסיה נט של משרד האוצר. מתי הקרן נזילה, וכמה עולים דמי הניהול. חינם, לא ייעוץ.",
+  "head": "<link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"איך משווים קרן השתלמות?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"בוחרים את החברה ואת המסלול, ורואים את התשואה ואת דמי הניהול מול כל המסלולים הדומים, לפי גמל נט.\"}}, {\"@type\": \"Question\", \"name\": \"מתי קרן השתלמות נזילה?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"בדרך כלל שש שנים מפתיחת הקרן. מכניסים את שנת הפתיחה ורואים מתי היא נזילה. לפרטים המדויקים פונים לחברה.\"}}, {\"@type\": \"Question\", \"name\": \"מאיפה הנתונים?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"מגמל נט ומפנסיה נט של משרד האוצר. הם מתעדכנים פעם בחודש.\"}}, {\"@type\": \"Question\", \"name\": \"הכלי ממליץ לעבור קרן?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לא. הוא מראה נתונים בלבד. לפני החלטה פונים ליועץ פנסיוני מורשה.\"}}, {\"@type\": \"Question\", \"name\": \"מה זה דמי ניהול מהצבירה?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"אחוז שהחברה גובה כל שנה מכל הכסף שנצבר בקרן. מכניסים בדף כמה יש בקרן ואת האחוז מהדוח השנתי, ורואים כמה זה בשקלים.\"}}]}</script>",
+  "og_title": "מעקב קרנות השתלמות, גמל ופנסיה",
+  "crumbs": [["מעקב קרנות השתלמות, גמל ופנסיה", null]]
+} -->
+<header class="k-hero">
+  <h1>השוואת קרנות השתלמות, גמל ופנסיה</h1>
+  <p class="sub">בוחרים את הקרן שלכם, ורואים איך המסלול עשה מול כל המסלולים הדומים בשוק, וכמה דמי ניהול גובים מכם. לפי נתוני "גמל נט" ו"פנסיה נט" של משרד האוצר.</p>
+</header>
+
+<div class="tool" id="kranot">
+  <section class="box">
+    <h2>איזו קרן</h2>
+    <div class="seg" id="f-kind" role="group" aria-label="סוג הקרן"></div>
+    <label class="field" style="margin-top:.7rem"><span>חברה</span><select id="f-corp"></select></label>
+    <label class="field"><span>מסלול</span><select id="f-fund"></select></label>
+    <p class="note" id="f-src">טוען נתונים…</p>
+  </section>
+
+  <div id="f-out" hidden>
+    <section class="sum" aria-live="polite">
+      <div class="lbl" id="f-name"></div>
+      <div class="big" id="f-y1">-</div>
+      <div class="sub2" id="f-sub"></div>
+      <div class="stats">
+        <div><b id="f-y3">-</b><span>ממוצע לשנה, 3 שנים</span></div>
+        <div><b id="f-y5">-</b><span>ממוצע לשנה, 5 שנים</span></div>
+        <div><b id="f-fee">-</b><span>דמי ניהול מהצבירה</span></div>
+      </div>
+    </section>
+
+    <section class="cancel-box" id="f-flag" hidden></section>
+
+    <section class="box">
+      <h2>מול מסלולים דומים</h2>
+      <p class="note" id="f-grp"></p>
+      <div class="whatif"><table>
+        <thead><tr><th></th><th>שלך</th><th>האמצע בשוק</th><th>המקום שלך</th></tr></thead>
+        <tbody id="f-cmp"></tbody>
+      </table></div>
+      <details class="years"><summary>לכל המסלולים הדומים</summary><div class="whatif"><table>
+        <thead><tr><th>מסלול</th><th>5 שנים</th><th>12 חודשים</th><th>דמי ניהול</th></tr></thead>
+        <tbody id="f-all"></tbody>
+      </table></div></details>
+    </section>
+
+    <section class="box">
+      <h2>כמה דמי הניהול עולים לך</h2>
+      <div class="grid2">
+        <label class="field"><span>כמה יש היום בקרן</span><input id="f-bal" class="num-in" inputmode="decimal" placeholder="₪"></label>
+        <label class="field"><span>דמי ניהול שלך <small class="note">מהדוח, %</small></span><input id="f-myfee" class="num-in" inputmode="decimal" placeholder="0.5"></label>
+      </div>
+      <p class="sub2" id="f-cost" style="margin-top:.6rem"></p>
+    </section>
+
+    <section class="box" id="f-liq-box">
+      <h2>מתי הקרן נזילה</h2>
+      <label class="field"><span>מתי נפתחה הקרן (שנה)</span><input id="f-open" class="num-in" inputmode="numeric" placeholder="2021"></label>
+      <p class="sub2" id="f-liq" style="margin-top:.6rem"></p>
+    </section>
+
+    <p class="cancel-box" id="f-old" hidden>⏰ <b>עברה שנה</b> מאז ששמרת את הקרן הזאת. כדאי לבדוק שוב את המספרים, ואז לשמור שוב.</p>
+    <button class="big-btn" type="button" id="f-keep">לשמור את הקרן ברשימה שלי</button>
+    <p class="saved" id="f-saved" role="status"></p>
+  </div>
+
+  <section class="box" id="f-mine-box" hidden>
+    <h2>הקרנות שלי</h2>
+    <p class="cancel-box" id="f-mine-old" hidden></p>
+    <div class="log" id="f-mine"></div>
+  </section>
+
+  <section class="box">
+    <h2>מה זה המסלולים?</h2>
+    <ul class="why">
+      <li><b>כללי</b>: מעורב: מניות, אג"ח והלוואות. הכי נפוץ.</li>
+      <li><b>מניות</b>: רוב הכסף במניות. עולה ויורד יותר חזק, בדרך כלל לטווח ארוך.</li>
+      <li><b>אג"ח / שקלי</b>: פחות תנודות, ובדרך כלל גם פחות תשואה.</li>
+      <li><b>עוקבי מדדים</b> (למשל S&amp;P 500): צמוד למדד מסוים, בלי מנהל שבוחר מניות.</li>
+      <li><b>הלכתי</b>: מנוהל לפי ייעוץ הלכתי (ריבית, שבת).</li>
+      <li><b>מדרגות / לפי גיל</b>: מסלול שמשתנה לבד לפי הגיל. בצעירים יותר מניות.</li>
+      <li><b>פנסיה מקיפה</b>: הקרן הרגילה, עם ביטוח נכות ושארים. <b>משלימה (כללית)</b>: לכסף שמעל התקרה של המקיפה, בלי הביטוחים.</li>
+    </ul>
+  </section>
+
+  <section class="cancel-box">
+    <b>מה לשאול את החברה או את היועץ</b>
+    <ul>
+      <li>מה דמי הניהול שלי מהצבירה ומההפקדה, ואפשר להוריד?</li>
+      <li>באיזה מסלול אני, והאם הוא מתאים לגיל שלי ולמתי שאצטרך את הכסף?</li>
+      <li>מתי הקרן נזילה, ומה המס אם מושכים?</li>
+    </ul>
+  </section>
+
+  <div class="local-note"><span class="ic2">ℹ️</span><span>תשואה של העבר לא אומרת מה יהיה. הנתונים מתעדכנים פעם בחודש מגמל נט ומפנסיה נט. מסלולים למקבלי קצבה לא נכנסים להשוואה.</span></div>
+  <div class="local-note"><span class="ic2">🔒</span><span>מה שבוחרים ומקלידים נשמר רק בטלפון שלך.</span></div>
+  <div class="data-acts"><a class="linkish" href="https://gemelnet.cma.gov.il/" target="_blank" rel="noopener">גמל נט</a><a class="linkish" href="https://pensyanet.cma.gov.il/" target="_blank" rel="noopener">פנסיה נט</a><button class="linkish" type="button" data-wipe="kranot">למחוק מהטלפון</button></div>
+</div>
+
+<p class="not-advice"><b>זה מראה נתונים, לא ייעוץ.</b> ייעוץ פנסיוני הוא מקצוע ברישיון. הכלי לא ממליץ לעבור קרן או מסלול. לפני החלטה: יועץ פנסיוני מורשה.</p>
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">השוואת קרנות השתלמות, גמל ופנסיה</h2>
+  <p>רוב האנשים לא יודעים כמה הרוויחה הקרן שלהם ביחס לאחרות, וכמה דמי ניהול הם משלמים. כאן בוחרים את החברה ואת המסלול, ורואים את התשואה ואת דמי הניהול מול כל המסלולים הדומים בשוק, לפי נתוני גמל נט ופנסיה נט של משרד האוצר.</p>
+  <h3>המקום שלכם בשוק</h3>
+  <p>תשואה של 12 חודשים, וממוצע לשנה על פני 3 ו-5 שנים, מול האמצע בשוק. רואים מיד אם המסלול שלכם בצמרת או בתחתית.</p>
+  <h3>כמה דמי הניהול עולים לכם</h3>
+  <p>מכניסים כמה יש בקרן ואת דמי הניהול מהדוח השנתי, ורואים כמה זה בשקלים. אפשר גם לבדוק מתי קרן ההשתלמות נזילה, ולשמור את הקרנות שלכם ברשימה, עם תזכורת לבדוק שוב בעוד שנה.</p>
+  <p>תשואה של העבר לא אומרת מה יהיה. הכלי מראה נתונים ולא נותן ייעוץ, ולא ממליץ לעבור קרן או מסלול. לפני החלטה פונים ליועץ פנסיוני מורשה. עוד: <a class="gold" href="/kesef/ribit-dribit/">מחשבון ריבית דריבית</a>.</p>
+  <h2>השוואת קרנות השתלמות: מה בודקים</h2>
+  <p>בהשוואת קרנות השתלמות מסתכלים על שני מספרים: התשואה לאורך זמן ודמי הניהול. חשוב להשוות מסלול למסלולים שדומים לו, מסלול מניות מול מסלולי מניות ומסלול כללי מול כלליים, כי מסלולים שונים לוקחים סיכון שונה. לכן הכלי מציג את המסלול שלכם רק מול הדומים לו, ומראה איפה הוא עומד ביחס לאמצע בשוק.</p>
+  <h3>מה ההבדל בין המסלולים</h3>
+  <p>בדף יש הסבר קצר לכל סוג: כללי, מניות, אג"ח, עוקבי מדדים, הלכתי ומסלול לפי גיל, וגם מה ההבדל בין פנסיה מקיפה למשלימה. יש גם רשימת שאלות שכדאי לשאול את החברה או את היועץ, למשל מה דמי הניהול שלי, והאם אפשר להוריד אותם.</p>
+  <h3>למה זה בחינם</h3>
+  <p>הנתונים של גמל נט ושל פנסיה נט פתוחים לציבור, אבל לא קל לקרוא אותם. הכלי מציג אותם בעברית פשוטה, בלי הרשמה, בלי פרסומות, ובלי שמישהו ינסה למכור לכם קרן.</p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>איך משווים קרן השתלמות?</summary><p>בוחרים את החברה ואת המסלול, ורואים את התשואה ואת דמי הניהול מול כל המסלולים הדומים, לפי גמל נט.</p></details>
+  <details><summary>מתי קרן השתלמות נזילה?</summary><p>בדרך כלל שש שנים מפתיחת הקרן. מכניסים את שנת הפתיחה ורואים מתי היא נזילה. לפרטים המדויקים פונים לחברה.</p></details>
+  <details><summary>מאיפה הנתונים?</summary><p>מגמל נט ומפנסיה נט של משרד האוצר. הם מתעדכנים פעם בחודש.</p></details>
+  <details><summary>הכלי ממליץ לעבור קרן?</summary><p>לא. הוא מראה נתונים בלבד. לפני החלטה פונים ליועץ פנסיוני מורשה.</p></details>
+  <details><summary>מה זה דמי ניהול מהצבירה?</summary><p>אחוז שהחברה גובה כל שנה מכל הכסף שנצבר בקרן. מכניסים בדף כמה יש בקרן ואת האחוז מהדוח השנתי, ורואים כמה זה בשקלים.</p></details>
+</section>
+<!--/seo-txt-->
+{{K:foot:מעקב קרנות השתלמות, גמל ופנסיה: תשואה ודמי ניהול מול מסלולים דומים, לפי גמל נט ופנסיה נט. כלי חינמי}}

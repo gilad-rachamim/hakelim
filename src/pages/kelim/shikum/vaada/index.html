@@ -1,0 +1,76 @@
+<!--meta {
+  "site": "kelim",
+  "nav": "tchumim",
+  "tool": "shikum_vaada",
+  "title": "הכנה לוועדה רפואית (ביטוח לאומי, משרד הביטחון): דף אחד עם מה שקשה לי | הכלים של גילעד רחמים",
+  "description": "הכנה לוועדה רפואית בביטוח לאומי או באגף השיקום של משרד הביטחון: דף אחד עם מה שקשה ביום-יום (שינה, עבודה, בית, יציאה מהבית, ריכוז, גוף), יום רגיל, מה עוזר, שאלות לשאול ומה להביא. להדפסה או ל-PDF. בחינם, נשמר רק בטלפון.",
+  "og_title": "הכנה לוועדה – לא לשכוח מה רציתי להגיד",
+  "priority": "0.7",
+  "crumbs": [["זכויות ושיקום", "/kelim/shikum/"], ["הכנה לוועדה", null]],
+  "head": "<link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><link rel=\"stylesheet\" href=\"/assets/shikum.css\"><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"מה לספר בוועדה רפואית?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"מה קשה לכם ביום-יום, ביום רגיל. הדף מסדר את זה לפי נושאים.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר להקריא מהדף בוועדה?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"אפשר לבקש. אפשר גם להשאיר עותק.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר להדפיס?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן, להדפיס או לשמור PDF.\"}}, {\"@type\": \"Question\", \"name\": \"הכלי אומר מה מגיע לי?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לא. את זה שואלים את הגורם המטפל.\"}}]}</script>",
+  "foot": "<script src=\"/assets/shikum-vaada.js\" defer></script>"
+} -->
+<header class="k-hero no-print">
+  <h1>הכנה לוועדה רפואית</h1>
+  <p class="sub">בוועדה הכול נשכח, והלחץ עושה את שלו. ממלאים כאן בבית, בשקט, ומגיעים עם דף אחד: מה קשה לי ביום-יום, ומה אני רוצה לשאול.</p>
+</header>
+<div class="tool no-print">
+  <div class="sk-note" id="va-demo" hidden><span>זו דוגמה, כדי שיהיה ברור איך הדף נראה. מוחקים וכותבים במקום.</span><button class="btn btn-line btn-sm" type="button" id="va-clear">לנקות את הדוגמה</button></div>
+  <form class="k-form" id="va-form" novalidate>
+    <div class="field"><label for="va-what">לאיזו ועדה או פגישה, ומתי?</label><input id="va-what" name="what" type="text" maxlength="80" placeholder="ועדה רפואית, יום שני 9:00"></div>
+    <div class="field"><label for="va-name">השם שלי <span class="opt">(לא חובה)</span></label><input id="va-name" name="name" type="text" maxlength="40"></div>
+    <p class="mp-cat" style="color:var(--muted);margin:.6rem 0 .2rem">מה קשה לי ביום-יום? כותבים רק מה שנוגע לכם. דלגו על השאר.</p>
+    <div class="field"><label for="va-sheina">שינה</label><textarea id="va-sheina" name="sheina" maxlength="400"></textarea></div>
+    <div class="field"><label for="va-avoda">עבודה או לימודים</label><textarea id="va-avoda" name="avoda" maxlength="400"></textarea></div>
+    <div class="field"><label for="va-bait">בבית ובמשפחה</label><textarea id="va-bait" name="bait" maxlength="400"></textarea></div>
+    <div class="field"><label for="va-yetzia">יציאה מהבית, נהיגה, מקומות הומים</label><textarea id="va-yetzia" name="yetzia" maxlength="400"></textarea></div>
+    <div class="field"><label for="va-rikuz">ריכוז וזיכרון</label><textarea id="va-rikuz" name="rikuz" maxlength="400"></textarea></div>
+    <div class="field"><label for="va-guf">גוף וכאבים</label><textarea id="va-guf" name="guf" maxlength="400"></textarea></div>
+    <div class="field"><label for="va-yom">יום רגיל אצלי <span class="opt">(לא היום הכי טוב, ולא הכי גרוע)</span></label><textarea id="va-yom" name="yom" maxlength="600"></textarea></div>
+    <div class="field"><label for="va-ozer">מה ומי עוזר לי <span class="opt">(טיפולים, תרופות, אנשים – לפי המסמכים)</span></label><textarea id="va-ozer" name="ozer" maxlength="400"></textarea></div>
+    <div class="field"><label for="va-q">שאלות לשאול <span class="opt">(שאלה בכל שורה)</span></label><textarea id="va-q" name="q" maxlength="600"></textarea></div>
+    <div class="field"><label for="va-lehavi">מה להביא <span class="opt">(לא חובה)</span></label><input id="va-lehavi" name="lehavi" type="text" maxlength="160"></div>
+    <div class="field"><label>עיצוב הדף</label>
+      <div class="sk-chips" id="va-theme"><button type="button" data-t="lavan">לבן (חוסך דיו)</button><button type="button" data-t="zayit">ירוק זית</button><button type="button" data-t="klaf">קלף</button></div></div>
+  </form>
+  <div class="share-row">
+    <button class="btn btn-gold btn-sm" type="button" id="va-print">להדפיס / לשמור PDF</button>
+    <a class="btn btn-line btn-sm" href="#" id="va-wa" target="_blank" rel="noopener"><svg class="ic"><use href="#wa"/></svg> לשלוח לעצמי בווטסאפ</a>
+    <button class="btn btn-line btn-sm" type="button" id="va-new">דף חדש (לנקות)</button>
+  </div>
+  <h2 style="text-align:center;font-family:var(--serif);color:var(--cream);margin-top:1rem">כך ייראה הדף</h2>
+</div>
+<div id="va-card" class="sk-card t-lavan"></div>
+<div class="tool no-print">
+  <h2 style="font-family:var(--serif);color:var(--cream);margin-top:1.4rem">כמה דברים שעוזרים</h2>
+  <ul class="sk-tips">
+    <li>מתארים יום רגיל, לא את היום הכי טוב. גם דוגמה אחת מהשבוע האחרון עוזרת.</li>
+    <li>אם קשה לדבר, אפשר לבקש להקריא מהדף, או להשאיר עותק.</li>
+    <li>מלווה – שואלים מראש את הגורם המטפל אם אפשר.</li>
+    <li>את המסמכים מסדרים ב<a href="/kelim/shikum/tik/">תיק המסמכים</a>, ואחרי הוועדה רושמים ב<a href="/kelim/shikum/yoman/">יומן הפניות</a> מה נאמר.</li>
+  </ul>
+  <p class="disclaimer">הכלי עוזר לסדר מה לספר ומה לשאול. הוא לא נותן ייעוץ רפואי או משפטי, ולא קובע מה מגיע. את זה שואלים את הגורם המטפל, את הרופא, או לפי המסמכים. מה שכתבתם נשמר רק בטלפון הזה.</p>
+  <div class="share-row"><a class="btn btn-line btn-sm" href="#" data-share-tool="wa" data-text="דף הכנה לוועדה: מה קשה ביום-יום ומה לשאול, דף אחד להדפסה. בחינם:" target="_blank" rel="noopener"><svg class="ic"><use href="#wa"/></svg> לשלוח את הכלי לחבר</a></div>
+</div>
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">להגיע לוועדה עם דף אחד מסודר</h2>
+  <p>בוועדה הלחץ עושה את שלו והרבה נשכח. ממלאים בבית, בשקט, מה קשה ביום-יום: שינה, עבודה, בית ומשפחה, יציאה מהבית, ריכוז וזיכרון, גוף וכאבים. מוסיפים יום רגיל, מה ומי עוזר, ושאלות לשאול.</p>
+  <h3>כמה דברים שעוזרים</h3>
+  <p>מתארים יום רגיל, לא את היום הכי טוב. גם דוגמה אחת מהשבוע האחרון עוזרת. אם קשה לדבר, אפשר לבקש להקריא מהדף או להשאיר עותק.</p>
+  <p>הכלי לא נותן ייעוץ רפואי או משפטי ולא קובע מה מגיע. את זה שואלים את הגורם המטפל. את המסמכים מסדרים ב<a class="gold" href="/kelim/shikum/tik/">תיק המסמכים</a>, ואחרי הוועדה רושמים ב<a class="gold" href="/kelim/shikum/yoman/">יומן הפניות</a>.</p>
+  <h2>הכנה לוועדה רפואית: מה כדאי להכין מראש</h2>
+  <p>הזמן בוועדה קצר, וקשה לזכור בה הכול. לכן כדאי להגיע עם שלושה דברים: דף שמתאר מה קשה ביום-יום, המסמכים הרפואיים המעודכנים, ורשימת שאלות. בדף כותבים רק מה שנוגע לכם, ומדלגים על השאר. לפני הוועדה קוראים אותו פעם אחת בשקט, ובוועדה אפשר להיעזר בו כדי לא לשכוח. אפשר גם להדפיס אותו או לשמור כ-PDF.</p>
+  <h2>ועדה רפואית בביטוח לאומי או במשרד הביטחון</h2>
+  <p>הדף מתאים לוועדה רפואית בביטוח לאומי, לוועדה או לפגישה באגף השיקום של משרד הביטחון, וגם לפגישה עם רופא או עם עובדת סוציאלית. כותבים למעלה לאיזו ועדה ומתי. רוצים להגיע עם מלווה? שואלים מראש את הגורם המטפל אם אפשר. בביטוח לאומי יש גם שירות חינמי של ייעוץ והכנה לוועדות, מרכזי "יד מכוונת". הדף כאן לא מחליף אותו, אלא עוזר להגיע מסודרים.</p>
+  <h3>למה זה בחינם</h3>
+  <p>הכלי חלק ממיזם הכלים של גילעד רחמים, שנבנה כדי להקל על מי שמתמודד עם בירוקרטיה. אין הרשמה ואין פרסומות, ומה שכתבתם נשמר רק בטלפון ולא נשלח לשום מקום.</p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>מה לספר בוועדה רפואית?</summary><p>מה קשה לכם ביום-יום, ביום רגיל. הדף מסדר את זה לפי נושאים.</p></details>
+  <details><summary>אפשר להקריא מהדף בוועדה?</summary><p>אפשר לבקש. אפשר גם להשאיר עותק.</p></details>
+  <details><summary>אפשר להדפיס?</summary><p>כן, להדפיס או לשמור PDF.</p></details>
+  <details><summary>הכלי אומר מה מגיע לי?</summary><p>לא. את זה שואלים את הגורם המטפל.</p></details>
+</section>
+<!--/seo-txt-->

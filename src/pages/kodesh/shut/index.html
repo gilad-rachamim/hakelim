@@ -1,0 +1,66 @@
+<!--meta {
+  "site": "kodesh",
+  "nav": "rabanim",
+  "tool": "shut",
+  "title": "שו\"ת לפרסום: שאלה ותשובה כתמונה מעוצבת לווטסאפ ולסטטוס | כלי קודש",
+  "description": "מדביקים שאלה ותשובה, ומקבלים תמונה מעוצבת לקבוצת הווטסאפ, לסטטוס או לעלון: ממוספרת, עם חתימה, בשלושה עיצובים. בחינם, בלי הרשמה.",
+  "og_title": "שו\"ת לפרסום – שאלה ותשובה כתמונה מעוצבת",
+  "priority": "0.7",
+  "crumbs": [["שו\"ת לפרסום", null]],
+  "head": "<link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><style>#sh-canvas{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);margin-top:1rem;background:#000}.sh-row{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}.k-form textarea{min-height:5.5rem}</style><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"איך מפרסמים שו\\\"ת בקבוצת ווטסאפ?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"מדביקים שאלה ותשובה, בוחרים עיצוב וגודל, ומשתפים את התמונה.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר למספר את השאלות?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. יש שדה למספר, כדי לפרסם סדרה.\"}}, {\"@type\": \"Question\", \"name\": \"מי אחראי לתוכן?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"מי שחותם עליו. הכלי רק מעצב.\"}}, {\"@type\": \"Question\", \"name\": \"זה עולה כסף?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לא. בחינם ובלי הרשמה.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר להשתמש בזה לעלון?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. בוחרים גודל \\\"לרוחב\\\", שומרים את התמונה ומכניסים לעלון.\"}}]}</script>",
+  "foot": "<script src=\"/assets/shut.js\" defer></script>"
+} -->
+<header class="k-hero">
+  <h1>שו"ת לפרסום: שאלה ותשובה כתמונה</h1>
+  <p class="sub">מדביקים שאלה ותשובה, ומקבלים תמונה מעוצבת לקבוצה, לסטטוס או לעלון. ממוספרת, עם החתימה שלכם.</p>
+</header>
+<div class="tool">
+  <form class="k-form lead-form" id="sh-form" novalidate>
+    <div class="field"><label for="sh-q">השאלה</label><textarea id="sh-q" name="q" required maxlength="700" placeholder="מותר לברך על הנרות אחרי השקיעה?"></textarea></div>
+    <div class="field"><label for="sh-a">התשובה</label><textarea id="sh-a" name="a" required maxlength="1400" placeholder="כותבים כאן את התשובה, במילים שלכם."></textarea></div>
+    <div class="sh-row">
+      <div class="field"><label for="sh-head">כותרת</label><input id="sh-head" name="head" type="text" maxlength="30" placeholder="שאלה ותשובה"></div>
+      <div class="field"><label for="sh-num">מספר <span class="opt">(לא חובה)</span></label><input id="sh-num" name="num" type="text" maxlength="8" placeholder="12"></div>
+    </div>
+    <div class="field"><label for="sh-sig">חתימה <span class="opt">(שם הרב או הקהילה)</span></label><input id="sh-sig" name="sig" type="text" maxlength="50" placeholder="הרב משה כהן · קהילת אהל יצחק"></div>
+    <div class="sh-row">
+      <div class="field"><label for="sh-theme">עיצוב</label><select id="sh-theme" name="theme"><option value="night">כחול וזהב</option><option value="parch">קלף</option><option value="black">שחור וזהב</option></select></div>
+      <div class="field"><label for="sh-size">גודל</label><select id="sh-size" name="size"><option value="square">ריבוע (קבוצה)</option><option value="story">לגובה (סטטוס)</option><option value="wide">לרוחב (עלון)</option></select></div>
+    </div>
+    <div class="field"><label for="sh-foot">שורה קטנה למטה <span class="opt">(לא חובה)</span></label><input id="sh-foot" name="foot" type="text" maxlength="60" placeholder="להצטרפות לקבוצה: 050-0000000"></div>
+  </form>
+  <canvas id="sh-canvas" width="1080" height="1080" role="img" aria-label="תצוגה מקדימה של כרטיס השאלה והתשובה"></canvas>
+  <div class="share-row">
+    <button class="btn btn-gold btn-sm" type="button" id="sh-share"><svg class="ic"><use href="#wa"/></svg> לשתף את התמונה</button>
+    <button class="btn btn-line btn-sm" type="button" id="sh-dl">לשמור את התמונה</button>
+    <button class="btn btn-line btn-sm" type="button" id="sh-text">להעתיק כטקסט</button>
+  </div>
+  <p class="ios-tip" id="sh-tip" hidden>התמונה נשמרה בטלפון. עכשיו פותחים את הווטסאפ, ומצרפים אותה מהגלריה.</p>
+  <p class="disclaimer">התוכן ההלכתי הוא של מי שחותם עליו. התמונה נוצרת בטלפון שלכם ולא נשמרת אצלנו.</p>
+  <p class="disclaimer">חלק מ<a class="gold" href="/kodesh/">כלי קודש</a>. רוצים עיצוב נוסף? <a class="gold" href="/kelim/bakasha/">ספרו לי</a>.</p>
+</div>
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">שאלה ותשובה כתמונה מעוצבת לקבוצה</h2>
+  <p>מדביקים שאלה ותשובה, מוסיפים כותרת, מספר וחתימה, ומקבלים תמונה מעוצבת לקבוצת הווטסאפ, לסטטוס או לעלון. שלושה עיצובים: כחול וזהב, קלף, ושחור וזהב.</p>
+  <h3>בכל גודל</h3>
+  <p>ריבוע לקבוצה, לגובה לסטטוס, או לרוחב לעלון. אפשר לשתף ישר, לשמור את התמונה, או להעתיק כטקסט.</p>
+  <p>התוכן ההלכתי הוא של מי שחותם עליו, ובכל שאלה למעשה שואלים את הרב. התמונה נוצרת בטלפון ולא נשמרת אצלנו. עוד: <a class="gold" href="/kodesh/dvar-torah/">דבר תורה מעוצב</a> ו<a class="gold" href="/kodesh/psak/">ממקור לפסק</a>.</p>
+  <h3>לשאלה של השבוע</h3>
+  <p>הרבה רבנים עונים בקבוצת הקהילה על שאלה אחת בשבוע. מספר בשדה "מספר" הופך את זה לסדרה, "שאלה 12", כך שהקהילה מחכה לשאלה הבאה. החתימה בתחתית מראה מי ענה.</p>
+  <h3>לכתוב קצר</h3>
+  <p>בתמונה, תשובה של כמה שורות נקראת עד הסוף. אם התשובה ארוכה, אפשר לשלוח תמונה עם התשובה בקצרה, ואחריה את הנוסח המלא כטקסט, בכפתור "להעתיק כטקסט".</p>
+  <h3>שלושה גדלים</h3>
+  <p>ריבוע לקבוצת ווטסאפ, לגובה לסטטוס, ולרוחב לעלון המודפס. אותו שו"ת אפשר לשמור בכל הגדלים. כך גם מי שלא שאל לומד משהו, והשאלות הטובות מגיעות לכולם.</p>
+  <h3>למה זה בחינם</h3>
+  <p>כלי קודש נבנים כחסד, לרבנים, לגבאים, לבתי כנסת ולכל המשפחה: בלי תשלום, בלי פרסומות ובלי הרשמה. מי שרוצה לעזור, שולח את הדף למי שזה יכול לעזור לו.</p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>איך מפרסמים שו"ת בקבוצת ווטסאפ?</summary><p>מדביקים שאלה ותשובה, בוחרים עיצוב וגודל, ומשתפים את התמונה.</p></details>
+  <details><summary>אפשר למספר את השאלות?</summary><p>כן. יש שדה למספר, כדי לפרסם סדרה.</p></details>
+  <details><summary>מי אחראי לתוכן?</summary><p>מי שחותם עליו. הכלי רק מעצב.</p></details>
+  <details><summary>זה עולה כסף?</summary><p>לא. בחינם ובלי הרשמה.</p></details>
+  <details><summary>אפשר להשתמש בזה לעלון?</summary><p>כן. בוחרים גודל "לרוחב", שומרים את התמונה ומכניסים לעלון.</p></details>
+</section>
+<!--/seo-txt-->

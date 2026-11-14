@@ -1,0 +1,85 @@
+<!--meta {
+  "site": "kelim",
+  "nav": "tchumim",
+  "tool": "tichnut_imun",
+  "title": "מחשבון זמן ועלות אימון מודל AI – כמה שעות ועל איזה כרטיס | הכלים של גילעד רחמים",
+  "description": "מזינים גודל מודל, כמה נתונים, LoRA או אימון מלא, וכרטיס NVIDIA – ומקבלים הערכה כמה שעות האימון ייקח, כמה יעלה בענן לפי המחיר שלכם, והשוואה בין 14 כרטיסים. בחינם, בדפדפן.",
+  "og_title": "כמה זמן וכסף ייקח לאמן את המודל?",
+  "priority": "0.7",
+  "crumbs": [["כלים למתכנתים", "/kelim/tichnut/"], ["זמן ועלות אימון", null]],
+  "head": "<link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><style>.tn-row{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}.tn-r3{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}.tn-ltr{direction:ltr;text-align:left}.tn-modes{display:flex;flex-wrap:wrap;gap:.4rem;margin:.3rem 0 .8rem}.tn-modes label{flex:1;min-width:7rem;position:relative;border:1px solid var(--line);border-radius:12px;padding:.5rem .6rem;text-align:center;cursor:pointer;color:var(--body)}.tn-modes input{position:absolute;opacity:0;width:1px;height:1px;inset:0}.tn-modes label:has(input:checked){border-color:var(--gold);color:var(--cream);background:rgba(216,179,95,.1)}.im-res{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:1rem}.im-res div{padding:.9rem;border:1px solid var(--gold-soft);border-radius:14px;text-align:center;background:rgba(216,179,95,.07)}.im-res b{display:block;font-family:var(--serif);font-size:2rem;color:var(--cream);line-height:1.15}.im-res span{color:var(--body);font-size:.9rem}.im-sub{margin-top:.5rem;color:var(--muted);font-size:.9rem;text-align:center}.im-mem{margin-top:.6rem;color:#f0c2bb}.im-mem:empty{display:none}.im-cmp{list-style:none;display:grid;gap:.35rem;margin-top:.5rem}.im-cmp li{display:grid;grid-template-columns:1fr auto;gap:.15rem .6rem;color:var(--parchment);font-size:.93rem}.im-cmp li.me span,.im-cmp li.me b{color:var(--gold);font-weight:700}.im-cmp b{font-weight:400}.im-cmp i{grid-column:1/-1;height:.35rem;border-radius:99px;background:var(--gold-soft)}.im-cmp li.me i{background:var(--gold)}.tn-h{margin-top:1.3rem;color:var(--cream);font-size:1.15rem}input[type=range]{width:100%;accent-color:var(--gold)}</style><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"כמה זמן לוקח אימון LoRA?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"תלוי בגודל המודל, בכמות הנתונים ובכרטיס. מזינים את הנתונים ומקבלים הערכה בשעות.\"}}, {\"@type\": \"Question\", \"name\": \"מה זה MFU?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כמה מהכוח התיאורטי של הכרטיס באמת מנוצל באימון. 30% עד 50% זה טיפוסי.\"}}, {\"@type\": \"Question\", \"name\": \"איך יודעים כמה זה יעלה בענן?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"מזינים את המחיר לשעה שאתם רואים אצל הספק. 0 אומר שזה כרטיס שלכם.\"}}, {\"@type\": \"Question\", \"name\": \"ההערכה מדויקת?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לא. אורך הרצפים, הספרייה, תקשורת בין כרטיסים ושמירות ביניים משנים את התמונה.\"}}, {\"@type\": \"Question\", \"name\": \"מה זה MFU באימון?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"האחוז מהכוח התאורטי של הכרטיס שמנוצל בפועל באימון. בדרך כלל 30% עד 50%. ככל שהוא גבוה יותר, האימון קצר יותר.\"}}]}</script>",
+  "foot": "<script src=\"/assets/tichnut-data.js\" defer></script><script src=\"/assets/tichnut-imun.js\" defer></script>"
+} -->
+<header class="k-hero">
+  <h1>מחשבון זמן ועלות אימון מודל AI</h1>
+  <p class="sub">כמה שעות ייקח לאמן את המודל, על איזה כרטיס, וכמה זה יעלה בענן. לתכנן לפני ששוכרים כרטיס.</p>
+</header>
+<div class="tool">
+  <form class="k-form" id="im-form" novalidate>
+    <div class="field"><label for="im-model">המודל</label><select id="im-model"></select></div>
+    <div class="field" id="im-Pbox" hidden><label for="im-P">פרמטרים (מיליארדים)</label><input id="im-P" type="number" min="0.01" step="0.1" class="tn-ltr"></div>
+    <div class="field"><label>סוג האימון</label>
+      <div class="tn-modes">
+        <label><input type="radio" name="im-mode" value="lora">LoRA / QLoRA</label>
+        <label><input type="radio" name="im-mode" value="full">אימון מלא</label>
+      </div>
+    </div>
+    <div class="field"><label>כמה נתונים</label>
+      <div class="tn-modes">
+        <label><input type="radio" name="im-in" value="ex">לפי דוגמאות</label>
+        <label><input type="radio" name="im-in" value="tok">לפי טוקנים</label>
+      </div>
+    </div>
+    <div class="tn-r3" id="im-exbox">
+      <div class="field"><label for="im-ex">דוגמאות</label><input id="im-ex" type="number" min="0" class="tn-ltr"></div>
+      <div class="field"><label for="im-len">טוקנים לדוגמה</label><input id="im-len" type="number" min="1" class="tn-ltr"></div>
+      <div class="field"><label for="im-ep">Epochs</label><input id="im-ep" type="number" min="0.1" step="0.5" class="tn-ltr"></div>
+    </div>
+    <div class="field" id="im-tokbox" hidden><label for="im-tok">טוקנים (מיליארדים, כולל כל ה-epochs)</label><input id="im-tok" type="number" min="0" step="0.1" class="tn-ltr"></div>
+    <div class="tn-row">
+      <div class="field"><label for="im-gpu">הכרטיס</label><select id="im-gpu"></select></div>
+      <div class="field"><label for="im-n">כמה כרטיסים</label><input id="im-n" type="number" min="1" max="1024" class="tn-ltr"></div>
+    </div>
+    <div class="field"><label for="im-mfu">ניצול בפועל (MFU): <b id="im-mfu-v"></b></label><input id="im-mfu" type="range" min="10" max="70" step="5"><p class="note">כמה מהכוח התיאורטי באמת מנוצל. 30%–50% זה טיפוסי; כרטיסים ביתיים ו-QLoRA – לרוב פחות.</p></div>
+    <div class="field"><label for="im-price">מחיר לשעה לכרטיס אחד (דולר)</label><input id="im-price" type="number" min="0" step="0.1" class="tn-ltr"><p class="note">המחיר משתנה בין ספקים ובין שעה לשעה – הזינו את המחיר שאתם רואים. 0 = בלי עלות (כרטיס שלכם).</p></div>
+  </form>
+  <div class="im-res">
+    <div><b id="im-h">—</b><span>זמן משוער</span></div>
+    <div><b id="im-cost">—</b><span id="im-cost-l"></span></div>
+  </div>
+  <p class="im-sub" id="im-sub"></p>
+  <p class="im-mem" id="im-mem"></p>
+  <h2 class="tn-h">אותה עבודה על כרטיסים אחרים</h2>
+  <ul class="im-cmp" id="im-cmp"></ul>
+  <div class="share-row">
+    <a class="btn btn-gold btn-sm" href="#" id="im-wa" target="_blank" rel="noopener"><svg class="ic"><use href="#wa"/></svg> לשלוח את ההערכה</a>
+    <button class="btn btn-line btn-sm" type="button" id="im-reset">לחזור לדוגמה</button>
+  </div>
+  <p class="disclaimer">החישוב: אימון מלא ≈ 6 × פרמטרים × טוקנים פעולות, LoRA ≈ 4 ×. מחולק בכוח של הכרטיס (BF16, בלי sparsity) כפול הניצול. זו הערכה לתכנון בלבד: בפועל משנים את התמונה אורך הרצפים, הספרייה, תקשורת בין כרטיסים, טעינת נתונים ושמירות ביניים. העלות לפי המחיר שהזנתם בלבד.</p>
+  <div class="share-row"><a class="btn btn-line btn-sm" href="#" data-share-tool="wa" data-text="מחשבון זמן ועלות לאימון מודל AI על כרטיסי NVIDIA. בחינם:" target="_blank" rel="noopener"><svg class="ic"><use href="#wa"/></svg> לשלוח את הכלי לחבר</a></div>
+</div>
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">כמה זמן וכסף יעלה לאמן מודל AI</h2>
+  <p>מזינים את גודל המודל, LoRA או אימון מלא, וכמה נתונים: לפי מספר דוגמאות או לפי טוקנים. בוחרים כרטיס NVIDIA וכמה כרטיסים, ומקבלים הערכה של שעות האימון. אם מזינים מחיר לשעה, מקבלים גם עלות משוערת בענן.</p>
+  <h3>איך זה מחושב</h3>
+  <p>אימון מלא הוא בערך 6 כפול פרמטרים כפול טוקנים פעולות, ו-LoRA בערך שני שלישים מזה. מחלקים בכוח של הכרטיס ובאחוז הניצול בפועל (MFU), שבדרך כלל 30% עד 50%. בתחתית: אותה עבודה על 14 כרטיסים.</p>
+  <p>זו הערכה לתכנון לפני ששוכרים כרטיס, לא הצעת מחיר. המחיר משתנה בין ספקים. לבדוק שהמודל נכנס לזיכרון: <a class="gold" href="/kelim/tichnut/vram/">מחשבון VRAM</a>.</p>
+  <h3>LoRA, QLoRA או אימון מלא</h3>
+  <p>באימון מלא משנים את כל המשקלות, וזה דורש הכי הרבה זיכרון וזמן. LoRA מאמן רק שכבות קטנות שמוסיפים למודל, ולכן הוא מהיר וזול יותר. QLoRA עושה אותו דבר על מודל מכווץ ל-4 ביט, וכך אפשר לאמן מודל גדול על כרטיס אחד.</p>
+  <h3>כרטיס יקר יכול לצאת זול</h3>
+  <p>בתחתית רואים את אותה עבודה על 14 כרטיסים. לפעמים כרטיס שעולה יותר לשעה מסיים כל כך מהר, שהעלות הכוללת יוצאת נמוכה יותר. כדאי להזין את המחיר לשעה של הספק שלכם ולהשוות.</p>
+  <h3>מתי זה שימושי</h3>
+  <p>לפני ששוכרים שרת בענן, כדי לדעת אם מדובר בשעות או בימים; כשמתכננים פרויקט גמר או מחקר; וכשבוחרים בין LoRA לאימון מלא. ההערכה מראה סדר גודל, לא מחיר סופי.</p>
+  <h3>למה זה בחינם</h3>
+  <p>הכלים של גילעד רחמים נבנים כחסד: בלי תשלום, בלי פרסומות ובלי הרשמה, כדי שכל אחד יוכל להשתמש בהם. מי שרוצה לעזור, שולח את הדף לחבר שזה יכול לעזור לו. חסר לכם כלי? אפשר <a class="gold" href="/kelim/bakasha/">לבקש כלי חדש</a>.</p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>כמה זמן לוקח אימון LoRA?</summary><p>תלוי בגודל המודל, בכמות הנתונים ובכרטיס. מזינים את הנתונים ומקבלים הערכה בשעות.</p></details>
+  <details><summary>מה זה MFU?</summary><p>כמה מהכוח התיאורטי של הכרטיס באמת מנוצל באימון. 30% עד 50% זה טיפוסי.</p></details>
+  <details><summary>איך יודעים כמה זה יעלה בענן?</summary><p>מזינים את המחיר לשעה שאתם רואים אצל הספק. 0 אומר שזה כרטיס שלכם.</p></details>
+  <details><summary>ההערכה מדויקת?</summary><p>לא. אורך הרצפים, הספרייה, תקשורת בין כרטיסים ושמירות ביניים משנים את התמונה.</p></details>
+  <details><summary>מה זה MFU באימון?</summary><p>האחוז מהכוח התאורטי של הכרטיס שמנוצל בפועל באימון. בדרך כלל 30% עד 50%. ככל שהוא גבוה יותר, האימון קצר יותר.</p></details>
+</section>
+<!--/seo-txt-->

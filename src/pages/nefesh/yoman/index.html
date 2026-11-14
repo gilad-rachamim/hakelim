@@ -1,0 +1,70 @@
+<!--meta {
+  "site": "nefesh",
+  "nav": "yoman",
+  "tool": "yoman",
+  "title": "יומן קול – מדברים, ומקבלים טקסט | נפש ויום-יום",
+  "description": "יומן בלי לכתוב: מקליטים חצי דקה בטלפון, והדיבור הופך לטקסט בעברית. ושורה אחת: מה היה טוב היום. היומן נשמר רק בטלפון שלך. חינם.",
+  "head": "<link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"איך כותבים יומן בלי לכתוב?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"מקליטים חצי דקה, והכלי הופך את הדיבור לטקסט ושומר ביומן.\"}}, {\"@type\": \"Question\", \"name\": \"ההקלטה נשמרת בשרת?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לא. היא נשלחת לתמלול וחוזרת כטקסט. היומן עצמו נשמר רק בטלפון.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר בלי אינטרנט?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"אפשר לכתוב ביומן גם בלי אינטרנט. התמלול צריך חיבור.\"}}, {\"@type\": \"Question\", \"name\": \"אם בזמן הכתיבה עולה מצוקה?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לא נשארים עם זה לבד. פונים לגורם מקצועי או לער\\\"ן 1201.\"}}, {\"@type\": \"Question\", \"name\": \"למה לכתוב יומן?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כתיבה, גם קצרה, עוזרת לסדר מחשבות ולראות לאורך זמן מה עוזר. כשקשה לכתוב, אפשר פשוט לדבר.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר לשמור את היומן לקובץ?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. יש כפתור לשמירת עותק לקובץ, ואפשר גם למחוק הכול מהטלפון.\"}}]}</script>",
+  "og_title": "יומן קול – מדברים, ומקבלים טקסט",
+  "crumbs": [
+    [
+      "יומן קול",
+      null
+    ]
+  ],
+  "foot": "<script src=\"/assets/hitkadmut.js\" defer></script>"
+} -->
+<header class="k-hero">
+  <h1>יומן קול</h1>
+  <p class="sub">כשקשה לכתוב, אפשר פשוט לדבר. חצי דקה, מה שעולה. וזה הופך לטקסט, ונשמר ביומן שלך.</p>
+</header>
+
+<div class="tool" id="yoman">
+  <p class="hk-strip" data-hk="yoman" data-gentle="1" data-verb="כתבתם ביומן" data-pill="ביומן" data-tool="yoman" hidden></p>
+  <div class="rec">
+    <button class="rec-btn" type="button" id="y-rec">🎙<br>להקליט</button>
+    <p class="status" id="y-status" role="status" aria-live="polite">לוחצים, מדברים, ולוחצים שוב לסיום. עד 3 דקות.</p>
+    <button class="btn btn-line btn-sm" type="button" id="y-retry" hidden>לנסות לתמלל שוב</button>
+  </div>
+
+  <div class="lead-form">
+    <div class="field"><label for="y-text">מה היה היום <span class="opt">(אפשר גם לכתוב, או לתקן מילה)</span></label>
+      <textarea id="y-text" maxlength="4000" placeholder="הטקסט מההקלטה יופיע כאן"></textarea></div>
+    <div class="field"><label for="y-good">🌱 שורה אחת: מה היה טוב היום? <span class="opt">(גם משהו קטן)</span></label>
+      <input id="y-good" type="text" maxlength="140" placeholder="למשל: שתיתי קפה במרפסת בשקט"></div>
+    <button class="big-btn" type="button" id="y-save">לשמור ביומן</button>
+    <p class="saved" id="y-saved" role="status"></p>
+  </div>
+  <div id="y-hk" hidden></div>
+
+  <section style="margin-top:1.4rem">
+    <h2 style="font-family:var(--serif);color:var(--cream);font-size:1.35rem;text-align:center">היומן שלך</h2>
+    <div class="entries" id="y-list"></div>
+  </section>
+
+  <div class="local-note"><span class="ic2">🔒</span><span>היומן נשמר רק בטלפון שלך. ההקלטה נשלחת לתמלול בענן (שרת של המיזם), חוזרת כטקסט, ולא נשמרת שם. בלי אינטרנט אפשר לכתוב, והיומן עצמו עובד.</span></div>
+  <div class="data-acts"><button class="linkish" type="button" data-export="yoman" data-name="יומן קול">לשמור עותק של היומן לקובץ</button><button class="linkish" type="button" data-wipe="yoman">למחוק את היומן מהטלפון</button></div>
+  <p class="note" style="text-align:center;margin-top:.8rem">צריך לתמלל הקלטה ארוכה, <a class="gold" href="/kelim/tamlul/sicha/">שיחה</a> או <a class="gold" href="/kelim/tamlul/shiur/">שיעור</a>? <a class="gold" href="/kelim/tamlul/">כלי התמלול המלא</a></p>
+</div>
+
+{{N:help}}
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">יומן בלי לכתוב: מדברים, וזה נהיה טקסט</h2>
+  <p>כשקשה לכתוב, אפשר פשוט לדבר. לוחצים, מדברים עד 3 דקות, והדיבור הופך לטקסט בעברית. אפשר לתקן מילה, ולהוסיף שורה אחת: מה היה טוב היום, גם משהו קטן.</p>
+  <h3>היומן שלך</h3>
+  <p>כל הרשומות נשמרות ביומן בטלפון. אפשר לשמור עותק לקובץ, או למחוק הכול מהטלפון.</p>
+  <p>ההקלטה נשלחת לתמלול בענן, חוזרת כטקסט ולא נשמרת שם. בלי אינטרנט אפשר לכתוב. עוד כלים שקטים: <a class="gold" href="/nefesh/hayom/">הדבר החשוב של היום</a> ו<a class="gold" href="/nefesh/">נפש ויום-יום</a>.</p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>איך כותבים יומן בלי לכתוב?</summary><p>מקליטים חצי דקה, והכלי הופך את הדיבור לטקסט ושומר ביומן.</p></details>
+  <details><summary>ההקלטה נשמרת בשרת?</summary><p>לא. היא נשלחת לתמלול וחוזרת כטקסט. היומן עצמו נשמר רק בטלפון.</p></details>
+  <details><summary>אפשר בלי אינטרנט?</summary><p>אפשר לכתוב ביומן גם בלי אינטרנט. התמלול צריך חיבור.</p></details>
+  <details><summary>אם בזמן הכתיבה עולה מצוקה?</summary><p>לא נשארים עם זה לבד. פונים לגורם מקצועי או לער"ן 1201.</p></details>
+  <details><summary>למה לכתוב יומן?</summary><p>כתיבה, גם קצרה, עוזרת לסדר מחשבות ולראות לאורך זמן מה עוזר. כשקשה לכתוב, אפשר פשוט לדבר.</p></details>
+  <details><summary>אפשר לשמור את היומן לקובץ?</summary><p>כן. יש כפתור לשמירת עותק לקובץ, ואפשר גם למחוק הכול מהטלפון.</p></details>
+</section>
+<!--/seo-txt-->
+{{N:foot:יומן קול: מדברים חצי דקה, ומקבלים טקסט בעברית. יומן שנשמר רק בטלפון. חינם}}
+{{N:join}}

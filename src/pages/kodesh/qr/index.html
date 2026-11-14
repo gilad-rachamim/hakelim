@@ -1,0 +1,70 @@
+<!--meta {
+  "site": "kodesh",
+  "nav": "rabanim",
+  "tool": "qr_shelet",
+  "title": "שלט QR לבית הכנסת ולשיעור: קבוצת ווטסאפ, קישור או טלפון | כלי קודש",
+  "description": "שלט עם קוד QR לתלייה בבית הכנסת: הצטרפות לקבוצת הווטסאפ, זמני התפילות, תרומה, הקלטות השיעורים או טלפון של הגבאי. מקלידים קישור, מוסיפים כותרת, ומדפיסים. בחינם.",
+  "og_title": "שלט QR לבית הכנסת – להדפסה בדקה",
+  "priority": "0.7",
+  "crumbs": [["שלט QR לבית הכנסת", null]],
+  "head": "<link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><style>#qr-canvas{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);margin-top:1rem;background:#000}.qr-row{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}#kc-print{display:none}@media print{@page{size:A5;margin:0}body>*:not(#kc-print){display:none!important}#kc-print{display:block}#kc-print img{width:100%;height:auto;display:block}}</style><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"איך עושים QR לקבוצת ווטסאפ?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"בוחרים \\\"קבוצת ווטסאפ\\\", מדביקים את קישור ההזמנה לקבוצה, מוסיפים כותרת ומדפיסים.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר QR לטלפון של הגבאי?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. בוחרים \\\"שיחת טלפון\\\" או \\\"ווטסאפ אישי\\\".\"}}, {\"@type\": \"Question\", \"name\": \"הקוד יעבוד תמיד?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן, כל עוד הקישור עצמו עובד. הקוד לא תלוי באתר שלנו.\"}}, {\"@type\": \"Question\", \"name\": \"זה בחינם?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן, בלי הרשמה.\"}}, {\"@type\": \"Question\", \"name\": \"איך יוצרים QR לקבוצת ווטסאפ?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"מעתיקים את קישור ההזמנה לקבוצה מווטסאפ, בוחרים \\\"קבוצת ווטסאפ\\\", מדביקים, ומדפיסים את השלט.\"}}]}</script>",
+  "foot": "<script src=\"/assets/vendor/qrcodejs/qrcode-1.0.0.min.js\" defer></script><script src=\"/assets/kcard.js\" defer></script><script src=\"/assets/qr-shelet.js\" defer></script>"
+} -->
+<header class="k-hero">
+  <h1>שלט QR לבית הכנסת: קבוצת ווטסאפ, קישור או טלפון</h1>
+  <p class="sub">קבוצת ווטסאפ, זמני תפילות, תרומה, הקלטות שיעורים או הטלפון של הגבאי. מקלידים קישור, מוסיפים כותרת, ומדפיסים שלט לתלייה.</p>
+</header>
+<div class="tool">
+  <form class="k-form lead-form" id="qr-form" novalidate>
+    <div class="qr-row">
+      <div class="field"><label for="qr-type">לאן הקוד מוביל?</label><select id="qr-type" name="type"><option value="group">קבוצת ווטסאפ</option><option value="link">קישור לאתר או לדף</option><option value="wa">ווטסאפ אישי</option><option value="phone">שיחת טלפון</option></select></div>
+      <div class="field"><label for="qr-val" id="qr-val-l">קישור ההזמנה לקבוצה</label><input id="qr-val" name="val" type="text" maxlength="300" dir="ltr" style="text-align:right" placeholder="https://chat.whatsapp.com/..."></div>
+    </div>
+    <div class="field"><label for="qr-title">כותרת השלט</label><input id="qr-title" name="title" type="text" maxlength="50" placeholder="הצטרפו לקבוצת בית הכנסת"></div>
+    <div class="field"><label for="qr-sub">שורת הסבר <span class="opt">(לא חובה)</span></label><input id="qr-sub" name="sub" type="text" maxlength="70" placeholder="זמני תפילות, שיעורים והודעות, ישר לטלפון"></div>
+    <div class="qr-row">
+      <div class="field"><label for="qr-cta">מתחת לקוד <span class="opt">(לא חובה)</span></label><input id="qr-cta" name="cta" type="text" maxlength="40" placeholder="סורקים ומצטרפים לקבוצה"></div>
+      <div class="field"><label for="qr-org">בית הכנסת <span class="opt">(לא חובה)</span></label><input id="qr-org" name="org" type="text" maxlength="40" placeholder="בית הכנסת אהל יצחק"></div>
+    </div>
+    <div class="qr-row">
+      <div class="field"><label for="qr-theme">עיצוב</label><select id="qr-theme" name="theme"><option value="night">כחול וזהב</option><option value="paper">לבן נקי (חוסך דיו)</option><option value="parch">קלף</option><option value="black">שחור וזהב</option><option value="sky">תכלת</option></select></div>
+      <div class="field"><label for="qr-size">גודל</label><select id="qr-size" name="size"><option value="a5">דף A5</option><option value="square">ריבוע (לווטסאפ)</option></select></div>
+    </div>
+  </form>
+  <canvas id="qr-canvas" width="1240" height="1754" role="img" aria-label="תצוגה מקדימה של השלט"></canvas>
+  <div class="share-row">
+    <button class="btn btn-gold btn-sm" type="button" id="qr-print">להדפיס שלט</button>
+    <button class="btn btn-line btn-sm" type="button" id="qr-share"><svg class="ic"><use href="#wa"/></svg> לשתף כתמונה</button>
+    <button class="btn btn-line btn-sm" type="button" id="qr-dl">לשמור את התמונה</button>
+  </div>
+  <p class="ios-tip" id="qr-tip" hidden>התמונה נשמרה בטלפון.</p>
+  <p class="disclaimer">לפני שתולים, סורקים את השלט בטלפון ומוודאים שהוא מוביל למקום הנכון. הקישור נשאר בטלפון שלכם ולא נשמר אצלנו.</p>
+  <p class="disclaimer">חלק מ<a class="gold" href="/kodesh/">כלי קודש</a>. דף שלם לבית הכנסת עם QR: <a class="gold" href="/kodesh/beit-knesset/">דף לבית הכנסת</a>.</p>
+</div>
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">שלט עם קוד QR לקבוצת הווטסאפ של בית הכנסת</h2>
+  <p>במקום לרשום מספרים על דף ליד הכניסה, תולים שלט עם קוד QR. מי שסורק מצטרף לקבוצת הווטסאפ של בית הכנסת, רואה את זמני התפילות, תורם, שומע הקלטות של שיעורים או מתקשר לגבאי.</p>
+  <h3>לאן הקוד מוביל</h3>
+  <p>קבוצת ווטסאפ, קישור לאתר או לדף, ווטסאפ אישי או שיחת טלפון. מוסיפים כותרת, שורת הסבר ואת שם בית הכנסת.</p>
+  <h3>עיצוב והדפסה</h3>
+  <p>כחול וזהב, לבן נקי שחוסך דיו, קלף, שחור וזהב או תכלת. דף A5 לתלייה, או ריבוע לשליחה בווטסאפ. לפני שתולים, סורקים ובודקים שהקוד מוביל למקום הנכון.</p>
+  <p>דף שלם לבית הכנסת עם זמנים ו-QR: <a class="gold" href="/kodesh/beit-knesset/">דף לבית הכנסת</a>.</p>
+  <h3>איך מקבלים את קישור הקבוצה</h3>
+  <p>בווטסאפ נכנסים לקבוצה, לוחצים על שם הקבוצה, ובוחרים "הזמנה לקבוצה באמצעות קישור". מעתיקים את הקישור ומדביקים בשדה. צריך להיות מנהל בקבוצה כדי לראות את האפשרות.</p>
+  <h3>איפה תולים</h3>
+  <p>בכניסה לבית הכנסת, ליד לוח המודעות, על השולחן בשיעור, או בעזרת נשים. שלט בגודל A5 קטן מספיק כדי לא להפריע, וגדול מספיק לסריקה מטר משם. הריבוע מתאים לשליחה בווטסאפ ולהעלאה לסטטוס.</p>
+  <h3>סריקה בטלפון</h3>
+  <p>ברוב הטלפונים פותחים את המצלמה ומכוונים לקוד, ומופיע קישור ללחיצה. אין צורך באפליקציה מיוחדת. כדאי לכתוב מתחת לקוד במילים מה יקרה, למשל "להצטרף לקבוצת בית הכנסת".</p>
+  <h3>כמה זה עולה?</h3>
+  <p>כלום. הכלי בנוי כחסד, בלי פרסומות ובלי איסוף פרטים. אפשר להשתמש בו כמה שרוצים, ולשלוח אותו לגבאי, לרב או לחברים.</p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>איך עושים QR לקבוצת ווטסאפ?</summary><p>בוחרים "קבוצת ווטסאפ", מדביקים את קישור ההזמנה לקבוצה, מוסיפים כותרת ומדפיסים.</p></details>
+  <details><summary>אפשר QR לטלפון של הגבאי?</summary><p>כן. בוחרים "שיחת טלפון" או "ווטסאפ אישי".</p></details>
+  <details><summary>הקוד יעבוד תמיד?</summary><p>כן, כל עוד הקישור עצמו עובד. הקוד לא תלוי באתר שלנו.</p></details>
+  <details><summary>זה בחינם?</summary><p>כן, בלי הרשמה.</p></details>
+  <details><summary>איך יוצרים QR לקבוצת ווטסאפ?</summary><p>מעתיקים את קישור ההזמנה לקבוצה מווטסאפ, בוחרים "קבוצת ווטסאפ", מדביקים, ומדפיסים את השלט.</p></details>
+</section>
+<!--/seo-txt-->

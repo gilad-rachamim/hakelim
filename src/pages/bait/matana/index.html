@@ -1,0 +1,86 @@
+<!--meta {
+  "site": "bait",
+  "tool": "bait_matana",
+  "title": "מתנה קבוצתית – מי השתתף וכמה נאסף, ישר מהווטסאפ | כלים למשפחה ולבית",
+  "description": "מתנה לגננת, למורה, לחבר או לסבתא: פותחים איסוף, שולחים לקבוצה, וכל אחד רושם את השם והסכום. כולם רואים כמה נאסף ועוד כמה חסר. בלי אפליקציה ובלי הרשמה, והכלי לא מעביר כסף.",
+  "head": "<link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"איך מארגנים מתנה לגננת?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"פותחים איסוף עם הסכום ודרך התשלום, שולחים את הקישור לקבוצת ההורים, וכל הורה רושם את עצמו. כולם רואים כמה נאסף.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר להסתיר כמה כל אחד נתן?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. מסמנים \\\"להראות רק שמות\\\".\"}}, {\"@type\": \"Question\", \"name\": \"הכלי מעביר את הכסף?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לא. הוא רק עוקב. משלמים בדרך שהמארגן כתב.\"}}, {\"@type\": \"Question\", \"name\": \"צריך הרשמה?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לא. הכול בקישור, בלי אפליקציה.\"}}, {\"@type\": \"Question\", \"name\": \"כמה כל הורה נותן למתנה לגננת?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"אין כלל קבוע. הרבה קבוצות בוחרות 20–30 ₪ להורה, כדי שכולם יוכלו להשתתף. בכלי אפשר להשאיר את הסכום פתוח ולהסתיר כמה כל אחד נתן.\"}}, {\"@type\": \"Question\", \"name\": \"איך מזכירים למי שעוד לא העביר, בלי להביך?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"שולחים לקבוצה את העדכון מהכלי, עם כמה נאסף ועוד כמה חסר. זו תזכורת כללית לכולם, בלי לפנות לאף אחד בשם.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר לאסוף בביט או בפייבוקס?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. כותבים בשדה \\\"איך משלמים\\\" את מספר הטלפון לביט או את הקישור לקבוצת פייבוקס. הכלי עצמו לא מעביר כסף, רק עוקב מי השתתף.\"}}]}</script>",
+  "og_title": "מתנה קבוצתית – כמה כבר נאסף?",
+  "priority": "0.8",
+  "crumbs": [
+    [
+      "מתנה קבוצתית",
+      null
+    ]
+  ]
+} -->
+<header class="k-hero">
+  <h1>מתנה קבוצתית</h1>
+  <p class="sub">פותחים איסוף, שולחים לקבוצה, וכל אחד רושם כמה הוא נותן. כולם רואים כמה נאסף ועוד כמה חסר.</p>
+</header>
+<div class="tool bt" id="mt-root">
+  <div id="mt-edit" hidden>
+    <h2>האיסוף</h2>
+    <div class="ms-form">
+      <label>למי המתנה? <input id="mt-t" type="text" maxlength="60" placeholder="מתנה לגננת מיכל, סוף שנה"></label>
+      <label>כמה רוצים לאסוף? <span>(₪, לא חובה)</span> <input id="mt-g" type="number" inputmode="numeric" min="0" placeholder="600"></label>
+      <label>איך משלמים? <span>(לא חובה)</span> <input id="mt-p" type="text" maxlength="80" placeholder="ביט או פייבוקס לדני, או מזומן בגן"></label>
+      <label>עד מתי? <span>(לא חובה)</span> <input id="mt-d" type="text" maxlength="60" placeholder="עד יום חמישי"></label>
+      <label style="display:flex;gap:.6rem;align-items:center;font-weight:400"><input id="mt-h" type="checkbox" style="width:1.3rem;height:1.3rem;accent-color:var(--gold)"> להראות רק שמות, בלי הסכום של כל אחד</label>
+    </div>
+    <div class="tools"><button class="btn btn-gold" type="button" id="mt-go">לפתוח את האיסוף ←</button></div>
+  </div>
+
+  <div id="mt-view" hidden>
+    <div class="mv-head"><h2 id="mt-title"></h2><p id="mt-when"></p></div>
+    <div class="mt-meter"><div class="track"><div class="fill" id="mt-bar"></div></div><p id="mt-sum" aria-live="polite"></p></div>
+    <div class="mv-banner" id="mt-pay" hidden><b>איך משלמים:</b> <span id="mt-pay-t"></span></div>
+    <form class="box" id="mt-join">
+      <b style="color:var(--cream)">גם אני בפנים</b>
+      <div class="row" style="margin-top:.5rem"><input id="mt-me" type="text" maxlength="25" placeholder="השם שלי" autocomplete="given-name" aria-label="השם שלי"><input id="mt-amt" type="number" inputmode="decimal" min="1" placeholder="₪" aria-label="סכום" style="flex:0 0 5.5rem"></div>
+      <div class="mt-amts"><button type="button" class="chip" data-amt="20">20 ₪</button><button type="button" class="chip" data-amt="30">30 ₪</button><button type="button" class="chip" data-amt="50">50 ₪</button><button type="button" class="chip" data-amt="100">100 ₪</button></div>
+      <div class="tools" style="justify-content:flex-start;margin-top:.6rem"><button class="btn btn-gold btn-sm" type="submit">לרשום אותי</button></div>
+    </form>
+    <h2>מי כבר בפנים</h2>
+    <ul class="mv-list" id="mt-list"></ul>
+    <div class="mv-banner" id="mt-nudge" hidden>כדי שכולם יראו את העדכון, שולחים את ההודעה לקבוצה.</div>
+    <div class="tools">
+      <a class="btn btn-gold" href="#" id="mt-wa" target="_blank" rel="noopener"><svg class="ic"><use href="#wa"/></svg> לשלוח עדכון לקבוצה</a>
+      <button class="btn btn-line btn-sm" type="button" id="mt-copy">להעתיק קישור</button>
+      <button class="btn btn-line btn-sm" type="button" id="mt-editbtn">לערוך</button>
+      <button class="btn btn-line btn-sm" type="button" id="mt-new">איסוף חדש</button>
+    </div>
+  </div>
+
+  <div class="box">
+    <b style="color:var(--cream)">חשוב לדעת</b>
+    <p class="muted" style="margin-top:.3rem">הכלי לא מעביר כסף, הוא רק עוזר לעקוב מי השתתף. התשלום עצמו נעשה בדרך שהמארגן כתב. כל הרשימה נמצאת בתוך הקישור, ולכן פותחים תמיד את הקישור מההודעה <b>האחרונה</b> בקבוצה.</p>
+  </div>
+  <div class="share-row"><a class="btn btn-line btn-sm" href="#" data-share-tool="wa" data-text="מתנה קבוצתית בלי בלגן: כל אחד רושם כמה הוא נותן, וכולם רואים כמה נאסף. בחינם:" target="_blank" rel="noopener"><svg class="ic"><use href="#wa"/></svg> לשלוח את הכלי לחבר</a></div>
+</div>
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">איסוף כסף למתנה בקבוצה, בלי בלגן</h2>
+  <p>מתנה לגננת, למורה בסוף שנה, לחבר שמתחתן או לסבתא. במקום לעקוב בקבוצה מי כבר העביר, פותחים איסוף, שולחים לקבוצה, וכל אחד רושם את השם ואת הסכום.</p>
+  <h3>כולם רואים כמה נאסף</h3>
+  <p>כותבים למי המתנה, כמה רוצים לאסוף, איך משלמים ועד מתי. כולם רואים כמה נאסף ועוד כמה חסר. אפשר להראות רק שמות, בלי הסכום של כל אחד.</p>
+  <h3>הכלי לא מעביר כסף</h3>
+  <p>הוא רק עוזר לעקוב מי השתתף. התשלום עצמו נעשה בדרך שהמארגן כתב, למשל ביט או פייבוקס. כל הרשימה נמצאת בתוך הקישור, אז תמיד פותחים את הקישור מההודעה האחרונה.</p>
+  <p>עוד לקבוצה: <a class="gold" href="/bait/mevi/">מי מביא מה</a>.</p>
+  <h3>רעיונות למתנה קבוצתית</h3>
+  <p>מתנה לגננת או למורה בסוף שנה, מתנה לחבר מהעבודה שמתחתן או שנולד לו ילד, מתנת פרידה לעובד שעוזב, מתנה ליום הולדת עגול של סבא, או השתתפות בטיפול של חבר שזקוק לעזרה. בכל המקרים האלה הבעיה היא לא המתנה, אלא המעקב: מי כבר העביר, כמה נאסף, ומי עוד לא ענה. כאן כל זה נמצא ברשימה אחת שכולם רואים.</p>
+  <h3>כמה כל אחד נותן?</h3>
+  <p>רוב הקבוצות בוחרות סכום קטן וקבוע, למשל 20 או 30 ₪ להורה, כדי שכולם יוכלו להשתתף בלי מבוכה. אפשר גם להשאיר את הסכום פתוח, ולסמן "להראות רק שמות" כדי שאף אחד לא ירגיש שבודקים אותו. כשכותבים יעד ("רוצים לאסוף 600 ₪"), כולם רואים כמה חסר, ובדרך כלל זה מה שמזיז את מי שעוד לא נכנס.</p>
+  <h3>הודעה שמזכירה בעדינות</h3>
+  <p>במקום לפנות לכל אחד בפרטי, שולחים לקבוצה את העדכון מהכלי: "נאספו 420 ₪ מתוך 600, עוד שלושה ימים למתנה". זו תזכורת שלא מביכה אף אחד. מי שרוצה לנסח את ההודעה יפה יותר, עם הדגשות ורשימה, יכול להיעזר ב<a class="gold" href="/kelim/tochen/wa/">עורך ההודעות לווטסאפ</a>.</p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>איך מארגנים מתנה לגננת?</summary><p>פותחים איסוף עם הסכום ודרך התשלום, שולחים את הקישור לקבוצת ההורים, וכל הורה רושם את עצמו. כולם רואים כמה נאסף.</p></details>
+  <details><summary>אפשר להסתיר כמה כל אחד נתן?</summary><p>כן. מסמנים "להראות רק שמות".</p></details>
+  <details><summary>הכלי מעביר את הכסף?</summary><p>לא. הוא רק עוקב. משלמים בדרך שהמארגן כתב.</p></details>
+  <details><summary>צריך הרשמה?</summary><p>לא. הכול בקישור, בלי אפליקציה.</p></details>
+  <details><summary>כמה כל הורה נותן למתנה לגננת?</summary><p>אין כלל קבוע. הרבה קבוצות בוחרות 20–30 ₪ להורה, כדי שכולם יוכלו להשתתף. בכלי אפשר להשאיר את הסכום פתוח ולהסתיר כמה כל אחד נתן.</p></details>
+  <details><summary>איך מזכירים למי שעוד לא העביר, בלי להביך?</summary><p>שולחים לקבוצה את העדכון מהכלי, עם כמה נאסף ועוד כמה חסר. זו תזכורת כללית לכולם, בלי לפנות לאף אחד בשם.</p></details>
+  <details><summary>אפשר לאסוף בביט או בפייבוקס?</summary><p>כן. כותבים בשדה "איך משלמים" את מספר הטלפון לביט או את הקישור לקבוצת פייבוקס. הכלי עצמו לא מעביר כסף, רק עוקב מי השתתף.</p></details>
+</section>
+<!--/seo-txt-->

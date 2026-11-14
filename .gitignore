@@ -1,0 +1,17 @@
+
+# Cloudflare wrangler local state
+tools/rsvp-worker/.wrangler/
+tools/rsvp-worker/node_modules/
+
+# קבצים אישיים של Claude – לא למאגר הציבורי
+.claude/handoffs/
+.claude/launch.json
+claude-skills/
+tools/shir-worker/.wrangler/
+tools/krav-worker/.wrangler/
+tools/chaye-worker/.wrangler/
+tools/*/.wrangler/
+
+# כלי הגיבוש: הספר, ההקלטה ו-40 הימים לשותפים – רק בתוך ה-Worker, לא במאגר הציבורי
+tools/gibush-worker/private/
+tools/*/.dev.vars

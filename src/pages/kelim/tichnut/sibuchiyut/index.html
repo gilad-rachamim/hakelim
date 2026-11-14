@@ -1,0 +1,88 @@
+<!--meta {
+  "site": "kelim",
+  "nav": "tchumim",
+  "tool": "tichnut_sibuchiyut",
+  "title": "מחשבון סיבוכיות Big-O – כמה זמן ייקח לפי n, וטבלאות מבני נתונים ומיונים | הכלים של גילעד רחמים",
+  "description": "בוחרים n ורואים כמה פעולות וכמה זמן לוקח O(log n), O(n), O(n log n), O(n²), O(2ⁿ) – ועד איזה n עוד עומדים בשנייה אחת. ועוד טבלאות סיבוכיות של מבני נתונים ומיונים, לקורס אלגוריתמים ולראיונות עבודה. בחינם.",
+  "og_title": "Big-O במספרים: כמה זמן זה באמת ייקח?",
+  "priority": "0.7",
+  "crumbs": [["כלים למתכנתים", "/kelim/tichnut/"], ["סיבוכיות Big-O", null]],
+  "head": "<link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><style>.tn-ltr{direction:ltr;text-align:left}.tn-row{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}input[type=range]{width:100%;accent-color:var(--gold);direction:ltr}.sb-n{display:flex;align-items:center;gap:.6rem}.sb-n b{font-family:var(--serif);font-size:1.6rem;color:var(--cream);direction:ltr;min-width:7rem;text-align:center}.sb-t{width:100%;border-collapse:collapse;margin-top:1rem;font-size:.92rem}.sb-t th,.sb-t td{padding:.45rem .35rem;border-bottom:1px solid var(--line);color:var(--parchment);text-align:right}.sb-t thead th{color:var(--muted);font-weight:400;font-size:.82rem}.sb-t tbody th{color:var(--cream);font-family:ui-monospace,Consolas,monospace;white-space:nowrap;text-align:left}.sb-t tr.ok td:nth-child(3){color:#9fd39b}.sb-t tr.bad td:nth-child(3){color:#f0a39b}.sb-t tr.ex td{color:var(--muted);font-size:.8rem;padding-top:0;border-bottom:1px solid var(--line)}.sb-t tr.ok,.sb-t tr.bad{border-bottom:0}.sb-t tr.ok td,.sb-t tr.ok th,.sb-t tr.bad td,.sb-t tr.bad th{border-bottom:0}.tn-h{margin-top:1.6rem;color:var(--cream);font-size:1.2rem}.sb-cs{overflow-x:auto;margin-top:.5rem}.sb-cs table{width:100%;border-collapse:collapse;font-size:.88rem;min-width:30rem}.sb-cs th,.sb-cs td{padding:.4rem .35rem;border-bottom:1px solid var(--line);text-align:center;color:var(--parchment)}.sb-cs thead th{color:var(--gold);font-weight:600}.sb-cs tbody th{text-align:right;color:var(--cream);font-weight:600}.sb-cs td{direction:ltr;font-family:ui-monospace,Consolas,monospace;font-size:.82rem}.sb-cs td.g{color:#9fd39b}.sb-cs td.r{color:#f0a39b}@media print{.topbar,.site-foot,.crumbs,.no-print{display:none!important}body{background:#fff}.sb-cs th,.sb-cs td,.sb-t th,.sb-t td{color:#000}}</style><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"מה זה סיבוכיות זמן?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כמה הזמן גדל כשהקלט גדל. O(n) גדל באותו קצב, O(n²) בריבוע. במחשבון רואים את זה בשניות.\"}}, {\"@type\": \"Question\", \"name\": \"עד איזה n פתרון O(n²) עובר בשנייה?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"בערך 10,000 ב-C++ לפי 10⁸ פעולות לשנייה. המחשבון מחשב לפי מה שבוחרים.\"}}, {\"@type\": \"Question\", \"name\": \"מה הסיבוכיות של טבלת hash?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"חיפוש, הכנסה ומחיקה בממוצע O(1). זה מופיע בטבלה עם הערות.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר להדפיס?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן, יש כפתור \\\"להדפיס דף סיכום\\\".\"}}, {\"@type\": \"Question\", \"name\": \"עד איזה n יעבור O(n²) בשנייה?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"בערך עד n של 10,000, אם מניחים כ-10⁸ פעולות בשנייה. המחשבון מראה את זה לכל מהירות שבוחרים.\"}}]}</script>",
+  "foot": "<script src=\"/assets/tichnut-data.js\" defer></script><script src=\"/assets/tichnut-sibuchiyut.js\" defer></script>"
+} -->
+<header class="k-hero">
+  <h1>מחשבון סיבוכיות: Big-O במספרים</h1>
+  <p class="sub">O(n²) נשמע מופשט – עד שרואים שעבור מיליון איברים זה כמעט 3 שעות. בוחרים n ורואים את ההבדל, ועד איזה גודל הפתרון עוד עומד בזמן.</p>
+</header>
+<div class="tool">
+  <div class="field no-print"><label for="sb-n">גודל הקלט n</label>
+    <div class="sb-n"><input id="sb-n" type="range" min="0" max="9" step="0.01"><b id="sb-n-v"></b></div>
+  </div>
+  <div class="tn-row no-print">
+    <div class="field"><label for="sb-nn">או להקליד n</label><input id="sb-nn" type="number" min="1" class="tn-ltr"></div>
+    <div class="field"><label for="sb-lim">מגבלת זמן (שניות)</label><input id="sb-lim" type="number" min="0.001" step="0.5" class="tn-ltr"></div>
+  </div>
+  <div class="field no-print"><label for="sb-ops">כמה פעולות פשוטות בשנייה</label><select id="sb-ops"><option value="10000000">10 מיליון – Python</option><option value="100000000">100 מיליון – Java / C++ (הערכה מקובלת)</option><option value="1000000000">מיליארד – C++ מהיר מאוד</option></select></div>
+  <table class="sb-t">
+    <thead><tr><th>סיבוכיות</th><th>פעולות</th><th>זמן</th><th>n מקסימלי ב-<span id="sb-lim-l"></span> שנ׳</th></tr></thead>
+    <tbody id="sb-rows"></tbody>
+  </table>
+
+  <h2 class="tn-h">מבני נתונים – כמה עולה כל פעולה</h2>
+  <div class="sb-cs"><table>
+    <thead><tr><th>מבנה</th><th>גישה</th><th>חיפוש</th><th>הכנסה</th><th>מחיקה</th></tr></thead>
+    <tbody>
+      <tr><th>מערך</th><td class="g">O(1)</td><td>O(n)</td><td>O(n)</td><td>O(n)</td></tr>
+      <tr><th>מערך דינמי (סוף)</th><td class="g">O(1)</td><td>O(n)</td><td class="g">O(1)*</td><td class="g">O(1)</td></tr>
+      <tr><th>רשימה מקושרת</th><td>O(n)</td><td>O(n)</td><td class="g">O(1)**</td><td class="g">O(1)**</td></tr>
+      <tr><th>מחסנית / תור</th><td>O(n)</td><td>O(n)</td><td class="g">O(1)</td><td class="g">O(1)</td></tr>
+      <tr><th>טבלת hash</th><td>—</td><td class="g">O(1)*</td><td class="g">O(1)*</td><td class="g">O(1)*</td></tr>
+      <tr><th>עץ חיפוש מאוזן</th><td>O(log n)</td><td>O(log n)</td><td>O(log n)</td><td>O(log n)</td></tr>
+      <tr><th>עץ חיפוש לא מאוזן</th><td class="r">O(n)</td><td class="r">O(n)</td><td class="r">O(n)</td><td class="r">O(n)</td></tr>
+      <tr><th>ערימה (heap)</th><td>O(1) מינ׳</td><td>O(n)</td><td>O(log n)</td><td>O(log n)</td></tr>
+    </tbody></table></div>
+  <p class="note">* בממוצע / amortized. ** כשכבר מחזיקים מצביע למקום. בעץ לא מאוזן – המקרה הגרוע.</p>
+
+  <h2 class="tn-h">מיונים</h2>
+  <div class="sb-cs"><table>
+    <thead><tr><th>מיון</th><th>הכי טוב</th><th>ממוצע</th><th>הכי גרוע</th><th>זיכרון</th><th>יציב</th></tr></thead>
+    <tbody>
+      <tr><th>Bubble / Insertion</th><td class="g">O(n)</td><td class="r">O(n²)</td><td class="r">O(n²)</td><td class="g">O(1)</td><td>✓</td></tr>
+      <tr><th>Selection</th><td class="r">O(n²)</td><td class="r">O(n²)</td><td class="r">O(n²)</td><td class="g">O(1)</td><td>✗</td></tr>
+      <tr><th>Merge sort</th><td>O(n log n)</td><td>O(n log n)</td><td>O(n log n)</td><td>O(n)</td><td>✓</td></tr>
+      <tr><th>Quick sort</th><td>O(n log n)</td><td>O(n log n)</td><td class="r">O(n²)</td><td>O(log n)</td><td>✗</td></tr>
+      <tr><th>Heap sort</th><td>O(n log n)</td><td>O(n log n)</td><td>O(n log n)</td><td class="g">O(1)</td><td>✗</td></tr>
+      <tr><th>Counting / Radix</th><td class="g">O(n+k)</td><td class="g">O(n+k)</td><td class="g">O(n+k)</td><td>O(n+k)</td><td>✓</td></tr>
+    </tbody></table></div>
+  <p class="note">יציב = איברים שווים נשארים באותו סדר. k = טווח הערכים. אין מיון השוואות מהיר מ-O(n log n) במקרה הגרוע.</p>
+  <p class="disclaimer">הזמנים הם סדר גודל: הקבועים, המטמון והשפה משנים הרבה. הכלל של "בערך 10⁸ פעולות לשנייה" מקובל בתחרויות ובמבחנים.</p>
+  <div class="share-row no-print">
+    <button class="btn btn-line btn-sm" type="button" id="sb-print">להדפיס דף סיכום</button>
+    <a class="btn btn-line btn-sm" href="#" data-share-tool="wa" data-text="Big-O במספרים + טבלאות מבני נתונים ומיונים – לקורס אלגוריתמים ולראיונות. בחינם:" target="_blank" rel="noopener"><svg class="ic"><use href="#wa"/></svg> לשלוח לחבר מהלימודים</a>
+  </div>
+</div>
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">Big-O במספרים: כמה זמן באמת ייקח</h2>
+  <p>בוחרים את גודל הקלט n, מגבלת זמן, וכמה פעולות בשנייה (Python, Java ו-C++ או C++ מהיר). הטבלה מראה לכל סיבוכיות, מ-O(log n) ועד O(2ⁿ), כמה פעולות זה, כמה זמן, ועד איזה n עוד עומדים בזמן.</p>
+  <h3>טבלאות לחזרה</h3>
+  <p>בדף יש טבלה של מבני נתונים, כמה עולה גישה, חיפוש, הכנסה ומחיקה במערך, ברשימה מקושרת, בטבלת hash, בעץ ובערימה. ויש טבלת מיונים: מקרה טוב, ממוצע וגרוע, זיכרון ויציבות. אפשר להדפיס דף סיכום.</p>
+  <p>הזמנים הם סדר גודל, והכלל של בערך 10⁸ פעולות לשנייה מקובל בתחרויות ובמבחנים. לראות מיון עובד: <a class="gold" href="/kelim/tichnut/miunim/">מיונים בתנועה</a>. לתרגול: <a class="gold" href="/kelim/tichnut/simulator/">סימולטור ראיון</a>.</p>
+  <h3>דוגמה</h3>
+  <p>נניח n = 100,000 ומגבלה של שנייה אחת. O(n log n) הוא בערך 1.7 מיליון פעולות, שעוברות מהר בכל שפה. O(n²) הוא 10 מיליארד פעולות, שלא יעברו בשנייה גם ב-C++. ככה יודעים מראש אם האלגוריתם יעבור, לפני שכותבים קוד. זה חוסך הרבה ניסוי וטעייה.</p>
+  <h3>למבחן, לתחרות ולראיון</h3>
+  <p>בראיון עבודה ובתחרויות תכנות שואלים מה הסיבוכיות של הפתרון, ואם הוא יעבור במגבלת הזמן. הטבלה עונה על זה במספרים, והטבלאות של מבני הנתונים והמיונים נותנות את מה שצריך לזכור בעל פה.</p>
+  <h3>Python, Java או C++</h3>
+  <p>המהירות תלויה בשפה: Python איטית יותר, Java ו-C++ מהירות יותר. בוחרים את השפה שלכם, והטבלה מתעדכנת. המספרים הם סדר גודל, ולא מדידה של מחשב מסוים.</p>
+  <h3>למה זה בחינם</h3>
+  <p>הכלים של גילעד רחמים נבנים כחסד: בלי תשלום, בלי פרסומות ובלי הרשמה, כדי שכל אחד יוכל להשתמש בהם. מי שרוצה לעזור, שולח את הדף לחבר שזה יכול לעזור לו. חסר לכם כלי? אפשר <a class="gold" href="/kelim/bakasha/">לבקש כלי חדש</a>.</p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>מה זה סיבוכיות זמן?</summary><p>כמה הזמן גדל כשהקלט גדל. O(n) גדל באותו קצב, O(n²) בריבוע. במחשבון רואים את זה בשניות.</p></details>
+  <details><summary>עד איזה n פתרון O(n²) עובר בשנייה?</summary><p>בערך 10,000 ב-C++ לפי 10⁸ פעולות לשנייה. המחשבון מחשב לפי מה שבוחרים.</p></details>
+  <details><summary>מה הסיבוכיות של טבלת hash?</summary><p>חיפוש, הכנסה ומחיקה בממוצע O(1). זה מופיע בטבלה עם הערות.</p></details>
+  <details><summary>אפשר להדפיס?</summary><p>כן, יש כפתור "להדפיס דף סיכום".</p></details>
+  <details><summary>עד איזה n יעבור O(n²) בשנייה?</summary><p>בערך עד n של 10,000, אם מניחים כ-10⁸ פעולות בשנייה. המחשבון מראה את זה לכל מהירות שבוחרים.</p></details>
+</section>
+<!--/seo-txt-->

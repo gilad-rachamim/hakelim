@@ -1,0 +1,103 @@
+<!--meta {
+  "site": "kesef",
+  "nav": "taktziv",
+  "tool": "taktziv",
+  "title": "ניהול תקציב משפחתי בחינם: הכנסות, הוצאות קבועות וכמה נשאר לשבוע | כלים לכסף",
+  "description": "תקציב משפחתי פשוט, בחינם ובלי הרשמה: רושמים הכנסות והוצאות קבועות, ורואים מיד כמה נשאר לחודש, לשבוע וליום. תכנון מול בפועל, שמירה לקובץ שנפתח באקסל והדפסה. נשמר רק בטלפון.",
+  "head": "<link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"צריך אקסל כדי להשתמש בכלי?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לא. ממלאים את המספרים בדף עצמו. מי שרוצה יכול לשמור לקובץ שנפתח באקסל.\"}}, {\"@type\": \"Question\", \"name\": \"המספרים שלי נשמרים אצלכם?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לא. התקציב נשמר רק בטלפון שלכם, ושום מספר לא נשלח לשום מקום.\"}}, {\"@type\": \"Question\", \"name\": \"איך יודעים כמה נשאר לשבוע?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"אחרי שרושמים הכנסות והוצאות קבועות, הכלי מחשב כמה נשאר לחודש, לשבוע וליום.\"}}, {\"@type\": \"Question\", \"name\": \"הכלי בחינם?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. בחינם, בלי הרשמה ובלי פרסומות.\"}}, {\"@type\": \"Question\", \"name\": \"מה ההבדל בין תכנון לבפועל בתקציב?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"בתכנון כותבים כמה חשבתם להוציא, ובבפועל כמה באמת יצא. ההפרש מראה איפה כדאי לשנות.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר לפתוח את התקציב באקסל?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. שומרים לקובץ שנפתח באקסל או בגוגל שיטס.\"}}]}</script>",
+  "og_title": "תקציב משפחתי פשוט – כמה נשאר לנו לשבוע",
+  "crumbs": [
+    [
+      "תקציב משפחתי",
+      null
+    ]
+  ]
+} -->
+<header class="k-hero">
+  <h1>תקציב משפחתי פשוט</h1>
+  <p class="sub">מה נכנס, מה יוצא קבוע, וכמה נשאר לנו לשבוע. בלי טבלאות מסובכות.</p>
+</header>
+
+<div class="tool" id="taktziv">
+  <section class="box" aria-labelledby="in-h">
+    <h2 id="in-h">מה נכנס בחודש <small id="t-in-sum">₪0</small></h2>
+    <p class="note">משכורות, קצבאות, שכר דירה שמקבלים. אחרי מס, מה שנכנס לחשבון.</p>
+    <div class="lrows" id="t-in"></div>
+    <button class="add" type="button" data-add="in">+ עוד הכנסה</button>
+  </section>
+
+  <section class="box" aria-labelledby="fix-h">
+    <h2 id="fix-h">מה יוצא קבוע בחודש <small id="t-fix-sum">₪0</small></h2>
+    <p class="note">שכירות או משכנתא, חשבונות, ביטוחים, גן, הלוואות, מנויים. מה שיורד כל חודש.</p>
+    <div class="chips" id="t-fix-chips" aria-label="להוסיף מהר">
+      <button type="button">שכירות / משכנתא</button><button type="button">חשמל</button><button type="button">מים</button><button type="button">ארנונה</button><button type="button">ועד בית</button><button type="button">גז</button><button type="button">טלפון ואינטרנט</button><button type="button">ביטוחים</button><button type="button">גן / צהרון</button><button type="button">חוגים</button><button type="button">דלק ותחבורה</button><button type="button">החזר הלוואה</button><button type="button">חיסכון קבוע</button>
+    </div>
+    <div class="lrows" id="t-fix"></div>
+    <button class="add" type="button" data-add="fix">+ עוד הוצאה קבועה</button>
+  </section>
+
+  <section class="box" aria-labelledby="spent-h">
+    <h2 id="spent-h">מה כבר הוצאנו החודש</h2>
+    <p class="note">אוכל, קניות, בילויים. לא חובה: אם תמלאו, החשבון לשבוע יהיה לפי מה שנשאר עד סוף החודש.</p>
+    <div class="grid2" style="margin-top:.7rem">
+      <div class="field"><label for="t-spent">הוצאנו עד היום</label><input id="t-spent" class="num-in" type="text" inputmode="decimal" placeholder="0"></div>
+      <div class="field"><label for="t-save">רוצים לשים בצד</label><input id="t-save" class="num-in" type="text" inputmode="decimal" placeholder="0"></div>
+    </div>
+  </section>
+
+  <section class="sum" aria-live="polite">
+    <div class="lbl" id="t-week-lbl">נשאר לנו לשבוע</div>
+    <div class="big" id="t-week">₪0</div>
+    <div class="sub2" id="t-week-sub"></div>
+    <div class="bar2" id="t-bar" aria-hidden="true"></div>
+    <div class="stats">
+      <div><b id="t-left">₪0</b><span>נשאר לחודש</span></div>
+      <div><b id="t-day">₪0</b><span>ליום</span></div>
+      <div><b id="t-fixpct">0%</b><span>מההכנסה הולך לקבועות</span></div>
+    </div>
+  </section>
+
+  <section class="box" id="t-plan-box" hidden>
+    <h2>תכנון מול בפועל <small id="t-plan-m"></small></h2>
+    <p class="note">מה יצא בכל קטגוריה, מהכלי "סריקת דף פירוט אשראי". כותבים ליד כל קטגוריה כמה מתכננים, ורואים איפה עברנו.</p>
+    <p class="sub2" id="t-plan-sum" style="margin:.5rem 0"></p>
+    <div class="ykids" id="t-plan"></div>
+    <button class="add" type="button" id="t-plan-fill">למלא תכנון לפי החודש הזה</button>
+    <button class="add" type="button" id="t-plan-spent">להכניס את ההוצאות המשתנות ל"הוצאנו עד היום"</button>
+    <p class="saved" id="t-plan-msg" role="status"></p>
+  </section>
+
+  <button class="big-btn" type="button" id="t-csv">לשמור לקובץ שנפתח באקסל</button>
+  <button class="big-btn soft" type="button" id="t-print">להדפיס</button>
+  <p class="saved" id="t-saved" role="status"></p>
+
+  <div class="local-note"><span class="ic2">🔒</span><span>נשמר אוטומטית רק בטלפון שלך. שום מספר לא נשלח לשום מקום.</span></div>
+  <div class="data-acts"><button class="linkish" type="button" data-wipe="taktziv">למחוק מהטלפון</button></div>
+</div>
+
+<p class="not-advice"><b>זה מחשבון, לא ייעוץ.</b> החשבון לפי המספרים שהכנסתם בלבד.</p>
+
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">תקציב משפחתי בלי טבלאות מסובכות</h2>
+  <p>רוב המשפחות לא צריכות תוכנה מסובכת. הן צריכות לדעת דבר אחד: כמה נשאר לנו השבוע. הכלי מתאים לזוגות צעירים, למשפחות שרוצות לעשות סדר, ולמי שניסה טבלת אקסל ונשבר באמצע.</p>
+  <h3>איך בונים את התקציב</h3>
+  <p>קודם רושמים מה נכנס בחודש: משכורות, קצבאות ושכר דירה שמקבלים, אחרי מס. אחר כך רושמים מה יוצא קבוע: שכירות או משכנתא, חשמל, מים, ארנונה, טלפון ואינטרנט, ביטוחים, גן, חוגים, דלק, החזרי הלוואות וחיסכון קבוע. הרשימה כבר מוכנה, ורק ממלאים סכומים ומוסיפים מה שחסר. מיד רואים כמה נשאר לחודש, לשבוע וליום, ואיזה אחוז מההכנסה הולך להוצאות הקבועות.</p>
+  <h3>באמצע החודש</h3>
+  <p>אפשר לכתוב כמה כבר הוצאתם החודש על אוכל, קניות ובילויים, וכמה רוצים לשים בצד. אז החשבון לשבוע מתעדכן לפי מה שנשאר עד סוף החודש. יש גם חלק של תכנון מול בפועל: כותבים ליד כל קטגוריה כמה מתכננים, ורואים איפה עברתם.</p>
+  <h3>שמירה ופרטיות</h3>
+  <p>התקציב נשמר אוטומטית רק בטלפון שלכם, ושום מספר לא נשלח לשום מקום. אפשר לשמור לקובץ שנפתח באקסל, או להדפיס. זה מחשבון ולא ייעוץ, והחשבון נעשה רק לפי המספרים שהכנסתם. הכלי בחינם, בלי הרשמה ובלי פרסומות. רוצים לראות לאן הכסף הולך? הכלי "סריקת דף פירוט אשראי" מחלק את ההוצאות לקטגוריות.</p>
+  <h3>איך בונים תקציב משפחתי בשלושה צעדים</h3>
+  <p><b>1. ההכנסות:</b> משכורות נטו, קצבאות, ומה שנכנס באופן קבוע. <b>2. ההוצאות הקבועות:</b> שכירות או משכנתא, ארנונה, חשבונות, ביטוחים, גן, תחבורה ומנויים. <b>3. מה שנשאר:</b> הכלי מחלק אותו לחודש, לשבוע וליום. הסכום ליום הוא המספר הכי שימושי, כי קל לזכור אותו בסופר. בסוף החודש משווים בין התכנון למה שקרה בפועל, ומתקנים. להוצאות שנתיות שמפתיעות יש <a class="gold" href="/kesef/shana/">הוצאות לאורך השנה</a>.</p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>צריך אקסל כדי להשתמש בכלי?</summary><p>לא. ממלאים את המספרים בדף עצמו. מי שרוצה יכול לשמור לקובץ שנפתח באקסל.</p></details>
+  <details><summary>המספרים שלי נשמרים אצלכם?</summary><p>לא. התקציב נשמר רק בטלפון שלכם, ושום מספר לא נשלח לשום מקום.</p></details>
+  <details><summary>איך יודעים כמה נשאר לשבוע?</summary><p>אחרי שרושמים הכנסות והוצאות קבועות, הכלי מחשב כמה נשאר לחודש, לשבוע וליום.</p></details>
+  <details><summary>הכלי בחינם?</summary><p>כן. בחינם, בלי הרשמה ובלי פרסומות.</p></details>
+  <details><summary>מה ההבדל בין תכנון לבפועל בתקציב?</summary><p>בתכנון כותבים כמה חשבתם להוציא, ובבפועל כמה באמת יצא. ההפרש מראה איפה כדאי לשנות.</p></details>
+  <details><summary>אפשר לפתוח את התקציב באקסל?</summary><p>כן. שומרים לקובץ שנפתח באקסל או בגוגל שיטס.</p></details>
+</section>
+<!--/seo-txt-->
+{{K:foot:תקציב משפחתי פשוט: הכנסות, הוצאות קבועות, וכמה נשאר לנו לשבוע. כלי חינמי}}

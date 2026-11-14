@@ -1,0 +1,107 @@
+<!--meta {
+  "site": "limudim",
+  "nav": "yomi",
+  "tool": "yomi",
+  "title": "לימוד יומי לסיום התנ״ך או המשנה – בשנה, בשלוש שנים או עד תאריך | כלים ללימודים",
+  "description": "בוחרים תנ״ך, משנה או כל ספר אחר, ובכמה זמן לסיים, ומקבלים כמה פרקים ללמוד כל יום, טבלה לפי תאריכים לסימון, קישור ללימוד בספריא, וקובץ ליומן. 929 פרקי תנ״ך, 525 פרקי משנה. חינם.",
+  "head": "<link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"כמה פרקים ביום כדי לסיים תנ\\\"ך בשנה?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"929 פרקים בשנה הם בערך שניים עד שלושה פרקים ביום. הכלי מחשב בדיוק לפי התאריכים שבחרתם.\"}}, {\"@type\": \"Question\", \"name\": \"כמה פרקים יש במשנה?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"525 פרקים ו-4,192 משניות, ב-63 מסכתות.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר להכניס את התוכנית ליומן?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. מורידים קובץ יומן, וכל יום נכנס עם הפרקים שלו וקישור לספריא.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר לא ללמוד בשבת?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. מסמנים אם ללמוד גם בשבת, והחישוב מתעדכן.\"}}, {\"@type\": \"Question\", \"name\": \"כמה פרקים יש בתנ\\\"ך?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"929 פרקים.\"}}, {\"@type\": \"Question\", \"name\": \"אם פספסתי יום, התוכנית מתקלקלת?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לא. אפשר להשלים, או לבנות תוכנית חדשה מהיום עם אותו תאריך סיום, והכלי יחלק מחדש.\"}}]}</script>",
+  "og_title": "לימוד יומי לסיום התנ״ך או המשנה",
+  "crumbs": [
+    [
+      "לימוד יומי לסיום",
+      null
+    ]
+  ],
+  "foot": "<script src=\"/assets/limudim-data.js\"></script><script src=\"/assets/hitkadmut.js\" defer></script>"
+} -->
+<header class="k-hero no-print">
+  <h1>לימוד יומי לסיום</h1>
+  <p class="sub">לסיים את כל התנ״ך, את המשנה, או כל ספר אחר. בוחרים בכמה זמן, ומקבלים כמה ללמוד כל יום.</p>
+</header>
+
+<div class="tool">
+  <div class="panel no-print" id="ly-plans-wrap" hidden>
+    <div class="field"><label for="ly-plans">התוכניות שלי</label><select id="ly-plans"></select></div>
+    <div class="btns"><button class="btn btn-line btn-sm" type="button" id="ly-newplan">+ תוכנית חדשה</button><button class="linkish" type="button" id="ly-del">למחוק את התוכנית</button></div>
+  </div>
+
+  <div id="ly-out" hidden>
+    <p class="hk-strip no-print" data-hk="yomi" data-goal="5" data-tool="yomi" data-what="לימוד" hidden style="margin-top:1rem"></p>
+    <div class="today-box" id="ly-today" style="margin-top:1rem"></div>
+    <div id="ly-hk" class="no-print" hidden></div>
+    <div class="sum-box" id="ly-sum" style="margin-top:1rem"></div>
+    <div class="panel no-print">
+      <div class="row2">
+        <div class="field"><label for="ly-ics-range">מה להכניס ליומן?</label><select id="ly-ics-range"><option value="31">החודש הקרוב</option><option value="92">3 החודשים הקרובים</option><option value="all">את כל התוכנית</option></select></div>
+        <div class="field" style="align-self:end"><button class="btn btn-gold" type="button" id="ly-ics">להכניס ליומן (ics)</button></div>
+      </div>
+      <p class="ios-tip" id="ly-tip" hidden>הקובץ ירד. פותחים אותו, והיומן מציע להוסיף את ימי הלימוד, כל אחד עם הפרקים של אותו יום וקישור לספריא. ביומן גוגל במחשב: הגדרות ← ייבוא.</p>
+      <div class="btns"><button class="btn btn-line btn-sm" type="button" id="ly-print">להדפיס את הטבלה</button></div>
+    </div>
+    <div id="ly-table" style="margin-top:1rem"></div>
+  </div>
+
+  <form class="panel no-print" id="ly-form" novalidate>
+    <h2>תוכנית חדשה</h2>
+    <div class="field"><span class="label">בלחיצה אחת</span>
+      <div class="chips">
+        <button type="button" data-preset="tanakh|all|y1">תנ״ך בשנה</button>
+        <button type="button" data-preset="tanakh|all|y3">תנ״ך ב-3 שנים</button>
+        <button type="button" data-preset="mishnah|all|y3|m">משנה ב-3 שנים</button>
+        <button type="button" data-preset="tanakh|=תהילים|m1">תהילים בחודש</button>
+        <button type="button" data-preset="mishnah|=אבות|m1">פרקי אבות בחודש</button>
+        <button type="button" data-preset="rambam|all|y3">רמב״ם ב-3 שנים</button>
+        <button type="button" data-preset="bavli|=ברכות|m3">מסכת ברכות ב-3 חודשים</button>
+      </div>
+      <span class="note">או לבחור לבד:</span></div>
+    <div class="field"><label for="ly-what">מה לומדים?</label><select id="ly-what"><option value="tanakh">תנ״ך</option><option value="mishnah">משנה</option><option value="rambam">רמב״ם, משנה תורה</option><option value="bavli">גמרא, תלמוד בבלי</option><option value="other">ספר אחר</option></select></div>
+    <div class="field" id="ly-part-wrap"><label for="ly-part">איזה חלק?</label><select id="ly-part"></select></div>
+    <div class="field" id="ly-unit-wrap" hidden><label for="ly-unit">לפי</label><select id="ly-unit"><option value="c">פרקים (525)</option><option value="m">משניות (4,192)</option></select></div>
+    <div id="ly-other" hidden style="display:grid;gap:.9rem">
+      <div class="field"><label for="ly-oname">שם הספר</label><input id="ly-oname" type="text" maxlength="50" placeholder="למשל: משנה ברורה חלק א, מסכת ברכות"></div>
+      <div class="row2">
+        <div class="field"><label for="ly-ocount">כמה יש בו?</label><input id="ly-ocount" type="number" min="1" max="20000" inputmode="numeric" placeholder="למשל 63"></div>
+        <div class="field"><label for="ly-ounit">של מה?</label><select id="ly-ounit"><option value="perek">פרקים</option><option value="daf">דפים</option><option value="amud">עמודים</option><option value="siman">סימנים</option><option value="shiur">שיעורים</option></select></div>
+      </div>
+      <div class="field"><label for="ly-ofirst">מתחילים ממספר <span class="opt">(בגמרא מתחילים מדף ב)</span></label><input id="ly-ofirst" type="number" min="1" value="1" inputmode="numeric"></div>
+    </div>
+    <div class="row2">
+      <div class="field"><label for="ly-len">בכמה זמן לסיים?</label><select id="ly-len"><option value="m1">חודש</option><option value="m3">3 חודשים</option><option value="m6">חצי שנה</option><option value="y1" selected>שנה</option><option value="y2">שנתיים</option><option value="y3">שלוש שנים</option><option value="date">עד תאריך שאבחר</option></select></div>
+      <div class="field"><label for="ly-start">מתחילים ב</label><input id="ly-start" type="date"></div>
+    </div>
+    <div class="field" id="ly-end-wrap" hidden><label for="ly-end">לסיים עד</label><input id="ly-end" type="date"></div>
+    <div class="row2">
+      <div class="field"><label for="ly-time">שעה ביומן</label><input id="ly-time" type="time" value="21:00"></div>
+      <div class="checks" style="align-self:end"><label><input type="checkbox" id="ly-shabbat" checked> ללמוד גם בשבת</label></div>
+    </div>
+    <button class="btn btn-gold btn-block big" type="submit">לחשב כמה ביום</button>
+    <p class="status" id="ly-st" role="status"></p>
+  </form>
+
+  <p class="note no-print" style="margin-top:.8rem">מספרי הפרקים לפי ספריא: 929 פרקים בתנ״ך (39 ספרים), 525 פרקים במשנה (63 מסכתות, כולל פרק ו באבות ופרק ד בביכורים), 4,192 משניות. רמב״ם משנה תורה: 84 הלכות, 1,006 פרקים (כולל סדר התפילה). תלמוד בבלי: 37 מסכתות, 2,684 דפים. הטקסט של היום נטען מספריא, ברישיון פתוח.</p>
+  <div class="local-note no-print"><span>🔒</span><span>התוכנית והסימונים נשמרים רק בטלפון הזה.</span></div>
+  <div class="share-row no-print"><a class="btn btn-gold btn-sm" href="#" data-share-tool="wa" data-text="לימוד יומי לסיום התנ״ך או המשנה: כמה פרקים ביום, טבלה לסימון ויומן. בחינם" target="_blank" rel="noopener"><svg class="ic"><use href="#wa"/></svg> לשלוח לחבר בווטסאפ</a></div>
+  <p class="disclaimer no-print"><a class="gold" href="/limudim/">כל הכלים ללימודים</a> · חינם · בלי הרשמה</p>
+</div>
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">תוכנית לימוד יומית לסיום התנ"ך או המשנה</h2>
+  <p>רוצים לסיים את כל התנ"ך בשנה, את המשנה בשלוש שנים, או ספר אחר עד תאריך מסוים? בוחרים מה ובכמה זמן, ומקבלים כמה ללמוד כל יום, עם טבלה לפי תאריכים לסימון.</p>
+  <h3>תוכניות בלחיצה אחת</h3>
+  <p>תנ"ך בשנה, תנ"ך בשלוש שנים, משנה בשלוש שנים, תהילים בחודש, פרקי אבות בחודש, רמב"ם בשלוש שנים ומסכת ברכות בשלושה חודשים. או בוחרים לבד: גמרא, רמב"ם, או כל ספר שכותבים את מספר הפרקים או הדפים שלו.</p>
+  <h3>ביומן ובדף מודפס</h3>
+  <p>מכניסים את התוכנית ליומן בטלפון, כל יום עם הפרקים שלו וקישור ללימוד בספריא. אפשר גם להדפיס את הטבלה ולתלות. אפשר לבחור אם ללמוד גם בשבת.</p>
+  <p>929 פרקי תנ"ך, 525 פרקי משנה, 2,684 דפי גמרא. מחזורים קבועים של כולם נמצאים ב<a class="gold" href="/limudim/olami/">לומדים עם כל העולם</a>, ולעילוי נשמה: <a class="gold" href="/limudim/ilui/">משניות לפי אותיות השם</a>.</p>
+  <h3>כמה ללמוד כל יום כדי לסיים</h3>
+  <p>התנ"ך מחולק ל-929 פרקים: פרק ביום מסיים בערך בשנתיים וחצי, ושלושה פרקים ביום בפחות משנה. המשנה מחולקת ל-525 פרקים: פרק ביום מסיים בקצת פחות משנה וחצי. הכלי מחשב כמה פרקים ליום לפי התאריך שבו רוצים לסיים, ובונה טבלה לסימון. מי שמעדיף ללמוד עם כולם באותו קצב, ימצא את הדף היומי, הרמב"ם היומי ו-929 ב<a class="gold" href="/limudim/olami/">לומדים עם כל העולם</a>.</p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>כמה פרקים ביום כדי לסיים תנ"ך בשנה?</summary><p>929 פרקים בשנה הם בערך שניים עד שלושה פרקים ביום. הכלי מחשב בדיוק לפי התאריכים שבחרתם.</p></details>
+  <details><summary>כמה פרקים יש במשנה?</summary><p>525 פרקים ו-4,192 משניות, ב-63 מסכתות.</p></details>
+  <details><summary>אפשר להכניס את התוכנית ליומן?</summary><p>כן. מורידים קובץ יומן, וכל יום נכנס עם הפרקים שלו וקישור לספריא.</p></details>
+  <details><summary>אפשר לא ללמוד בשבת?</summary><p>כן. מסמנים אם ללמוד גם בשבת, והחישוב מתעדכן.</p></details>
+  <details><summary>כמה פרקים יש בתנ"ך?</summary><p>929 פרקים.</p></details>
+  <details><summary>אם פספסתי יום, התוכנית מתקלקלת?</summary><p>לא. אפשר להשלים, או לבנות תוכנית חדשה מהיום עם אותו תאריך סיום, והכלי יחלק מחדש.</p></details>
+</section>
+<!--/seo-txt-->

@@ -1,0 +1,126 @@
+<!--meta {
+  "site": "kelim",
+  "nav": "tchumim",
+  "tool": "sader",
+  "title": "מסדר תיקיות – מסדרים את כל הקבצים בלי למחוק כלום | הכלים של גילעד רחמים",
+  "description": "בוחרים תיקייה מבולגנת, והכלי מסדר עותק שלה: מסמכים, תמונות לפי שנה וחודש, סרטונים, הקלטות, קבלות וחשבוניות. כפולים ולא ברורים בצד. כלום לא נמחק, והקבצים לא עולים לשום מקום. בחינם.",
+  "og_title": "מסדר תיקיות – כלום לא נמחק, הכול מסודר",
+  "priority": "0.8",
+  "crumbs": [["מחשב וטלפון", "/kelim/machshev/"], ["מסדר תיקיות", null]],
+  "head": "<link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><link rel=\"stylesheet\" href=\"/assets/sader.css\"><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"איך מסדרים תמונות לפי תאריך?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"בוחרים את התיקייה, והכלי מסדר עותק של התמונות לפי שנה וחודש, לפי התאריך שהמצלמה כתבה בקובץ.\"}}, {\"@type\": \"Question\", \"name\": \"הכלי מוחק קבצים?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לא. הוא רק מעתיק לתיקייה חדשה, והמקור נשאר כמו שהוא.\"}}, {\"@type\": \"Question\", \"name\": \"איך מוצאים קבצים כפולים?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"הכלי מזהה קבצים זהים לגמרי ושם אותם בתיקייה \\\"כפולים – לבדוק\\\".\"}}, {\"@type\": \"Question\", \"name\": \"זה עובד גם בטלפון?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. בטלפון בוחרים קבצים, והתוצאה יוצאת כקובץ ZIP מסודר.\"}}, {\"@type\": \"Question\", \"name\": \"מסדר התיקיות מוחק משהו מהמחשב?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לא. הוא רק קורא את התיקייה ומעתיק לתיקייה חדשה או ל-ZIP. המקור נשאר כמו שהוא.\"}}]}</script>",
+  "foot": "<script src=\"/assets/sader.js\" defer></script>"
+} -->
+<header class="k-hero" id="sd-top">
+  <h1>מסדר תיקיות</h1>
+  <p class="sub">בוחרים תיקייה מבולגנת, ומקבלים עותק מסודר שלה: מסמכים, תמונות לפי שנה וחודש, סרטונים, הקלטות, קבלות וחשבוניות. מה שלא ברור נשאר לכם להחליט.</p>
+</header>
+<div class="tool">
+  <section id="sd-pick">
+    <p class="sd-safe"><b>שום קובץ לא נמחק ולא זז.</b> הכלי רק קורא את התיקייה שלכם ומעתיק לתיקייה חדשה בשם "… – מסודר" (או ל-ZIP). המקור נשאר בדיוק כמו שהוא.<br><b>הקבצים לא עולים לשום מקום.</b> הכול קורה בתוך הדפדפן, במחשב או בטלפון שלכם.</p>
+    <ol class="sd-steps">
+      <li>בוחרים תיקייה (או כמה קבצים).</li>
+      <li>רואים איך זה ייראה מסודר, ומזיזים מה שרוצים.</li>
+      <li>לוחצים "להעתיק", ומקבלים תיקייה חדשה ודוח: מה עבר לאן.</li>
+    </ol>
+    <div class="sd-pickrow">
+      <button class="btn btn-gold" type="button" id="sd-pick-dir" hidden>📂 לבחור תיקייה במחשב</button>
+      <label class="btn btn-gold" hidden>📂 לבחור תיקייה<input type="file" id="sd-dir-in" webkitdirectory multiple></label>
+      <label class="btn btn-line">🗂 לבחור קבצים<input type="file" id="sd-files-in" multiple></label>
+    </div>
+    <p class="k-next no-print">📲 <b>בטלפון:</b> אחרי שמתקינים את "הכלים" במסך הבית, אפשר לבחור תמונות בגלריה, ללחוץ "שיתוף", ולבחור "הכלים". הן מגיעות ישר לכאן.</p>
+    <div id="sd-drop"><b>או לגרור לכאן תיקייה או קבצים</b>מסייר הקבצים במחשב</div>
+    <p class="disclaimer">במחשב, בכרום או באדג׳, הכלי יוצר את התיקייה המסודרת ישר במחשב. בטלפון ובדפדפנים אחרים בוחרים קבצים, והתוצאה יוצאת כקובץ ZIP אחד מסודר.</p>
+  </section>
+
+  <section id="sd-work" hidden aria-live="polite">
+    <h2 style="font-family:var(--serif);color:var(--cream);font-size:1.2rem">עובד על זה…</h2>
+    <div class="sd-barw"><div id="sd-bar"></div></div>
+    <p id="sd-prog-l" class="note">מתחיל</p>
+    <p class="disclaimer">בתיקייה גדולה זה יכול לקחת כמה דקות. לא לסגור את הדף.</p>
+  </section>
+
+  <section id="sd-preview" hidden>
+    <h2 style="font-family:var(--serif);color:var(--cream);font-size:1.25rem">ככה זה ייראה מסודר</h2>
+    <p id="sd-sum"></p>
+    <p class="sd-newname">התיקייה החדשה: <b id="sd-newname"></b></p>
+    <div class="sd-opts">
+      <b class="sd-opts-h">איך לסדר</b>
+      <label class="sd-chk"><input type="checkbox" id="sd-o-keep"> <span><b>לשמור שמות של תיקיות</b> – תיקייה כמו "טיול באילת" נשארת שלמה בתוך השנה שלה (שמות כלליים כמו DCIM או "הורדות" לא נשמרים)</span></label>
+      <label class="sd-chk"><input type="checkbox" id="sd-o-ev"> <span><b>אירועים</b> – יום עם הרבה תמונות מקבל תיקייה משלו, ובחג גם את שם החג</span></label>
+      <label class="sd-chk"><input type="checkbox" id="sd-o-sim"> <span><b>תמונות דומות</b> – צילום רצף או תמונה ערוכה עוברים ל"דומים – לבדוק" <small id="sd-o-sim-note"></small></span></label>
+      <label class="sd-chk"><input type="checkbox" id="sd-o-ren"> <span><b>תאריך בתחילת השם</b> – "2023-05-12 – IMG_1234.jpg", כדי שהקבצים יסתדרו לפי הסדר. השם המקורי נשאר בסוף</span></label>
+      <details class="sd-rules-box"><summary><b>הכללים שלי</b> – מילה בשם הקובץ ← תיקייה</summary>
+        <p class="disclaimer">שורה לכל כלל. למשל:<br><code>ועד בית = בית/ועד בית</code><br><code>רכב, טסט, ביטוח רכב = רכב</code><br>הכללים קודמים לכל השאר, ונשמרים בדפדפן הזה לפעם הבאה.</p>
+        <textarea id="sd-rules" rows="4" aria-label="הכללים שלי" placeholder="ועד בית = בית/ועד בית"></textarea>
+        <div class="share-row"><button class="btn btn-line btn-sm" type="button" id="sd-rules-apply">להחיל את הכללים</button> <span class="note" id="sd-rules-n"></span></div>
+      </details>
+    </div>
+    <div id="sd-events" class="sd-events" hidden>
+      <b>אירועים שמצאתי</b> <span class="note">– אפשר לתת לכל אחד שם. התיקייה תיקרא כך.</span>
+      <ul id="sd-ev-list"></ul>
+    </div>
+    <p class="disclaimer">פותחים תיקייה כדי לראות מה בתוכה. אפשר להעביר תיקייה שלמה לתיקייה אחרת, או לבחור "לא להעתיק". ב"למיון", ב"כפולים" וב"דומים" אפשר להחליט על כל קובץ לבד.</p>
+    <div id="sd-tree"></div>
+    <details class="sd-big"><summary><b>מה תופס הכי הרבה מקום</b> <span class="note" id="sd-big-sum"></span></summary><ol id="sd-big-list" class="sd-files"></ol></details>
+    <div class="share-row">
+      <button class="btn btn-gold" type="button" id="sd-to-folder" hidden>📂 להעתיק לתיקייה חדשה במחשב</button>
+      <button class="btn btn-gold" type="button" id="sd-to-zip">⬇ להוריד מסודר כ-ZIP</button>
+      <button class="btn btn-line" type="button" id="sd-to-add" hidden>➕ להוסיף לתיקייה מסודרת שכבר יש לי</button>
+      <button class="btn btn-line btn-sm" type="button" id="sd-back">לבחור משהו אחר</button>
+    </div>
+    <p class="disclaimer">ב"להעתיק לתיקייה" בוחרים איפה ליצור את התיקייה החדשה, למשל "מסמכים" או שולחן העבודה. צריך מספיק מקום פנוי, כי זה עותק. ב"להוסיף לתיקייה מסודרת" בוחרים תיקייה "… – מסודר" מפעם קודמת: קבצים שכבר נמצאים בה לא מועתקים שוב.</p>
+  </section>
+
+  <section id="sd-done" hidden>
+    <div class="sd-donebox">
+      <h2 id="sd-done-h">הכול מסודר</h2>
+      <p id="sd-done-p"></p>
+      <div id="sd-zips"></div>
+    </div>
+    <h2 style="font-family:var(--serif);color:var(--cream);font-size:1.2rem;margin-top:1.2rem">הדוח: כמה קבצים בכל תיקייה</h2>
+    <div id="sd-rep"></div>
+    <p class="note">עכשיו כדאי לעבור על "למיון – להחליט" ועל "כפולים – לבדוק". כשהכול נראה טוב, אתם מחליטים מה לעשות עם התיקייה הישנה.</p>
+    <div class="share-row">
+      <button class="btn btn-line btn-sm" type="button" id="sd-rep-dl">⬇ לשמור את הדוח המלא</button>
+      <button class="btn btn-line btn-sm" type="button" id="sd-again">לסדר עוד תיקייה</button>
+    </div>
+  </section>
+
+  <h2 style="font-family:var(--serif);color:var(--cream);font-size:1.2rem;margin-top:1.6rem">איך הכלי מחליט</h2>
+  <ul class="sd-how">
+    <li><b>מסמכים אישיים</b> ו<b>קבלות וחשבוניות</b>: לפי מילים בשם הקובץ או התיקייה (תעודה, דרכון, קבלה, חשבונית, תלוש…).</li>
+    <li><b>שיעורים ותורה</b>: הקלטות, מסמכים וסרטונים עם מילים כמו שיעור, הלכה, גמרא, דרשה. כשכתוב בשם פרשה ("פרשת נח") או מסכת ("מסכת ברכות"), כל אחת מקבלת תיקייה משלה, לפי הסדר.</li>
+    <li><b>תמונות וסרטונים</b> לפי שנה וחודש: מהתאריך שהמצלמה כתבה בתוך הקובץ (גם באייפון ובסרטונים), משם הקובץ, או מתאריך השינוי.</li>
+    <li><b>אירועים</b>: יום עם הרבה תמונות מקבל תיקייה משלו. אם זה חג, היא נקראת בשם החג.</li>
+    <li><b>כפולים</b>: רק קובץ זהה לגמרי (אותו גודל ואותה "טביעת אצבע" של התוכן). עותק אחד נכנס למקום, והשאר בצד לבדיקה.</li>
+    <li><b>דומים</b>: תמונות שנראות כמעט אותו דבר. הגדולה נשארת במקום, השאר בצד לבדיקה.</li>
+    <li><b>בטלפון</b>: אחרי שמוסיפים את "הכלים" למסך הבית, אפשר לבחור תמונות בגלריה, ללחוץ "שיתוף" ולבחור "הכלים".</li>
+    <li><b>למיון – להחליט</b>: קבצים בלי סיומת, סוגים לא מוכרים, וקבצי מערכת זמניים. הכלי לא מנחש בשבילכם.</li>
+  </ul>
+  <div class="share-row"><a class="btn btn-line btn-sm" href="#" data-share-tool="wa" data-text="מסדר תיקיות בחינם: מסדר את כל הקבצים לתיקיות, בלי למחוק כלום ובלי להעלות לשום מקום:" target="_blank" rel="noopener"><svg class="ic"><use href="#wa"/></svg> לשלוח את הכלי לחבר</a></div>
+</div>
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">לסדר את כל הקבצים במחשב, בלי למחוק כלום</h2>
+  <p>תיקיית ההורדות עם אלפי קבצים, גלריה של עשר שנים בלי סדר. בוחרים תיקייה מבולגנת, והכלי מסדר עותק שלה: מסמכים, תמונות לפי שנה וחודש, סרטונים, הקלטות, קבלות וחשבוניות.</p>
+  <h3>שום דבר לא נמחק</h3>
+  <p>הכלי רק קורא את התיקייה ומעתיק לתיקייה חדשה, או לקובץ ZIP. המקור נשאר בדיוק כמו שהוא, והקבצים לא עולים לשום מקום.</p>
+  <h3>חכם, אבל לא מנחש</h3>
+  <p>תמונות מסודרות לפי התאריך שהמצלמה כתבה. יום עם הרבה תמונות מקבל תיקייה משלו, ובחג גם את שם החג. כפולים זהים ותמונות דומות עוברים לבדיקה, וקבצים לא ברורים נשארים ב"למיון", כדי שאתם תחליטו. אפשר גם להוסיף כללים משלכם.</p>
+  <p>רואים מראש איך זה ייראה, מזיזים מה שרוצים, ובסוף מקבלים דוח של מה עבר לאן. עוד: <a class="gold" href="/kelim/machshev/gibui/">צ'ק-ליסט גיבוי לטלפון</a>.</p>
+  <h3>איך זה עובד</h3>
+  <p>בוחרים תיקייה במחשב או בטלפון, או קבצים. הכלי קורא אותם ומציע סידור: מסמכים, תמונות לפי שנה וחודש, סרטונים, הקלטות, וקבלות וחשבוניות. אפשר לשמור שמות של תיקיות קיימות, לקבץ לפי אירועים, למצוא תמונות דומות, ולהוסיף תאריך בתחילת השם.</p>
+  <h3>מה תופס מקום</h3>
+  <p>"מה תופס הכי הרבה מקום" מראה את הקבצים הגדולים, כדי שתחליטו לבד מה למחוק. הכלי עצמו לא מוחק כלום.</p>
+  <h3>למה זה בחינם</h3>
+  <p>הכלים של גילעד רחמים נבנים כחסד: בלי תשלום, בלי פרסומות ובלי הרשמה, כדי שכל אחד יוכל להשתמש בהם. מי שרוצה לעזור, שולח את הדף לחבר שזה יכול לעזור לו. חסר לכם כלי? אפשר <a class="gold" href="/kelim/bakasha/">לבקש כלי חדש</a>.</p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>איך מסדרים תמונות לפי תאריך?</summary><p>בוחרים את התיקייה, והכלי מסדר עותק של התמונות לפי שנה וחודש, לפי התאריך שהמצלמה כתבה בקובץ.</p></details>
+  <details><summary>הכלי מוחק קבצים?</summary><p>לא. הוא רק מעתיק לתיקייה חדשה, והמקור נשאר כמו שהוא.</p></details>
+  <details><summary>איך מוצאים קבצים כפולים?</summary><p>הכלי מזהה קבצים זהים לגמרי ושם אותם בתיקייה "כפולים – לבדוק".</p></details>
+  <details><summary>זה עובד גם בטלפון?</summary><p>כן. בטלפון בוחרים קבצים, והתוצאה יוצאת כקובץ ZIP מסודר.</p></details>
+  <details><summary>מסדר התיקיות מוחק משהו מהמחשב?</summary><p>לא. הוא רק קורא את התיקייה ומעתיק לתיקייה חדשה או ל-ZIP. המקור נשאר כמו שהוא.</p></details>
+</section>
+<!--/seo-txt-->
