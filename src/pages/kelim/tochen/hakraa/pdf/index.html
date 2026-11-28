@@ -1,0 +1,146 @@
+<!--meta {
+  "site": "kelim",
+  "nav": "tchumim",
+  "tool": "tochen_hakraa_pdf",
+  "title": "הקראת PDF בעברית – להפוך קובץ PDF לקול ולקובץ MP3 בחינם | הכלים של גילעד רחמים",
+  "description": "הקראת PDF בעברית בקול אנושי: מעלים קובץ PDF או Word, והוא מוקרא בקול של גבר או אישה. פרקים, מהירות עד פי 3 והורדה כ-MP3. נגיש לקורא מסך. חינם, בלי הרשמה.",
+  "og_title": "הקראת PDF בעברית – בחינם",
+  "priority": "0.8",
+  "crumbs": [
+    [
+      "יצירת תוכן",
+      "/kelim/tochen/"
+    ],
+    [
+      "הקראת טקסט בעברית",
+      "/kelim/tochen/hakraa/"
+    ],
+    [
+      "הקראת PDF",
+      null
+    ]
+  ],
+  "head": "<link rel=\"stylesheet\" href=\"/assets/tochen-hakraa.css\"><link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"איך מקריאים קובץ PDF בעברית?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לוחצים \\\"להעלות קובץ PDF או Word\\\", מסמנים את המסמך ואז \\\"המר לקובץ קול\\\". הקטע הראשון מתנגן תוך שניות.\"}}, {\"@type\": \"Question\", \"name\": \"למה לא נמצא טקסט ב-PDF שלי?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כמעט תמיד כי הוא סריקה. נסו לסמן מילה בעכבר: אם אי אפשר, זו תמונה.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר להפוך PDF לקובץ MP3?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. אחרי ההמרה לוחצים \\\"להוריד כקובץ MP3\\\" ומעבירים לטלפון או לרכב.\"}}, {\"@type\": \"Question\", \"name\": \"העברית יוצאת הפוכה, מה עושים?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"יש קבצים ישנים ששומרים אותיות בסדר חזותי. מנסים לייצא את המסמך מחדש מהמקור, או להעתיק ל-Word ולבדוק שהמשפטים תקינים.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר להקריא רק כמה עמודים?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן: מעתיקים אותם ומדביקים בתיבת הטקסט, או משתמשים ברשימת הפרקים.\"}}, {\"@type\": \"Question\", \"name\": \"קובץ עם סיסמה יעבוד?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לא. קודם שומרים עותק בלי הגנה, אם מותר לכם.\"}}, {\"@type\": \"Question\", \"name\": \"כמה עולה להקריא מסמך?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כלום. בלי הרשמה ובלי פרסומות; רק מכסת דיבור יומית משותפת.\"}}]}</script><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"WebApplication\", \"name\": \"הקראת PDF בעברית – בחינם\", \"applicationCategory\": \"AccessibilityApplication\", \"operatingSystem\": \"Any\", \"inLanguage\": \"he\", \"isAccessibleForFree\": true, \"url\": \"https://hakelim.com/kelim/tochen/hakraa/pdf/\", \"offers\": {\"@type\": \"Offer\", \"price\": \"0\", \"priceCurrency\": \"ILS\"}, \"accessibilityFeature\": [\"fullKeyboardControl\", \"ARIA\", \"highContrastDisplay\", \"largePrint\", \"ttsMarkup\"], \"accessibilityHazard\": \"none\"}</script>",
+  "foot": "<script src=\"/assets/tochen-hakraa.js\" defer></script>"
+}
+-->
+<header class="k-hero">
+  <h1>הקראת <bdi>PDF</bdi> בעברית – מקובץ לקול</h1>
+  <p class="sub">מעלים קובץ <bdi>PDF</bdi> או <bdi>Word</bdi>, לוחצים "המר לקובץ קול", ומקשיבים למסמך בקול אנושי. אפשר להוריד כקובץ <bdi>MP3</bdi> ולהקשיב בדרך.</p>
+  <p class="hk-free">חינם · בלי הרשמה · בלי פרסומות · נגיש לקורא מסך ולמקלדת</p>
+</header>
+<div class="tool hk" id="hk-app">
+  <section class="hk-step" aria-labelledby="hk-s1">
+    <h2 id="hk-s1">1. הטקסט להקראה</h2>
+    <div class="hk-row">
+      <button type="button" class="btn btn-gold" id="hk-pick" aria-label="להעלות קובץ PDF או Word">להעלות קובץ <bdi>PDF</bdi> או <bdi>Word</bdi></button>
+      <input type="file" id="hk-file" accept=".pdf,.docx,.txt,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain" hidden aria-hidden="true" tabindex="-1">
+      <span class="hk-fname" id="hk-fname"></span>
+    </div>
+    <label for="hk-src">או מדביקים כאן טקסט:</label>
+    <textarea id="hk-src" class="hk-src" rows="6" dir="auto"></textarea>
+    <p class="hk-count" id="hk-count" aria-live="off"></p>
+  </section>
+
+  <fieldset class="hk-step">
+    <legend>2. מי מקריא</legend>
+    <div class="hk-opts">
+      <label class="hk-opt"><input type="radio" name="hk-voice" value="m" checked> קול של גבר</label>
+      <label class="hk-opt"><input type="radio" name="hk-voice" value="f"> קול של אישה</label>
+    </div>
+  </fieldset>
+
+  <fieldset class="hk-step">
+    <legend>3. מה להקריא</legend>
+    <div class="hk-opts">
+      <label class="hk-opt"><input type="radio" name="hk-mode" value="full" checked> הקראה מלאה, מילה במילה</label>
+      <label class="hk-opt"><input type="radio" name="hk-mode" value="skira"> סקירה קולית קצרה של המסמך</label>
+    </div>
+  </fieldset>
+
+  <div class="hk-go-row">
+    <button type="button" class="btn btn-gold hk-go" id="hk-go">המר לקובץ קול</button>
+    <button type="button" class="btn btn-line" id="hk-stop" hidden>לעצור את ההמרה</button>
+    <button type="button" class="btn btn-line" id="hk-device" hidden>להקריא בקול של המכשיר</button>
+  </div>
+  <p class="hk-status" id="hk-status" role="status" aria-live="polite"></p>
+  <progress class="hk-prog" id="hk-prog" max="100" value="0" hidden aria-label="התקדמות ההמרה"></progress>
+  <p class="hk-prog-t" id="hk-prog-t"></p>
+
+  <section class="hk-player" id="hk-player" hidden aria-labelledby="hk-p-h">
+    <h2 id="hk-p-h">הנגן</h2>
+    <p class="hk-title" id="hk-title"></p>
+    <audio id="hk-audio" preload="auto"></audio>
+    <div class="hk-ctl">
+      <button type="button" class="btn btn-gold hk-play" id="hk-play" aria-pressed="false">▶ נגן</button>
+      <button type="button" class="btn btn-line" id="hk-back">15 שניות אחורה</button>
+      <button type="button" class="btn btn-line" id="hk-fwd">15 שניות קדימה</button>
+      <button type="button" class="btn btn-line" id="hk-prev">הפרק הקודם</button>
+      <button type="button" class="btn btn-line" id="hk-next">הפרק הבא</button>
+    </div>
+    <div class="hk-row">
+      <label class="hk-rate-l" for="hk-rate">מהירות ההקראה</label>
+      <select id="hk-rate" class="hk-rate">
+        <option value="0.75">איטי, פי 0.75</option>
+        <option value="1" selected>רגיל, פי 1</option>
+        <option value="1.25">פי 1.25</option>
+        <option value="1.5">פי 1.5</option>
+        <option value="2">פי 2</option>
+        <option value="2.5">פי 2.5</option>
+        <option value="3">פי 3</option>
+      </select>
+      <button type="button" class="btn btn-gold" id="hk-dl">להוריד כקובץ MP3</button>
+    </div>
+    <p class="hk-where" id="hk-where"></p>
+    <div id="hk-ch-box" hidden>
+      <h3 id="hk-ch-h">פרקים</h3>
+      <ol class="hk-chapters" id="hk-chapters" aria-labelledby="hk-ch-h"></ol>
+    </div>
+    <button type="button" class="btn btn-line btn-sm" id="hk-showtext" aria-expanded="false" aria-controls="hk-text">להציג את הטקסט שמוקרא</button>
+    <div class="hk-text" id="hk-text" hidden dir="auto" tabindex="0" aria-label="הטקסט שמוקרא"></div>
+  </section>
+
+  <section class="hk-step" id="hk-mine-box" hidden aria-labelledby="hk-m-h">
+    <h2 id="hk-m-h">ההקראות שלי</h2>
+    <p class="note">נשמרות רק במכשיר הזה. פותחים וממשיכים להקשיב מהמקום שבו עצרתם.</p>
+    <ul class="hk-mine" id="hk-mine"></ul>
+  </section>
+
+  <details class="hk-embed-box">
+    <summary>להטמיע את הכלי באתר שלכם (עמותות, ספריות ומוסדות)</summary>
+    <p class="note">מעתיקים את השורה הזאת לדף באתר שלכם, והכלי מופיע בו כמו שהוא: בחינם, בלי הרשמה ובלי פרסומות.</p>
+    <label for="hk-embed-code" class="sr">שורת ההטמעה</label>
+    <textarea id="hk-embed-code" class="hk-embed-code" rows="3" readonly></textarea>
+    <button type="button" class="btn btn-line btn-sm" id="hk-embed-copy">להעתיק את השורה</button>
+  </details>
+  <p class="hk-by">הכלי של <a class="gold" href="https://hakelim.com/kelim/tochen/hakraa/" target="_blank" rel="noopener">מיזם הכלים של גילעד רחמים</a> – בחינם, לכולם.</p>
+</div>
+
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">הקראת PDF: להקשיב למסמך במקום לקרוא אותו</h2>
+  <p>קובץ PDF נוח להדפסה ופחות נוח לקריאה בטלפון, שם צריך להגדיל ולגרור כל שורה. תוכנות תצוגה מראות את העמוד, ולכל היותר משמיעות אותו בקול מתכתי. כאן המסמך הופך לשמע בקול אנושי שאפשר לקחת לדרך.</p>
+  <h3>איזה PDF אפשר להקריא</h3>
+  <p>כל קובץ שאפשר לסמן בו מילים בעכבר: מאמר, חוברת, חוזר ממשרד, תקנון, ספר דיגיטלי. הכלי מדביק שורות שבורות למשפטים, כדי שהקול לא ייעצר בסוף כל שורה. סריקה או צילום הם תמונה בלבד, ואין מה להקריא; מריצים עליהם קודם זיהוי תווים בתוכנה אחרת, או מדביקים את הנוסח ממקור דיגיטלי.</p>
+  <h3>הקראת מסמך Word</h3>
+  <p>גם docx נקרא ישירות. קובץ בסיומת הישנה doc פותחים ב-Word ושומרים מחדש כ-docx. מסמך באנגלית אפשר להעביר קודם דרך <a class="gold" href="/kelim/tochen/tirgum/mismachim/">תרגום מסמכים</a> ולהאזין לעברית.</p>
+  <h3>טבלאות, הערות שוליים ושני טורים</h3>
+  <p>כאן PDF מקשה על כל מקריא: מספרי עמודים, כותרות עליונות והערות שוליים עלולים להיכנס באמצע משפט, וטבלה נשמעת כמו רשימת מספרים. בדף עם שני טורים כדאי לבדוק את סדר הקטעים בחלון הטקסט המוקרא. אם משהו התערבב, מעתיקים רק את הפסקאות הרצויות לתיבה.</p>
+  <h3>לדלג ישר לסעיף הנכון</h3>
+  <p>כותרות כגון "מבוא", "פרק שני" או "סיכום" הופכות לרשימה לחיצה, כך שבחוברת של ארבעים עמודים קופצים לחלק שמעניין. אחוז ההתקדמות מראה כמה נשאר, ובחזרה לדף הקובץ מחכה תחת "ההקראות שלי" בנקודה שבה עצרתם.</p>
+  <h3>סיכום PDF בקול לפני שמחליטים</h3>
+  <p>מסמך ארוך ולא ברור אם הוא רלוונטי? בוחרים "סקירה קולית קצרה" ומקבלים בדקה-שתיים מה הוא, מה עיקרו ומה המסקנה. סיכום אוטומטי יכול להשמיט פרט, ולכן בחוזה, בהחלטה רשמית או במסמך רפואי מאזינים לנוסח המלא.</p>
+  <h3>הקובץ שלכם לא עולה לשרת</h3>
+  <p>את ה-PDF מפענח הדפדפן במכשיר שלכם. רק המילים, מנה אחר מנה, יוצאות אל שירות הדיבור של גוגל, ושום עותק לא נשמר במיזם. תלוש שכר או תיק רפואי, שיש בהם פרטים מזהים, שקלו היטב לפני שמעלים.</p>
+  <p>קשור למסמכים: <a class="gold" href="/kelim/tochen/hakraa/makri-tekstim/">מקריא לכל טקסט</a>, <a class="gold" href="/kelim/tochen/hakraa/sfarim-muklatim/">ספר שלם כשמע</a>, <a class="gold" href="/kelim/tochen/hakraa/">עמוד ההקראה הראשי</a>, <a class="gold" href="/kelim/negishut/">נגישות</a>, <a class="gold" href="/kelim/tochen/">עוד כלי טקסט</a>. <a class="gold" href="/kelim/pratiut/">איך נשמר המידע</a> · <a class="gold" href="/kelim/">הכלים כולם</a></p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>איך מקריאים קובץ PDF בעברית?</summary><p>לוחצים "להעלות קובץ PDF או Word", מסמנים את המסמך ואז "המר לקובץ קול". הקטע הראשון מתנגן תוך שניות.</p></details>
+  <details><summary>למה לא נמצא טקסט ב-PDF שלי?</summary><p>כמעט תמיד כי הוא סריקה. נסו לסמן מילה בעכבר: אם אי אפשר, זו תמונה.</p></details>
+  <details><summary>אפשר להפוך PDF לקובץ MP3?</summary><p>כן. אחרי ההמרה לוחצים "להוריד כקובץ MP3" ומעבירים לטלפון או לרכב.</p></details>
+  <details><summary>העברית יוצאת הפוכה, מה עושים?</summary><p>יש קבצים ישנים ששומרים אותיות בסדר חזותי. מנסים לייצא את המסמך מחדש מהמקור, או להעתיק ל-Word ולבדוק שהמשפטים תקינים.</p></details>
+  <details><summary>אפשר להקריא רק כמה עמודים?</summary><p>כן: מעתיקים אותם ומדביקים בתיבת הטקסט, או משתמשים ברשימת הפרקים.</p></details>
+  <details><summary>קובץ עם סיסמה יעבוד?</summary><p>לא. קודם שומרים עותק בלי הגנה, אם מותר לכם.</p></details>
+  <details><summary>כמה עולה להקריא מסמך?</summary><p>כלום. בלי הרשמה ובלי פרסומות; רק מכסת דיבור יומית משותפת.</p></details>
+</section>

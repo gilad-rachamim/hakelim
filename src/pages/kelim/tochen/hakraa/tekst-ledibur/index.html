@@ -1,0 +1,148 @@
+<!--meta {
+  "site": "kelim",
+  "nav": "tchumim",
+  "tool": "tochen_hakraa_tts",
+  "title": "טקסט לדיבור בעברית – המרת טקסט לקול אנושי ולקובץ MP3 בחינם | הכלים של גילעד רחמים",
+  "description": "טקסט לדיבור בעברית בחינם ובלי הרשמה: מדביקים טקסט או מעלים PDF ו-Word, בוחרים קול גבר או אישה ומקבלים דיבור טבעי. מהירות עד פי 3 והורדה כקובץ MP3.",
+  "og_title": "טקסט לדיבור בעברית – בחינם ובלי הרשמה",
+  "priority": "0.8",
+  "crumbs": [
+    [
+      "יצירת תוכן",
+      "/kelim/tochen/"
+    ],
+    [
+      "הקראת טקסט בעברית",
+      "/kelim/tochen/hakraa/"
+    ],
+    [
+      "טקסט לדיבור בעברית",
+      null
+    ]
+  ],
+  "head": "<link rel=\"stylesheet\" href=\"/assets/tochen-hakraa.css\"><link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"מה זה טקסט לדיבור?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"תוכנה שמקבלת מילים כתובות ומשמיעה אותן. באנגלית Text to Speech או TTS. הגרסה כאן מדברת עברית, בקול זכר או נקבה.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר להוריד את הדיבור כקובץ?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. בגמר ההמרה לוחצים \\\"להוריד כקובץ MP3\\\" ומקבלים קובץ שמע שמתנגן בטלפון, במחשב וברכב.\"}}, {\"@type\": \"Question\", \"name\": \"כמה טקסט אפשר להמיר בבת אחת?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"אין תיבה שנחסמת אחרי מאות תווים. טקסט ארוך מחולק לקטעים. אם ההקצאה היומית המשותפת נגמרת באמצע, ממשיכים למחרת מאותו מקום.\"}}, {\"@type\": \"Question\", \"name\": \"איך מתקנים מילה שנהגית לא נכון?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"מנקדים אותה, או כותבים אותה כמו שהיא נשמעת, וממירים שוב.\"}}, {\"@type\": \"Question\", \"name\": \"צריך מפתח API או חשבון?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לא. אין הרשמה, אין כרטיס אשראי ואין פרסומות. זה מיזם חסד.\"}}, {\"@type\": \"Question\", \"name\": \"הדיבור הוא של אדם אמיתי?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לא. זה קול שנוצר בבינה מלאכותית, ונשמע קרוב מאוד לאדם שקורא.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר לשמוע את התוצאה לאט יותר?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. בנגן יש איטי, רגיל וכמה דרגות מואצות עד פי 3, בלי להמיר מחדש.\"}}]}</script><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"WebApplication\", \"name\": \"טקסט לדיבור בעברית – בחינם ובלי הרשמה\", \"applicationCategory\": \"AccessibilityApplication\", \"operatingSystem\": \"Any\", \"inLanguage\": \"he\", \"isAccessibleForFree\": true, \"url\": \"https://hakelim.com/kelim/tochen/hakraa/tekst-ledibur/\", \"offers\": {\"@type\": \"Offer\", \"price\": \"0\", \"priceCurrency\": \"ILS\"}, \"accessibilityFeature\": [\"fullKeyboardControl\", \"ARIA\", \"highContrastDisplay\", \"largePrint\", \"ttsMarkup\"], \"accessibilityHazard\": \"none\"}</script>",
+  "foot": "<script src=\"/assets/tochen-hakraa.js\" defer></script>"
+}
+-->
+<header class="k-hero">
+  <h1>טקסט לדיבור בעברית – בקול טבעי</h1>
+  <p class="sub">המרת טקסט לדיבור (<bdi>Text to Speech</bdi>) בעברית: מדביקים טקסט או מעלים קובץ, ומקבלים דיבור שנשמע כמו אדם. מורידים כקובץ <bdi>MP3</bdi>.</p>
+  <p class="hk-free">חינם · בלי הרשמה · בלי פרסומות · נגיש לקורא מסך ולמקלדת</p>
+</header>
+<div class="tool hk" id="hk-app">
+  <section class="hk-step" aria-labelledby="hk-s1">
+    <h2 id="hk-s1">1. הטקסט להקראה</h2>
+    <div class="hk-row">
+      <button type="button" class="btn btn-gold" id="hk-pick" aria-label="להעלות קובץ PDF או Word">להעלות קובץ <bdi>PDF</bdi> או <bdi>Word</bdi></button>
+      <input type="file" id="hk-file" accept=".pdf,.docx,.txt,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain" hidden aria-hidden="true" tabindex="-1">
+      <span class="hk-fname" id="hk-fname"></span>
+    </div>
+    <label for="hk-src">או מדביקים כאן טקסט:</label>
+    <textarea id="hk-src" class="hk-src" rows="6" dir="auto"></textarea>
+    <p class="hk-count" id="hk-count" aria-live="off"></p>
+  </section>
+
+  <fieldset class="hk-step">
+    <legend>2. מי מקריא</legend>
+    <div class="hk-opts">
+      <label class="hk-opt"><input type="radio" name="hk-voice" value="m" checked> קול של גבר</label>
+      <label class="hk-opt"><input type="radio" name="hk-voice" value="f"> קול של אישה</label>
+    </div>
+  </fieldset>
+
+  <fieldset class="hk-step">
+    <legend>3. מה להקריא</legend>
+    <div class="hk-opts">
+      <label class="hk-opt"><input type="radio" name="hk-mode" value="full" checked> הקראה מלאה, מילה במילה</label>
+      <label class="hk-opt"><input type="radio" name="hk-mode" value="skira"> סקירה קולית קצרה של המסמך</label>
+    </div>
+  </fieldset>
+
+  <div class="hk-go-row">
+    <button type="button" class="btn btn-gold hk-go" id="hk-go">המר לקובץ קול</button>
+    <button type="button" class="btn btn-line" id="hk-stop" hidden>לעצור את ההמרה</button>
+    <button type="button" class="btn btn-line" id="hk-device" hidden>להקריא בקול של המכשיר</button>
+  </div>
+  <p class="hk-status" id="hk-status" role="status" aria-live="polite"></p>
+  <progress class="hk-prog" id="hk-prog" max="100" value="0" hidden aria-label="התקדמות ההמרה"></progress>
+  <p class="hk-prog-t" id="hk-prog-t"></p>
+
+  <section class="hk-player" id="hk-player" hidden aria-labelledby="hk-p-h">
+    <h2 id="hk-p-h">הנגן</h2>
+    <p class="hk-title" id="hk-title"></p>
+    <audio id="hk-audio" preload="auto"></audio>
+    <div class="hk-ctl">
+      <button type="button" class="btn btn-gold hk-play" id="hk-play" aria-pressed="false">▶ נגן</button>
+      <button type="button" class="btn btn-line" id="hk-back">15 שניות אחורה</button>
+      <button type="button" class="btn btn-line" id="hk-fwd">15 שניות קדימה</button>
+      <button type="button" class="btn btn-line" id="hk-prev">הפרק הקודם</button>
+      <button type="button" class="btn btn-line" id="hk-next">הפרק הבא</button>
+    </div>
+    <div class="hk-row">
+      <label class="hk-rate-l" for="hk-rate">מהירות ההקראה</label>
+      <select id="hk-rate" class="hk-rate">
+        <option value="0.75">איטי, פי 0.75</option>
+        <option value="1" selected>רגיל, פי 1</option>
+        <option value="1.25">פי 1.25</option>
+        <option value="1.5">פי 1.5</option>
+        <option value="2">פי 2</option>
+        <option value="2.5">פי 2.5</option>
+        <option value="3">פי 3</option>
+      </select>
+      <button type="button" class="btn btn-gold" id="hk-dl">להוריד כקובץ MP3</button>
+    </div>
+    <p class="hk-where" id="hk-where"></p>
+    <div id="hk-ch-box" hidden>
+      <h3 id="hk-ch-h">פרקים</h3>
+      <ol class="hk-chapters" id="hk-chapters" aria-labelledby="hk-ch-h"></ol>
+    </div>
+    <button type="button" class="btn btn-line btn-sm" id="hk-showtext" aria-expanded="false" aria-controls="hk-text">להציג את הטקסט שמוקרא</button>
+    <div class="hk-text" id="hk-text" hidden dir="auto" tabindex="0" aria-label="הטקסט שמוקרא"></div>
+  </section>
+
+  <section class="hk-step" id="hk-mine-box" hidden aria-labelledby="hk-m-h">
+    <h2 id="hk-m-h">ההקראות שלי</h2>
+    <p class="note">נשמרות רק במכשיר הזה. פותחים וממשיכים להקשיב מהמקום שבו עצרתם.</p>
+    <ul class="hk-mine" id="hk-mine"></ul>
+  </section>
+
+  <details class="hk-embed-box">
+    <summary>להטמיע את הכלי באתר שלכם (עמותות, ספריות ומוסדות)</summary>
+    <p class="note">מעתיקים את השורה הזאת לדף באתר שלכם, והכלי מופיע בו כמו שהוא: בחינם, בלי הרשמה ובלי פרסומות.</p>
+    <label for="hk-embed-code" class="sr">שורת ההטמעה</label>
+    <textarea id="hk-embed-code" class="hk-embed-code" rows="3" readonly></textarea>
+    <button type="button" class="btn btn-line btn-sm" id="hk-embed-copy">להעתיק את השורה</button>
+  </details>
+  <p class="hk-by">הכלי של <a class="gold" href="https://hakelim.com/kelim/tochen/hakraa/" target="_blank" rel="noopener">מיזם הכלים של גילעד רחמים</a> – בחינם, לכולם.</p>
+</div>
+
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">טקסט לדיבור בעברית, בלי חשבון ובלי קרדיטים</h2>
+  <p>טקסט לדיבור, או באנגלית Text to Speech ובקיצור TTS, הוא תוכנה שהופכת מילים כתובות לקול. רוב האתרים שעושים את זה בעברית מבקשים לפתוח חשבון, נותנים כמה מאות תווים לניסיון ואז מבקשים תשלום. כאן מדביקים ולוחצים.</p>
+  <h3>מה אפשר לעשות עם טקסט שהפך לדיבור</h3>
+  <p>להקשיב למייל ארוך בזמן שמבשלים. להפוך סיכום שיעור לקובץ שמע לחזרה לפני מבחן. להכין הודעה מדוברת לקבוצת ווטסאפ למי שמתקשה לקרוא. להוסיף דיבור להסבר מצולם. את קובץ ה-MP3 שיורד אפשר לשלוח, לשמור בטלפון או לנגן ברמקול.</p>
+  <h3>איך לכתוב טקסט שיישמע טוב</h3>
+  <p>משפטים קצרים עם נקודה בסוף נשמעים הכי ברור. מספרים, תאריכים וקיצורים כדאי לכתוב כמו שאומרים אותם: "שלושים אחוז" ולא סימן האחוז, "עמוד שלוש" ולא ע׳ 3. מילה שאפשר לקרוא בשתי דרכים, כמו "ספר" או "דבר", שווה לנקד, והמנוע ילך לפי הניקוד.</p>
+  <h3>Text to Speech Hebrew: מה שונה בעברית</h3>
+  <p>עברית נכתבת כמעט בלי תנועות, ולכן מנוע דיבור ישן ניחש כל מילה בנפרד ויצא עילג. מנוע חדש קורא את המשפט כולו לפני שהוא מבטא אותו, כך שהוא מבדיל לפי ההקשר בין "בֹּקֶר" ל"בָּקָר", מעלה את הקול בשאלה ועוצר בפסיק. טעויות עדיין קורות, בעיקר בשמות פרטיים ובמילים לועזיות; כתיבה פונטית פותרת את רובן.</p>
+  <h3>מטקסט לקובץ, בשלוש לחיצות</h3>
+  <p>מדביקים בתיבה, או מעלים קובץ TXT, ‏Word או PDF שיש בו טקסט. בוחרים קול זכר או קול נקבה. לוחצים "המר לקובץ קול". טקסט ארוך נחתך לקטעים קצרים: הראשון מוכן תוך שניות ואפשר לנגן אותו מיד, והשאר מצטרפים בזה אחר זה. כשהכול מוכן, "להוריד כקובץ MP3" נותן קובץ אחד שלם.</p>
+  <h3>TTS בעברית בתוך האתר שלכם</h3>
+  <p>בעלי אתרים יכולים להציב את תיבת הטקסט והנגן אצלם בעזרת שורה אחת שמעתיקים מתחתית הכלי. אין מפתח API לנהל ואין חשבונית בסוף החודש, אבל יש תקרה: כל המשתמשים חולקים אותה הקצאה יומית של דיבור, ולכן לשימוש מסחרי כבד עדיף שירות בתשלום.</p>
+  <h3>לאן הטקסט נשלח</h3>
+  <p>הדפדפן שלכם פותח את הקובץ בעצמו. אל שרת הקול של גוגל יוצאות רק השורות להמרה, קטע אחר קטע, ואצלנו לא נשמר מהן עותק. סיסמאות, פרטים רפואיים ומסמכים חסויים לא כדאי להדביק בשום כלי מקוון, גם לא בזה.</p>
+  <h3>המרת טקסט לדיבור לפני שמפרסמים</h3>
+  <p>שמיעת הנוסח היא גם הגהה מצוינת. כשהמילים נאמרות, שומעים מיד משפט ארוך מדי, מילה שחוזרת פעמיים או פסיק חסר, שהעין דילגה עליהם. מי שכותב נאום, ברכה לאירוע או דבר תורה יכול להמיר טיוטה, להאזין עם שעון ביד, לקצר ולהמיר שוב. כך יודעים גם כמה דקות ייקח לומר את הדברים בעל פה, ומתאמנים על ההטעמה לפני שעומדים מול קהל. מי שמכין תשדיר לרמקולים באירוע או הנחיות בטיחות לטיול יכול לבדוק כך שכל משפט מובן כבר בשמיעה ראשונה, גם ברעש וגם למאזין שלא רואה את הדף.</p>
+  <p>לצרכים אחרים: <a class="gold" href="/kelim/tochen/hakraa/">הקראת טקסט בעברית</a>, <a class="gold" href="/kelim/tochen/hakraa/kraynut/">קריינות לסרטון</a>, <a class="gold" href="/kelim/tochen/hakraa/pdf/">דיבור מתוך PDF</a>. ולכיוון ההפוך, <a class="gold" href="/kelim/tamlul/">תמלול הקלטה למילים</a>. <a class="gold" href="/kelim/pratiut/">מדיניות הפרטיות</a> · <a class="gold" href="/kelim/tochen/">כלים ליוצרי תוכן</a> · <a class="gold" href="/kelim/">לכל הכלים</a></p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>מה זה טקסט לדיבור?</summary><p>תוכנה שמקבלת מילים כתובות ומשמיעה אותן. באנגלית Text to Speech או TTS. הגרסה כאן מדברת עברית, בקול זכר או נקבה.</p></details>
+  <details><summary>אפשר להוריד את הדיבור כקובץ?</summary><p>כן. בגמר ההמרה לוחצים "להוריד כקובץ MP3" ומקבלים קובץ שמע שמתנגן בטלפון, במחשב וברכב.</p></details>
+  <details><summary>כמה טקסט אפשר להמיר בבת אחת?</summary><p>אין תיבה שנחסמת אחרי מאות תווים. טקסט ארוך מחולק לקטעים. אם ההקצאה היומית המשותפת נגמרת באמצע, ממשיכים למחרת מאותו מקום.</p></details>
+  <details><summary>איך מתקנים מילה שנהגית לא נכון?</summary><p>מנקדים אותה, או כותבים אותה כמו שהיא נשמעת, וממירים שוב.</p></details>
+  <details><summary>צריך מפתח API או חשבון?</summary><p>לא. אין הרשמה, אין כרטיס אשראי ואין פרסומות. זה מיזם חסד.</p></details>
+  <details><summary>הדיבור הוא של אדם אמיתי?</summary><p>לא. זה קול שנוצר בבינה מלאכותית, ונשמע קרוב מאוד לאדם שקורא.</p></details>
+  <details><summary>אפשר לשמוע את התוצאה לאט יותר?</summary><p>כן. בנגן יש איטי, רגיל וכמה דרגות מואצות עד פי 3, בלי להמיר מחדש.</p></details>
+</section>

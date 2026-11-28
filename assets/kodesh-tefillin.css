@@ -1,0 +1,167 @@
+/* סדר הנחת תפילין + תזכורת לפני השקיעה (כלי קודש). הנוסח עצמו מעוצב ב-boker.css */
+.tf-card{background:rgba(14,22,40,.96);border:1px solid var(--line);border-radius:18px;padding:1rem}
+.tf-status{border-radius:14px;padding:.9rem 1rem;display:flex;flex-direction:column;gap:.25rem;text-align:center;background:rgba(255,255,255,.05);border:1px solid var(--line)}
+.tf-status b{font-size:1.35rem;color:var(--cream);line-height:1.3}
+.tf-status span{color:var(--body);font-size:1rem;line-height:1.5}
+.tf-status strong{color:var(--gold);font-size:1.15rem}
+.tf-status.ok{background:rgba(70,160,90,.18);border-color:rgba(110,200,130,.55)}
+.tf-status.ok b{color:#9ee0a8}
+.tf-status.urgent{background:rgba(200,90,40,.2);border-color:rgba(240,140,80,.7)}
+.tf-status.off{background:rgba(212,176,98,.1)}
+.tf-times{display:flex;flex-wrap:wrap;justify-content:center;gap:.3rem .9rem;margin:.7rem 0 .2rem;color:var(--body);font-size:.95rem}
+.tf-times span:first-child{color:var(--gold);font-weight:700}
+.tf-done{display:block;width:100%;margin-top:.7rem;font:inherit;font-size:1.25rem;font-weight:700;min-height:56px;border-radius:14px;border:0;background:var(--gold);color:var(--ink);cursor:pointer}
+.tf-done.ghost{background:transparent;border:1px solid var(--line);color:var(--body);font-size:1rem;font-weight:400;min-height:44px}
+.tf-week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:.3rem;margin-top:.9rem}
+.tf-d{display:flex;flex-direction:column;align-items:center;gap:.1rem;padding:.3rem 0;border-radius:10px;background:rgba(255,255,255,.04);color:var(--body);font-size:1.05rem;min-height:52px}
+.tf-d i{font-style:normal;font-size:.8rem;opacity:.75}
+.tf-d.ok{background:rgba(70,160,90,.25);color:#b8f0c0;font-weight:700}
+.tf-d.now{outline:2px solid var(--gold)}
+.tf-d.off{opacity:.55}
+.tf-streak{text-align:center;color:var(--body);font-size:.92rem;margin:.5rem 0 0}
+.tf-place{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-top:.9rem;padding-top:.8rem;border-top:1px solid var(--line)}
+.tf-place label{color:var(--body);font-size:.95rem}
+.tf-place select{color-scheme:dark;flex:1;min-width:9rem;font:inherit;min-height:44px;border-radius:10px;padding:.3rem .5rem;background:#0e1628;color:var(--cream);border:1px solid var(--line)}
+.tf-place .btn{min-height:44px}
+.tf-msg{color:var(--body);font-size:.9rem;margin:.4rem 0 0;min-height:1.2em}
+.tf-set h2{font-size:1.3rem;color:var(--cream);margin:0 0 .3rem}
+.tf-set>p{color:var(--body);margin:.2rem 0 .8rem;line-height:1.55}
+.tf-row{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;padding:.55rem 0;border-bottom:1px solid var(--line);color:var(--cream)}
+.tf-row label{display:flex;align-items:center;gap:.5rem;cursor:pointer;flex:1;min-width:12rem;min-height:44px}
+.tf-row input[type=checkbox]{width:22px;height:22px;accent-color:var(--gold);flex:none}
+.tf-row input[type=time],.tf-row input[type=month],.tf-row select{color-scheme:dark;font:inherit;min-height:44px;border-radius:10px;padding:.2rem .5rem;background:#0e1628;color:var(--cream);border:1px solid var(--line)}
+.tf-row small{display:block;color:var(--body);font-size:.85rem;line-height:1.45}
+.tf-btns{display:flex;flex-direction:column;gap:.55rem;margin-top:1rem}
+.tf-btns .btn{width:100%;justify-content:center;min-height:50px;font-size:1.05rem}
+.tf-note{background:rgba(212,176,98,.08);border:1px dashed rgba(212,176,98,.45);border-radius:12px;padding:.7rem .85rem;margin-top:.9rem;color:var(--body);line-height:1.6;font-size:.95rem}
+.tf-note b{color:var(--gold)}
+.tf-how{margin-top:.7rem;border:1px solid var(--line);border-radius:12px;padding:.3rem .8rem}
+.tf-how summary{cursor:pointer;color:var(--gold);min-height:44px;display:flex;align-items:center;font-weight:700}
+.tf-how ol{margin:.2rem 0 .6rem;padding-inline-start:1.3rem;color:var(--body);line-height:1.7}
+.tf-sid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem;margin-top:.6rem}
+.tf-sid a{display:flex;flex-direction:column;gap:.15rem;padding:.75rem .8rem;border-radius:12px;border:1px solid #d8c89c;background:#f6efdc;color:#5a4410;text-decoration:none;font-family:var(--sans,inherit);font-size:1rem;font-weight:700;line-height:1.3}
+.tf-sid a small{font-weight:400;color:#6e6040;font-size:.82rem}
+.bk-paper.dark .tf-sid a{background:#1f2636;border-color:#3a3f4c;color:#e2c178}
+.bk-paper.dark .tf-sid a small{color:#a99d80}
+
+/* מסך הנעילה */
+html.tf-locked,html.tf-locked body{overflow:hidden}
+.tf-lock{position:fixed;inset:0;z-index:50;background:#0b1120;color:var(--cream);overflow-y:auto;padding:max(1.2rem,env(safe-area-inset-top)) 1rem 2rem;display:flex;flex-direction:column;align-items:center;text-align:center}
+.tf-lock[hidden]{display:none}
+.tf-lock-in{max-width:30rem;width:100%;display:flex;flex-direction:column;gap:.8rem}
+.tf-lock .tf-ic{font-size:2.6rem;line-height:1}
+.tf-lock h2{font-size:1.6rem;margin:0;color:var(--cream)}
+.tf-lock-ss{color:var(--gold);font-size:1.05rem;margin:0}
+.tf-lock-txt{background:#fffdf6;color:#1b1b1b;border-radius:14px;padding:1rem;font-family:var(--serif);font-size:1.3rem;line-height:1.9;text-align:right}
+.tf-lock-txt .ins{font-family:var(--sans,inherit);font-size:.92rem;color:#5e5644;background:#f6efdc;border-radius:8px;padding:.35rem .6rem;margin:.3rem 0;line-height:1.5}
+.tf-lock-txt p{margin:.3rem 0}
+.tf-lock-txt .big{font-weight:700;text-align:center;font-size:1.5rem}
+.tf-lock .tf-done{margin-top:0}
+.tf-lock-read{font:inherit;font-size:1.05rem;min-height:50px;border-radius:14px;border:1px solid var(--gold);background:transparent;color:var(--gold);cursor:pointer}
+.tf-lock-later{position:relative;overflow:hidden;font:inherit;font-size:.9rem;min-height:44px;border-radius:12px;border:1px solid var(--line);background:transparent;color:var(--body);cursor:pointer;touch-action:none;user-select:none;-webkit-user-select:none}
+.tf-lock-later::before{content:"";position:absolute;inset:0;background:rgba(212,176,98,.25);transform:scaleX(0);transform-origin:right;transition:transform 0s}
+.tf-lock-later.holding::before{transform:scaleX(1);transition:transform 3s linear}
+.tf-lock-later span{position:relative}
+@media (prefers-reduced-motion:reduce){.tf-lock-later.holding::before{transition:none}}
+@media print{.tf-card,.tf-set,.tf-lock,.k-hero .sub{display:none!important}}
+
+/* סבב 2: שלושה מנהגים, איור, משחק נקודות, יום פטור */
+.bk-paper[data-minhag=ash] [data-m]:not([data-m~=ash]),.bk-paper[data-minhag=sf] [data-m]:not([data-m~=sf]),.bk-paper[data-minhag=em] [data-m]:not([data-m~=em]){display:none}
+.tf-seg3{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))}
+.tf-seg3 button{display:flex;flex-direction:column;align-items:center;line-height:1.2;padding:.35rem .2rem}
+.tf-seg3 button small{font-size:.72rem;opacity:.8;font-weight:400}
+.tf-fig{margin:.6rem auto 1rem;max-width:22rem;text-align:center}
+.tf-fig svg{width:100%;max-width:17rem;height:auto;display:block;margin:0 auto}
+.tf-body{fill:#e9dfc6}
+.bk-paper.dark .tf-body{fill:#3a4152}
+.tf-hair{fill:none;stroke:#8a6d2f;stroke-width:5;stroke-linecap:round;stroke-dasharray:2 6}
+.tf-box{fill:#151515;stroke:#000;stroke-width:1}
+.tf-strap{fill:none;stroke:#151515;stroke-width:4;stroke-linecap:round}
+.bk-paper.dark .tf-box,.bk-paper.dark .tf-strap{stroke:#d9d2c0}
+.tf-num circle{fill:#b8862b}
+.tf-num text{fill:#fff;font:700 15px/1 sans-serif;text-anchor:middle}
+.tf-fig figcaption{font-family:var(--sans,inherit);font-size:.9rem;color:#5e5644;background:#f6efdc;border-radius:10px;padding:.45rem .6rem;line-height:1.55;margin-top:.4rem}
+.bk-paper.dark .tf-fig figcaption{background:#1f2636;color:#cfc4a6}
+.tf-where{border-inline-start:3px solid #b8862b}
+.tf-biur{margin-top:.6rem}
+.tf-biur p{font-family:var(--sans,inherit);font-size:1rem;line-height:1.75}
+.tf-ptur{display:block;width:100%;margin-top:.5rem;font:inherit;font-size:.95rem;min-height:44px;border-radius:12px;border:1px dashed rgba(212,176,98,.55);background:transparent;color:var(--body);cursor:pointer}
+.tf-ptur[hidden]{display:none}
+.tf-toast{margin:.6rem 0 0;padding:.6rem .8rem;border-radius:12px;background:rgba(212,176,98,.16);border:1px solid rgba(212,176,98,.6);color:var(--cream);text-align:center;font-weight:700;line-height:1.5}
+.tf-toast[hidden]{display:none}
+button.tf-d{font:inherit;border:0;cursor:pointer;font-size:1.05rem}
+.tf-d.pt{background:rgba(212,176,98,.14);color:var(--cream)}
+.tf-d.miss{background:rgba(255,255,255,.04)}
+.tf-alt{flex-basis:100%;text-align:center;font-size:.85rem;opacity:.85}
+.tf-game{margin-top:.9rem;padding:.8rem .9rem;border-radius:14px;background:linear-gradient(135deg,rgba(212,176,98,.14),rgba(212,176,98,.04));border:1px solid rgba(212,176,98,.35)}
+.tf-lvl{display:flex;align-items:baseline;gap:.4rem;flex-wrap:wrap;color:var(--body)}
+.tf-pts{font-size:1.9rem;font-weight:800;color:var(--gold);line-height:1}
+.tf-lvl b{margin-inline-start:auto;color:var(--cream);font-size:1rem}
+.tf-bar{height:10px;border-radius:99px;background:rgba(255,255,255,.08);margin:.55rem 0 .35rem;overflow:hidden}
+.tf-bar i{display:block;height:100%;width:0;background:var(--gold);border-radius:99px;transition:width .6s}
+.tf-next{margin:0;color:var(--body);font-size:.88rem}
+.tf-cheer{margin:.45rem 0 0;color:var(--cream);font-size:.95rem;line-height:1.55}
+.tf-cheer:empty{display:none}
+.tf-rules{margin-top:.5rem}
+.tf-rules summary{cursor:pointer;color:var(--gold);min-height:40px;display:flex;align-items:center;font-weight:700;font-size:.95rem}
+.tf-rules ul{margin:.1rem 0 .3rem;padding-inline-start:1.2rem;color:var(--body);line-height:1.65;font-size:.92rem}
+.tf-rules b{color:var(--cream)}
+@media print{.bk-paper [data-m]{display:revert}.bk-paper[data-minhag=ash] [data-m]:not([data-m~=ash]),.bk-paper[data-minhag=sf] [data-m]:not([data-m~=sf]),.bk-paper[data-minhag=em] [data-m]:not([data-m~=em]){display:none}}
+/* טקסט בתוך details בדף הנוסח יורש את צבע הדף (seo-txt.css צובע details p בבהיר) */
+.bk-paper details p{color:inherit}
+/* כרטיס אפליקציית התזכורת לאנדרואיד. מוסתר כשהדף נפתח מתוך האפליקציה עצמה (utm_source=tefillin_app, סקריפט ב-head) */
+.tf-app{margin-top:1rem}
+.tf-app h2{font-size:1.3rem;color:var(--cream);margin:0 0 .3rem}
+.tf-app>p{color:var(--body);margin:.2rem 0 .6rem;line-height:1.55}
+.tf-app-list{list-style:none;margin:0 0 .8rem;padding:0;display:grid;gap:.45rem}
+.tf-app-list li{color:var(--body);line-height:1.55;font-size:.97rem;background:rgba(255,255,255,.04);border-radius:10px;padding:.5rem .7rem}
+.tf-app-list b{color:var(--cream)}
+.tf-app-shots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem;margin:0 auto .9rem;max-width:30rem}
+.tf-app-shots figure{margin:0;text-align:center}
+.tf-app-shots img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.tf-app-shots figcaption{color:var(--body);font-size:.85rem;margin-top:.35rem}
+.tf-app-dl{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;min-height:60px;font-size:1.2rem;font-weight:700;text-align:center;box-sizing:border-box}
+.tf-app-dl small{font-size:.82rem;font-weight:400;opacity:.85}
+.tf-app-ios,.tf-app-pc{display:none;text-align:center;color:var(--cream);background:rgba(212,176,98,.1);border:1px solid var(--line);border-radius:12px;padding:.7rem;margin:.6rem 0 0;line-height:1.55}
+.tf-ios .tf-app-dl,.tf-ios .tf-app-how{display:none}
+.tf-ios .tf-app-ios,.tf-pc .tf-app-pc{display:block}
+.tf-app-how p{color:var(--body);line-height:1.6;font-size:.93rem}
+.tf-app-ref{color:var(--gold)}
+.tf-app-ref-in,.tf-in-app .tf-app,.tf-in-app .tf-app-ref{display:none}
+.tf-in-app .tf-app-ref-in{display:inline}
+/* שאלות של כל יום */
+.tf-daily h2{font-size:1.3rem;color:var(--cream);margin:0 0 .3rem}
+.tf-daily>p{color:var(--body);margin:.2rem 0 .7rem;line-height:1.6}
+.tf-daily details{border-bottom:1px solid var(--line);padding:.15rem 0}
+.tf-daily summary{cursor:pointer;color:var(--cream);font-weight:700;min-height:48px;display:flex;align-items:center;line-height:1.4}
+.tf-daily details p{color:var(--body);line-height:1.7;margin:.1rem 0 .7rem}
+.tf-daily .tf-small{font-size:.85rem;color:var(--body);opacity:.85;margin-top:.7rem}
+
+/* מצב מהיר: רק ברכה ושמע ישראל */
+.tf-quick{display:block;width:100%;margin-top:.5rem;font:inherit;font-size:1rem;min-height:48px;border-radius:12px;border:1px solid rgba(212,176,98,.6);background:rgba(212,176,98,.1);color:var(--cream);cursor:pointer}
+.tf-quick[hidden]{display:none}
+.tf-lock.quick .tf-lock-later{display:none}
+
+/* נעילת אפליקציות באייפון (/kodesh/tefillin/iphone/) */
+.ti-box{margin-top:1rem;padding-top:.9rem;border-top:1px solid var(--line)}
+.ti-box h2{font-size:1.2rem;color:var(--cream);margin:0 0 .3rem}
+.ti-box>p{color:var(--body);margin:.2rem 0 .6rem;line-height:1.55}
+.ti-sign{margin-top:.8rem;background:rgba(212,176,98,.12);border:1px solid var(--gold);border-radius:14px;padding:.8rem 1rem;text-align:center}
+.ti-sign p{margin:0 0 .3rem;font-size:1.3rem;font-weight:700;color:var(--cream);line-height:1.4}
+.ti-sign small{color:var(--body);font-size:.92rem;line-height:1.5}
+.ti-sign b{color:var(--gold)}
+.ti-cam{display:flex;width:100%;justify-content:center;min-height:56px;font-size:1.15rem;margin-top:.7rem;cursor:pointer}
+.ti-msg{margin:.7rem 0 0;min-height:1.3em;color:var(--body);font-size:1.02rem;line-height:1.5;text-align:center}
+.ti-msg.ok{color:#9ee0a8;font-weight:700;font-size:1.2rem}
+.ti-msg.bad{color:#ffb38a}
+.ti-code,.ti-url{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin:.4rem 0}
+.ti-code code,.ti-url code{flex:1;min-width:0;direction:ltr;text-align:left;overflow-wrap:anywhere;background:#0b1120;border:1px solid var(--line);border-radius:10px;padding:.55rem .7rem;color:var(--cream);font-size:.92rem;user-select:all}
+.ti-code code{font-size:1.15rem;letter-spacing:.04em}
+.ti-link{font:inherit;background:none;border:0;color:var(--gold);text-decoration:underline;cursor:pointer;padding:.4rem 0;min-height:44px}
+.ti-steps{margin:.3rem 0 .6rem;padding-inline-start:1.3rem;color:var(--body);line-height:1.75}
+.ti-steps li{margin:.35rem 0}
+.ti-steps b{color:var(--cream)}
+.ti-from{display:flex;flex-direction:column;gap:.3rem;margin:.5rem 0;color:var(--body);font-size:.95rem}
+.ti-from select{color-scheme:dark;font:inherit;min-height:44px;border-radius:10px;padding:.2rem .5rem;background:#0e1628;color:var(--cream);border:1px solid var(--line)}
+.tf-app-ios a{color:var(--gold);font-weight:700}
+.tf-set .tf-small{font-size:.88rem;color:var(--body);line-height:1.55}

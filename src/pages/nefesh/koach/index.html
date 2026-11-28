@@ -1,0 +1,115 @@
+<!--meta {
+ "site": "nefesh",
+ "nav": "koach",
+ "tool": "koach",
+ "title": "מד כוח – כמה כוח יש היום, ומה מותר לדחות | נפש ויום-יום",
+ "description": "מד כוח: מסמנים כמה כוח יש היום, מ-1 עד 5, ובוחרים מה מותר לדחות בלי אשמה. גרף של השבוע, ושיתוף בקישור עם בן או בת הזוג, כדי שידעו בלי לשאול. חינם, נשמר בטלפון.",
+ "head": "<link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"מה זה מד כוח?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"דרך פשוטה לסמן כמה כוח יש היום, מ-1 עד 5, ולבחור מה מותר לדחות. בסוף השבוע רואים גרף.\"}}, {\"@type\": \"Question\", \"name\": \"איך משתפים עם בן או בת הזוג?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"שולחים קישור בווטסאפ. הם רואים את השבוע ומה נדחה היום, בלי חשבון ובלי אפליקציה.\"}}, {\"@type\": \"Question\", \"name\": \"המידע נשמר אצלכם?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לא. הוא בטלפון שלך, ובשיתוף רק בתוך הקישור.\"}}, {\"@type\": \"Question\", \"name\": \"מה מותר לדחות ביום בלי כוח?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"דברים שאפשר לעשות גם מחר: לענות להודעות, מפגש, סידורים, ניירת. בכלי בוחרים מה נדחה היום, בלי אשמה. אוכל, שתייה ותרופות שהרופא נתן לא דוחים.\"}}, {\"@type\": \"Question\", \"name\": \"איך מסבירים למשפחה שאין כוח היום?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"שולחים להם את הקישור. הם רואים את השבוע ומה נדחה היום, ויש בדף גם כמה מילים למשפחה על איך לעזור.\"}}, {\"@type\": \"Question\", \"name\": \"זה מחליף טיפול?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לא. זה כלי ליום-יום שעוזר להקשיב לעצמך ולשתף. הגרף יכול לעזור בשיחה עם רופא או מטפל, אבל לא מחליף אותם.\"}}, {\"@type\": \"Question\", \"name\": \"ומה אם יש הרבה ימים בלי כוח?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כדאי לדבר עם רופא המשפחה או עם גורם מקצועי. אפשר גם לפנות לער\\\"ן בטלפון 1201. במצב חירום – מד\\\"א 101.\"}}]}</script>",
+ "og_title": "מד כוח – כמה כוח יש היום",
+ "crumbs": [
+  [
+   "מד כוח",
+   null
+  ]
+ ]
+} -->
+<header class="k-hero">
+  <h1>מד כוח</h1>
+  <p class="sub">יש ימים עם כוח, ויש ימים בלי. כשיודעים כמה יש היום, קל יותר לבחור, ולשחרר.</p>
+</header>
+
+<div class="tool" id="koach">
+  <section class="shared-view" id="k-shared" hidden aria-live="polite" style="margin-bottom:1.4rem">
+    <h2 id="k-shared-h" style="font-family:var(--serif);color:var(--cream);font-size:1.35rem"></h2>
+    <div class="chart" id="k-shared-chart" style="margin-top:.7rem"></div>
+    <p id="k-shared-today" style="margin-top:.7rem;color:var(--parchment)"></p>
+    <p class="note" style="margin-top:.6rem">איך לעזור: בימים של 1-2, פחות שאלות ופחות תוכניות. אפשר להציע דבר אחד מוחשי ("אני אקנה היום", "אני אקח את הילדים"), ולהיות בסביבה. לא צריך לתקן, מספיק להיות שם. <a class="gold" href="/nefesh/mishpacha/#zug">עוד על זה</a></p>
+  </section>
+
+  <div class="panel lead-form">
+    <div class="field"><span class="label">כמה כוח יש לי היום?</span>
+      <div class="scale" id="k-scale" role="group" aria-label="כמה כוח, מ-1 עד 5">
+        <button type="button" data-v="1" aria-pressed="false"><b>1</b><span>כמעט אין</span></button>
+        <button type="button" data-v="2" aria-pressed="false"><b>2</b><span>מעט</span></button>
+        <button type="button" data-v="3" aria-pressed="false"><b>3</b><span>בינוני</span></button>
+        <button type="button" data-v="4" aria-pressed="false"><b>4</b><span>טוב</span></button>
+        <button type="button" data-v="5" aria-pressed="false"><b>5</b><span>הרבה</span></button>
+      </div>
+      <p id="k-advice" style="color:var(--parchment);min-height:1.5em"></p>
+    </div>
+    <div id="k-step2" hidden>
+      <div class="field"><span class="label">מה מותר לי לדחות היום?</span>
+        <div class="chips" id="k-defer">
+          <label><input type="checkbox" value="סידורים"> סידורים</label>
+          <label><input type="checkbox" value="טלפונים"> טלפונים</label>
+          <label><input type="checkbox" value="לענות להודעות"> לענות להודעות</label>
+          <label><input type="checkbox" value="ניקיון"> ניקיון</label>
+          <label><input type="checkbox" value="בישול"> בישול</label>
+          <label><input type="checkbox" value="אירוע או מפגש"> אירוע או מפגש</label>
+          <label><input type="checkbox" value="ניירת"> ניירת</label>
+          <label><input type="checkbox" value="עבודה או לימודים"> עבודה או לימודים</label>
+        </div></div>
+      <div class="field" style="margin-top:.7rem"><label for="k-other">עוד משהו? <span class="opt">(לא חובה)</span></label><input id="k-other" type="text" maxlength="60"></div>
+      <button class="big-btn" type="button" id="k-save" style="margin-top:.9rem">לשמור את היום</button>
+      <p class="saved" id="k-saved" role="status"></p>
+    </div>
+  </div>
+
+  <section style="margin-top:1.4rem">
+    <h2 style="font-family:var(--serif);color:var(--cream);font-size:1.35rem;text-align:center">השבוע שלי</h2>
+    <div class="chart" id="k-chart" style="margin-top:.6rem"></div>
+  </section>
+
+  <section class="edit-box" style="margin-top:1.2rem">
+    <p style="font-weight:700;color:var(--cream)">לשתף עם בן או בת הזוג</p>
+    <p class="note">שולחים קישור בווטסאפ, והם רואים את הגרף של השבוע ומה מותר לדחות היום. בלי חשבון, בלי אפליקציה. כל פעם שרוצים לעדכן, שולחים שוב.</p>
+    <div class="field" style="margin-top:.5rem"><label for="k-name">השם שלך, שיופיע אצלם <span class="opt">(לא חובה)</span></label><input id="k-name" type="text" maxlength="30"></div>
+    <a class="btn btn-gold btn-block" href="#" id="k-share" target="_blank" rel="noopener" style="margin-top:.7rem"><svg class="ic"><use href="#wa"/></svg> לשלוח את השבוע שלי</a>
+  </section>
+
+  <div class="local-note"><span class="ic2">🔒</span><span>נשמר רק בטלפון שלך. בשיתוף, השבוע נכנס לתוך הקישור עצמו, ורק מי שמקבל אותו רואה.</span></div>
+  <div class="data-acts"><button class="linkish" type="button" data-export="koach" data-name="מד כוח">לשמור עותק לקובץ</button><button class="linkish" type="button" data-wipe="koach,koach-name">למחוק מהטלפון</button></div>
+</div>
+
+{{N:help}}
+<p class="shutaf no-print" style="margin:1.4rem auto 0;text-align:center;font-size:.95rem;color:var(--muted)">זכויות נכי צה"ל – <a class="gold" href="https://shikum.app/nechei-tzahal" target="_blank" rel="noopener">בשיקום אפ</a>, האתר של השותף שלנו.</p>
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">מד כוח: כמה כוח יש לי היום?</h2>
+  <p>מסמנים כמה כוח יש היום, מ-1 (כמעט אין) עד 5 (הרבה), ובוחרים מה מותר לדחות היום בלי אשמה: לענות להודעות, אירוע או מפגש, עבודה או לימודים. בסוף השבוע רואים גרף. בחינם, בלי הרשמה ובלי פרסומות.</p>
+  <h3>למה בכלל למדוד כוח</h3>
+  <p>הרבה פעמים אנחנו קמים בבוקר עם אותה רשימה, בלי קשר לכמה כוח יש. ביום טוב זה עובד. ביום קשה זה נגמר בתחושה של כישלון. כשעוצרים לרגע ושואלים "כמה יש לי היום?", אפשר להתאים את היום לכוח, ולא להפך. זו לא בדיקה ולא אבחון. זו רק דרך להקשיב לעצמך.</p>
+  <h3>מה כל מספר יכול להגיד</h3>
+  <ul>
+    <li><b>1 – כמעט אין:</b> יום של הבסיס. לאכול, לשתות, לנוח. כל השאר יכול לחכות.</li>
+    <li><b>2 – מעט:</b> דבר אחד קטן, ולא יותר. לבחור אותו מראש.</li>
+    <li><b>3 – בינוני:</b> אפשר לעשות חלק מהדברים, עם הפסקות.</li>
+    <li><b>4 – טוב:</b> יום שאפשר להתקדם בו, בלי להעמיס הכול עליו.</li>
+    <li><b>5 – הרבה:</b> כדאי ליהנות, ולשמור קצת כוח גם למחר.</li>
+  </ul>
+  <h3>לדחות בלי אשמה</h3>
+  <p>לדחות זה לא לוותר. סידורים, ניירת וטלפונים יחכו עד מחר. בכלי מסמנים מה נדחה היום, וזה עוזר לשחרר: זה כתוב, זה לא נשכח, ולא צריך להחזיק את זה בראש. מה שבדרך כלל לא דוחים: אוכל ושתייה, תרופות שהרופא נתן, ופנייה לעזרה כשצריך.</p>
+  <h3>לראות את השבוע</h3>
+  <p>הגרף של השבוע מראה דברים שקשה לראות מבפנים. אולי ימי ראשון תמיד קשים. אולי אחרי לילה קצר הכוח יורד. אולי אחרי מפגש עם חברים הוא דווקא עולה. אין כאן מסקנות רפואיות, רק תמונה שאפשר להביא לשיחה עם מי שמלווה אותך.</p>
+  <h3>לשתף עם בן או בת הזוג</h3>
+  <p>שולחים קישור בווטסאפ, והם רואים את הגרף של השבוע ומה מותר לדחות היום. בלי חשבון ובלי אפליקציה. כך לא צריך להסביר כל בוקר מחדש, והם יודעים בלי לשאול. בדף שהם פותחים יש גם כמה מילים איך לעזור בימים של מעט כוח: פחות שאלות, דבר אחד מוחשי, ולהיות בסביבה.</p>
+  <h3>הפרטיות שלך</h3>
+  <p>הכול נשמר רק בטלפון שלך. בשיתוף, השבוע נכנס לתוך הקישור עצמו, ורק מי שמקבל אותו רואה. אפשר לשמור עותק לקובץ, או למחוק הכול מהטלפון בלחיצה.</p>
+  <h3>מתי לפנות לעזרה</h3>
+  <p>מד כוח הוא כלי ליום-יום, לא טיפול. אם יש הרבה ימים ברצף של 1 ו-2, אם קשה לתפקד, או אם עולות מחשבות קשות, לא נשארים עם זה לבד. מדברים עם רופא המשפחה או עם איש מקצוע בתחום הנפש. ער"ן, עזרה ראשונה נפשית, זמין בטלפון 1201. במצב חירום מתקשרים מיד למד"א, 101.</p>
+  <h3>עוד כלים קטנים ליום-יום</h3>
+  <p>ביום של מעט כוח, <a class="gold" href="/nefesh/hayom/">הדבר החשוב של היום</a> עוזר לבחור דבר אחד בלבד. כדי שהמשפחה תבין, יש <a class="gold" href="/nefesh/mishpacha/">הסבר למשפחה</a>. ולרגע קשה במיוחד יש <a class="gold" href="/nefesh/rega/">רגע קשה</a>: נשימה, מילים שלך וקווי תמיכה.</p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>מה זה מד כוח?</summary><p>דרך פשוטה לסמן כמה כוח יש היום, מ-1 עד 5, ולבחור מה מותר לדחות. בסוף השבוע רואים גרף.</p></details>
+  <details><summary>איך משתפים עם בן או בת הזוג?</summary><p>שולחים קישור בווטסאפ. הם רואים את השבוע ומה נדחה היום, בלי חשבון ובלי אפליקציה.</p></details>
+  <details><summary>המידע נשמר אצלכם?</summary><p>לא. הוא בטלפון שלך, ובשיתוף רק בתוך הקישור.</p></details>
+  <details><summary>מה מותר לדחות ביום בלי כוח?</summary><p>דברים שאפשר לעשות גם מחר: לענות להודעות, מפגש, סידורים, ניירת. בכלי בוחרים מה נדחה היום, בלי אשמה. אוכל, שתייה ותרופות שהרופא נתן לא דוחים.</p></details>
+  <details><summary>איך מסבירים למשפחה שאין כוח היום?</summary><p>שולחים להם את הקישור. הם רואים את השבוע ומה נדחה היום, ויש בדף גם כמה מילים למשפחה על איך לעזור.</p></details>
+  <details><summary>זה מחליף טיפול?</summary><p>לא. זה כלי ליום-יום שעוזר להקשיב לעצמך ולשתף. הגרף יכול לעזור בשיחה עם רופא או מטפל, אבל לא מחליף אותם.</p></details>
+  <details><summary>ומה אם יש הרבה ימים בלי כוח?</summary><p>כדאי לדבר עם רופא המשפחה או עם גורם מקצועי. אפשר גם לפנות לער"ן בטלפון 1201. במצב חירום – מד"א 101.</p></details>
+</section>
+<!--/seo-txt-->
+{{N:foot:מד כוח: כמה כוח יש היום, מה מותר לדחות, ושיתוף עם בן או בת הזוג. כלי חינמי}}
+{{N:join}}

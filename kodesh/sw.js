@@ -1,0 +1,97 @@
+// service worker של תת-אתר בהכלים של גילעד רחמים (נוצר ע"י build.py, לא לערוך את העותק בתיקיית האתר).
+// דפים: קודם רשת, ואם אין אינטרנט – מהשמור. קבצים קבועים (css/js/גופנים): קודם שמור.
+// בקשות לשרתים אחרים (התמלול, גוגל) לא נוגעים בהן.
+var CACHE = 'kodesh-202611271802';
+var PRECACHE = ["/kodesh/album/", "/kodesh/alefbet/en/", "/kodesh/alefbet/ru/", "/kodesh/alon/", "/kodesh/arvit/ashkenaz/", "/kodesh/arvit/", "/kodesh/arvit/sfarad/", "/kodesh/atar/", "/kodesh/azkara/", "/kodesh/beit-knesset/", "/kodesh/birkat-hamazon/ashkenaz/", "/kodesh/birkat-hamazon/bore-nefashot/", "/kodesh/birkat-hamazon/edot-hamizrach/", "/kodesh/birkat-hamazon/en/", "/kodesh/birkat-hamazon/", "/kodesh/birkat-hamazon/meein-shalosh/", "/kodesh/birkat-hamazon/ru/", "/kodesh/birkat-hamazon/sefarad/", "/kodesh/boker/", "/kodesh/brachon/", "/kodesh/brachot/", "/kodesh/brachot/yom-huledet/", "/kodesh/britot/en/", "/kodesh/britot/", "/kodesh/britot/ru/", "/kodesh/britot-meyuchadot/en/", "/kodesh/britot-meyuchadot/", "/kodesh/britot-meyuchadot/ru/", "/kodesh/chag-basis/", "/kodesh/chanuka/bracha/", "/kodesh/chanuka/chanukiya/", "/kodesh/chanuka/chesed/", "/kodesh/chanuka/chidon/", "/kodesh/chanuka/chufsha/", "/kodesh/chanuka/en/", "/kodesh/chanuka/", "/kodesh/chanuka/kniyot/", "/kodesh/chanuka/matkonim/", "/kodesh/chanuka/megila/", "/kodesh/chanuka/mekabim/", "/kodesh/chanuka/mischakim/hadlaka/", "/kodesh/chanuka/mischakim/", "/kodesh/chanuka/mischakim/pazel/", "/kodesh/chanuka/mischakim/zikaron/", "/kodesh/chanuka/nerot/", "/kodesh/chanuka/ru/", "/kodesh/chanuka/sevivon/", "/kodesh/chanuka/shirim/", "/kodesh/chanuka/shiron/", "/kodesh/chanuka/sipurim/", "/kodesh/chanuka/tashbetz/", "/kodesh/chanuka/tshii/", "/kodesh/chanuka/tzviya/", "/kodesh/chanuka/yetzira/", "/kodesh/chayal/", "/kodesh/dapei-tefila/", "/kodesh/dvar-torah/", "/kodesh/gimatria/en/", "/kodesh/gimatria/", "/kodesh/giur/ahavat-hager/", "/kodesh/giur/brachot/", "/kodesh/giur/brit-mila-lager/", "/kodesh/giur/en/brachot/", "/kodesh/giur/en/brit-mila-lager/", "/kodesh/giur/en/", "/kodesh/giur/en/mitzvot/", "/kodesh/giur/en/musagim/", "/kodesh/giur/en/shabat-rishona/", "/kodesh/giur/en/yedaa/", "/kodesh/giur/", "/kodesh/giur/mishpacha-melava/", "/kodesh/giur/mishpacha-melava/sheli/", "/kodesh/giur/mitzvot/", "/kodesh/giur/musagim/", "/kodesh/giur/ru/brachot/", "/kodesh/giur/ru/brit-mila-lager/", "/kodesh/giur/ru/", "/kodesh/giur/ru/mitzvot/", "/kodesh/giur/ru/musagim/", "/kodesh/giur/ru/shabat-rishona/", "/kodesh/giur/ru/yedaa/", "/kodesh/giur/shabat-rishona/", "/kodesh/giur/shut/chidon/", "/kodesh/giur/shut/en/", "/kodesh/giur/shut/", "/kodesh/giur/shut/lekehila/", "/kodesh/giur/shut/ru/", "/kodesh/giur/shut/shavua-rishon/", "/kodesh/giur/shut/yom-hagiur/", "/kodesh/giur/yedaa/", "/kodesh/hachlama/en/", "/kodesh/hachlama/", "/kodesh/hachlama/ru/", "/kodesh/havdala/en/", "/kodesh/havdala/ru/", "/kodesh/hodaot/", "/kodesh/", "/kodesh/kaddish/en/", "/kodesh/kaddish/ru/", "/kodesh/kartis/", "/kodesh/kartis-mohel/en/", "/kodesh/kartis-mohel/", "/kodesh/kartis-mohel/ru/", "/kodesh/kibudim-brit/en/", "/kodesh/kibudim-brit/", "/kodesh/kibudim-brit/ru/", "/kodesh/kibudim-yechida/en/", "/kodesh/kibudim-yechida/", "/kodesh/kibudim-yechida/ru/", "/kodesh/kiddush/en/", "/kodesh/kiddush/ru/", "/kodesh/kivun-yerushalayim/", "/kodesh/luach/", "/kodesh/luach-ivri/en/holidays/hanukkah/", "/kodesh/luach-ivri/en/holidays/", "/kodesh/luach-ivri/en/holidays/passover/", "/kodesh/luach-ivri/en/holidays/purim/", "/kodesh/luach-ivri/en/holidays/rosh-hashanah/", "/kodesh/luach-ivri/en/holidays/shavuot/", "/kodesh/luach-ivri/en/holidays/sukkot/", "/kodesh/luach-ivri/en/holidays/tu-bishvat/", "/kodesh/luach-ivri/en/holidays/yom-kippur/", "/kodesh/luach-ivri/en/", "/kodesh/luach-ivri/", "/kodesh/luach-ivri/ru/", "/kodesh/luach-ivri/ru/prazdniki/chanuka/", "/kodesh/luach-ivri/ru/prazdniki/", "/kodesh/luach-ivri/ru/prazdniki/pesach/", "/kodesh/luach-ivri/ru/prazdniki/purim/", "/kodesh/luach-ivri/ru/prazdniki/rosh-hashana/", "/kodesh/luach-ivri/ru/prazdniki/shavuot/", "/kodesh/luach-ivri/ru/prazdniki/sukkot/", "/kodesh/luach-ivri/ru/prazdniki/tu-bishvat/", "/kodesh/luach-ivri/ru/prazdniki/yom-kipur/", "/kodesh/luach-shana/", "/kodesh/masach/", "/kodesh/mekorot/", "/kodesh/mezuzah/en/", "/kodesh/mezuzah/ru/", "/kodesh/mikledet/en/", "/kodesh/mincha/ashkenaz/", "/kodesh/mincha/", "/kodesh/mincha/sfarad/", "/kodesh/misheberach/", "/kodesh/modeh-ani/en/", "/kodesh/modeh-ani/", "/kodesh/modeh-ani/ru/", "/kodesh/mohalim/bli-atar/", "/kodesh/mohalim/en/bli-atar/", "/kodesh/mohalim/en/", "/kodesh/mohalim/hodaot/", "/kodesh/mohalim/", "/kodesh/mohalim/ru/bli-atar/", "/kodesh/mohalim/ru/", "/kodesh/musaf-chol-hamoed/ashkenaz/", "/kodesh/musaf-chol-hamoed/", "/kodesh/musaf-chol-hamoed/sfarad/", "/kodesh/musaf-rosh-chodesh/ashkenaz/", "/kodesh/musaf-rosh-chodesh/", "/kodesh/musaf-rosh-chodesh/sfarad/", "/kodesh/nishmat-kol-chai/", "/kodesh/olpan/", "/kodesh/olpan/kol/", "/kodesh/olpan/mara/", "/kodesh/olpan/prompter/", "/kodesh/olpan/reka/", "/kodesh/omer/en/", "/kodesh/omer-avot/", "/kodesh/parasha/acharei-mot/", "/kodesh/parasha/balak/", "/kodesh/parasha/bamidbar/", "/kodesh/parasha/bechukotai/", "/kodesh/parasha/behaalotcha/", "/kodesh/parasha/behar/", "/kodesh/parasha/bereshit/", "/kodesh/parasha/beshalach/", "/kodesh/parasha/bo/", "/kodesh/parasha/chayei-sara/", "/kodesh/parasha/chukat/", "/kodesh/parasha/devarim/", "/kodesh/parasha/eikev/", "/kodesh/parasha/emor/", "/kodesh/parasha/en/", "/kodesh/parasha/haazinu/", "/kodesh/parasha/", "/kodesh/parasha/kedoshim/", "/kodesh/parasha/ki-tavo/", "/kodesh/parasha/ki-teitzei/", "/kodesh/parasha/ki-tisa/", "/kodesh/parasha/korach/", "/kodesh/parasha/lech-lecha/", "/kodesh/parasha/masei/", "/kodesh/parasha/matot/", "/kodesh/parasha/metzora/", "/kodesh/parasha/miketz/", "/kodesh/parasha/mishpatim/", "/kodesh/parasha/nasso/", "/kodesh/parasha/nitzavim/", "/kodesh/parasha/noach/", "/kodesh/parasha/pekudei/", "/kodesh/parasha/pinchas/", "/kodesh/parasha/reeh/", "/kodesh/parasha/shemini/", "/kodesh/parasha/shemot/", "/kodesh/parasha/shlach/", "/kodesh/parasha/shoftim/", "/kodesh/parasha/tazria/", "/kodesh/parasha/terumah/", "/kodesh/parasha/tetzaveh/", "/kodesh/parasha/toldot/", "/kodesh/parasha/tzav/", "/kodesh/parasha/vaera/", "/kodesh/parasha/vaetchanan/", "/kodesh/parasha/vayakhel/", "/kodesh/parasha/vayechi/", "/kodesh/parasha/vayeilech/", "/kodesh/parasha/vayera/", "/kodesh/parasha/vayeshev/", "/kodesh/parasha/vayetzei/", "/kodesh/parasha/vayigash/", "/kodesh/parasha/vayikra/", "/kodesh/parasha/vayishlach/", "/kodesh/parasha/vezot-haberacha/", "/kodesh/parasha/yitro/", "/kodesh/post/", "/kodesh/psak/", "/kodesh/qr/", "/kodesh/r/", "/kodesh/shabat/afula/", "/kodesh/shabat/akko/", "/kodesh/shabat/ashdod/", "/kodesh/shabat/ashkelon/", "/kodesh/shabat/bat-yam/", "/kodesh/shabat/beer-sheva/", "/kodesh/shabat/beit-shemesh/", "/kodesh/shabat/bnei-brak/", "/kodesh/shabat/dimona/", "/kodesh/shabat/eilat/", "/kodesh/shabat/en/candle-lighting/", "/kodesh/shabat/en/", "/kodesh/shabat/hadera/", "/kodesh/shabat/haifa/", "/kodesh/shabat/herzliya/", "/kodesh/shabat/hevron/", "/kodesh/shabat/holon/", "/kodesh/shabat/", "/kodesh/shabat/karmiel/", "/kodesh/shabat/kfar-saba/", "/kodesh/shabat/kiryat-gat/", "/kodesh/shabat/kiryat-shmona/", "/kodesh/shabat/lod/", "/kodesh/shabat/modiin/", "/kodesh/shabat/nahariya/", "/kodesh/shabat/netanya/", "/kodesh/shabat/petah-tikva/", "/kodesh/shabat/raanana/", "/kodesh/shabat/ramat-gan/", "/kodesh/shabat/ramla/", "/kodesh/shabat/rehovot/", "/kodesh/shabat/rishon-lezion/", "/kodesh/shabat/ru/", "/kodesh/shabat/tel-aviv/", "/kodesh/shabat/tveria/", "/kodesh/shabat/tzfat/", "/kodesh/shabat/yerushalaim/", "/kodesh/shacharit/ashkenaz/", "/kodesh/shacharit/", "/kodesh/shacharit/sfarad/", "/kodesh/shavua/", "/kodesh/shema-al-hamita/", "/kodesh/shema-israel/en/", "/kodesh/shema-israel/", "/kodesh/shema-israel/ru/", "/kodesh/shiur/", "/kodesh/shlichei-tzibur/mi-sheberach/", "/kodesh/shlichei-tzibur/pticha-heichal-shabbat/", "/kodesh/shlichei-tzibur/shabbat-mevarchim/", "/kodesh/shlichei-tzibur/shabbat-shacharit/", "/kodesh/shlichei-tzibur/shani-vachamishi/", "/kodesh/shlichei-tzibur/simchat-shabbat-chatan/", "/kodesh/shut/", "/kodesh/simcha/", "/kodesh/sipur/", "/kodesh/sipurim/", "/kodesh/taarich-ivri/en/hebrew-birthday/", "/kodesh/taarich-ivri/en/", "/kodesh/taarich-ivri/", "/kodesh/taarich-ivri/ru/den-rozhdeniya/", "/kodesh/taarich-ivri/ru/", "/kodesh/taarichim/", "/kodesh/tahara/en/", "/kodesh/tahara/hefsek-tahara/", "/kodesh/tahara/", "/kodesh/tahara/leil-tevila/", "/kodesh/tahara/luach-tahara/", "/kodesh/tahara/machshev-vestot/", "/kodesh/tahara/shiva-nekiyim/", "/kodesh/tefilat-haderech/birkat-hagomel/", "/kodesh/tefilat-haderech/en/", "/kodesh/tefilat-haderech/", "/kodesh/tefilat-haderech/ru/", "/kodesh/tefilat-haderech/tisa/", "/kodesh/tefillin/afula/", "/kodesh/tefillin/akko/", "/kodesh/tefillin/ashdod/", "/kodesh/tefillin/ashkelon/", "/kodesh/tefillin/bat-yam/", "/kodesh/tefillin/beer-sheva/", "/kodesh/tefillin/beit-shemesh/", "/kodesh/tefillin/bnei-brak/", "/kodesh/tefillin/dimona/", "/kodesh/tefillin/eilat/", "/kodesh/tefillin/hadera/", "/kodesh/tefillin/haifa/", "/kodesh/tefillin/herzliya/", "/kodesh/tefillin/hevron/", "/kodesh/tefillin/holon/", "/kodesh/tefillin/", "/kodesh/tefillin/iphone/", "/kodesh/tefillin/karmiel/", "/kodesh/tefillin/kfar-saba/", "/kodesh/tefillin/kiryat-gat/", "/kodesh/tefillin/kiryat-shmona/", "/kodesh/tefillin/lod/", "/kodesh/tefillin/modiin/", "/kodesh/tefillin/nahariya/", "/kodesh/tefillin/netanya/", "/kodesh/tefillin/petah-tikva/", "/kodesh/tefillin/raanana/", "/kodesh/tefillin/ramat-gan/", "/kodesh/tefillin/ramla/", "/kodesh/tefillin/rehovot/", "/kodesh/tefillin/rishon-lezion/", "/kodesh/tefillin/tel-aviv/", "/kodesh/tefillin/tveria/", "/kodesh/tefillin/tzfat/", "/kodesh/tefillin/yerushalaim/", "/kodesh/tehillim/", "/kodesh/tehillim/sefer/", "/kodesh/tehillim/shem/", "/kodesh/teuda/", "/kodesh/tofes-brit/en/", "/kodesh/tofes-brit/", "/kodesh/tofes-brit/ru/", "/kodesh/tziyud/", "/kodesh/video/", "/kodesh/video-parasha/", "/kodesh/video-shiur/", "/kodesh/yahrzeit/en/", "/kodesh/yahrzeit/", "/kodesh/yahrzeit/ru/", "/kodesh/zmanim/afula/", "/kodesh/zmanim/akko/", "/kodesh/zmanim/ashdod/", "/kodesh/zmanim/ashkelon/", "/kodesh/zmanim/bat-yam/", "/kodesh/zmanim/beer-sheva/", "/kodesh/zmanim/beit-shemesh/", "/kodesh/zmanim/bnei-brak/", "/kodesh/zmanim/dimona/", "/kodesh/zmanim/eilat/", "/kodesh/zmanim/en/", "/kodesh/zmanim/hadera/", "/kodesh/zmanim/haifa/", "/kodesh/zmanim/herzliya/", "/kodesh/zmanim/hevron/", "/kodesh/zmanim/holon/", "/kodesh/zmanim/", "/kodesh/zmanim/karmiel/", "/kodesh/zmanim/kfar-saba/", "/kodesh/zmanim/kiryat-gat/", "/kodesh/zmanim/kiryat-shmona/", "/kodesh/zmanim/lod/", "/kodesh/zmanim/modiin/", "/kodesh/zmanim/nahariya/", "/kodesh/zmanim/netanya/", "/kodesh/zmanim/petah-tikva/", "/kodesh/zmanim/raanana/", "/kodesh/zmanim/ramat-gan/", "/kodesh/zmanim/ramla/", "/kodesh/zmanim/rehovot/", "/kodesh/zmanim/rishon-lezion/", "/kodesh/zmanim/tel-aviv/", "/kodesh/zmanim/tveria/", "/kodesh/zmanim/tzfat/", "/kodesh/zmanim/yerushalaim/", "/assets/site.css?v=ca47a812", "/assets/kelim.css?v=61bdeaab", "/assets/kelim.js?v=8f859adf", "/assets/hakraa-daf.js?v=5b6fd0b2", "/assets/track.js?v=ca51c9e7", "/assets/discover.js?v=2f413188", "/assets/discover2.js?v=c51f41ae", "/assets/helper.js?v=1d550d2e", "/assets/fonts/FrankRuhlLibre-wght.woff", "/assets/fonts/Assistant-wght.woff", "/assets/icon-kodesh-192.png"];
+self.addEventListener('install', function (e) {
+  e.waitUntil(caches.open(CACHE).then(function (c) { return c.addAll(PRECACHE); }).catch(function () {}).then(function () { return self.skipWaiting(); }));
+});
+self.addEventListener('activate', function (e) {
+  e.waitUntil(caches.keys().then(function (keys) {
+    var site = CACHE.split('-')[0] + '-';
+    return Promise.all(keys.filter(function (k) { return k.indexOf(site) === 0 && k !== CACHE; }).map(function (k) { return caches.delete(k); }));
+  }).then(function () { return self.clients.claim(); }));
+});
+self.addEventListener('fetch', function (e) {
+  var req = e.request;
+  // קבצים ששותפו מאפליקציה אחרת (share_target ב-manifest של הכלים): שומרים רגע ב-Cache ופותחים את הכלי המתאים.
+  // קובץ אחד של שמע או וידאו (הודעה קולית מווטסאפ) – כלי התמלול. PDF אחד – מילוי וחתימה. כל השאר (תמונות, כמה קבצים) – מסדר התיקיות, כמו תמיד.
+  if (req.method === 'POST' && /\/machshev\/sader\/$/.test(new URL(req.url).pathname)) {
+    e.respondWith(req.formData().then(function (fd) {
+      var files = fd.getAll('files').filter(function (f) { return f && typeof f !== 'string'; });
+      // טקסט ששותף בלי קבצים (הודעה עם קוד אימות): שומרים רגע ב-Cache ופותחים את כלי קוד האימות. לא נשלח לשום שרת.
+      if (!files.length) {
+        var shared = [fd.get('title'), fd.get('text'), fd.get('url')].filter(function (v) { return v && typeof v === 'string'; }).join('\n');
+        return caches.delete('kod-share').then(function () { return caches.open('kod-share'); }).then(function (c) {
+          return c.put('/kod-share/0', new Response(shared, { headers: { 'content-type': 'text/plain; charset=utf-8' } }));
+        }).then(function () { return Response.redirect('/kelim/machshev/kod-imut/?share=1', 303); });
+      }
+      var AVX = { opus: 'audio/ogg', ogg: 'audio/ogg', oga: 'audio/ogg', m4a: 'audio/mp4', mp3: 'audio/mpeg', aac: 'audio/aac', amr: 'audio/amr', wav: 'audio/wav', flac: 'audio/flac', mp4: 'video/mp4', '3gp': 'video/3gpp', webm: 'video/webm', mov: 'video/quicktime' };
+      var ext = files.length === 1 ? (/\.([a-z0-9]+)$/i.exec(files[0].name || '') || [])[1] : '';
+      var byExt = ext ? AVX[ext.toLowerCase()] : '';
+      var av = files.length === 1 && (/^(audio|video)\//.test(files[0].type || '') || !!byExt);
+      // קובץ PDF בודד – הכלי למילוי וחתימה על PDF
+      var pdf = files.length === 1 && (/pdf$/i.test(files[0].type || '') || /\.pdf$/i.test(files[0].name || ''));
+      if (pdf) return caches.delete('chatima-share').then(function () { return caches.open('chatima-share'); }).then(function (c) {
+        return c.put('/chatima-share/0', new Response(files[0], { headers: { 'content-type': 'application/pdf', 'x-name': encodeURIComponent(files[0].name || 'מסמך.pdf') } }));
+      }).then(function () { return Response.redirect('/kelim/machshev/chatima/?share=1', 303); });
+      // הקלטת שיחה (לפי שם הקובץ: Call recording..., call_rec, מספר טלפון ותאריך) – ליומן השיחות. הודעה קולית מווטסאפ (PTT/AUD, opus) – לתמלול כרגיל.
+      var nm = av ? String(files[0].name || '') : '';
+      var call = av && !/^(PTT|AUD)-/i.test(nm) && !/^(opus|ogg|oga)$/i.test(ext) && /(call|rec_|record|הקלט|שיחה|\+?\d{9,}|\d{8}[_-]?\d{6})/i.test(nm);
+      var box = av ? 'tamlul-share' : 'sader-share';
+      return caches.delete(box).then(function () { return caches.open(box); }).then(function (c) {
+        return Promise.all(files.map(function (f, i) {
+          var type = f.type && (!av || /^(audio|video)\//.test(f.type)) ? f.type : (av && byExt) || 'application/octet-stream';
+          return c.put('/' + box + '/' + i, new Response(f, { headers: { 'content-type': type, 'x-name': encodeURIComponent(f.name), 'x-mod': String(f.lastModified || '') } }));
+        }));
+      }).then(function () { return Response.redirect(call ? '/kelim/android/yoman-sichot/?share=1' : av ? '/kelim/tamlul/?share=1' : '/kelim/machshev/sader/?share=1', 303); });
+    }));
+    return;
+  }
+  if (req.method !== 'GET') return;
+  var url = new URL(req.url);
+  if (url.origin !== location.origin) return;
+  if (req.mode === 'navigate') {
+    e.respondWith(fetch(req).then(function (r) {
+      var copy = r.clone();
+      caches.open(CACHE).then(function (c) { c.put(url.pathname, copy); });
+      return r;
+    }).catch(function () {
+      return caches.match(url.pathname).then(function (r) { return r || caches.match(self.registration.scope); });
+    }));
+    return;
+  }
+  // קבצים גדולים (מודל הסרת הרקע של הסטודיו, 46MB): הכלי שומר אותם בעצמו, בלי הורדה חוזרת ברקע בכל שימוש
+  if (/^\/assets\/vendor\/(isnet|onnxruntime-web|pyodide)\//.test(url.pathname)) return;
+  if (/^\/assets\//.test(url.pathname)) {
+    e.respondWith(caches.match(req).then(function (hit) {
+      var net = fetch(req).then(function (r) {
+        if (r.ok) { var copy = r.clone(); caches.open(CACHE).then(function (c) { c.put(req, copy); }); }
+        return r;
+      });
+      return hit || net;
+    }));
+  }
+});
+
+// התראות "החדשות ב-3 דקות" (tools/news-worker): הדחיפה מגיעה בלי תוכן, ומביאים את הסיכום האחרון מהשרת.
+self.addEventListener('push', function (e) {
+  var page = '/kelim/machshev/chadashot/';
+  e.waitUntil(fetch('https://kelim-news.gilad4049.workers.dev/latest?from=push', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (ed) {
+    var first = ed && ed.sections && ed.sections.main && ed.sections.main[0];
+    return self.registration.showNotification('החדשות ב-3 דקות – סיכום ' + ((ed && ed.name) || 'חדש'), {
+      body: first ? first.text : 'הסיכום החדש מחכה לך', icon: '/assets/icon-kelim-192.png', badge: '/assets/icon-kelim-192.png',
+      tag: 'kelim-news', lang: 'he', dir: 'rtl', data: { url: page }
+    });
+  }).catch(function () {
+    return self.registration.showNotification('החדשות ב-3 דקות', { body: 'הסיכום החדש מחכה לך', icon: '/assets/icon-kelim-192.png', tag: 'kelim-news', lang: 'he', dir: 'rtl', data: { url: page } });
+  }));
+});
+self.addEventListener('notificationclick', function (e) {
+  e.notification.close();
+  var url = (e.notification.data && e.notification.data.url) || '/kelim/';
+  e.waitUntil(self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then(function (list) {
+    for (var i = 0; i < list.length; i++) if (list[i].url.indexOf(url) >= 0 && 'focus' in list[i]) return list[i].focus();
+    return self.clients.openWindow(url);
+  }));
+});

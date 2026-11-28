@@ -1,0 +1,111 @@
+<!--meta {
+ "site": "kelim",
+ "nav": "tchumim",
+ "tool": "tichnut_vram",
+ "title": "מחשבון VRAM – כמה זיכרון כרטיס מסך צריך למודל AI | הכלים של גילעד רחמים",
+ "description": "מחשבון VRAM: בוחרים מודל שפה (Llama, Qwen, Mistral...), דיוק (FP16, 8-bit, 4-bit) ואורך הקשר, ורואים כמה GB של VRAM צריך להרצה או לאימון LoRA.",
+ "og_title": "כמה VRAM צריך כדי להריץ את המודל?",
+ "priority": "0.7",
+ "crumbs": [
+  [
+   "כלים למתכנתים",
+   "/kelim/tichnut/"
+  ],
+  [
+   "מחשבון VRAM",
+   null
+  ]
+ ],
+ "head": "<link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><style>.tn-row{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}.tn-modes{display:flex;flex-wrap:wrap;gap:.4rem;margin:.3rem 0 .8rem}.tn-modes label{position:relative;flex:1;min-width:8rem;border:1px solid var(--line);border-radius:12px;padding:.55rem .6rem;text-align:center;cursor:pointer;color:var(--body)}.tn-modes input{position:absolute;opacity:0;width:1px;height:1px;inset:0}.tn-modes label:has(input:checked){border-color:var(--gold);color:var(--cream);background:rgba(216,179,95,.1)}.tn-big{margin-top:1rem;padding:1rem;border:1px solid var(--gold-soft);border-radius:14px;text-align:center;background:rgba(216,179,95,.07)}.tn-big b{display:block;font-family:var(--serif);font-size:2.6rem;color:var(--cream);line-height:1.1;direction:ltr}.tn-big span{color:var(--body);font-size:.95rem}.tn-bars{list-style:none;display:grid;gap:.45rem;margin-top:.9rem}.tn-bars li{display:grid;grid-template-columns:1fr auto;gap:.3rem .6rem;color:var(--parchment);font-size:.95rem}.tn-bars b{color:var(--gold);direction:ltr}.tn-bars i{grid-column:1/-1;display:block;height:.45rem;border-radius:99px;background:var(--gold)}.tn-fit{list-style:none;display:grid;gap:.4rem;margin-top:.5rem}.tn-fit li{display:flex;justify-content:space-between;gap:.6rem;flex-wrap:wrap;padding:.55rem .8rem;border:1px solid var(--line);border-radius:12px;color:var(--parchment)}.tn-fit span{color:var(--muted);font-size:.9rem}.tn-h{margin-top:1.1rem;color:var(--cream);font-size:1.05rem}.tn-ltr{direction:ltr;text-align:left}</style><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"כמה VRAM צריך למודל 7B?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"ב-FP16 בערך 14 GB למשקלות בלבד, ועוד זיכרון להקשר. ב-4 ביט בערך רבע מזה. המחשבון נותן את המספר לפי מה שבחרתם.\"}},{\"@type\":\"Question\",\"name\":\"מה זה KV cache?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"הזיכרון שהמודל שומר על ההקשר בזמן כתיבה. הוא גדל עם אורך ההקשר ועם מספר הבקשות במקביל.\"}},{\"@type\":\"Question\",\"name\":\"כמה זיכרון צריך לאימון LoRA?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"הרבה פחות מאימון מלא, כי מאמנים רק חלק קטן מהמשקלות. בוחרים \\\"אימון LoRA\\\" ורואים את החישוב.\"}},{\"@type\":\"Question\",\"name\":\"המספר מדויק?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"זו הערכה. בפועל זה משתנה לפי הספרייה (vLLM, llama.cpp, Transformers) וההגדרות.\"}},{\"@type\":\"Question\",\"name\":\"הדף הזה בחינם?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"כן. הכול כאן בחינם, בלי הרשמה ובלי פרסומות.\"}},{\"@type\":\"Question\",\"name\":\"כמה VRAM צריך למודל 70B?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"בערך 140 GB ב-FP16 וכ-40 GB ב-4 ביט, רק למשקלות. גם ב-4 ביט זה יותר מכרטיס ביתי אחד, ולכן משתמשים בשני כרטיסים או בכרטיס שרת.\"}},{\"@type\":\"Question\",\"name\":\"מה קורה כשהמודל לא נכנס לזיכרון?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"או שמופיעה שגיאת CUDA out of memory, או שהתוכנה מעבירה חלק מהשכבות לזיכרון של המחשב. אז המודל ירוץ, אבל לאט בהרבה.\"}},{\"@type\":\"Question\",\"name\":\"כמה זיכרון צריך ל-QLoRA?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"הרבה פחות מאימון מלא, כי המודל נטען ב-4 ביט ומאמנים רק שכבות קטנות שנוספות לו. במחשבון בוחרים אימון LoRA עם דיוק 4 ביט, ורואים הערכה קרובה.\"}}]}</script>",
+ "foot": "<script src=\"/assets/tichnut-data.js\" defer></script><script src=\"/assets/tichnut-vram.js\" defer></script>"
+} -->
+<header class="k-hero">
+  <h1>מחשבון VRAM: כמה זיכרון צריך למודל AI</h1>
+  <p class="sub">כמה זיכרון כרטיס מסך צריך כדי להריץ או לאמן מודל שפה, ואיזה כרטיס NVIDIA מספיק. בוחרים, והתשובה מתעדכנת מיד.</p>
+</header>
+<div class="tool">
+  <form class="k-form" id="vr-form" novalidate>
+    <div class="field"><label for="vr-model">המודל</label><select id="vr-model"></select></div>
+    <div id="vr-custom" hidden>
+      <div class="tn-row">
+        <div class="field"><label for="vr-P">פרמטרים (מיליארדים)</label><input id="vr-P" type="number" min="0.1" step="0.1" class="tn-ltr"></div>
+        <div class="field"><label for="vr-L">מספר שכבות</label><input id="vr-L" type="number" min="1" class="tn-ltr"></div>
+      </div>
+      <div class="tn-row">
+        <div class="field"><label for="vr-kvh">KV heads</label><input id="vr-kvh" type="number" min="1" class="tn-ltr"></div>
+        <div class="field"><label for="vr-hd">head dim</label><input id="vr-hd" type="number" min="1" class="tn-ltr"></div>
+      </div>
+      <div class="field"><label for="vr-hid">hidden size</label><input id="vr-hid" type="number" min="1" class="tn-ltr"></div>
+    </div>
+    <div class="field"><label>מה עושים עם המודל?</label>
+      <div class="tn-modes">
+        <label><input type="radio" name="vr-mode" value="inf">הרצה</label>
+        <label><input type="radio" name="vr-mode" value="lora">אימון LoRA</label>
+        <label><input type="radio" name="vr-mode" value="full">אימון מלא</label>
+      </div>
+    </div>
+    <div class="tn-row">
+      <div class="field"><label for="vr-prec">דיוק המשקלות</label><select id="vr-prec"><option value="4">FP32</option><option value="2">FP16 / BF16</option><option value="1">FP8 / INT8</option><option value="0.5">4 ביט (Q4, GPTQ, AWQ)</option></select></div>
+      <div class="field"><label for="vr-kv">דיוק ה-KV cache</label><select id="vr-kv"><option value="2">FP16</option><option value="1">FP8</option></select></div>
+    </div>
+    <div class="tn-row">
+      <div class="field"><label for="vr-ctx">אורך הקשר (טוקנים)</label><input id="vr-ctx" type="number" min="1" step="1024" class="tn-ltr"></div>
+      <div class="field"><label for="vr-batch">כמה בקשות במקביל</label><input id="vr-batch" type="number" min="1" class="tn-ltr"></div>
+    </div>
+  </form>
+  <div class="tn-big"><b id="vr-total">0 GB</b><span id="vr-what"></span></div>
+  <ul class="tn-bars" id="vr-bars"></ul>
+  <p class="tn-h" id="vr-fit-h"></p>
+  <ul class="tn-fit" id="vr-fit"></ul>
+  <div class="share-row">
+    <a class="btn btn-gold btn-sm" href="#" id="vr-wa" target="_blank" rel="noopener"><svg class="ic"><use href="#wa"/></svg> לשלוח את התוצאה</a>
+    <button class="btn btn-line btn-sm" type="button" id="vr-reset">לחזור לדוגמה</button>
+  </div>
+  <p class="disclaimer">זו הערכה ולא מדידה. בפועל זה משתנה לפי הספרייה (vLLM, llama.cpp, Transformers), לפי Flash Attention ולפי הגדרות האימון. כדאי להשאיר 10%–20% מרווח. באימון מלא החישוב מניח mixed precision עם Adam.</p>
+  <div class="share-row"><a class="btn btn-line btn-sm" href="#" data-share-tool="wa" data-text="מחשבון VRAM: כמה זיכרון כרטיס מסך צריך כדי להריץ מודל AI, ואיזה כרטיס מספיק. בחינם:" target="_blank" rel="noopener"><svg class="ic"><use href="#wa"/></svg> לשלוח את הכלי לחבר</a></div>
+</div>
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">כמה VRAM צריך כדי להריץ מודל שפה?</h2>
+  <p>בוחרים מודל (Llama, Qwen, Mistral ועוד) או מקלידים גודל, בוחרים דיוק של FP16, 8 ביט או 4 ביט, אורך הקשר וכמה בקשות במקביל. המחשבון מראה כמה GB של זיכרון כרטיס מסך צריך, ואיזה כרטיס NVIDIA מספיק.</p>
+  <h3>הרצה, LoRA או אימון מלא</h3>
+  <p>בהרצה נספרים המשקלות וה-KV cache. באימון נוספים גרדיאנטים ומצב האופטימייזר. אימון מלא מחושב לפי mixed precision עם Adam.</p>
+  <p>זו הערכה ולא מדידה, וכדאי להשאיר 10% עד 20% מרווח. אחרי שיודעים כמה זיכרון צריך: <a class="gold" href="/kelim/tichnut/gpu/">השוואת כרטיסי NVIDIA</a>, <a class="gold" href="/kelim/tichnut/mehirut/">כמה טוקנים לשנייה</a> ו<a class="gold" href="/kelim/tichnut/hagdarot/">הגדרות מוכנות להרצה</a>.</p>
+  <h3>חשבון מהיר בראש</h3>
+  <p>בכל מיליארד פרמטרים: כ-2 GB ב-FP16, כ-1 GB ב-8 ביט וכ-0.5 GB ב-4 ביט. מודל של 7 מיליארד ב-4 ביט צריך בערך 4 GB למשקלות, ועוד זיכרון להקשר. המחשבון מוסיף את ה-KV cache לפי אורך ההקשר ומספר הבקשות.</p>
+  <h3>למה ההקשר תופס זיכרון</h3>
+  <p>בכל טוקן בשיחה המודל שומר מפתחות וערכים לכל שכבה. בהקשר ארוך, או כשכמה אנשים שואלים בבת אחת, ה-KV cache יכול לתפוס יותר מהמשקלות עצמם. דיוק FP8 ל-KV cache חוסך חצי.</p>
+  <h3>הרצה או אימון</h3>
+  <p>בהרצה צריך מקום למשקלות ולהקשר. באימון LoRA מוסיפים מעט, ובאימון מלא צריך הרבה יותר: גרדיאנטים ומצב האופטימייזר. המחשבון מראה גם איזה כרטיס NVIDIA מספיק לתוצאה. כדאי להשאיר מרווח של 10% עד 20%.</p>
+  <h3>בחינם, ובלי הרשמה</h3>
+  <p>אין כאן מנוי, אין גרסת פרימיום ואין פרסומות. הכלי בנוי כחסד, לכל מי שצריך אותו, ורץ בדפדפן שלכם. הדרך הכי טובה לעזור היא לשלוח את הקישור למי שזה יכול לחסוך לו זמן, או <a class="gold" href="/kelim/bakasha/">לספר לנו מה עוד חסר</a>.</p>
+<h3>דוגמאות: כמה תופסים המשקלות בלבד</h3>
+  <ul style="color:var(--body);line-height:1.8;margin:0 0 .9rem;padding-inline-start:1.2rem">
+    <li><strong>מודל של 8 מיליארד</strong> (למשל Llama 3.1 8B): כ-16 GB ב-FP16, כ-8 GB ב-8 ביט, וכ-4.5 GB ב-4 ביט. ב-4 ביט הוא נכנס בנוחות לכרטיס של 12 GB, כמו RTX 3060.</li>
+    <li><strong>מודל של 32 מיליארד</strong> (למשל Qwen2.5 32B): כ-64 GB ב-FP16, וכ-18 GB ב-4 ביט. ב-4 ביט הוא נכנס לכרטיס של 24 GB, עם מקום להקשר בינוני.</li>
+    <li><strong>מודל של 70 מיליארד</strong>: כ-140 GB ב-FP16, וכ-40 GB ב-4 ביט. גם ב-4 ביט זה יותר מכרטיס ביתי אחד, ולכן צריך שני כרטיסים של 24 GB או כרטיס שרת.</li>
+  </ul>
+  <h3>כמה זיכרון תופס ההקשר, במספרים</h3>
+  <p>הנוסחה ל-KV cache: 2 (מפתחות וערכים) × מספר השכבות × מספר ראשי ה-KV × גודל ראש × בתים לערך × מספר הטוקנים. ב-Llama 3.1 8B יש 32 שכבות, 8 ראשי KV וגודל ראש 128. ב-FP16 זה 128 KB לכל טוקן. הקשר של 8,000 טוקנים תופס בערך 1 GB, והקשר מלא של 128,000 טוקנים כבר כ-16 GB, יותר מהמשקלות של המודל ב-8 ביט.</p>
+  <h3>למה אימון מלא צריך פי כמה</h3>
+  <p>באימון מלא עם Adam ו-mixed precision מקובל לחשב כ-16 בתים לכל פרמטר: משקלות ב-16 ביט, גרדיאנטים, עותק ראשי ב-32 ביט ושני מצבים של האופטימייזר. מודל של 7 מיליארד צריך כך כ-112 GB, עוד לפני האקטיבציות. לכן רוב מי שמאמן בבית משתמש ב-LoRA, או ב-QLoRA, שבו המודל עצמו נטען ב-4 ביט ומאמנים רק שכבות קטנות שנוספות לו.</p>
+  <h3>טעויות נפוצות בחישוב</h3>
+  <ul style="color:var(--body);line-height:1.8;margin:0 0 .9rem;padding-inline-start:1.2rem">
+    <li>לחשב רק את המשקלות ולשכוח את ההקשר. מודל שנטען בהצלחה יכול ליפול באמצע שיחה ארוכה.</li>
+    <li>לשכוח שהמסך עצמו תופס חלק מהזיכרון, כשהכרטיס מחובר גם למסך.</li>
+    <li>לחשוב ששני כרטיסים של 12 GB הם בדיוק כמו כרטיס אחד של 24 GB. המודל מתחלק ביניהם, אבל יש תקורה, ולא כל תוכנה תומכת בזה באותה צורה.</li>
+  </ul>
+  <p>המחשבון בחינם, בלי הרשמה ובלי פרסומות. כשהזיכרון נגמר בכל זאת, מדביקים את השגיאה ב<a class="gold" href="/kelim/tichnut/shgiot/">מסביר השגיאות</a> ומקבלים מה לבדוק.</p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>כמה VRAM צריך למודל 7B?</summary><p>ב-FP16 בערך 14 GB למשקלות בלבד, ועוד זיכרון להקשר. ב-4 ביט בערך רבע מזה. המחשבון נותן את המספר לפי מה שבחרתם.</p></details>
+  <details><summary>מה זה KV cache?</summary><p>הזיכרון שהמודל שומר על ההקשר בזמן כתיבה. הוא גדל עם אורך ההקשר ועם מספר הבקשות במקביל.</p></details>
+  <details><summary>כמה זיכרון צריך לאימון LoRA?</summary><p>הרבה פחות מאימון מלא, כי מאמנים רק חלק קטן מהמשקלות. בוחרים "אימון LoRA" ורואים את החישוב.</p></details>
+  <details><summary>המספר מדויק?</summary><p>זו הערכה. בפועל זה משתנה לפי הספרייה (vLLM, llama.cpp, Transformers) וההגדרות.</p></details>
+  <details><summary>הדף הזה בחינם?</summary><p>כן. הכול כאן בחינם, בלי הרשמה ובלי פרסומות.</p></details>
+  <details><summary>כמה VRAM צריך למודל 70B?</summary><p>בערך 140 GB ב-FP16 וכ-40 GB ב-4 ביט, רק למשקלות. גם ב-4 ביט זה יותר מכרטיס ביתי אחד, ולכן משתמשים בשני כרטיסים או בכרטיס שרת.</p></details>
+  <details><summary>מה קורה כשהמודל לא נכנס לזיכרון?</summary><p>או שמופיעה שגיאת CUDA out of memory, או שהתוכנה מעבירה חלק מהשכבות לזיכרון של המחשב. אז המודל ירוץ, אבל לאט בהרבה.</p></details>
+  <details><summary>כמה זיכרון צריך ל-QLoRA?</summary><p>הרבה פחות מאימון מלא, כי המודל נטען ב-4 ביט ומאמנים רק שכבות קטנות שנוספות לו. במחשבון בוחרים אימון LoRA עם דיוק 4 ביט, ורואים הערכה קרובה.</p></details>
+</section>
+<!--/seo-txt-->

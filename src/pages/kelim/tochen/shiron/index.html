@@ -1,0 +1,76 @@
+<!--meta {
+  "site": "kelim",
+  "nav": "tchumim",
+  "tool": "shiron",
+  "title": "שירון להדפסה – חוברת שירים עם תוכן עניינים | הכלים של גילעד רחמים",
+  "description": "בונים שירון בכמה דקות: מוסיפים שירים (שם ומילים), ומקבלים חוברת מסודרת להדפסה עם שער, תוכן עניינים ומספור. לשבת, לטיול, לאירוע או לסוף שנה. בחינם, נשמר בטלפון.",
+  "og_title": "שירון להדפסה – חוברת שירים מסודרת",
+  "priority": "0.7",
+  "crumbs": [
+    [
+      "יצירת תוכן",
+      "/kelim/tochen/"
+    ],
+    [
+      "שירון",
+      null
+    ]
+  ],
+  "head": "<link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><link rel=\"stylesheet\" href=\"/assets/shiron.css\"><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"איך מכינים שירון להדפסה?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כותבים שם לשירון, מוסיפים שירים עם המילים, ולוחצים \\\"להדפיס / לשמור PDF\\\". תוכן העניינים והמספור נוצרים לבד.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר אותיות גדולות?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. בוחרים \\\"גדול\\\" ומקבלים טור אחד באותיות גדולות.\"}}, {\"@type\": \"Question\", \"name\": \"מותר להכניס כל שיר?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"רק שירים שמותר לכם להשתמש בהם: שירי עם, פיוטים, תפילות או שירים שלכם.\"}}, {\"@type\": \"Question\", \"name\": \"השירון נשמר?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן, בטלפון שלכם בלבד.\"}}, {\"@type\": \"Question\", \"name\": \"יש תוכן עניינים אוטומטי?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. השער, תוכן העניינים ומספרי העמודים נבנים לבד מהשירים שהוספתם.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר להוסיף שירים מאוחר יותר?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. השירון נשמר בטלפון, ואפשר להוסיף, למחוק ולשנות סדר בכל זמן.\"}}]}</script>",
+  "foot": "<script src=\"/assets/shiron.js\" defer></script>"
+} -->
+<header class="k-hero no-print">
+  <h1>שירון להדפסה</h1>
+  <p class="sub">מוסיפים שירים, ומקבלים חוברת מסודרת עם שער ותוכן עניינים. לשולחן שבת, לטיול, לחנוכה או לאירוע.</p>
+</header>
+<div class="tool no-print">
+  <form class="k-form" id="sh-form" novalidate>
+    <div class="field"><label for="sh-title">שם השירון</label><input id="sh-title" name="title" type="text" maxlength="40" placeholder="שירי שבת"></div>
+    <div class="field"><label for="sh-sub">שורה מתחת <span class="opt">(לא חובה)</span></label><input id="sh-sub" name="sub" type="text" maxlength="60" placeholder="משפחת כהן · חנוכה תשפ״ז"></div>
+    <div class="field"><span class="label">גודל אותיות</span><div class="radios">
+      <label><input type="radio" name="size" value="r"> רגיל (שני טורים)</label>
+      <label><input type="radio" name="size" value="g"> גדול (טור אחד, נוח לקריאה)</label>
+    </div></div>
+    <div id="sh-songs"></div>
+    <button class="btn btn-line btn-sm" type="button" id="sh-add">+ עוד שיר</button>
+  </form>
+  <div class="share-row">
+    <button class="btn btn-gold btn-sm" type="button" id="sh-print">להדפיס / לשמור PDF</button>
+    <button class="btn btn-line btn-sm" type="button" id="sh-clear">שירון חדש (לנקות)</button>
+  </div>
+  <p class="disclaimer">מדביקים מילים של שירים שמותר לכם להשתמש בהם (שירי עם, פיוטים, תפילות, או שירים שכתבתם). השירון נשמר בטלפון הזה.</p>
+  <h2 class="sh-h">כך ייראה השירון</h2>
+</div>
+<div id="sh-book" class="sh-book"></div>
+<div class="tool no-print"><div class="share-row"><a class="btn btn-line btn-sm" href="#" data-share-tool="wa" data-text="בונים שירון להדפסה בכמה דקות, עם שער ותוכן עניינים. בחינם:" target="_blank" rel="noopener"><svg class="ic"><use href="#wa"/></svg> לשלוח את הכלי לחבר</a></div></div>
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">שירון להדפסה, עם תוכן עניינים</h2>
+  <p>לשולחן שבת, לטיול שנתי, למסיבת חנוכה או לסוף שנה בגן. מוסיפים שירים, שם ומילים, ומקבלים חוברת מסודרת: שער, תוכן עניינים ומספור עמודים, מוכנה להדפסה.</p>
+  <h3>שני גדלים</h3>
+  <p>רגיל, בשני טורים, כדי לחסוך נייר. או גדול, בטור אחד, נוח לקריאה למבוגרים ולמי שרואה פחות טוב.</p>
+  <h3>מדפיסים או שומרים PDF</h3>
+  <p>מדפיסים בבית, או שומרים כ-PDF ושולחים לבית דפוס. השירון נשמר בטלפון, כך שאפשר להוסיף שירים בפעם הבאה.</p>
+  <h3>אילו שירים להכניס</h3>
+  <p>שירי עם, פיוטים, תפילות או שירים שכתבתם, כלומר שירים שמותר לכם להשתמש בהם. לחנוכה יש <a class="gold" href="/kodesh/chanuka/shiron/">שירון חנוכה</a> מוכן, ולשמחות <a class="gold" href="/kodesh/brachon/">ברכונים להדפסה</a>.</p>
+  <h3>שלב אחרי שלב</h3>
+  <p>כותבים שם לשירון, ואם רוצים גם שורה מתחת, למשל שם המשפחה או האירוע. לכל שיר כותבים שם ומילים, ולוחצים "עוד שיר". השער, תוכן העניינים ומספרי העמודים נבנים לבד, לפי הסדר שבו הוספתם את השירים.</p>
+  <h3>טיפים לשירון טוב</h3>
+  <p>בשולחן שבת ובאירוע עם מבוגרים, הגודל הגדול נוח יותר לקריאה. לטיול או לגן, שני טורים חוסכים נייר. כדאי לבדוק את המילים מול מקור אמין לפני ההדפסה, ולהכניס רק שירים שמותר לכם להשתמש בהם. גם שירים שכתבתם בעצמכם נכנסים בקלות.</p>
+  <h3>לשבת, לחג ולשמחה</h3>
+  <p>שירון לשולחן שבת עם הזמירות שהמשפחה שרה, שירון לחנוכה או לפסח, שירון לבר מצווה או לשבע ברכות עם שירים שהאורחים מכירים, או חוברת לטיול שנתי. השירון נשמר בטלפון, כך שאפשר לחזור, להוסיף שירים ולהדפיס שוב.</p>
+  <h3>בחינם, ובלי הרשמה</h3>
+  <p>אין כאן מנוי, אין גרסת פרימיום ואין פרסומות. הכלי בנוי כחסד, לכל מי שצריך אותו, ורץ בדפדפן שלכם. הדרך הכי טובה לעזור היא לשלוח את הקישור למי שזה יכול לחסוך לו זמן, או <a class="gold" href="/kelim/bakasha/">לספר לנו מה עוד חסר</a>.</p>
+  <h3>רעיונות לשירון</h3>
+  <p>שירון לשבת עם זמירות ופיוטים, שירון לטיול או למדורה, שירון לבר מצווה או לחתונה עם השירים של המשפחה, שירון לסוף שנה בגן או בכיתה, ושירון לערב שירה בציבור. מוסיפים שירים בסדר שבו רוצים לשיר, והכלי בונה שער, תוכן עניינים ומספור עמודים. ואם רוצים לשיר עם מוזיקה, יש <a class="gold" href="/kelim/shir/karaoke/">קריוקי בעברית</a>.</p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>איך מכינים שירון להדפסה?</summary><p>כותבים שם לשירון, מוסיפים שירים עם המילים, ולוחצים "להדפיס / לשמור PDF". תוכן העניינים והמספור נוצרים לבד.</p></details>
+  <details><summary>אפשר אותיות גדולות?</summary><p>כן. בוחרים "גדול" ומקבלים טור אחד באותיות גדולות.</p></details>
+  <details><summary>מותר להכניס כל שיר?</summary><p>רק שירים שמותר לכם להשתמש בהם: שירי עם, פיוטים, תפילות או שירים שלכם.</p></details>
+  <details><summary>השירון נשמר?</summary><p>כן, בטלפון שלכם בלבד.</p></details>
+  <details><summary>יש תוכן עניינים אוטומטי?</summary><p>כן. השער, תוכן העניינים ומספרי העמודים נבנים לבד מהשירים שהוספתם.</p></details>
+  <details><summary>אפשר להוסיף שירים מאוחר יותר?</summary><p>כן. השירון נשמר בטלפון, ואפשר להוסיף, למחוק ולשנות סדר בכל זמן.</p></details>
+</section>
+<!--/seo-txt-->

@@ -1,0 +1,150 @@
+<!--meta {
+  "site": "kelim",
+  "nav": "tchumim",
+  "tool": "tochen_hakraa_makri",
+  "title": "מקריא טקסטים בעברית – קורא בקול כל טקסט, PDF ו-Word בחינם | הכלים של גילעד רחמים",
+  "description": "מקריא טקסטים בעברית בקול אנושי: מדביקים טקסט או מעלים קובץ, והמקריא קורא לכם בקול של גבר או אישה. מהירות עד פי 3, פרקים והורדה כ-MP3. חינם, בלי הרשמה.",
+  "og_title": "מקריא טקסטים בעברית – בחינם",
+  "priority": "0.8",
+  "crumbs": [
+    [
+      "יצירת תוכן",
+      "/kelim/tochen/"
+    ],
+    [
+      "הקראת טקסט בעברית",
+      "/kelim/tochen/hakraa/"
+    ],
+    [
+      "מקריא טקסטים",
+      null
+    ]
+  ],
+  "head": "<link rel=\"stylesheet\" href=\"/assets/tochen-hakraa.css\"><link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"יש מקריא טקסטים בעברית בחינם?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן, זה הדף. מדביקים או מעלים מסמך ושומעים אותו, בלי הרשמה ובלי תשלום.\"}}, {\"@type\": \"Question\", \"name\": \"המקריא עובד גם באייפון ובאנדרואיד?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן, ישירות מהדפדפן, בלי להוריד שום דבר מהחנות.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר לראות את המילים בזמן שהן נאמרות?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. \\\"להציג את הטקסט שמוקרא\\\" פותח את הקטע הנוכחי באותיות גדולות.\"}}, {\"@type\": \"Question\", \"name\": \"זה מתאים לילד עם דיסלקציה?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"זה כלי עזר: הוא מאפשר לשמוע ולקרוא יחד ולשלוט בקצב. הוא לא מחליף אבחון או טיפול.\"}}, {\"@type\": \"Question\", \"name\": \"המקריא זוכר איפה הפסקתי?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. ההקראות נשארות במכשיר תחת \\\"ההקראות שלי\\\", וממשיכים מאותה שנייה.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר לבחור מי יקריא?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן, מקריא או מקריאה, ובכל מסמך מחדש.\"}}, {\"@type\": \"Question\", \"name\": \"צריך אינטרנט?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"להכנת ההקראה כן. קובץ שכבר ירד למכשיר מתנגן גם בלי רשת.\"}}]}</script><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"WebApplication\", \"name\": \"מקריא טקסטים בעברית – בחינם\", \"applicationCategory\": \"AccessibilityApplication\", \"operatingSystem\": \"Any\", \"inLanguage\": \"he\", \"isAccessibleForFree\": true, \"url\": \"https://hakelim.com/kelim/tochen/hakraa/makri-tekstim/\", \"offers\": {\"@type\": \"Offer\", \"price\": \"0\", \"priceCurrency\": \"ILS\"}, \"accessibilityFeature\": [\"fullKeyboardControl\", \"ARIA\", \"highContrastDisplay\", \"largePrint\", \"ttsMarkup\"], \"accessibilityHazard\": \"none\"}</script>",
+  "foot": "<script src=\"/assets/tochen-hakraa.js\" defer></script>"
+}
+-->
+<header class="k-hero">
+  <h1>מקריא טקסטים בעברית – בקול של אדם</h1>
+  <p class="sub">מקריא טקסטים שקורא לכם בקול כל דבר כתוב: הודעה, מאמר, מסמך <bdi>PDF</bdi> או ספר שלם. בוחרים קול, לוחצים ומקשיבים.</p>
+  <p class="hk-free">חינם · בלי הרשמה · בלי פרסומות · נגיש לקורא מסך ולמקלדת</p>
+</header>
+<div class="tool hk" id="hk-app">
+  <section class="hk-step" aria-labelledby="hk-s1">
+    <h2 id="hk-s1">1. הטקסט להקראה</h2>
+    <div class="hk-row">
+      <button type="button" class="btn btn-gold" id="hk-pick" aria-label="להעלות קובץ PDF או Word">להעלות קובץ <bdi>PDF</bdi> או <bdi>Word</bdi></button>
+      <input type="file" id="hk-file" accept=".pdf,.docx,.txt,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain" hidden aria-hidden="true" tabindex="-1">
+      <span class="hk-fname" id="hk-fname"></span>
+    </div>
+    <label for="hk-src">או מדביקים כאן טקסט:</label>
+    <textarea id="hk-src" class="hk-src" rows="6" dir="auto"></textarea>
+    <p class="hk-count" id="hk-count" aria-live="off"></p>
+  </section>
+
+  <fieldset class="hk-step">
+    <legend>2. מי מקריא</legend>
+    <div class="hk-opts">
+      <label class="hk-opt"><input type="radio" name="hk-voice" value="m" checked> קול של גבר</label>
+      <label class="hk-opt"><input type="radio" name="hk-voice" value="f"> קול של אישה</label>
+    </div>
+  </fieldset>
+
+  <fieldset class="hk-step">
+    <legend>3. מה להקריא</legend>
+    <div class="hk-opts">
+      <label class="hk-opt"><input type="radio" name="hk-mode" value="full" checked> הקראה מלאה, מילה במילה</label>
+      <label class="hk-opt"><input type="radio" name="hk-mode" value="skira"> סקירה קולית קצרה של המסמך</label>
+    </div>
+  </fieldset>
+
+  <div class="hk-go-row">
+    <button type="button" class="btn btn-gold hk-go" id="hk-go">המר לקובץ קול</button>
+    <button type="button" class="btn btn-line" id="hk-stop" hidden>לעצור את ההמרה</button>
+    <button type="button" class="btn btn-line" id="hk-device" hidden>להקריא בקול של המכשיר</button>
+  </div>
+  <p class="hk-status" id="hk-status" role="status" aria-live="polite"></p>
+  <progress class="hk-prog" id="hk-prog" max="100" value="0" hidden aria-label="התקדמות ההמרה"></progress>
+  <p class="hk-prog-t" id="hk-prog-t"></p>
+
+  <section class="hk-player" id="hk-player" hidden aria-labelledby="hk-p-h">
+    <h2 id="hk-p-h">הנגן</h2>
+    <p class="hk-title" id="hk-title"></p>
+    <audio id="hk-audio" preload="auto"></audio>
+    <div class="hk-ctl">
+      <button type="button" class="btn btn-gold hk-play" id="hk-play" aria-pressed="false">▶ נגן</button>
+      <button type="button" class="btn btn-line" id="hk-back">15 שניות אחורה</button>
+      <button type="button" class="btn btn-line" id="hk-fwd">15 שניות קדימה</button>
+      <button type="button" class="btn btn-line" id="hk-prev">הפרק הקודם</button>
+      <button type="button" class="btn btn-line" id="hk-next">הפרק הבא</button>
+    </div>
+    <div class="hk-row">
+      <label class="hk-rate-l" for="hk-rate">מהירות ההקראה</label>
+      <select id="hk-rate" class="hk-rate">
+        <option value="0.75">איטי, פי 0.75</option>
+        <option value="1" selected>רגיל, פי 1</option>
+        <option value="1.25">פי 1.25</option>
+        <option value="1.5">פי 1.5</option>
+        <option value="2">פי 2</option>
+        <option value="2.5">פי 2.5</option>
+        <option value="3">פי 3</option>
+      </select>
+      <button type="button" class="btn btn-gold" id="hk-dl">להוריד כקובץ MP3</button>
+    </div>
+    <p class="hk-where" id="hk-where"></p>
+    <div id="hk-ch-box" hidden>
+      <h3 id="hk-ch-h">פרקים</h3>
+      <ol class="hk-chapters" id="hk-chapters" aria-labelledby="hk-ch-h"></ol>
+    </div>
+    <button type="button" class="btn btn-line btn-sm" id="hk-showtext" aria-expanded="false" aria-controls="hk-text">להציג את הטקסט שמוקרא</button>
+    <div class="hk-text" id="hk-text" hidden dir="auto" tabindex="0" aria-label="הטקסט שמוקרא"></div>
+  </section>
+
+  <section class="hk-step" id="hk-mine-box" hidden aria-labelledby="hk-m-h">
+    <h2 id="hk-m-h">ההקראות שלי</h2>
+    <p class="note">נשמרות רק במכשיר הזה. פותחים וממשיכים להקשיב מהמקום שבו עצרתם.</p>
+    <ul class="hk-mine" id="hk-mine"></ul>
+  </section>
+
+  <details class="hk-embed-box">
+    <summary>להטמיע את הכלי באתר שלכם (עמותות, ספריות ומוסדות)</summary>
+    <p class="note">מעתיקים את השורה הזאת לדף באתר שלכם, והכלי מופיע בו כמו שהוא: בחינם, בלי הרשמה ובלי פרסומות.</p>
+    <label for="hk-embed-code" class="sr">שורת ההטמעה</label>
+    <textarea id="hk-embed-code" class="hk-embed-code" rows="3" readonly></textarea>
+    <button type="button" class="btn btn-line btn-sm" id="hk-embed-copy">להעתיק את השורה</button>
+  </details>
+  <p class="hk-by">הכלי של <a class="gold" href="https://hakelim.com/kelim/tochen/hakraa/" target="_blank" rel="noopener">מיזם הכלים של גילעד רחמים</a> – בחינם, לכולם.</p>
+</div>
+
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">מקריא טקסטים שנעים להקשיב לו</h2>
+  <p>מקריא טקסטים טוב הוא כזה ששוכחים שהוא תוכנה. הוא לא ממהר, לא בולע סופי מילים ולא שר כל משפט באותה מנגינה. המקריא כאן מדבר עברית בקול אנושי, ואפשר להאזין לו שעה ברצף בלי להתעייף: בבית, בדרך לעבודה או לפני השינה, כשמתחשק לסגור את העיניים.</p>
+  <h3>מקריא טקסטים לילדים, להורים ולסבים</h3>
+  <p>ילד שעוד נאבק בקריאה שומע את הסיפור או את דף העבודה ועוקב באצבע. הורה עסוק מקשיב להודעה הארוכה מבית הספר בזמן קיפול כביסה. סבתא שהאותיות הקטנות מעייפות אותה שומעת את המכתב מקופת החולים. הלחצן "להציג את הטקסט שמוקרא" מגדיל את המילים על המסך בזמן שהן נאמרות.</p>
+  <h3>תוכנת הקראה בעברית בלי להתקין</h3>
+  <p>אין מה להוריד: נכנסים לדף בכרום, בספארי, באדג׳ או בפיירפוקס, באנדרואיד, באייפון או במחשב. מי שמשתמש בו כל יום מוסיף קיצור למסך הבית, והוא נפתח כמו אפליקציה. אחרי שההקראה התחילה אפשר לכבות את המסך ולהמשיך להאזין.</p>
+  <h3>תוכנת הקראה חינמית: מה מקבלים כאן</h3>
+  <p>אין גרסת ניסיון שמסתיימת, אין סימן מים קולי ואין פרסומת באמצע. הדבר היחיד שמוגבל הוא כמות הדיבור היומית, שכולם חולקים. אם הגעתם לתקרה, המקריא המובנה של הטלפון או המחשב ממשיך להקריא את אותו טקסט, בצליל פחות טבעי.</p>
+  <h3>לקויות קריאה, דיסלקציה ועיניים עייפות</h3>
+  <p>שמיעה יחד עם קריאה עוזרת להרבה אנשים עם דיסלקציה להחזיק את הרצף. מאיטים את הקצב בקטע קשה, מאיצים בקטע מוכר, וחוזרים על פסקה כמה פעמים שרוצים. תלמיד יכול להכין כך את חומר המבחן בבית, וסטודנט לעבור על מאמר בנסיעה.</p>
+  <h3>עם NVDA, ‏VoiceOver ו-TalkBack</h3>
+  <p>מי שכבר עובד עם קורא מסך ימצא כאן לחצנים עם שמות מדוברים, סדר מעבר הגיוני במקש Tab והכרזות מצב שנשמעות מעצמן. הדף נבדק מול התקן הישראלי 5568 ו-WCAG 2.2 ברמה AA. פרטים ב<a class="gold" href="/kelim/negishut/">הצהרת הנגישות</a>.</p>
+  <h3>מה המקריא לא יודע</h3>
+  <p>הוא לא קורא תמונה של טקסט, ולכן צילום של דף או סריקה לא יעבדו. הוא לא גולש לאתר לפי קישור; מעתיקים את הפסקאות ומדביקים. והוא לא מתאים לחומר סודי, כי המשפטים עוברים דרך שרת הקול של גוגל כדי להפוך לדיבור.</p>
+  <h3>איפה מקריא טקסט חוסך זמן</h3>
+  <p>בנסיעה בתחבורה ציבורית, כשהקריאה עושה סחרחורת. בזמן אימון או הליכה, עם כתבה ששמרתם מהבוקר. במטבח, כשהידיים בבצק והמתכון ארוך. אחרי ניתוח בעיניים, או בערב שבו המסך כבר מכאיב. עולים חדשים ולומדי עברית שומעים איך הוגים משפט שלם ועוקבים אחרי הכתב בקצב איטי. ומורה יכולה להכין לתלמיד שזקוק להקראה את הוראות המשימה, כדי שיחזור אליהן לבד בלי לבקש עזרה בכל פעם.</p>
+  <h3>להתחיל להאזין בפחות מדקה</h3>
+  <p>פותחים את הדף, מדביקים את מה שהעתקתם מההודעה או מהכתבה, לוחצים על הכפתור הגדול ומחכים כמה שניות. אין צורך להבין בהגדרות, ולכן אפשר להראות את זה פעם אחת גם למי שלא אוהב מחשבים. אחרי כמה ימים רבים מגלים שהם מספיקים לעבור על חומר שנדחה שבועות, כי האוזן פנויה גם כשהעיניים והידיים עסוקות. מתחילים בקטע קצר, בוחרים קצב נוח, ומאריכים בהדרגה.</p>
+  <p>עוד דרכים להקשיב: <a class="gold" href="/kelim/tochen/hakraa/sfarim-muklatim/">ספר שמע מקובץ</a>, <a class="gold" href="/kelim/tochen/hakraa/pdf/">מקריא ל-PDF</a>, <a class="gold" href="/kelim/tochen/hakraa/tekst-ledibur/">המרה לדיבור</a>, <a class="gold" href="/kelim/tochen/hakraa/">הדף הראשי של ההקראה</a>. אולי יעזרו גם <a class="gold" href="/kelim/negishut/">כלי הנגישות</a>, <a class="gold" href="/kelim/pratiut/">פרטיות</a> ו<a class="gold" href="/kelim/">שאר הכלים</a></p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>יש מקריא טקסטים בעברית בחינם?</summary><p>כן, זה הדף. מדביקים או מעלים מסמך ושומעים אותו, בלי הרשמה ובלי תשלום.</p></details>
+  <details><summary>המקריא עובד גם באייפון ובאנדרואיד?</summary><p>כן, ישירות מהדפדפן, בלי להוריד שום דבר מהחנות.</p></details>
+  <details><summary>אפשר לראות את המילים בזמן שהן נאמרות?</summary><p>כן. "להציג את הטקסט שמוקרא" פותח את הקטע הנוכחי באותיות גדולות.</p></details>
+  <details><summary>זה מתאים לילד עם דיסלקציה?</summary><p>זה כלי עזר: הוא מאפשר לשמוע ולקרוא יחד ולשלוט בקצב. הוא לא מחליף אבחון או טיפול.</p></details>
+  <details><summary>המקריא זוכר איפה הפסקתי?</summary><p>כן. ההקראות נשארות במכשיר תחת "ההקראות שלי", וממשיכים מאותה שנייה.</p></details>
+  <details><summary>אפשר לבחור מי יקריא?</summary><p>כן, מקריא או מקריאה, ובכל מסמך מחדש.</p></details>
+  <details><summary>צריך אינטרנט?</summary><p>להכנת ההקראה כן. קובץ שכבר ירד למכשיר מתנגן גם בלי רשת.</p></details>
+</section>

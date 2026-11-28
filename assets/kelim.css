@@ -1,0 +1,178 @@
+/* הכלים של גילעד רחמים + כלי קודש – מעל site.css. צבעים משלהם, אותו אופי. */
+body.site-kelim{--ink:#0f1d1c;--ink-2:#152826;--gold:#d8b35f;--gold-hi:#e8c87c;--gold-soft:#8f7a45;--body:#d4dcd2;--muted:#9db0a8;--parchment:#eef1e8;--cream:#fbfaf2;--line:rgba(216,179,95,.2);--accent:#5fbfa6}
+body.site-kodesh{--ink:#0e1628;--ink-2:#15203a;--gold:#d4b062;--gold-hi:#e6c57e;--gold-soft:#8a7444;--body:#d3d9e6;--muted:#9aa6bf;--parchment:#eef0f6;--cream:#fbfaf4;--line:rgba(212,176,98,.2);--accent:#7fa7e0}
+body.site-kelim,body.site-kodesh{background:radial-gradient(120% 60% at 85% 0%,rgba(216,179,95,.09),transparent 60%),radial-gradient(90% 50% at 0% 100%,var(--line),transparent 60%),var(--ink)}
+html:has(body.site-kelim){background:#0f1d1c}
+html:has(body.site-kodesh){background:#0e1628}
+.site-kelim .brand img,.site-kodesh .brand img{border-radius:10px}
+[hidden]{display:none!important}
+.k-hero{text-align:center;padding:2.6rem 1.25rem 1.6rem;max-width:44rem;margin:0 auto}
+.k-hero h1{font-family:var(--serif);font-weight:700;color:var(--cream);font-size:clamp(2rem,8vw,3rem);line-height:1.15}
+.k-hero .sub{color:var(--body);font-size:1.15rem;margin-top:.8rem}
+.k-hero .actions{justify-content:center;margin-top:1.3rem}
+.k-sec{max-width:46rem;margin:0 auto;padding:1.6rem 1.25rem}
+.k-sec>h2{font-family:var(--serif);color:var(--cream);font-size:1.6rem;margin-bottom:.4rem}
+.k-sec>p.lead2{color:var(--body);margin-bottom:1rem}
+.story{border:1px solid var(--line);border-radius:18px;padding:1.4rem 1.3rem;background:rgba(255,255,255,.03);font-size:1.13rem;line-height:1.85;color:var(--parchment)}
+.story p+p{margin-top:.8rem}
+.story .sig{display:block;margin-top:1rem;color:var(--gold);font-family:var(--serif);font-size:1.15rem}
+.flag{display:grid;gap:.6rem;padding:1.4rem 1.3rem;border:1px solid var(--gold-soft);border-radius:18px;background:linear-gradient(160deg,rgba(216,179,95,.16),rgba(216,179,95,.03) 65%);text-decoration:none;color:inherit}
+.flag b{font-family:var(--serif);font-size:1.45rem;color:var(--cream)}
+.flag span{color:var(--body)}
+.flag .go{color:var(--gold);font-weight:600}
+.dom{display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:.8rem}
+.dom>*{position:relative;display:block;padding:1.05rem 1rem;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.025);color:inherit;text-decoration:none}
+.dom b{display:block;font-family:var(--serif);color:var(--cream);font-size:1.18rem;line-height:1.3;padding-inline-end:4.2rem}
+.dom span{display:block;color:var(--muted);font-size:.98rem;margin-top:.3rem;line-height:1.5}
+.dom a:hover{border-color:var(--gold-soft)}
+.badge{position:absolute;top:.85rem;inset-inline-end:.8rem;font-size:.8rem;font-weight:700;border-radius:99px;padding:.1rem .6rem;background:var(--gold);color:var(--ink)}
+.badge.soon{background:transparent;color:var(--muted);border:1px solid var(--line);font-weight:600}
+.dom .is-soon{opacity:.82}
+.k-form{display:grid;gap:.9rem;padding:1.3rem 1.2rem;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.03)}
+.k-form textarea{width:100%;min-height:6.5rem;font:inherit;font-size:1.05rem;color:var(--cream);background:rgba(0,0,0,.25);border:1px solid var(--line);border-radius:12px;padding:.75rem .85rem;resize:vertical}
+.k-form textarea:focus{outline:2px solid var(--gold);outline-offset:1px}
+.k-form .done{padding:1rem;border-radius:12px;background:rgba(95,191,166,.12);border:1px solid rgba(95,191,166,.4);color:var(--cream)}
+.give{display:grid;gap:.8rem}
+.give .num{display:flex;flex-wrap:wrap;align-items:center;gap:.7rem;padding:1rem 1.1rem;border:1px solid var(--gold-soft);border-radius:14px;background:rgba(216,179,95,.08)}
+.give .num b{font-size:1.5rem;letter-spacing:.04em;color:var(--cream);direction:ltr}
+.give ul{list-style:none;display:grid;gap:.45rem;color:var(--body)}
+.give li::before{content:"•";color:var(--gold);margin-inline-end:.5rem}
+.me{display:grid;grid-template-columns:5.5rem 1fr;gap:1rem;align-items:start}
+.me img{width:5.5rem;height:5.5rem;border-radius:50%;object-fit:cover;border:2px solid var(--gold-soft)}
+.me p{color:var(--body);line-height:1.75}
+.install-bar{position:fixed;inset-inline:0;bottom:0;z-index:50;display:flex;align-items:center;gap:.7rem;padding:.75rem 1rem calc(.75rem + env(safe-area-inset-bottom));background:var(--ink-2);border-top:1px solid var(--gold-soft);color:var(--cream);font-size:1rem}
+.install-bar span{flex:1}
+.install-bar .x{background:none;border:0;color:var(--muted);font-size:1.6rem;line-height:1;cursor:pointer;padding:0 .3rem}
+.ios-tip{margin-top:.6rem;padding:.8rem 1rem;border-radius:12px;border:1px dashed var(--gold-soft);color:var(--body);font-size:1rem}
+.share-row{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin:1.2rem 0 .4rem}
+.disclaimer{color:var(--muted);font-size:.92rem;text-align:center;margin:1rem auto 0;max-width:36rem}
+/* כלי: תיבת תוצאה */
+.tool{max-width:40rem;margin:0 auto;padding:0 1.25rem}
+.res{margin-top:1rem;padding:1.2rem 1.15rem;border:1px solid var(--gold-soft);border-radius:16px;background:linear-gradient(170deg,rgba(216,179,95,.13),rgba(216,179,95,.02) 60%)}
+.res h3{font-family:var(--serif);color:var(--cream);font-size:1.25rem}
+.res .big{font-family:var(--serif);font-weight:700;color:var(--cream);font-size:clamp(1.4rem,6vw,1.9rem);line-height:1.3;margin-top:.25rem}
+.res .g{color:var(--gold);font-size:1.15rem}
+.res ul{list-style:none;display:grid;gap:.4rem;margin-top:.7rem;color:var(--body);font-size:1rem}
+.res li{padding-inline-start:.9rem;border-inline-start:2px solid var(--gold-soft)}
+.tabs{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1rem}
+.tabs button{font:inherit;font-size:1rem;padding:.5rem .9rem;border-radius:99px;border:1px solid var(--line);background:transparent;color:var(--body);cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--gold);color:var(--ink);border-color:var(--gold);font-weight:700}
+@media (max-width:640px){body.site-kelim,body.site-kodesh{padding-bottom:0}}
+/* "הכלי עזר לך?" + הצעה לשיפור, בתחתית כל כלי */
+.fb{margin:2.4rem auto 0;padding:0 1.25rem;max-width:40rem}
+.fb .in{border:1px dashed var(--line);border-radius:18px;padding:1.1rem 1rem;text-align:center;background:rgba(255,255,255,.025)}
+.fb-q{font-family:var(--serif);color:var(--cream);font-size:1.15rem}
+.fb-rate{display:flex;gap:.5rem;justify-content:center;margin-top:.6rem}
+.fb-thanks{color:var(--parchment);margin-top:.4rem}
+.fb-more{margin-top:.8rem;text-align:right}
+.fb-more summary{cursor:pointer;color:var(--gold);font-weight:600;text-align:center;list-style-position:inside}
+.fb-more form{margin-top:.8rem}
+.fb-note{color:var(--muted);font-size:.9rem;margin-top:.8rem}
+.shp-line{text-align:right;margin:0 0 1rem;padding:0 0 .9rem;border-bottom:1px dashed var(--line)}
+.shp-line-h{font-family:var(--serif);color:var(--gold);font-size:1.05rem;text-align:center}
+.shp-line-h .n{color:var(--muted);font-family:inherit;font-size:.85rem}
+.shp-line ul{list-style:none;margin:.5rem 0 0;padding:0;display:grid;gap:.45rem}
+.shp-line li{color:var(--body);font-size:.93rem;line-height:1.6}
+.shp-line time{color:var(--muted);font-size:.82rem;margin-inline-end:.35rem;white-space:nowrap}
+.shp-line .by{color:var(--gold)}
+.fb-nameok{margin-top:.5rem;font-size:.88rem}
+@media print{.fb{display:none!important}}
+body[data-tool="rega"] .fb{display:none}
+/* footer v2 */
+.ft{max-width:64rem;border-top:1px solid var(--line);margin-top:2.5rem}.ft .ft-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;padding:1.3rem 1.2rem;margin-bottom:1rem;border:1px solid var(--gold-soft);border-radius:20px;background:radial-gradient(120% 160% at 100% 0,rgba(216,179,95,.2),transparent 60%),rgba(255,255,255,.02)}.ft .ft-cta p{margin:.25rem 0 0;color:var(--body)}.ft .ft-h{font-size:1.3rem;color:var(--cream);margin:0}.ft .ft-btns{display:flex;flex-wrap:wrap;gap:.5rem}.ft .ft-btns a{display:inline-flex;padding:.45rem 1rem}.ft .ft-btns .btn-gold{color:var(--ink)}.ft .ft-help{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem;padding:.8rem 1rem;margin-bottom:1.6rem;border-radius:16px;background:rgba(95,191,166,.08);border:1px solid rgba(95,191,166,.28)}.ft .ft-help-t{color:var(--cream);font-weight:600;margin-inline-end:.3rem}.ft .ft-help a{display:inline-flex;gap:.3rem;align-items:center;padding:.3rem .7rem;border-radius:999px;border:1px solid var(--line);background:var(--ink-2);color:var(--body)}.ft .ft-help a b{direction:ltr;unicode-bidi:isolate;color:var(--accent);font-family:inherit;font-weight:700;margin:0;display:inline}.ft .ft-help a.urgent b{color:#ff8a7a}.ft .ft-help a.go{border-color:transparent;background:none;color:var(--gold);font-weight:600}.ft .cols{grid-template-columns:repeat(auto-fit,minmax(9.5rem,1fr))}.ft .ft-doms{grid-row:span 2}.ft .ft-link{display:block;padding:.15rem 0;background:none;border:0;color:var(--muted);font:inherit;cursor:pointer;text-align:start}.ft .ft-link:hover{color:var(--parchment)}.ft .ft-promise{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem 1.2rem;list-style:none;margin:1.6rem 0 0;padding:.9rem 0 0;border-top:1px solid var(--line);color:var(--body);font-size:.9rem}.ft .end a{display:inline;color:var(--gold)}@media (max-width:560px){.ft .cols{grid-template-columns:1fr 1fr}.ft .ft-doms{grid-row:auto}.ft .ft-btns{width:100%}.ft .ft-btns a{flex:1;justify-content:center}}@media print{.ft{display:none!important}}
+/* גילוי אפשרויות: שורה קצרה ליד הפעולה (09.11.2026) */
+.k-next{margin:1.2rem 0;padding:.8rem 1rem;border:1px solid var(--line);border-radius:12px;background:rgba(201,162,75,.07);font-size:.97rem;line-height:1.6}
+.k-voice{margin:.4rem 0 .6rem;font-size:.95rem;opacity:.95}
+.fb-share{text-align:center;margin:.6rem 0 0}
+
+/* שיתוף בלי ווטסאפ: SMS והעתקת קישור ליד כל כפתור ווטסאפ (מכשירים כשרים, 09.11.2026) */
+.share-alts{display:inline-flex;flex-wrap:wrap;gap:.4rem;margin:.4rem .4rem 0;vertical-align:middle}
+.share-alts .btn{font-size:.9rem}
+.kasher-msg{white-space:pre-wrap;direction:rtl;background:rgba(201,162,75,.07);border:1px solid var(--line);border-radius:12px;padding:.8rem 1rem;font-size:.97rem;line-height:1.65;width:100%;min-height:12rem;color:inherit;font-family:inherit}
+@media print{.share-alts{display:none}}
+.k-list{margin:.6rem 0 1rem;padding-inline-start:1.2rem;display:grid;gap:.55rem;line-height:1.65}
+/* "עוד כלים בחינם" בתחתית כל כלי (build.py: seo_related) */
+.rel{margin-top:2.2rem;border-top:1px solid var(--line)}
+.rel .dom b{padding-inline-end:0;font-size:1.08rem}
+.rel .rel-all{margin-top:.9rem;text-align:center}
+@media print{.rel{display:none!important}}
+body[data-tool="rega"] .rel{display:none}
+/* "בחינם, בלי הגבלה ובלי פרסומות" – פס בראש כל דף (build.py chesed_band) */
+.chesed{max-width:44rem;margin:.7rem auto 0;padding:0 1.25rem;text-align:center}.chesed-t{display:flex;flex-wrap:wrap;justify-content:center;gap:.35rem .45rem;margin:0}.chesed-t b{display:inline-flex;align-items:center;padding:.22rem .75rem;border-radius:999px;border:1px solid var(--gold-soft);background:rgba(216,179,95,.1);color:var(--gold);font-weight:700;font-size:.92rem;line-height:1.4;white-space:nowrap}.chesed-s{margin:.4rem 0 0;color:var(--muted);font-size:.86rem;line-height:1.5}@media print{.chesed{display:none!important}}
+.chesed-p{margin:.5rem auto 0;max-width:26rem;font-size:.88rem;color:var(--muted)}.chesed-p summary{cursor:pointer;color:var(--gold);display:inline-block}.chesed-p label{display:block;margin:.5rem 0 .3rem;color:var(--body)}.chesed-p input{display:block;width:100%;max-width:14rem;margin:.3rem auto 0;text-align:center;font-size:1.1rem;letter-spacing:.08em}.chesed-p span{display:block;margin-top:.25rem}.chesed-p .chesed-ok{color:var(--accent);font-weight:600}
+
+/* נגישות WCAG 2.2 AA (12.11.2026): התגית על כרטיס בצבע כהה על זהב (".dom span" דרס אותה לאפור, ניגודיות 1.1) */
+.dom span.badge{color:var(--ink);font-size:.8rem;margin-top:0;line-height:1.5}
+.dom span.badge.soon{color:var(--muted)}
+.install-bar .x{min-width:2.75rem;min-height:2.75rem}
+/* פס "החדשות ב-3 דקות" (18.11.2026) – דק ורגוע, בראש התוכן בדף הבית ובדפים הנצפים */
+.newsbar{display:flex;flex-wrap:nowrap;align-items:center;gap:.4rem .6rem;max-width:var(--max,1100px);margin:.6rem auto 0;padding:.45rem .7rem;border:1px solid var(--line);border-radius:12px;background:rgba(216,179,95,.06);font-size:.93rem;box-sizing:border-box;width:calc(100% - 2rem)}
+.newsbar a{text-decoration:none;color:inherit}
+.newsbar .nb-main{display:flex;align-items:center;gap:.5rem;flex:1 1 auto;min-width:0;min-height:2.75rem}
+.newsbar .nb-txt{min-width:0;line-height:1.45}
+.newsbar .nb-txt b{color:var(--gold)}
+.newsbar .nb-ed{color:var(--muted)}
+.newsbar .nb-sub{display:block;color:var(--muted);font-size:.86rem}
+.newsbar .nb-ed::before{content:"– "}
+.newsbar .nb-go{color:var(--gold);margin-inline-start:auto}
+.newsbar .nb-bell{border:1px solid var(--gold-soft);border-radius:99px;padding:.3rem .8rem;color:var(--gold);font-size:.88rem;min-height:2.75rem;display:inline-flex;align-items:center;white-space:nowrap}
+.newsbar .nb-bell{flex:0 0 auto;justify-content:center;min-width:2.75rem}
+/* גובה קבוע בטלפון (26.11.2026, CLS): שלוש שורות שלא נשברות, כך שמילוי שם המהדורה והחלפת הגופן לא מזיזים את הדף */
+@media (max-width:560px){.newsbar .nb-bell-t,.newsbar .nb-go{display:none}.newsbar .nb-txt{flex:1 1 0}.newsbar .nb-txt>*{display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.newsbar .nb-ed::before{content:none}}
+@media (max-width:359px){.newsbar .nb-ic{display:none}}
+.newsbar a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+/* גופנים בלי קפיצות (26.11.2026, CLS): לטקסט של הדף – font-display:optional יחד עם preload בתבנית, כך שהגופן לא מוחלף אחרי שהדף כבר צויר.
+   שמות נפרדים בכוונה: "Assistant" ו-"Frank Ruhl Libre" נשארים swap בשביל הכלים שמציירים תמונות על canvas. */
+@font-face{font-family:"Assistant UI";src:url("fonts/Assistant-wght.woff") format("woff");font-weight:200 800;font-display:optional}
+@font-face{font-family:"Frank Ruhl UI";src:url("fonts/FrankRuhlLibre-wght.woff") format("woff");font-weight:300 900;font-display:optional}
+body[data-site]{--sans:"Assistant UI",system-ui,sans-serif;--serif:"Frank Ruhl UI","David Libre",serif}
+
+/* "עוד כלים שיעזרו לכם" v2: שישה כרטיסים */
+.rel-v2 .dom{display:grid;grid-template-columns:repeat(auto-fill,minmax(14rem,1fr));gap:.7rem}
+.rel-v2 .rc{display:flex;flex-direction:column;gap:.2rem;padding:.75rem .9rem;border:1px solid rgba(201,165,92,.35);border-radius:.7rem;background:rgba(255,255,255,.04)}
+.rel-v2 .rc a{font-weight:700;color:var(--gold,#d8b35f);text-decoration:none;min-height:24px}
+.rel-v2 .rc a:hover,.rel-v2 .rc a:focus-visible{text-decoration:underline}
+.rel-v2 .rc span{font-size:.88rem;opacity:.85}
+.rel-v2 .rc .badge{display:inline-block;margin-inline-start:.4rem;font-size:.72rem;font-weight:700;padding:.05rem .45rem;border-radius:1rem;background:#1b1b1b;color:#f3d98c}
+
+/* פס עונה (חנוכה): בית, דפי תחום; assets/discover.js */
+.hk-season{max-width:62rem;margin:1rem auto;padding:.7rem 1rem;border:1px solid rgba(201,165,92,.5);border-radius:.8rem;background:rgba(201,165,92,.08)}
+.hk-season p{margin:.15rem 0}
+.hk-se-h span:last-child{opacity:.85}
+.hk-se-l{display:flex;flex-wrap:wrap;gap:.45rem}
+.hk-season a{display:inline-flex;align-items:center;min-height:44px;padding:0 .8rem;border-radius:2rem;border:1px solid rgba(201,165,92,.5);color:var(--gold,#d8b35f);text-decoration:none;font-weight:600;font-size:.92rem}
+.hk-season a:hover,.hk-season a:focus-visible{background:rgba(201,165,92,.18)}
+.hk-thin{padding:.3rem .8rem;margin:.5rem auto}
+.hk-thin p{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center}
+@media print{.hk-season{display:none}}
+
+/* פס שקט לקורס אחרי כל כלי (24.11.2026) */
+.kurs-band{max-width:46rem;margin:1.6rem auto 0;padding:.7rem 1.1rem;text-align:center;border-top:1px solid var(--line)}
+.kurs-band p{margin:0;font-size:.95rem;color:var(--parchment,inherit);line-height:1.7}
+.kurs-band a{color:var(--gold);font-weight:700}
+
+/* ביצועים בנייד (26.11.2026): מקטעים שמתחת לקפל לא מחושבים עד שמתקרבים אליהם בגלילה */
+@media screen{main>.seo-txt,main>.seo-faq,body>.site-foot{content-visibility:auto;contain-intrinsic-size:auto 60rem}}
+/* עמוד הכלים (27.11.2026): טקסט ההסבר גבוה מההערכה, והקישורים שבו "כיסו" את כותרות השאלות בבדיקת הנגישות */
+@media screen{body[data-tool="kelim_home"]>main>.seo-txt{contain-intrinsic-size:auto 120rem}}
+
+/* מסך צר מאוד (26.11.2026): בלי גלישה אופקית בתפריט העליון */
+@media (max-width:380px){body.site-kelim .topbar .in{gap:.4rem;padding-inline:.7rem}body.site-kelim .brand{gap:.4rem}body.site-kelim .brand b{font-size:.9rem}}
+
+/* תפריט עליון במסך צר (26.11.2026): שורה משלו עם מטרות לחיצה של 44px. היא נגללת עם הדף,
+   והשורה של השם והחיפוש נשארת דביקה באותו גובה כמו קודם (כדי לא להסתיר אלמנטים דביקים אחרים). */
+@media (max-width:760px){
+  body .topbar{top:-45px}
+  body .topbar .in{flex-wrap:wrap;row-gap:.55rem;padding-top:0}
+  body .topbar .topnav{order:-1;flex:0 0 100%;min-width:0;height:44px;margin:0;gap:0;border-bottom:1px solid var(--line);box-sizing:content-box;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain}
+  body .topbar .topnav a{flex:1 0 auto;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-width:44px;min-height:44px;padding:0 .4rem;font-size:.86rem;border-radius:10px;white-space:nowrap}
+  body .topbar .topnav a:focus-visible{outline-offset:-3px!important;box-shadow:none}
+  body .topbar .topnav .brand-sub{flex:0 0 auto;height:auto;padding:0 .7rem}
+  body .topbar .brand{flex:1 1 0;min-width:0}
+  body .topbar .brand b{min-width:0;white-space:normal;line-height:1.15;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+  body .topbar .hkd-top{min-height:44px;min-width:44px;justify-content:center}
+}
+@media (max-width:340px){body .topbar .topnav a{font-size:.8rem;padding:0 .25rem}}
+/* שם המיזם תמיד בשתי שורות במסך צר, כדי שהחלפת הגופן לא תזיז אותו */
+@media (max-width:480px){body .topbar .brand b{max-width:9em}}

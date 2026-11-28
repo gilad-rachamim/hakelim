@@ -1,0 +1,148 @@
+<!--meta {
+  "site": "kelim",
+  "nav": "tchumim",
+  "tool": "tochen_hakraa_sefer",
+  "title": "ספרים מוקלטים מכל קובץ – להפוך ספר, חוברת או סיכום לספר שמע בחינם | הכלים של גילעד רחמים",
+  "description": "ספרים מוקלטים שמכינים לבד: מעלים ספר, חוברת או סיכום כקובץ PDF או Word, ומקבלים ספר שמע בעברית בקול אנושי, עם פרקים, מהירות עד פי 3 והורדה כ-MP3. חינם.",
+  "og_title": "ספר מוקלט מכל קובץ – בחינם",
+  "priority": "0.8",
+  "crumbs": [
+    [
+      "יצירת תוכן",
+      "/kelim/tochen/"
+    ],
+    [
+      "הקראת טקסט בעברית",
+      "/kelim/tochen/hakraa/"
+    ],
+    [
+      "ספר מוקלט מכל קובץ",
+      null
+    ]
+  ],
+  "head": "<link rel=\"stylesheet\" href=\"/assets/tochen-hakraa.css\"><link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"איך הופכים ספר לספר מוקלט?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"מעלים אותו כקובץ Word, ‏TXT או PDF עם טקסט, בוחרים מספר או מספרת ולוחצים \\\"המר לקובץ קול\\\".\"}}, {\"@type\": \"Question\", \"name\": \"אפשר להמיר ספר שלם?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן, בהדרגה. ספר עבה עשוי להימשך כמה ימים בגלל תקרת הדיבור היומית.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר להפוך ספר מודפס לספר שמע?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"רק אם יש לו נוסח דיגיטלי. צילומי עמודים הם תמונות, והכלי לא מזהה בהן אותיות.\"}}, {\"@type\": \"Question\", \"name\": \"זה תחליף לספרייה לעיוורים?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לא. שם יש אלפי ספרים בקריאת אדם. כאן משלימים את מה שחסר.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר לשתף את הספר המוקלט?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"את מה שכתבתם או שמותר להפצה, כן. יצירה מוגנת רק לשימושכם.\"}}, {\"@type\": \"Question\", \"name\": \"הספר יישאר גם מחר?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן, באותו דפדפן ובאותו מכשיר. לגיבוי מורידים MP3.\"}}, {\"@type\": \"Question\", \"name\": \"יש תשלום לפי עמוד?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"אין. בלי מנוי, בלי הרשמה ובלי פרסומות.\"}}]}</script><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"WebApplication\", \"name\": \"ספר מוקלט מכל קובץ – בחינם\", \"applicationCategory\": \"AccessibilityApplication\", \"operatingSystem\": \"Any\", \"inLanguage\": \"he\", \"isAccessibleForFree\": true, \"url\": \"https://hakelim.com/kelim/tochen/hakraa/sfarim-muklatim/\", \"offers\": {\"@type\": \"Offer\", \"price\": \"0\", \"priceCurrency\": \"ILS\"}, \"accessibilityFeature\": [\"fullKeyboardControl\", \"ARIA\", \"highContrastDisplay\", \"largePrint\", \"ttsMarkup\"], \"accessibilityHazard\": \"none\"}</script>",
+  "foot": "<script src=\"/assets/tochen-hakraa.js\" defer></script>"
+}
+-->
+<header class="k-hero">
+  <h1>ספרים מוקלטים – מכל קובץ שיש לכם</h1>
+  <p class="sub">יש לכם ספר, חוברת לימוד או סיכום כקובץ <bdi>PDF</bdi> או <bdi>Word</bdi>? מעלים אותו ומקבלים ספר מוקלט בעברית, בקול אנושי, עם פרקים.</p>
+  <p class="hk-free">חינם · בלי הרשמה · בלי פרסומות · נגיש לקורא מסך ולמקלדת</p>
+</header>
+<div class="tool hk" id="hk-app">
+  <section class="hk-step" aria-labelledby="hk-s1">
+    <h2 id="hk-s1">1. הטקסט להקראה</h2>
+    <div class="hk-row">
+      <button type="button" class="btn btn-gold" id="hk-pick" aria-label="להעלות קובץ PDF או Word">להעלות קובץ <bdi>PDF</bdi> או <bdi>Word</bdi></button>
+      <input type="file" id="hk-file" accept=".pdf,.docx,.txt,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain" hidden aria-hidden="true" tabindex="-1">
+      <span class="hk-fname" id="hk-fname"></span>
+    </div>
+    <label for="hk-src">או מדביקים כאן טקסט:</label>
+    <textarea id="hk-src" class="hk-src" rows="6" dir="auto"></textarea>
+    <p class="hk-count" id="hk-count" aria-live="off"></p>
+  </section>
+
+  <fieldset class="hk-step">
+    <legend>2. מי מקריא</legend>
+    <div class="hk-opts">
+      <label class="hk-opt"><input type="radio" name="hk-voice" value="m" checked> קול של גבר</label>
+      <label class="hk-opt"><input type="radio" name="hk-voice" value="f"> קול של אישה</label>
+    </div>
+  </fieldset>
+
+  <fieldset class="hk-step">
+    <legend>3. מה להקריא</legend>
+    <div class="hk-opts">
+      <label class="hk-opt"><input type="radio" name="hk-mode" value="full" checked> הקראה מלאה, מילה במילה</label>
+      <label class="hk-opt"><input type="radio" name="hk-mode" value="skira"> סקירה קולית קצרה של המסמך</label>
+    </div>
+  </fieldset>
+
+  <div class="hk-go-row">
+    <button type="button" class="btn btn-gold hk-go" id="hk-go">המר לקובץ קול</button>
+    <button type="button" class="btn btn-line" id="hk-stop" hidden>לעצור את ההמרה</button>
+    <button type="button" class="btn btn-line" id="hk-device" hidden>להקריא בקול של המכשיר</button>
+  </div>
+  <p class="hk-status" id="hk-status" role="status" aria-live="polite"></p>
+  <progress class="hk-prog" id="hk-prog" max="100" value="0" hidden aria-label="התקדמות ההמרה"></progress>
+  <p class="hk-prog-t" id="hk-prog-t"></p>
+
+  <section class="hk-player" id="hk-player" hidden aria-labelledby="hk-p-h">
+    <h2 id="hk-p-h">הנגן</h2>
+    <p class="hk-title" id="hk-title"></p>
+    <audio id="hk-audio" preload="auto"></audio>
+    <div class="hk-ctl">
+      <button type="button" class="btn btn-gold hk-play" id="hk-play" aria-pressed="false">▶ נגן</button>
+      <button type="button" class="btn btn-line" id="hk-back">15 שניות אחורה</button>
+      <button type="button" class="btn btn-line" id="hk-fwd">15 שניות קדימה</button>
+      <button type="button" class="btn btn-line" id="hk-prev">הפרק הקודם</button>
+      <button type="button" class="btn btn-line" id="hk-next">הפרק הבא</button>
+    </div>
+    <div class="hk-row">
+      <label class="hk-rate-l" for="hk-rate">מהירות ההקראה</label>
+      <select id="hk-rate" class="hk-rate">
+        <option value="0.75">איטי, פי 0.75</option>
+        <option value="1" selected>רגיל, פי 1</option>
+        <option value="1.25">פי 1.25</option>
+        <option value="1.5">פי 1.5</option>
+        <option value="2">פי 2</option>
+        <option value="2.5">פי 2.5</option>
+        <option value="3">פי 3</option>
+      </select>
+      <button type="button" class="btn btn-gold" id="hk-dl">להוריד כקובץ MP3</button>
+    </div>
+    <p class="hk-where" id="hk-where"></p>
+    <div id="hk-ch-box" hidden>
+      <h3 id="hk-ch-h">פרקים</h3>
+      <ol class="hk-chapters" id="hk-chapters" aria-labelledby="hk-ch-h"></ol>
+    </div>
+    <button type="button" class="btn btn-line btn-sm" id="hk-showtext" aria-expanded="false" aria-controls="hk-text">להציג את הטקסט שמוקרא</button>
+    <div class="hk-text" id="hk-text" hidden dir="auto" tabindex="0" aria-label="הטקסט שמוקרא"></div>
+  </section>
+
+  <section class="hk-step" id="hk-mine-box" hidden aria-labelledby="hk-m-h">
+    <h2 id="hk-m-h">ההקראות שלי</h2>
+    <p class="note">נשמרות רק במכשיר הזה. פותחים וממשיכים להקשיב מהמקום שבו עצרתם.</p>
+    <ul class="hk-mine" id="hk-mine"></ul>
+  </section>
+
+  <details class="hk-embed-box">
+    <summary>להטמיע את הכלי באתר שלכם (עמותות, ספריות ומוסדות)</summary>
+    <p class="note">מעתיקים את השורה הזאת לדף באתר שלכם, והכלי מופיע בו כמו שהוא: בחינם, בלי הרשמה ובלי פרסומות.</p>
+    <label for="hk-embed-code" class="sr">שורת ההטמעה</label>
+    <textarea id="hk-embed-code" class="hk-embed-code" rows="3" readonly></textarea>
+    <button type="button" class="btn btn-line btn-sm" id="hk-embed-copy">להעתיק את השורה</button>
+  </details>
+  <p class="hk-by">הכלי של <a class="gold" href="https://hakelim.com/kelim/tochen/hakraa/" target="_blank" rel="noopener">מיזם הכלים של גילעד רחמים</a> – בחינם, לכולם.</p>
+</div>
+
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">ספר מוקלט שמכינים לבד, מהחומר שאתם צריכים</h2>
+  <p>ספרים מוקלטים וספרי שמע הם דרך נפלאה לקרוא בלי עיניים, אבל בקטלוג יש רק מה שמישהו כבר הקליט. חוברת הקורס, הסיכום של חבר או הספר המקצועי שקיבלתם כקובץ בדרך כלל לא שם. כאן מכינים מהם ספר קולי בעצמכם.</p>
+  <h3>לסטודנטים וללומדים עם לקות ראייה</h3>
+  <p>סטודנט עיוור או כבד ראייה מקבל ערימות של מאמרים ומצגות. במקום לחכות שבועות להקלטה, ממירים בערב ומאזינים בבוקר. ספרות יפה בקריאת קריינים משאילים מהספרייה המרכזית לעיוורים ולבעלי לקויות קריאה; הדף הזה משלים אותה במה שעוד לא הוקלט.</p>
+  <h3>ספרי שמע חינם: מה חוקי</h3>
+  <p>להמרה לשימוש אישי מתאים חומר שכתבתם, ספרים שזכויותיהם פקעו, או קבצים שקניתם ומותר לכם להשתמש בהם. אל תפיצו ספר שמע שהכנתם מיצירה מוגנת בלי רשות המחבר או ההוצאה. מקורות כמו פרויקט בן-יהודה מציעים הרבה ספרות עברית שאפשר להוריד ולהדביק כאן.</p>
+  <h3>ספר ארוך: כמה זמן זה לוקח</h3>
+  <p>רומן של מאתיים עמודים הוא שעות רבות של דיבור. ההמרה מתקדמת מנה אחר מנה, ואפשר לפתוח בהאזנה כשהמנה הראשונה מוכנה. בגלל התקרה היומית ספר שלם נפרס לרוב על כמה ימים: לוחצים "להמשיך את ההמרה", והיא נמשכת מהמקום שנעצרה.</p>
+  <h3>הקראת ספרים בפרקים</h3>
+  <p>כדי לקבל תוכן עניינים לחיץ, שימו כל כותרת פרק בשורה נפרדת: "פרק ראשון", "פרק שני", "אחרית דבר". כך חוזרים בקלות לפרק מסוים, ומי שנרדם באמצע מוצא את מקומו.</p>
+  <h3>להאזין ברכב, בהליכה ובמיטה</h3>
+  <p>ספר שהומר ממשיך להתנגן כשמסך הטלפון נעול. אפשר גם להוריד MP3 ולשים אותו בנגן, בדיסק-און-קי לרדיו של הרכב או בטלפון של הורה מבוגר. מאזינים ותיקים מאיצים לפי שתיים, ומי שלומד חומר חדש מאט.</p>
+  <h3>איפה הספר נשמר</h3>
+  <p>המדף שלכם נמצא בזיכרון הדפדפן: "ההקראות שלי". ניקוי נתוני גלישה מוחק אותו, ומכשיר אחר לא רואה אותו, לכן ספר שחשוב לכם מורידים כקובץ. הטקסט עצמו נשלח לשרת הקול של גוגל להפיכה לדיבור, ולא נאגר אצלנו.</p>
+  <h3>לפני שממירים: לנקות את הקובץ</h3>
+  <p>כדאי למחוק מהעותק את דף הזכויות, את המפתח ואת רשימות המקורות, כדי לא לבזבז עליהם דיבור ולא להקשיב לעשרות מספרי עמודים.</p>
+  <p>לקוראים בהאזנה: <a class="gold" href="/kelim/tochen/hakraa/pdf/">מסמך PDF בקול</a>, <a class="gold" href="/kelim/tochen/hakraa/makri-tekstim/">מקריא למסך</a>, <a class="gold" href="/kelim/tochen/hakraa/">כלי ההקראה</a>, <a class="gold" href="/kelim/negishut/">התאמות נגישות</a>, <a class="gold" href="/kelim/pratiut/">פרטיות</a>. <a class="gold" href="/kelim/tochen/">תוכן ויצירה</a> · <a class="gold" href="/kelim/">מפת הכלים</a></p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>איך הופכים ספר לספר מוקלט?</summary><p>מעלים אותו כקובץ Word, ‏TXT או PDF עם טקסט, בוחרים מספר או מספרת ולוחצים "המר לקובץ קול".</p></details>
+  <details><summary>אפשר להמיר ספר שלם?</summary><p>כן, בהדרגה. ספר עבה עשוי להימשך כמה ימים בגלל תקרת הדיבור היומית.</p></details>
+  <details><summary>אפשר להפוך ספר מודפס לספר שמע?</summary><p>רק אם יש לו נוסח דיגיטלי. צילומי עמודים הם תמונות, והכלי לא מזהה בהן אותיות.</p></details>
+  <details><summary>זה תחליף לספרייה לעיוורים?</summary><p>לא. שם יש אלפי ספרים בקריאת אדם. כאן משלימים את מה שחסר.</p></details>
+  <details><summary>אפשר לשתף את הספר המוקלט?</summary><p>את מה שכתבתם או שמותר להפצה, כן. יצירה מוגנת רק לשימושכם.</p></details>
+  <details><summary>הספר יישאר גם מחר?</summary><p>כן, באותו דפדפן ובאותו מכשיר. לגיבוי מורידים MP3.</p></details>
+  <details><summary>יש תשלום לפי עמוד?</summary><p>אין. בלי מנוי, בלי הרשמה ובלי פרסומות.</p></details>
+</section>

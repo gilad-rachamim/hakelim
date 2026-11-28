@@ -1,0 +1,146 @@
+<!--meta {
+  "site": "kelim",
+  "nav": "tchumim",
+  "tool": "tochen_hakraa_kraynut",
+  "title": "קריינות AI בעברית בחינם – קריין וקריינית לקובץ MP3, בלי הרשמה | הכלים של גילעד רחמים",
+  "description": "קריינות AI בעברית בחינם: כותבים טקסט, בוחרים קריין או קריינית בקול טבעי ומורידים קובץ MP3 לסרטון, למצגת, למענה קולי או לפודקאסט. בלי הרשמה ובלי קרדיטים.",
+  "og_title": "קריינות AI בעברית – בחינם",
+  "priority": "0.8",
+  "crumbs": [
+    [
+      "יצירת תוכן",
+      "/kelim/tochen/"
+    ],
+    [
+      "הקראת טקסט בעברית",
+      "/kelim/tochen/hakraa/"
+    ],
+    [
+      "קריינות AI בעברית",
+      null
+    ]
+  ],
+  "head": "<link rel=\"stylesheet\" href=\"/assets/tochen-hakraa.css\"><link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"יש קריינות AI בעברית בחינם?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. מקלידים תסריט, בוחרים קריין או קריינית ומורידים MP3, בלי להירשם ובלי לקנות דקות.\"}}, {\"@type\": \"Question\", \"name\": \"מותר להשתמש בקריינות בסרטון שלי?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"הקובץ שהפקתם שלכם: לסרטון, למצגת או לתא קולי. האחריות על תוכן התסריט היא שלכם, ובפלטפורמות שדורשות סימון של תוכן מלאכותי יש לסמן.\"}}, {\"@type\": \"Question\", \"name\": \"באיזה פורמט מגיעה הקריינות?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"MP3 אחד לכל התסריט, שנכנס לכל תוכנת עריכה נפוצה.\"}}, {\"@type\": \"Question\", \"name\": \"איך מוסיפים הפסקה ארוכה?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"הדרך הבטוחה: מפיקים כל חלק בנפרד ומשאירים רווח ביניהם בעריכה.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר מוזיקת רקע?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"הכלי מפיק דיבור בלבד. את המוזיקה מוסיפים בעריכה, רק קטעים שמותר לכם להשתמש בהם.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר לשבט את הקול שלי?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לא. יש שני קולות מוכנים, גבר ואישה.\"}}, {\"@type\": \"Question\", \"name\": \"זה מתאים לפרסומת?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לספוט קצר ברשתות כן. לשידור גדול מומלץ להשוות מול קריין מקצועי.\"}}]}</script><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"WebApplication\", \"name\": \"קריינות AI בעברית – בחינם\", \"applicationCategory\": \"AccessibilityApplication\", \"operatingSystem\": \"Any\", \"inLanguage\": \"he\", \"isAccessibleForFree\": true, \"url\": \"https://hakelim.com/kelim/tochen/hakraa/kraynut/\", \"offers\": {\"@type\": \"Offer\", \"price\": \"0\", \"priceCurrency\": \"ILS\"}, \"accessibilityFeature\": [\"fullKeyboardControl\", \"ARIA\", \"highContrastDisplay\", \"largePrint\", \"ttsMarkup\"], \"accessibilityHazard\": \"none\"}</script>",
+  "foot": "<script src=\"/assets/tochen-hakraa.js\" defer></script>"
+}
+-->
+<header class="k-hero">
+  <h1>קריינות AI בעברית – קריין וקריינית בחינם</h1>
+  <p class="sub">כותבים את הטקסט, בוחרים קול של קריין או של קריינית, ומורידים קריינות בעברית כקובץ <bdi>MP3</bdi>: לסרטון, למצגת, למענה קולי או לפודקאסט.</p>
+  <p class="hk-free">חינם · בלי הרשמה · בלי פרסומות · נגיש לקורא מסך ולמקלדת</p>
+</header>
+<div class="tool hk" id="hk-app">
+  <section class="hk-step" aria-labelledby="hk-s1">
+    <h2 id="hk-s1">1. הטקסט להקראה</h2>
+    <div class="hk-row">
+      <button type="button" class="btn btn-gold" id="hk-pick" aria-label="להעלות קובץ PDF או Word">להעלות קובץ <bdi>PDF</bdi> או <bdi>Word</bdi></button>
+      <input type="file" id="hk-file" accept=".pdf,.docx,.txt,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain" hidden aria-hidden="true" tabindex="-1">
+      <span class="hk-fname" id="hk-fname"></span>
+    </div>
+    <label for="hk-src">או מדביקים כאן טקסט:</label>
+    <textarea id="hk-src" class="hk-src" rows="6" dir="auto"></textarea>
+    <p class="hk-count" id="hk-count" aria-live="off"></p>
+  </section>
+
+  <fieldset class="hk-step">
+    <legend>2. מי מקריא</legend>
+    <div class="hk-opts">
+      <label class="hk-opt"><input type="radio" name="hk-voice" value="m" checked> קול של גבר</label>
+      <label class="hk-opt"><input type="radio" name="hk-voice" value="f"> קול של אישה</label>
+    </div>
+  </fieldset>
+
+  <fieldset class="hk-step">
+    <legend>3. מה להקריא</legend>
+    <div class="hk-opts">
+      <label class="hk-opt"><input type="radio" name="hk-mode" value="full" checked> הקראה מלאה, מילה במילה</label>
+      <label class="hk-opt"><input type="radio" name="hk-mode" value="skira"> סקירה קולית קצרה של המסמך</label>
+    </div>
+  </fieldset>
+
+  <div class="hk-go-row">
+    <button type="button" class="btn btn-gold hk-go" id="hk-go">המר לקובץ קול</button>
+    <button type="button" class="btn btn-line" id="hk-stop" hidden>לעצור את ההמרה</button>
+    <button type="button" class="btn btn-line" id="hk-device" hidden>להקריא בקול של המכשיר</button>
+  </div>
+  <p class="hk-status" id="hk-status" role="status" aria-live="polite"></p>
+  <progress class="hk-prog" id="hk-prog" max="100" value="0" hidden aria-label="התקדמות ההמרה"></progress>
+  <p class="hk-prog-t" id="hk-prog-t"></p>
+
+  <section class="hk-player" id="hk-player" hidden aria-labelledby="hk-p-h">
+    <h2 id="hk-p-h">הנגן</h2>
+    <p class="hk-title" id="hk-title"></p>
+    <audio id="hk-audio" preload="auto"></audio>
+    <div class="hk-ctl">
+      <button type="button" class="btn btn-gold hk-play" id="hk-play" aria-pressed="false">▶ נגן</button>
+      <button type="button" class="btn btn-line" id="hk-back">15 שניות אחורה</button>
+      <button type="button" class="btn btn-line" id="hk-fwd">15 שניות קדימה</button>
+      <button type="button" class="btn btn-line" id="hk-prev">הפרק הקודם</button>
+      <button type="button" class="btn btn-line" id="hk-next">הפרק הבא</button>
+    </div>
+    <div class="hk-row">
+      <label class="hk-rate-l" for="hk-rate">מהירות ההקראה</label>
+      <select id="hk-rate" class="hk-rate">
+        <option value="0.75">איטי, פי 0.75</option>
+        <option value="1" selected>רגיל, פי 1</option>
+        <option value="1.25">פי 1.25</option>
+        <option value="1.5">פי 1.5</option>
+        <option value="2">פי 2</option>
+        <option value="2.5">פי 2.5</option>
+        <option value="3">פי 3</option>
+      </select>
+      <button type="button" class="btn btn-gold" id="hk-dl">להוריד כקובץ MP3</button>
+    </div>
+    <p class="hk-where" id="hk-where"></p>
+    <div id="hk-ch-box" hidden>
+      <h3 id="hk-ch-h">פרקים</h3>
+      <ol class="hk-chapters" id="hk-chapters" aria-labelledby="hk-ch-h"></ol>
+    </div>
+    <button type="button" class="btn btn-line btn-sm" id="hk-showtext" aria-expanded="false" aria-controls="hk-text">להציג את הטקסט שמוקרא</button>
+    <div class="hk-text" id="hk-text" hidden dir="auto" tabindex="0" aria-label="הטקסט שמוקרא"></div>
+  </section>
+
+  <section class="hk-step" id="hk-mine-box" hidden aria-labelledby="hk-m-h">
+    <h2 id="hk-m-h">ההקראות שלי</h2>
+    <p class="note">נשמרות רק במכשיר הזה. פותחים וממשיכים להקשיב מהמקום שבו עצרתם.</p>
+    <ul class="hk-mine" id="hk-mine"></ul>
+  </section>
+
+  <details class="hk-embed-box">
+    <summary>להטמיע את הכלי באתר שלכם (עמותות, ספריות ומוסדות)</summary>
+    <p class="note">מעתיקים את השורה הזאת לדף באתר שלכם, והכלי מופיע בו כמו שהוא: בחינם, בלי הרשמה ובלי פרסומות.</p>
+    <label for="hk-embed-code" class="sr">שורת ההטמעה</label>
+    <textarea id="hk-embed-code" class="hk-embed-code" rows="3" readonly></textarea>
+    <button type="button" class="btn btn-line btn-sm" id="hk-embed-copy">להעתיק את השורה</button>
+  </details>
+  <p class="hk-by">הכלי של <a class="gold" href="https://hakelim.com/kelim/tochen/hakraa/" target="_blank" rel="noopener">מיזם הכלים של גילעד רחמים</a> – בחינם, לכולם.</p>
+</div>
+
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">קריינות בבינה מלאכותית, בעברית שנשמעת טבעית</h2>
+  <p>קריינות AI נוצרת על ידי מודל בינה מלאכותית במקום הקלטה באולפן. בעברית זה היה חלש במשך שנים והשתפר מאוד לאחרונה: ההטעמה נכונה, יש נשימות, וזה נשמע כמו אדם שקורא מדף. לסרטון קצר או להדרכה זה חוסך אולפן, מיקרופון וטייקים חוזרים.</p>
+  <h3>קריינות לסרטונים, למצגות ולמענה קולי</h3>
+  <p>כותבים את התסריט, מורידים את הפסקול ומניחים אותו על ציר הזמן בכל תוכנת עריכה. במצגת מוסיפים קטע שמע לכל שקף. עסק קטן יכול להכין הודעת פתיחה למרכזייה, "הגעתם אל..." ושעות הפעילות, ולהחליף אותה לפני כל חג.</p>
+  <h3>טיפים לקריינות שנשמעת מקצועית</h3>
+  <p>כותבים כמו שמדברים. פסיק נותן נשימה, נקודה נותנת עצירה, ושורה ריקה מפרידה בין רעיונות. שם של מותג או מונח לועזי כותבים באותיות עבריות לפי ההגייה. כל משפט במודעה צריך להחזיק לבד, כדי שאפשר יהיה לחתוך אותו בעריכה.</p>
+  <h3>קריין או קריינית: איך בוחרים</h3>
+  <p>מייצרים את משפט הפתיחה פעם בכל קול ומקשיבים ברמקול של טלפון, כי שם רוב הצופים. תוכן הדרכה ארוך דורש קול רגוע; מודעה של עשרים שניות מרוויחה מקצב מעט מהיר. את המהירות בנגן משנים רק להאזנה, ואם רוצים קצב אחר בסרטון מכוונים אותו בתוכנת העריכה.</p>
+  <h3>כמה זמן יוצא מכל טקסט</h3>
+  <p>בקצב דיבור רגיל, בערך מאה וארבעים מילים בעברית ממלאות דקה. ספוט של חצי דקה הוא כשבעים מילים, וסרטון הסבר של שלוש דקות כארבע מאות. כדאי למדוד את הקטע שיצא לפני שבונים עליו את התמונות.</p>
+  <h3>מתי עדיין צריך קריין אנושי</h3>
+  <p>לקמפיין גדול, למשחק קולי, לשירה או לדמות עם רגש מדויק, אדם באולפן עדיף. גם כשחוזה או פלטפורמה דורשים לציין שהקול מלאכותי, מציינים. אל תציגו קריין AI כאדם מסוים, ואל תחקו קול של מישהו.</p>
+  <h3>בלי קרדיטים ובלי חבילות</h3>
+  <p>שירותי קריינות מסחריים מוכרים דקות. כאן אין ארנק ואין מנוי; יש מכסה יומית אחת לכל הציבור, ומה שהספקתם להפיק נשאר שלכם. התסריט עובר לשרת הקול של גוגל לצורך ההפקה בלבד ואינו נשמר אצלנו, ולכן השקה סודית לא כדאי להקליד לפני מועדה.</p>
+  <p>להמשך ההפקה: <a class="gold" href="/kelim/tochen/">כלים לסרטונים ולתוכן</a>, <a class="gold" href="/kelim/tochen/tirgum/koli/">תרגום קולי</a>, <a class="gold" href="/kelim/tochen/hakraa/tekst-ledibur/">המרת טקסט לדיבור</a>, <a class="gold" href="/kelim/tochen/hakraa/">הקראה בעברית</a>, <a class="gold" href="/kelim/tamlul/">תמלול לכתוביות</a>. <a class="gold" href="/kelim/pratiut/">פרטיות</a> · <a class="gold" href="/kelim/">כל המיזם</a></p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>יש קריינות AI בעברית בחינם?</summary><p>כן. מקלידים תסריט, בוחרים קריין או קריינית ומורידים MP3, בלי להירשם ובלי לקנות דקות.</p></details>
+  <details><summary>מותר להשתמש בקריינות בסרטון שלי?</summary><p>הקובץ שהפקתם שלכם: לסרטון, למצגת או לתא קולי. האחריות על תוכן התסריט היא שלכם, ובפלטפורמות שדורשות סימון של תוכן מלאכותי יש לסמן.</p></details>
+  <details><summary>באיזה פורמט מגיעה הקריינות?</summary><p>MP3 אחד לכל התסריט, שנכנס לכל תוכנת עריכה נפוצה.</p></details>
+  <details><summary>איך מוסיפים הפסקה ארוכה?</summary><p>הדרך הבטוחה: מפיקים כל חלק בנפרד ומשאירים רווח ביניהם בעריכה.</p></details>
+  <details><summary>אפשר מוזיקת רקע?</summary><p>הכלי מפיק דיבור בלבד. את המוזיקה מוסיפים בעריכה, רק קטעים שמותר לכם להשתמש בהם.</p></details>
+  <details><summary>אפשר לשבט את הקול שלי?</summary><p>לא. יש שני קולות מוכנים, גבר ואישה.</p></details>
+  <details><summary>זה מתאים לפרסומת?</summary><p>לספוט קצר ברשתות כן. לשידור גדול מומלץ להשוות מול קריין מקצועי.</p></details>
+</section>

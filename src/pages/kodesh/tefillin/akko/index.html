@@ -1,0 +1,119 @@
+<!--meta {
+  "site": "kodesh",
+  "nav": "rabanim",
+  "tool": "tefillin_ir",
+  "title": "זמן הנחת תפילין עכו – משיכיר ושקיעה היום | כלי קודש",
+  "description": "זמן הנחת תפילין עכו: משיכיר ושקיעה להיום, טבלה לשנה שלמה, ספירה לאחור ותזכורת ביומן לפי השקיעה בעכו. בחינם, בלי הרשמה.",
+  "og_title": "זמן הנחת תפילין עכו",
+  "priority": "0.6",
+  "crumbs": [
+    [
+      "סדר הנחת תפילין",
+      "/kodesh/tefillin/"
+    ],
+    [
+      "עכו",
+      null
+    ]
+  ],
+  "head": "<script>(function(){var h=document.documentElement,k='tf-in-app',q=/[?&]utm_source=tefillin_app/.test(location.search);try{if(q)sessionStorage.setItem(k,'1');q=q||sessionStorage.getItem(k)==='1'}catch(e){}if(q)h.classList.add(k);var u=navigator.userAgent;if(/iPhone|iPad|iPod/.test(u)||(/Macintosh/.test(u)&&navigator.maxTouchPoints>1))h.classList.add('tf-ios');else if(!/Android/.test(u))h.classList.add('tf-pc')})();</script><link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><link rel=\"stylesheet\" href=\"/assets/kodesh-shabat.css\"><link rel=\"stylesheet\" href=\"/assets/boker.css\"><link rel=\"stylesheet\" href=\"/assets/kodesh-tefillin.css\"><style>.tf-tbl-wrap{overflow-x:auto}.tf-tbl{width:100%;border-collapse:collapse;font-size:.88rem;text-align:center}.tf-tbl th,.tf-tbl td{padding:.35rem .2rem;border-bottom:1px solid rgba(212,176,98,.25)}.tf-tbl th{color:var(--gold)}.tf-tbl caption{caption-side:bottom;padding-top:.5rem;font-size:.85rem}</style><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"מאיזו שעה מניחים תפילין בעכו היום?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"ב-26.11.2026 אפשר בעכו מהמשיכיר ב-05:25, ולדעת פוסקים מסוימים בדורנו מ-05:23. ליום אחר בעכו יש לוח בדף.\"}},{\"@type\":\"Question\",\"name\":\"עד מתי מניחים תפילין בעכו?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"עד השקיעה בעכו: ב-26.11.2026 בשעה 16:33, ובמשך השנה בין 16:32 ל-19:52.\"}},{\"@type\":\"Question\",\"name\":\"מתי המשיכיר בעכו הכי מוקדם ומתי הכי מאוחר?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"הכי מוקדם בעכו ב-14.6.2027, בשעה 04:30. הכי מאוחר ב-30.10.2027, בשעה 06:03.\"}},{\"@type\":\"Question\",\"name\":\"כמה זמן יש בעכו להניח תפילין ביום חורף קצר?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"בין המשיכיר לשקיעה בעכו יש ביום הקצר בשנה 10 שעות ו-54 דקות (21.12.2026, מ-05:42 עד 16:37), וביום הארוך 15 שעות ו-21 דקות (21.6.2027, מ-04:30 עד 19:51).\"}},{\"@type\":\"Question\",\"name\":\"במה זמני התפילין בעכו שונים מירושלים?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"בסוף יוני המשיכיר בעכו חל 4 דקות לפני ירושלים, והשקיעה בעכו 4 דקות אחרי ירושלים. בסוף דצמבר המשיכיר בעכו חל 3 דקות אחרי ירושלים, והשקיעה בעכו שתי דקות לפני ירושלים.\"}},{\"@type\":\"Question\",\"name\":\"איך מקבלים תזכורת תפילין לפי עכו?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"לוחצים בכלי על \\\"יומן לחצי שנה לפי עכו\\\" ופותחים את הקובץ בטלפון. כל תזכורת מחושבת לפי השקיעה בעכו באותו יום, בחינם ובלי הרשמה.\"}}]}</script>",
+  "foot": "<script src=\"/assets/vendor/hebcal-bundle/hebcal-core-6.14.7.min.js\" data-hebcal defer></script><script src=\"/assets/kodesh-tefillin.js\" defer></script>"
+} -->
+<header class="k-hero">
+  <h1>זמן הנחת תפילין עכו: מאיזו שעה ועד מתי</h1>
+  <p class="sub">משיכיר ושקיעה בעכו להיום, כמה זמן נשאר, תזכורת ולוח לשנה שלמה. בחינם, בלי הרשמה ובלי פרסומות.</p>
+</header>
+<div class="tool tf-card" id="tf" data-place="32.93,35.08" data-name="עכו">
+  <div class="tf-status" id="tf-status" aria-live="polite"><b>בודק את השקיעה בעכו…</b></div>
+  <div class="tf-times" id="tf-times"></div>
+  <button type="button" class="tf-done" id="tf-done">הנחתי תפילין ✓</button>
+  <button type="button" class="tf-ptur" id="tf-ptur">היום הייתי פטור</button>
+  <p class="tf-toast" id="tf-toast" aria-live="polite" hidden></p>
+  <div class="tf-week" id="tf-week" aria-label="השבוע האחרון. לחיצה על יום שעבר: הנחתי / הייתי פטור"></div>
+  <p class="tf-streak" id="tf-streak"></p>
+  <div class="tf-game" id="tf-game">
+    <div class="tf-lvl"><span class="tf-pts" id="tf-pts">0</span><span>נקודות</span><b id="tf-lvl">צעד ראשון</b></div>
+    <div class="tf-bar" aria-hidden="true"><i id="tf-bar"></i></div>
+    <p class="tf-next" id="tf-next"></p>
+    <p class="tf-cheer" id="tf-cheer"></p>
+  </div>
+  <div class="tf-place">
+    <label for="tf-city">המקום:</label>
+    <select id="tf-city"></select>
+    <button type="button" class="btn btn-sm btn-line" id="tf-gps">📍 המיקום שלי</button>
+  </div>
+  <p class="tf-msg" id="tf-gps-msg"></p>
+  <div class="tf-row"><label for="tf-before">תזכורת לפני השקיעה בעכו</label>
+    <select id="tf-before"><option value="15">15 דקות</option><option value="30">30 דקות</option><option value="45">45 דקות</option><option value="60">שעה</option><option value="90">שעה וחצי</option></select></div>
+  <div class="tf-btns">
+    <button type="button" class="btn btn-gold" id="tf-ics">📅 יומן לחצי שנה לפי עכו</button>
+    <button type="button" class="btn btn-line" id="tf-notif">🔔 להפעיל התראות בטלפון</button>
+  </div>
+  <p class="tf-msg" id="tf-ics-msg"></p>
+</div>
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">זמן תפילין עכו להיום, 26.11.2026</h2>
+  <p>בעכו מניחים היום מ-<bdi>05:25</bdi> (משיכיר) עד <bdi>16:33</bdi> (שקיעה), והנץ בעכו ב-<bdi>06:19</bdi>. לדעת פוסקים מסוימים בדורנו (66 דקות זמניות לפני הנץ) הזמן בעכו מתחיל ב-<bdi>05:23</bdi>, ומי שרוצה לסמוך על כך ישאל את הרב שלו.</p>
+  <h3>לוח זמני תפילין עכו לשנה</h3>
+  <div class="tf-tbl-wrap" tabindex="0" role="region" aria-label="טבלת זמני תפילין עכו"><table class="tf-tbl">
+  <caption>זמני תפילין בעכו, מדצמבר 2026 עד נובמבר 2027, בשעון ישראל (כולל שעון קיץ).</caption>
+  <thead><tr><th scope="col">תאריך</th><th scope="col">מוקדם*</th><th scope="col">משיכיר</th><th scope="col">נץ</th><th scope="col">שקיעה</th><th scope="col">כוכבים</th></tr></thead>
+  <tbody>
+<tr><th scope="row">1 בדצמבר</th><td>05:28</td><td>05:29</td><td>06:24</td><td>16:32</td><td>17:12</td></tr>
+<tr><th scope="row">15 בדצמבר</th><td>05:39</td><td>05:39</td><td>06:34</td><td>16:34</td><td>17:14</td></tr>
+<tr><th scope="row">1 בינואר</th><td>05:47</td><td>05:46</td><td>06:42</td><td>16:43</td><td>17:24</td></tr>
+<tr><th scope="row">15 בינואר</th><td>05:46</td><td>05:47</td><td>06:42</td><td>16:55</td><td>17:35</td></tr>
+<tr><th scope="row">1 בפברואר</th><td>05:36</td><td>05:42</td><td>06:35</td><td>17:11</td><td>17:49</td></tr>
+<tr><th scope="row">15 בפברואר</th><td>05:22</td><td>05:31</td><td>06:23</td><td>17:24</td><td>18:01</td></tr>
+<tr><th scope="row">1 במרץ</th><td>05:05</td><td>05:17</td><td>06:08</td><td>17:36</td><td>18:13</td></tr>
+<tr><th scope="row">15 במרץ</th><td>04:44</td><td>04:59</td><td>05:50</td><td>17:47</td><td>18:23</td></tr>
+<tr><th scope="row">1 באפריל</th><td>05:19</td><td>05:36</td><td>06:28</td><td>18:59</td><td>19:36</td></tr>
+<tr><th scope="row">15 באפריל</th><td>04:59</td><td>05:17</td><td>06:10</td><td>19:09</td><td>19:47</td></tr>
+<tr><th scope="row">1 במאי</th><td>04:38</td><td>04:57</td><td>05:52</td><td>19:21</td><td>20:00</td></tr>
+<tr><th scope="row">15 במאי</th><td>04:24</td><td>04:43</td><td>05:40</td><td>19:31</td><td>20:12</td></tr>
+<tr><th scope="row">1 ביוני</th><td>04:14</td><td>04:32</td><td>05:32</td><td>19:42</td><td>20:25</td></tr>
+<tr><th scope="row">15 ביוני</th><td>04:12</td><td>04:30</td><td>05:30</td><td>19:49</td><td>20:32</td></tr>
+<tr><th scope="row">1 ביולי</th><td>04:16</td><td>04:34</td><td>05:34</td><td>19:52</td><td>20:35</td></tr>
+<tr><th scope="row">15 ביולי</th><td>04:24</td><td>04:42</td><td>05:41</td><td>19:49</td><td>20:31</td></tr>
+<tr><th scope="row">1 באוגוסט</th><td>04:37</td><td>04:56</td><td>05:52</td><td>19:38</td><td>20:19</td></tr>
+<tr><th scope="row">15 באוגוסט</th><td>04:48</td><td>05:07</td><td>06:02</td><td>19:25</td><td>20:04</td></tr>
+<tr><th scope="row">1 בספטמבר</th><td>05:03</td><td>05:21</td><td>06:13</td><td>19:05</td><td>19:42</td></tr>
+<tr><th scope="row">15 בספטמבר</th><td>05:14</td><td>05:31</td><td>06:23</td><td>18:46</td><td>19:23</td></tr>
+<tr><th scope="row">1 באוקטובר</th><td>05:28</td><td>05:42</td><td>06:33</td><td>18:24</td><td>19:01</td></tr>
+<tr><th scope="row">15 באוקטובר</th><td>05:40</td><td>05:52</td><td>06:43</td><td>18:07</td><td>18:43</td></tr>
+<tr><th scope="row">1 בנובמבר</th><td>04:57</td><td>05:04</td><td>05:57</td><td>16:48</td><td>17:26</td></tr>
+<tr><th scope="row">15 בנובמבר</th><td>05:12</td><td>05:16</td><td>06:09</td><td>16:38</td><td>17:17</td></tr>
+  </tbody></table></div>
+  <p class="note">* מוקדם: לדעת פוסקים מסוימים בדורנו. הלוח של עכו מחושב בגובה פני הים.</p>
+  <h3>איך משתנה הזמן בעכו במשך השנה</h3>
+  <p>המשיכיר בעכו נע בין <bdi>04:30</bdi> (14.6.2027) לבין <bdi>06:03</bdi> (30.10.2027). השקיעה המוקדמת ביותר בעכו היא ב-<bdi>16:32</bdi> (4.12.2026), והמאוחרת ביותר ב-<bdi>19:52</bdi> (30.6.2027). ביום הקצר יש בעכו 10 שעות ו-54 דקות (21.12.2026, מ-05:42 עד 16:37), וביום הארוך 15 שעות ו-21 דקות (21.6.2027, מ-04:30 עד 19:51).</p>
+  <p>גם הנץ בעכו משתנה: המוקדם ביותר ב-<bdi>05:30</bdi> (8.6.2027) והמאוחר ביותר ב-<bdi>06:55</bdi> (30.10.2027). מי שמתפלל ותיקין בעכו מניח תפילין לפני הנץ, מהמשיכיר ואילך, ומוצא את שתי השעות של כל תקופה בלוח של עכו.</p>
+  <p>צאת הכוכבים בעכו היום, 26.11.2026, הוא ב-<bdi>17:13</bdi>. הזמנים בעכו מתעדכנים בכלי שבראש הדף בכל יום מחדש, ואפשר לבחור בו מקום אחר או את המיקום שלכם.</p>
+  <h3>עכו: המקום והשקיעה</h3>
+  <p>עכו יושבת על חוף הים, בצפון מפרץ חיפה. היא מערבית לגליל, ולכן השמש שוקעת בה מעט מאוחר יותר מאשר בכרמיאל או בצפת.</p>
+  <h3>עכו מול ירושלים</h3>
+  <p>בקיץ, ב-21.6.2027, המשיכיר בעכו חל 4 דקות לפני ירושלים, והשקיעה בעכו 4 דקות אחרי ירושלים. בחורף, ב-21.12.2026, המשיכיר בעכו חל 3 דקות אחרי ירושלים, והשקיעה בעכו שתי דקות לפני ירושלים.</p>
+  <h3>ערים קרובות לעכו</h3>
+  <ul>
+    <li><a href="/kodesh/tefillin/nahariya/">זמן תפילין נהריה</a>: כ-9 ק״מ מעכו, משיכיר <bdi>05:25</bdi> ושקיעה <bdi>16:33</bdi></li>
+    <li><a href="/kodesh/tefillin/haifa/">זמן תפילין חיפה</a>: כ-18 ק״מ מעכו, משיכיר <bdi>05:25</bdi> ושקיעה <bdi>16:34</bdi></li>
+    <li><a href="/kodesh/tefillin/karmiel/">זמן תפילין כרמיאל</a>: כ-21 ק״מ מעכו, משיכיר <bdi>05:24</bdi> ושקיעה <bdi>16:32</bdi></li>
+    <li><a href="/kodesh/tefillin/tzfat/">זמן תפילין צפת</a>: כ-39 ק״מ מעכו, משיכיר <bdi>05:23</bdi> ושקיעה <bdi>16:32</bdi></li>
+  </ul>
+  <p><a href="/kodesh/tefillin/">סדר הנחת תפילין המלא</a> · <a href="/kodesh/zmanim/akko/">זמני היום בעכו</a> · <a href="/kodesh/shabat/akko/">כניסת שבת בעכו</a></p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>מאיזו שעה מניחים תפילין בעכו היום?</summary><p>ב-26.11.2026 אפשר בעכו מהמשיכיר ב-05:25, ולדעת פוסקים מסוימים בדורנו מ-05:23. ליום אחר בעכו יש לוח בדף.</p></details>
+  <details><summary>עד מתי מניחים תפילין בעכו?</summary><p>עד השקיעה בעכו: ב-26.11.2026 בשעה 16:33, ובמשך השנה בין 16:32 ל-19:52.</p></details>
+  <details><summary>מתי המשיכיר בעכו הכי מוקדם ומתי הכי מאוחר?</summary><p>הכי מוקדם בעכו ב-14.6.2027, בשעה 04:30. הכי מאוחר ב-30.10.2027, בשעה 06:03.</p></details>
+  <details><summary>כמה זמן יש בעכו להניח תפילין ביום חורף קצר?</summary><p>בין המשיכיר לשקיעה בעכו יש ביום הקצר בשנה 10 שעות ו-54 דקות (21.12.2026, מ-05:42 עד 16:37), וביום הארוך 15 שעות ו-21 דקות (21.6.2027, מ-04:30 עד 19:51).</p></details>
+  <details><summary>במה זמני התפילין בעכו שונים מירושלים?</summary><p>בסוף יוני המשיכיר בעכו חל 4 דקות לפני ירושלים, והשקיעה בעכו 4 דקות אחרי ירושלים. בסוף דצמבר המשיכיר בעכו חל 3 דקות אחרי ירושלים, והשקיעה בעכו שתי דקות לפני ירושלים.</p></details>
+  <details><summary>איך מקבלים תזכורת תפילין לפי עכו?</summary><p>לוחצים בכלי על "יומן לחצי שנה לפי עכו" ופותחים את הקובץ בטלפון. כל תזכורת מחושבת לפי השקיעה בעכו באותו יום, בחינם ובלי הרשמה.</p></details>
+</section>
+<!--/seo-txt-->
+<section class="k-sec" aria-labelledby="tf-other-h">
+  <h2 id="tf-other-h">זמן הנחת תפילין בערים נוספות</h2>
+  <nav class="sb-chips" aria-label="זמן הנחת תפילין בערים נוספות"><a href="/kodesh/tefillin/yerushalaim/">ירושלים</a><a href="/kodesh/tefillin/tel-aviv/">תל אביב</a><a href="/kodesh/tefillin/haifa/">חיפה</a><a href="/kodesh/tefillin/beer-sheva/">באר שבע</a><a href="/kodesh/tefillin/petah-tikva/">פתח תקווה</a><a href="/kodesh/tefillin/rishon-lezion/">ראשון לציון</a><a href="/kodesh/tefillin/netanya/">נתניה</a><a href="/kodesh/tefillin/ashdod/">אשדוד</a><a href="/kodesh/tefillin/bnei-brak/">בני ברק</a><a href="/kodesh/tefillin/holon/">חולון</a><a href="/kodesh/tefillin/ramat-gan/">רמת גן</a><a href="/kodesh/tefillin/bat-yam/">בת ים</a><a href="/kodesh/tefillin/rehovot/">רחובות</a><a href="/kodesh/tefillin/ashkelon/">אשקלון</a><a href="/kodesh/tefillin/beit-shemesh/">בית שמש</a><a href="/kodesh/tefillin/modiin/">מודיעין</a><a href="/kodesh/tefillin/herzliya/">הרצליה</a><a href="/kodesh/tefillin/kfar-saba/">כפר סבא</a><a href="/kodesh/tefillin/raanana/">רעננה</a><a href="/kodesh/tefillin/hadera/">חדרה</a><a href="/kodesh/tefillin/lod/">לוד</a><a href="/kodesh/tefillin/ramla/">רמלה</a><a href="/kodesh/tefillin/kiryat-gat/">קריית גת</a><a href="/kodesh/tefillin/dimona/">דימונה</a><a href="/kodesh/tefillin/eilat/">אילת</a><a href="/kodesh/tefillin/hevron/">חברון וקריית ארבע</a><a href="/kodesh/tefillin/tveria/">טבריה</a><a href="/kodesh/tefillin/tzfat/">צפת</a><a href="/kodesh/tefillin/afula/">עפולה</a><a href="/kodesh/tefillin/akko/" aria-current="page">עכו</a><a href="/kodesh/tefillin/nahariya/">נהריה</a><a href="/kodesh/tefillin/karmiel/">כרמיאל</a><a href="/kodesh/tefillin/kiryat-shmona/">קריית שמונה</a></nav>
+</section>

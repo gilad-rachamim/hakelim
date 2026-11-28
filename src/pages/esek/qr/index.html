@@ -1,0 +1,96 @@
+<!--meta {
+  "site": "esek",
+  "nav": "qr",
+  "tool": "esek_qr",
+  "title": "יצירת קוד QR בחינם: מחולל QR (ברקוד לסריקה) מעוצב לקישור, לווטסאפ ולוויפיי | כלים לעסק קטן",
+  "description": "יצירת קוד QR בחינם ובלי הרשמה, עם כותרת בעברית ועיצוב: ברקוד לסריקה לקישור, לווטסאפ, לטלפון, לטקסט או לרשת הוויפיי. מקבלים תמונה לשיתוף ודף להדפסה לדלפק, לשולחן או לחלון. הקוד נוצר בטלפון, ושום דבר לא נשמר.",
+  "og_title": "QR מעוצב עם כותרת – לקישור, לווטסאפ ולוויפיי",
+  "priority": "0.8",
+  "crumbs": [
+    [
+      "QR מעוצב",
+      null
+    ]
+  ],
+  "head": "<script src=\"/assets/vendor/qrcodejs/qrcode-1.0.0.min.js\" integrity=\"sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" defer></script><link rel=\"stylesheet\" href=\"/assets/seo-txt.css\"><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"מחולל ה-QR בחינם?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. בחינם ובלי הרשמה.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר ליצור QR לוויפיי?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. כותבים את שם הרשת והסיסמה, ומי שסורק מתחבר בלי להקליד. הסיסמה לא נשמרת באתר.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר ליצור QR שפותח שיחת ווטסאפ?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. כותבים את מספר הטלפון, ואפשר להוסיף הודעה שתופיע מוכנה למי שסורק.\"}}, {\"@type\": \"Question\", \"name\": \"איך מדפיסים את הקוד?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"בוחרים את הגודל \\\"להדפסה\\\", ולוחצים \\\"להדפיס\\\". אפשר גם לשמור כתמונה או לשתף.\"}}, {\"@type\": \"Question\", \"name\": \"זה אותו דבר כמו יצירת ברקוד?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"קוד QR הוא הריבוע שרבים קוראים לו ברקוד: סורקים אותו במצלמת הטלפון, והוא פותח קישור, שיחה או רשת. ברקוד של פסים, כמו על מוצרים בחנות, הכלי לא יוצר.\"}}, {\"@type\": \"Question\", \"name\": \"לקוד QR יש תאריך תפוגה?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לא. הקוד כאן קבוע: המידע כתוב בתוך הקוד עצמו, ולכן הוא לא פג ואין הגבלה על מספר הסריקות. אם הקישור שאליו הוא מוביל נמחק, הקוד כבר לא יוביל לשום מקום.\"}}, {\"@type\": \"Question\", \"name\": \"אפשר לשים לוגו באמצע קוד ה-QR?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"כן. בוחרים תמונה בשדה \\\"לוגו באמצע הקוד\\\". הקוד נוצר אז ברמת תיקון שגיאות גבוהה, כך שהוא נסרק גם עם הלוגו. כדאי לבדוק סריקה לפני הדפסה.\"}}, {\"@type\": \"Question\", \"name\": \"איך עושים קוד QR לפייבוקס או לביט?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"מעתיקים את קישור התשלום מהאפליקציה, בוחרים כאן \\\"קישור\\\" ומדביקים. הקוד יפתח את דף התשלום בטלפון של מי שסורק.\"}}, {\"@type\": \"Question\", \"name\": \"הקוד יפסיק לעבוד אחרי זמן?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"לא. זה קוד סטטי: הקישור כתוב בתוך הקוד עצמו, בלי שרת באמצע, ולכן הוא עובד לתמיד ובלי הגבלת סריקות.\"}}]}</script>",
+  "foot": "<script src=\"/assets/kcard.js\" defer></script><script src=\"/assets/esek-qr.js\" defer></script>"
+} -->
+<header class="k-hero">
+  <h1>יצירת קוד QR מעוצב</h1>
+  <p class="sub">קוד לסריקה עם כותרת ועיצוב: לקישור, לטלפון, לווטסאפ או לוויפיי של העסק. תמונה לשיתוף, ודף להדפסה לדלפק.</p>
+</header>
+<div class="tool">
+  <form class="k-form lead-form" id="qr-form" novalidate>
+    <input type="hidden" name="type" id="qr-type" value="link">
+    <div class="es-tabs" role="group" aria-label="סוג הקוד">
+      <button type="button" data-qt="link" aria-pressed="true">🔗 קישור</button>
+      <button type="button" data-qt="wa" aria-pressed="false">💬 ווטסאפ</button>
+      <button type="button" data-qt="tel" aria-pressed="false">📞 טלפון</button>
+      <button type="button" data-qt="wifi" aria-pressed="false">📶 וויפיי</button>
+      <button type="button" data-qt="text" aria-pressed="false">📝 טקסט</button>
+    </div>
+    <div data-qf="link" class="field"><label for="qr-url">הקישור</label><input id="qr-url" name="url" type="url" inputmode="url" maxlength="1200" placeholder="https://..." dir="ltr" style="text-align:right"><p class="es-hint">דף פייסבוק, אינסטגרם, גוגל ביזנס, ביקורות, או <a class="gold" href="/esek/tafrit/">התפריט הדיגיטלי שבניתם</a>.</p></div>
+    <div data-qf="wa tel" class="field" hidden><label for="qr-phone">מספר הטלפון</label><input id="qr-phone" name="phone" type="tel" inputmode="tel" maxlength="20" placeholder="050-0000000" dir="ltr" style="text-align:right"></div>
+    <div data-qf="wa" class="field" hidden><label for="qr-msg">הודעה שתופיע מוכנה <span class="opt">(לא חובה)</span></label><input id="qr-msg" name="msg" type="text" maxlength="120" placeholder="שלום, אשמח להזמין"></div>
+    <div data-qf="wifi" class="field" hidden><label for="qr-ssid">שם הרשת</label><input id="qr-ssid" name="ssid" type="text" maxlength="40" placeholder="Pizza-Moshe" dir="ltr" style="text-align:right"></div>
+    <div data-qf="wifi" class="es-row" hidden>
+      <div class="field"><label for="qr-pass">סיסמה</label><input id="qr-pass" name="pass" type="text" maxlength="63" autocomplete="off" dir="ltr" style="text-align:right"></div>
+      <div class="field"><label for="qr-sec">אבטחה</label><select id="qr-sec" name="sec"><option value="WPA">WPA / WPA2 (רוב הרשתות)</option><option value="WEP">WEP (ישן)</option><option value="nopass">בלי סיסמה</option></select></div>
+    </div>
+    <div data-qf="wifi" hidden><label class="check"><input type="checkbox" id="qr-showpass"> <span>לכתוב את הסיסמה גם במילים מתחת לקוד</span></label></div>
+    <div data-qf="text" class="field" hidden><label for="qr-text">הטקסט</label><textarea id="qr-text" name="text" maxlength="600" placeholder="כל טקסט שיופיע למי שסורק"></textarea></div>
+    <div class="field"><label for="qr-logo">לוגו באמצע הקוד <span class="opt">(לא חובה – תמונה או לוגו של העסק)</span></label><input id="qr-logo" type="file" accept="image/*"><button class="btn btn-line btn-sm" type="button" id="qr-logo-rm" hidden style="margin-top:.4rem">להסיר את הלוגו</button></div>
+    <div class="field"><label for="qr-title">כותרת מעל הקוד</label><input id="qr-title" name="title" type="text" maxlength="40" placeholder="התפריט שלנו"></div>
+    <div class="field"><label for="qr-sub">שורה מתחת לקוד <span class="opt">(לא חובה)</span></label><input id="qr-sub" name="sub" type="text" maxlength="70" placeholder="סורקים במצלמה של הטלפון"></div>
+    <div class="es-row">
+      <div class="field"><label for="qr-theme">עיצוב</label><select id="qr-theme" name="theme"><option value="white">לבן נקי</option><option value="black">שחור וזהב</option><option value="tomato">אדום</option><option value="fresh">ירוק</option><option value="coffee">חום קפה</option><option value="sunny">צהוב</option><option value="sky">תכלת</option></select></div>
+      <div class="field"><label for="qr-size">גודל</label><select id="qr-size" name="size"><option value="a5">להדפסה (דף לעמידה)</option><option value="square">ריבוע (לשיתוף)</option><option value="story">לגובה (סטטוס)</option></select></div>
+    </div>
+    <input type="hidden" name="foot" value="">
+  </form>
+  <canvas id="qr-canvas" class="es-canvas" width="1240" height="1754" role="img" aria-label="תצוגה מקדימה של קוד ה-QR"></canvas>
+  <p class="es-hint" id="qr-err" hidden style="color:var(--accent)"></p>
+  <div class="share-row">
+    <button class="btn btn-gold btn-sm" type="button" id="qr-print">🖨️ להדפיס</button>
+    <button class="btn btn-line btn-sm" type="button" id="qr-share"><svg class="ic"><use href="#wa"/></svg> לשתף את התמונה</button>
+    <button class="btn btn-line btn-sm" type="button" id="qr-dl">לשמור את התמונה</button>
+  </div>
+  <p class="ios-tip" id="qr-tip" hidden>התמונה נשמרה בטלפון, בגלריה.</p>
+  <p class="disclaimer">לפני שמדפיסים הרבה: סורקים פעם אחת מהמסך עם טלפון אחר, ובודקים שזה נפתח נכון. הקוד נוצר בטלפון שלכם, ושום דבר לא נשמר אצלנו (גם לא סיסמת הוויפיי).</p>
+  <p class="disclaimer">חלק מ<a class="gold" href="/esek/">כלים לעסק קטן</a>. רוצים סוג קוד נוסף? <a class="gold" href="/kelim/bakasha/">ספרו לי</a>.</p>
+</div>
+
+<!--seo-txt-->
+<section class="k-sec seo-txt" aria-labelledby="seo-h">
+  <h2 id="seo-h">איך יוצרים קוד QR בחינם</h2>
+  <p>קוד QR הוא ריבוע שסורקים במצלמת הטלפון, והוא פותח קישור, שיחה או רשת וויפיי. המחולל מתאים לבעלי עסקים קטנים שרוצים שלט לדלפק, למארגני אירועים, לגבאים ולמורים, ולכל מי שרוצה שאנשים יגיעו למקום הנכון בלי להקליד.</p>
+  <h3>חמישה סוגי קוד</h3>
+  <p>קישור: לדף פייסבוק, לאינסטגרם, לביקורות בגוגל או לתפריט. ווטסאפ: הסורק נכנס ישר לשיחה איתכם, ואפשר להכין לו הודעה מוכנה. טלפון: סריקה שמחייגת אליכם. וויפיי: הלקוחות מתחברים לרשת בלי להקליד סיסמה. טקסט: כל טקסט שרוצים.</p>
+  <h3>איך מעצבים ומדפיסים</h3>
+  <p>כותבים כותרת מעל הקוד, ואם רוצים גם שורה מתחתיו. בוחרים עיצוב: לבן נקי, שחור וזהב, אדום, ירוק, חום קפה, צהוב או תכלת. בוחרים גודל: דף להדפסה לעמידה על הדלפק, ריבוע לשיתוף, או לגובה לסטטוס. אחר כך מדפיסים, משתפים או שומרים את התמונה.</p>
+  <h3>טיפ לפני שמדפיסים</h3>
+  <p>לפני שמדפיסים הרבה עותקים, סורקים פעם אחת מהמסך עם טלפון אחר, ובודקים שהקוד נפתח נכון. הקוד נוצר בטלפון שלכם, ושום דבר לא נשמר באתר, גם לא סיסמת הוויפיי. יש לכם מסעדה או דוכן? הכלי "תפריט דיגיטלי" בונה תפריט בקישור עם קוד לשולחן. הכול בחינם ובלי הרשמה.</p>
+  <h2>מחולל QR: קוד קבוע, בלי תאריך תפוגה</h2>
+  <p>הקוד שנוצר כאן הוא קוד קבוע: הקישור, המספר או הטקסט כתובים בתוך הקוד עצמו, בלי שרת באמצע. לכן אין לו תאריך תפוגה ואין מגבלה על מספר הסריקות, והוא ימשיך לעבוד כל עוד הקישור עצמו קיים. מצד שני, אי אפשר לשנות את הקישור אחרי ההדפסה, ואין ספירה של סריקות. צריך קישור אחר? יוצרים קוד חדש, בחינם.</p>
+  <h2>יצירת ברקוד לעסק: איפה שמים את הקוד</h2>
+  <p>בעלי עסקים שמים את הקוד על הדלפק, בחלון הראווה, על כרטיס ביקור או על פלייר. באירוע שמים קוד שמוביל למיקום או לאלבום התמונות, ובבית הכנסת קוד שמוביל ללוח הזמנים. כדאי לכתוב מעל הקוד מה מקבלים כשסורקים, למשל "סרקו לתפריט", כי אנשים סורקים כשברור להם למה.</p>
+<h2>קוד QR עם לוגו באמצע</h2>
+  <p>אפשר להוסיף לוגו של העסק, או כל תמונה, באמצע הקוד: בוחרים קובץ בשדה "לוגו באמצע הקוד", והוא מופיע בתוך ריבוע לבן קטן. כשיש לוגו, הקוד נוצר ברמת תיקון השגיאות הגבוהה ביותר (H), שמאפשרת לטלפון לקרוא את הקוד גם כשכ-30% ממנו מכוסה. הלוגו כאן מכסה בערך 7% בלבד, כך שיש מרווח ביטחון גדול. בכל זאת, אחרי שמוסיפים לוגו כדאי לסרוק פעם אחת בטלפון לפני שמדפיסים מאות עותקים.</p>
+  <h3>קוד QR לפייבוקס ולביט</h3>
+  <p>רוצים שלקוחות ישלמו בסריקה? בפייבוקס ובביט אפשר ליצור קישור תשלום או קישור לקבוצה. מעתיקים את הקישור מהאפליקציה, בוחרים כאן "קישור", ומדביקים. הקוד שנוצר פותח את דף התשלום ישר בטלפון של הלקוח. אפשר לכתוב מעל הקוד "משלמים כאן בפייבוקס" ולהדביק אותו ליד הקופה.</p>
+  <h3>קוד QR שלא פג תוקף</h3>
+  <p>הרבה אתרים מציעים קוד "דינמי" בחינם, ואחרי כמה שבועות הקוד מפסיק לעבוד עד שמשלמים מנוי. כאן הקוד "סטטי": הקישור עצמו כתוב בתוך הקוד, בלי שרת באמצע, ולכן הוא עובד לתמיד ובלי הגבלת סריקות. החיסרון היחיד: אם הקישור משתנה, צריך ליצור קוד חדש.</p>
+</section>
+<section class="k-sec seo-faq" aria-labelledby="seo-faq-h">
+  <h2 id="seo-faq-h">שאלות ותשובות</h2>
+  <details><summary>מחולל ה-QR בחינם?</summary><p>כן. בחינם ובלי הרשמה.</p></details>
+  <details><summary>אפשר ליצור QR לוויפיי?</summary><p>כן. כותבים את שם הרשת והסיסמה, ומי שסורק מתחבר בלי להקליד. הסיסמה לא נשמרת באתר.</p></details>
+  <details><summary>אפשר ליצור QR שפותח שיחת ווטסאפ?</summary><p>כן. כותבים את מספר הטלפון, ואפשר להוסיף הודעה שתופיע מוכנה למי שסורק.</p></details>
+  <details><summary>איך מדפיסים את הקוד?</summary><p>בוחרים את הגודל "להדפסה", ולוחצים "להדפיס". אפשר גם לשמור כתמונה או לשתף.</p></details>
+  <details><summary>זה אותו דבר כמו יצירת ברקוד?</summary><p>קוד QR הוא הריבוע שרבים קוראים לו ברקוד: סורקים אותו במצלמת הטלפון, והוא פותח קישור, שיחה או רשת. ברקוד של פסים, כמו על מוצרים בחנות, הכלי לא יוצר.</p></details>
+  <details><summary>לקוד QR יש תאריך תפוגה?</summary><p>לא. הקוד כאן קבוע: המידע כתוב בתוך הקוד עצמו, ולכן הוא לא פג ואין הגבלה על מספר הסריקות. אם הקישור שאליו הוא מוביל נמחק, הקוד כבר לא יוביל לשום מקום.</p></details>
+  <details><summary>אפשר לשים לוגו באמצע קוד ה-QR?</summary><p>כן. בוחרים תמונה בשדה "לוגו באמצע הקוד". הקוד נוצר אז ברמת תיקון שגיאות גבוהה, כך שהוא נסרק גם עם הלוגו. כדאי לבדוק סריקה לפני הדפסה.</p></details>
+  <details><summary>איך עושים קוד QR לפייבוקס או לביט?</summary><p>מעתיקים את קישור התשלום מהאפליקציה, בוחרים כאן "קישור" ומדביקים. הקוד יפתח את דף התשלום בטלפון של מי שסורק.</p></details>
+  <details><summary>הקוד יפסיק לעבוד אחרי זמן?</summary><p>לא. זה קוד סטטי: הקישור כתוב בתוך הקוד עצמו, בלי שרת באמצע, ולכן הוא עובד לתמיד ובלי הגבלת סריקות.</p></details>
+</section>
+<!--/seo-txt-->
